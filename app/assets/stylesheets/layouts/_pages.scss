@@ -1,31 +1,53 @@
-.blok {
-  width: 360px;
-  height: 280px;
-  margin: 15px;
-  padding: 10px;
-  position: relative;
-  border: solid;
-  border-top-color: white;
-  border-right-color: white;
-  border-left-color: #c1c1c1;
-  border-bottom-color: #c1c1c1;
-  border-radius: 20px;
-  border-width: 2px;
-}
-
 .banner {
-  height: 200px;
+  height: 160px;
   margin: 15px;
   padding: 20px;
-  position: relative;
+}
+
+.home-page-blok {
   border: solid;
   border-top-color: white;
   border-right-color: white;
   border-left-color: #c1c1c1;
   border-bottom-color: #c1c1c1;
   border-radius: 20px;
-  border-width: 2px;
-
+  border-width: 3px;
+  background-color: #fcfcfc;
 }
 
+.container-blok {
+  margin: 0px;
+  padding: 10px;
+  position: relative;
+}
+.inner-blok {
+  padding: 10px;
+  height: 280px;
+}
 
+.banner-mobile {
+  height: 80px;
+  margin: 20px;
+  text-align: center;
+  color: grey;
+  font-style: bold;
+}
+.mobile-blok {
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container-fluid {
+  width: 90vw;
+}
+
+.row-fluid {
+  width: 100%;
+}

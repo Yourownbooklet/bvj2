@@ -6,7 +6,7 @@
     <% end %>
 
 
-    <div class="dropdown">
+    <div class="dropdown hidden-xs">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Voorleesboek</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
         <li><a href="#">biologisch verhaal</a></li>
@@ -14,7 +14,7 @@
         <li><a href="#">aftelboek</a></li>
       </ul>
     </div>
-    <div class="dropdown">
+    <div class="dropdown hidden-xs">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Invulboek</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
         <li><a href="#">receptieboek</a></li>
@@ -26,7 +26,7 @@
         <li><a href="#">babyboek</a></li>
       </ul>
     </div>
-    <div class="dropdown">
+    <div class="dropdown hidden-xs">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Kalender</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
         <li><a href="#">family planner</a></li>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <!-- Right Navigation -->
-  <div class="navbar-section hidden-xs hidden-sm">
+  <div class="navbar-section hidden-xs">
     <div class="dropdown">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Over BOEKJE voor JOU</span>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
@@ -68,14 +68,30 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-item hidden-md hidden-lg">
+  <div class="navbar-item hidden-sm hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+        <li>
+          <%= link_to about_path do %>
+            <i class="fas fa-info-circle"></i> Hoe werkt het?
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-sign-in-alt"></i> Log in
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <i class="fa fa-cog"></i> Register
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out-alt"></i>  Log out
+          <% end %>
+        </li>
     </div>
   </div>
 </div>
