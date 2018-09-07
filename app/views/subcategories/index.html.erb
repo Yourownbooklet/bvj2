@@ -1,0 +1,13 @@
+<div class="container-fluid hidden-xs">
+  <div class="row-fluid">
+    <% @subcategories.each do |c| %>
+      <%= link_to "#" do %>
+        <div class="container-blok col-sm-6 col-md-4">
+          <div class="inner-blok home-page-blok">
+            <%= c.name %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

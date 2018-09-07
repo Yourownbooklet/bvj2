@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180906155247) do
+ActiveRecord::Schema.define(version: 20180907092051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,14 @@ ActiveRecord::Schema.define(version: 20180906155247) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "bookpages", force: :cascade do |t|
-    t.string "name"
-    t.text "html"
+  create_table "bookanswers", force: :cascade do |t|
+    t.string "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "pagetemplate_id"
+    t.bigint "question_id"
     t.bigint "book_id"
-    t.index ["book_id"], name: "index_bookpages_on_book_id"
-    t.index ["pagetemplate_id"], name: "index_bookpages_on_pagetemplate_id"
+    t.index ["book_id"], name: "index_bookanswers_on_book_id"
+    t.index ["question_id"], name: "index_bookanswers_on_question_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -39,29 +38,13 @@ ActiveRecord::Schema.define(version: 20180906155247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "buyer_id"
+    t.bigint "booktemplate_id"
+    t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
   end
 
   create_table "booktemplates", force: :cascade do |t|
     t.string "name"
-    t.string "rails"
-    t.string "g"
-    t.string "model"
-    t.string "Producttype"
-    t.string "Productsubtype"
-    t.string "Category"
-    t.string "Subcategory"
-    t.string "Pagetemplate"
-    t.text "html"
-    t.string "Bookpage"
-    t.string "Book"
-    t.string "Question"
-    t.string "question"
-    t.boolean "open"
-    t.string "Answer"
-    t.string "answer"
-    t.string "Imagegallery"
-    t.string "Image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "publisher_id"
@@ -108,8 +91,8 @@ ActiveRecord::Schema.define(version: 20180906155247) do
     t.text "html"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "productsubtype_id"
-    t.index ["productsubtype_id"], name: "index_pagetemplates_on_productsubtype_id"
+    t.bigint "booktemplate_id"
+    t.index ["booktemplate_id"], name: "index_pagetemplates_on_booktemplate_id"
   end
 
   create_table "productsubtypes", force: :cascade do |t|
@@ -160,8 +143,9 @@ ActiveRecord::Schema.define(version: 20180906155247) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "bookpages", "books"
-  add_foreign_key "bookpages", "pagetemplates"
+  add_foreign_key "bookanswers", "books"
+  add_foreign_key "bookanswers", "questions"
+  add_foreign_key "books", "booktemplates"
   add_foreign_key "books", "users", column: "buyer_id"
   add_foreign_key "booktemplates", "productsubtypes"
   add_foreign_key "booktemplates", "subcategories"
@@ -170,7 +154,7 @@ ActiveRecord::Schema.define(version: 20180906155247) do
   add_foreign_key "images", "imagegalleries"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users", column: "buyer_id"
-  add_foreign_key "pagetemplates", "productsubtypes"
+  add_foreign_key "pagetemplates", "booktemplates"
   add_foreign_key "productsubtypes", "producttypes"
   add_foreign_key "questions", "subcategories"
   add_foreign_key "subcategories", "categories"
