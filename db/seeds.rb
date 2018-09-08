@@ -16,6 +16,8 @@ Subcategory.destroy_all
 Category.destroy_all
 Productsubtype.destroy_all
 Producttype.destroy_all
+Image.destroy_all
+Imagegallery.destroy_all
 
 categories = Category.create([
   {
@@ -360,5 +362,68 @@ answers = Answer.create([
     question_id: questions[3].id
   }
 ])
+
+imagegalleries = Imagegallery.create([
+  {
+    name: "Afbeeldingen van Ingrid",
+    publisher_id: users[1].id
+  }
+])
+
+images = Image.create([
+  {
+    name: "rozet",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "nieuwskrant",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "kopjes",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "verpleger",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "voorpagina kalender",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "kalender Jan",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "kalender Feb",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "kalender Mar",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "Pot augurken",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "meerdere",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "huwelijk man vrouw",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "baby jongen",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    name: "baby meisje",
+    imagegallery_id: imagegalleries[0].id
+  }
+])
+
 
 p "seeds done"

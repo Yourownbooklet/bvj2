@@ -123,9 +123,7 @@ ActiveRecord::Schema.define(version: 20180907092051) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.bigint "imagegallery_id"
     t.index ["category_id"], name: "index_subcategories_on_category_id"
-    t.index ["imagegallery_id"], name: "index_subcategories_on_imagegallery_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -158,5 +156,4 @@ ActiveRecord::Schema.define(version: 20180907092051) do
   add_foreign_key "productsubtypes", "producttypes"
   add_foreign_key "questions", "subcategories"
   add_foreign_key "subcategories", "categories"
-  add_foreign_key "subcategories", "imagegalleries"
 end
