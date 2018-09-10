@@ -3,4 +3,5 @@ class Subcategory < ApplicationRecord
   has_many :answers, through: :question
   has_many :booktemplates
   belongs_to :category
+  has_one :image
 end

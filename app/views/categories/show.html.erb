@@ -1,6 +1,11 @@
-<div class="banner home-page-blok hidden-xs">Category <p><%= @category.name  %></p></div>
 <div class="container-fluid hidden-xs">
   <div class="row-fluid">
+    <div class="container-blok col-sm-6 col-md-4">
+      <div class="inner-blok home-page-blok">
+        Category
+        <p><%= @category.name  %></p>
+      </div>
+    </div>
     <% @subcategories.each do |c| %>
       <%= link_to "#" do %>
         <div class="container-blok col-sm-6 col-md-4">
@@ -11,4 +16,17 @@
       <% end %>
     <% end %>
   </div>
+</div>
+<div class="hidden-sm hidden-md hidden-lg">
+  <div class="mobile-blok home-page-blok">
+    Category
+    <p><%= @category.name  %></p>
+  </div>
+  <% @subcategories.each do |c| %>
+    <%= link_to "#" do %>
+      <div class="mobile-blok home-page-blok">
+        <%= c.name %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

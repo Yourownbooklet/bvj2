@@ -1,28 +1,4 @@
-<div class="home1 hidden-xs">
-    <% @categories.each do |c| %>
-      <%= link_to category_path(c), class: "link-to" do %>
-      <% image = Image.find(c.image_id) %>
-    <div class="home-page-blok home-blok" style="background-image: url('<%= asset_path image.name %>')" >
-      <div class="home-tekst-blok">
-        <%= c.name  %>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-</div>
-<div class="hidden-sm hidden-md hidden-lg">
-  <% @categories.each do |c| %>
-    <%= link_to category_path(c), class: "link-to" do %>
-      <% image = Image.find(c.image_id) %>
-      <div class="mobile-blok home-page-blok" style="background-image: url('<%= asset_path image.name %>')">
-      <div class="home-tekst-blok">
-        <%= c.name  %>
-      </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-<div class="banner2">
+<div class="banner home-page-blok hidden-xs">
 <h1>Landing page title</h1>
 <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
 </div>

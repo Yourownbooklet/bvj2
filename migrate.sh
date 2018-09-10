@@ -15,3 +15,9 @@ rails g migration AddBooktemplateToBook booktemplate:references
 
 rails g migration AddQuestionToBookanswer question:references
 rails g migration AddBookToBookanswer book:references
+
+rails g migration AddImageToSubcategory image:references
+rails g migration AddImageToCategory image:references
+
+
+rails g migration AddItemsToUser user address1:string address2:string postalcode:string city:string country:string phonenumber:string

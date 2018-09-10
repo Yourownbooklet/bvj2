@@ -2,3 +2,80 @@
 .image {
   max-width: 80vh;
 }
+
+.banner {
+  height: 160px;
+  margin: 15px;
+  padding: 20px;
+}
+
+.banner2 {
+  color:white;
+  padding: 40px;
+  height: 350px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-style: bold;
+  background-image: image-url("banner-geel.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+// .banner2 h1{
+//   margin-left: 15px;
+//   background-color: black;
+//   color: yellow;
+//   width: 450px;
+// }
+
+.home-page-blok {
+  border: solid;
+  border-top-color: white;
+  border-right-color: white;
+  border-left-color: #c1c1c1;
+  border-bottom-color: #c1c1c1;
+  border-radius: 20px;
+  border-width: 3px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+ }
+
+.home1 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-blok {
+  height:140px;
+  width:240px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+ }
+
+.home-tekst-blok {
+  height: 30px;
+  width:140px;
+  font-variant: small-caps;
+  font-size: 22px;
+  background-color: #FBD000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -33px;
+  color:black;
+}
+
+.link-to {
+  text-decoration: none !important;
+}
+
+

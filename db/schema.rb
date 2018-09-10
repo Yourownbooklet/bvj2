@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180907092051) do
+ActiveRecord::Schema.define(version: 20180910161316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20180907092051) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "image_id"
+    t.index ["image_id"], name: "index_categories_on_image_id"
   end
 
   create_table "imagegalleries", force: :cascade do |t|
@@ -123,7 +125,9 @@ ActiveRecord::Schema.define(version: 20180907092051) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
+    t.bigint "image_id"
     t.index ["category_id"], name: "index_subcategories_on_category_id"
+    t.index ["image_id"], name: "index_subcategories_on_image_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -148,6 +152,7 @@ ActiveRecord::Schema.define(version: 20180907092051) do
   add_foreign_key "booktemplates", "productsubtypes"
   add_foreign_key "booktemplates", "subcategories"
   add_foreign_key "booktemplates", "users", column: "publisher_id"
+  add_foreign_key "categories", "images"
   add_foreign_key "imagegalleries", "users", column: "publisher_id"
   add_foreign_key "images", "imagegalleries"
   add_foreign_key "orders", "books"
@@ -156,4 +161,5 @@ ActiveRecord::Schema.define(version: 20180907092051) do
   add_foreign_key "productsubtypes", "producttypes"
   add_foreign_key "questions", "subcategories"
   add_foreign_key "subcategories", "categories"
+  add_foreign_key "subcategories", "images"
 end

@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :books
   has_many :booktemplates
   has_many :imagegalleries
+  has_many :images, through: :imagegallery
 end
