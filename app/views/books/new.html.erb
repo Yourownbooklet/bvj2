@@ -1,0 +1,32 @@
+<!-- on PC -->
+<div class="book-info bookpage">
+  <p><%= @subcategory.name %> <br>
+  <%= @booktemplate.name %> <br>
+  Book id:<%= @book.id %>
+  <% @questions.each do |q| %>
+    <%= q.question  %>?<br>
+    Open vraag? <%= q.open  %><br>
+    <% q.answers.each do |a| %>
+      <%= a.answer %>
+    <% end %>
+  <% end %>
+</div>
+ <div class="container-fluid bookpages-content flow hidden-xs">
+  <div class="row-fluid">
+    <% @pagetemplates.each do |p| %>
+      <%= link_to "#" do %>
+        <div class="container-blok bookpage col-sm-12">
+          <%= p.name %><br>
+          <%= p.html.html_safe %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+  <!-- on mobile -->
+<div class="hidden-sm hidden-md hidden-lg">
+  <div class="bookpage bookpage-size">
+
+  </div>
+</div>
+

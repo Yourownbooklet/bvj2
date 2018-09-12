@@ -4,7 +4,6 @@
   background: black;
   color: white;
   transition: all 0.3s ease;
-  height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -12,6 +11,7 @@
   position:fixed;
   width: 100vw;
   margin-top: -70px;
+      z-index:10;
 }
 
 /* Logo */

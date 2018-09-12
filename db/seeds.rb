@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeds started"
 
-Image.destroy_all
-Imagegallery.destroy_all
+Book.destroy_all
 Pagetemplate.destroy_all
 Booktemplate.destroy_all
 Answer.destroy_all
@@ -17,6 +16,8 @@ Subcategory.destroy_all
 Category.destroy_all
 Productsubtype.destroy_all
 Producttype.destroy_all
+Image.destroy_all
+Imagegallery.destroy_all
 User.destroy_all
 
 users = User.create([
@@ -365,55 +366,43 @@ pagetemplates = Pagetemplate.create([
   {
     name: 'Pagina 1',
     booktemplate_id: booktemplates[0].id,
-    html: '<h1>Boekje voor [answer q1]</h1>
-<%= image_tag "Afbeelding 1.jpg", height: 100 %>',
+    html: 'cat1_prod5_pub1_p1',
   },
   {
     name: 'Pagina 2',
     booktemplate_id: booktemplates[0].id,
-    html: '<div class="tekst-ingrid">Je hebt van die dagen die je nooit meer vergeet</div><div class="tekst-ingrid">[Antwoord vraag 2] is er zo &#x00E9&#x00E9n. </div><%= image_tag "Afbeelding 2.jpg", height: 300 %>',
+    html: 'cat1_prod5_pub1_p2',
   },
   {
     name: 'Pagina 3',
     booktemplate_id: booktemplates[0].id,
-    html: '<div class="tekst-ingrid">Papa en mama zaten thuis rustig een kopje koffie te drinken. Zou [antwoord vraag 3] vandaag misschien komen?</div><%= image_tag "Afbeelding 3a.jpg", height: 300 %>',
+    html: 'cat1_prod5_pub1_p3',
   },
   {
     name: 'Pagina 4',
     booktemplate_id: booktemplates[0].id,
-    html: '<% answerq3 = "b" %><div class="tekst-ingrid">En ja hoor, daar is [answer q1].</div><div class="tekst-ingrid">Wat een
-<% if answerq3 == "g" %>
-mooi meisje.
-<br>
-<%= image_tag "img4-g.jpg", height: 300 %>
-<% end %>
-<%  if answerq3 == "b"  %>
-prachtig ventje.
-<br>
-<%= image_tag "img4-b.jpg", height: 300 %>
-<% end %>
-</div>',
+    html: 'cat1_prod5_pub1_p4',
   },
   {
     name: 'Pagina 1',
     booktemplate_id: booktemplates[1].id,
-    html: '<h1>Kalender voor [answer Q subcategory_id: 4]</h1><%= image_tag "Afbeelding 5.jpg", height: 400 %>',
+    html: 'cat4_prod18_pub1_p1',
   },
   {
     name: 'Pagina 2',
     booktemplate_id: booktemplates[1].id,
-    html: '<%= image_tag "Afbeelding 6.jpg", height: 400 %>',
+    html: 'cat4_prod18_pub1_p2',
   },
   {
     name: 'Pagina 3',
     booktemplate_id: booktemplates[1].id,
-    html: '<%= image_tag "Afbeelding 7.jpg", height: 400 %>',
+    html: 'cat4_prod18_pub1_p3',
   },
   {
     name: 'Pagina 4',
     booktemplate_id: booktemplates[1].id,
-    html: '<%= image_tag "Afbeelding 8.jpg", height: 400 %>',
-  }
+    html: 'cat4_prod18_pub1_p4',
+  },
 ])
 
 questions = Question.create([

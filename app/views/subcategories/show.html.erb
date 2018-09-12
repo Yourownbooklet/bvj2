@@ -2,15 +2,15 @@
   <div class="row-fluid">
     <div class="container-blok col-sm-6 col-md-4">
       <div class="inner-blok home-page-blok">
-        Category
-        <p><%= @category.name  %></p>
+        Sub Category
+        <p><%= @subcategory.name  %></p>
       </div>
     </div>
-    <% @subcategories.each do |s| %>
-      <%= link_to subcategory_path(s) do %>
+    <% @booktemplates.each do |b| %>
+      <%= link_to booktemplate_path(b) do %>
         <div class="container-blok col-sm-6 col-md-4">
           <div class="inner-blok home-page-blok">
-            <%= s.name %>
+            <%= b.name %>
           </div>
         </div>
       <% end %>
@@ -19,13 +19,13 @@
 </div>
 <div class="hidden-sm hidden-md hidden-lg">
   <div class="mobile-blok home-page-blok">
-    Category
-    <p><%= @category.name  %></p>
+    Sub Category
+    <p><%= @subcategory.name  %></p>
   </div>
-  <% @subcategories.each do |s| %>
-    <%= link_to subcategory_path(s) do %>
+  <% @booktemplates.each do |b| %>
+    <%= link_to new_book_path(b) do %>
       <div class="mobile-blok home-page-blok">
-        <%= s.name %>
+        <%= b.name %>
       </div>
     <% end %>
   <% end %>

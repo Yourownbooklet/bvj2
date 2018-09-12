@@ -1,10 +1,20 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
+
   def new
     @book = Book.new
-    @bookanswer = Bookanswer.new
-    @subcategory = Subcategory.find(params[:subcategory_id])
+    @booktemplate = Booktemplate.find(params[:format])
+    @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate.id)
+    @subcategory = Subcategory.find(@booktemplate.subcategory_id)
     @questions = Question.where(subcategory_id: @subcategory.id)
-    @booktemplate = Booktemplate.find(params[:subcategory_id])
+    @book.booktemplate_id = @booktemplate.id
+    @book.save!
+    @questions.each do |q|
+      @bookanswer = Bookanswer.new
+      @bookanswer.question_id = q.id
+      @bookanswer.book_id = @book.id
+      @bookanswer.save!
+    end
   end
 
   def create

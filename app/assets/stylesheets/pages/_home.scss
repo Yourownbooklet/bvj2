@@ -4,31 +4,53 @@
 }
 
 .banner {
-  height: 160px;
-  margin: 15px;
-  padding: 20px;
-}
-
-.banner2 {
   color:white;
-  padding: 40px;
-  height: 350px;
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: left;
-  font-style: bold;
   background-image: image-url("banner-geel.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% auto;
 }
 
-// .banner2 h1{
-//   margin-left: 15px;
-//   background-color: black;
-//   color: yellow;
-//   width: 450px;
-// }
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .navbar-h {
+    height: 70px;
+  }
+  .banner-h {
+    padding: 40px;
+    height: 50vh;
+  }
+  .resp1 {
+    font-size: 5vw;
+    font-style: bold;
+  }
+  .resp2 {
+    font-size: 1.5vw;
+    font-style: bold;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .navbar-h {
+    height: 50px;
+  }
+  .banner-h {
+    padding: 15px;
+    height: 20vh;
+  }
+  .resp1 {
+    font-size: 8vw;
+    font-style: bold;
+  }
+  .resp2 {
+    font-size: 4vw;
+    font-style: bold;
+  }
+}
 
 .home-page-blok {
   border: solid;
@@ -70,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -33px;
+  margin-top: -10px;
   color:black;
 }
 

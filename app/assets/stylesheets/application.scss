@@ -15,7 +15,15 @@
 @import "pages/index";
 
 body {
-  padding-top: 70px;
+  margin-top: 70px;
   width: 100vw;
   background-color: #e8e8e8;
+}
+
+.save {
+  background: black;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 20px;
 }
