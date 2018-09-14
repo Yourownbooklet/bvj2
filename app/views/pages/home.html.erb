@@ -1,8 +1,9 @@
+<!-- pc view -->
 <div class="home1 hidden-xs">
     <% @categories.each do |c| %>
       <%= link_to category_path(c), class: "link-to" do %>
       <% image = Image.find(c.image_id) %>
-    <div class="home-page-blok home-blok" style="background-image: url('<%= asset_path image.name %>')" >
+    <div class="home-page-blok home-blok home-blok-h1" style="background-image: url('<%= asset_path image.name %>')" >
       <div class="home-tekst-blok">
         <%= c.name  %>
       </div>
@@ -10,6 +11,9 @@
     <% end %>
   <% end %>
 </div>
+<!--  -->
+<!-- mobile view -->
+<!--  -->
 <div class="hidden-sm hidden-md hidden-lg">
   <% @categories.each do |c| %>
     <%= link_to category_path(c), class: "link-to" do %>
@@ -22,41 +26,60 @@
     <% end %>
   <% end %>
 </div>
+<!-- all media view -->
 <div class="banner banner-h">
-<h4 class="resp1">Landing page title</h4>
-<h3 class="resp2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+  <h4 class="resp1">Boekje voor JOU</h4>
+  <%= link_to about_path, class: "link-to" do %>
+    <h3 class="resp2">Click her to learn more about book for you.</h3>
+  <% end %>
 </div>
-<div class="container-fluid hidden-xs">
-  <div class="row-fluid">
-    <% @categories.each do |c| %>
-      <%= link_to category_path(c) do %>
-        <div class="container-blok col-sm-6 col-md-4">
-          <div class="inner-blok home-page-blok">
-            <%= c.name %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    <div class="container-blok col-sm-6 col-md-4">
-      <div class="inner-blok home-page-blok">
-        About BOEKJE voor JOU
-      </div>
+<!-- PC view -->
+<div class="home1 hidden-xs">
+  <%= link_to booktemplate_path(15) do  %>
+  <div class="home-page-blok home-blok home-blok-h2" style="background-image: url('/assets/product 1.jpg')">
+    <div class="home-tekst-blok-product">
+      € 16,-
+    </div>
+  </div>
+  <% end %>
+  <div class="home-page-blok home-blok home-blok-h2" style="background-image: url('/assets/product 2.jpg')">
+    <div class="home-tekst-blok-product">
+      € 43,-
+    </div>
+  </div>
+  <div class="home-page-blok home-blok home-blok-h2" style="background-image: url('/assets/product 3.jpg')">
+    <div class="home-tekst-blok-product">
+      € 33,-
+    </div>
+  </div>
+  <div class="home-page-blok home-blok home-blok-h2" style="background-image: url('/assets/product 4.jpg')">
+    <div class="home-tekst-blok-product">
+      € 29,-
     </div>
   </div>
 </div>
-<div class="banner-mobile home-page-blok hidden-sm hidden-md hidden-lg">
-  Create your own bookpresent<br/> This is how it works
-</div>
+<!-- mobile view -->
 <div class="hidden-sm hidden-md hidden-lg">
-  <% @categories.each do |c| %>
-    <%= link_to category_path(c) do %>
-      <div class="mobile-blok home-page-blok">
-        <%= c.name  %>
-      </div>
-    <% end %>
+  <%= link_to booktemplate_path(15) do  %>
+  <div class="mobile-blok-square home-page-blok " style="background-image: url('/assets/product 1.jpg')">
+    <div class="home-tekst-blok-product">
+      € 23,-
+    </div>
+  </div>
   <% end %>
-  <div class="mobile-blok home-page-blok">
-    About BOEKJE voor JOU
+  <div class="mobile-blok-square home-page-blok " style="background-image: url('/assets/product 2.jpg')">
+    <div class="home-tekst-blok-product">
+      € 27,-
+    </div>
+  </div>
+  <div class="mobile-blok-square home-page-blok " style="background-image: url('/assets/product 3.jpg')">
+    <div class="home-tekst-blok-product">
+      € 21,-
+    </div>
+  </div>
+  <div class="mobile-blok-square home-page-blok" style="background-image: url('/assets/product 4.jpg')">
+    <div class="home-tekst-blok-product">
+      € 28,-
+    </div>
   </div>
 </div>
-

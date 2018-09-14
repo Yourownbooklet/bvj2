@@ -14,16 +14,80 @@
 @import "components/index";
 @import "pages/index";
 
+// CSS templates
+@import "templates/index";
+
 body {
-  margin-top: 70px;
   width: 100vw;
   background-color: #e8e8e8;
 }
 
-.save {
-  background: black;
-  color: white;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 20px;
+@media screen and (min-width: 601px) {
+  body {
+  margin-top: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    margin-top: 60px;
+  }
+}
+
+.knop-1 {
+  width: 145px;
+  height: 40px;
+  background-color: #FFCC33;
+  color: black;
+  padding: 5px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.knop-1:hover {
+  background-color: #FEBE00;
+}
+
+
+input {
+  width: 265px;
+  height: 40px;
+  margin: 0px 0px 10px 0px;
+  padding: 11px 10px 11px 10px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 0px;
+  border-style: none;
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #FCFEFF;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #FCFEFF;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #FCFEFF;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #FCFEFF;
+  }
+}
+
+input:focus {
+  outline: none;
+  border: 2px;
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+select {
+  width: 265px;
+  height: 40px;
+  margin: 0px 0px 10px 0px;
+  padding: 11px 10px 11px 10px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 0px;
+  border-style: none;
 }

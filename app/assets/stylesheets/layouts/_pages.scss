@@ -16,12 +16,24 @@
   font-style: bold;
 }
 .mobile-blok {
-  height: 60px;
+  height: 80px;
   margin: 10px;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: 100% auto;
+ }
+
+ .mobile-blok-square {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: auto 100%;
  }
 
 .wrapper {

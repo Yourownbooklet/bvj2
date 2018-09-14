@@ -17,29 +17,58 @@
     width: 500px;
     padding: 10px;
   }
+
+  .book-info {
+    margin-top: 70px;
+    padding: 20px 0px 20px 35px;
+    position:fixed;
+    height:100vw;
+    width:400px;
+    top:0;
+    left:0;
+  }
+  .bookpages-content {
+  padding-left: 400px;
+  // position: relative;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
+
 
   .bookpage-size {
     height: 350px;
     width: 350px;
     padding: 5px;
   }
-}
-
-.book-info {
-  margin-top: 70px;
-  padding: 20px;
-  position:fixed;
-  height:100vw;
-  width:400px;
-  top:0;
-  left:0;
-}
-
-.bookpages-content {
-  padding-left: 400px;
+  .book-info {
+    margin-top: 70px;
+    padding: 20px;
+    position: none;
+  }
+  .bookpages-content {
+    padding-left: 1px;
   // position: relative;
+  }
+}
+
+.book-info-mobile {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.booktemplate-page {
+  padding: 35px 0px 10px 0px;
+}
+
+.booktemplate {
+  font-family: $bvj;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.question {
+  font-family: $bvj;
+  font-size: 16px;
 }

@@ -17,7 +17,7 @@
       <%= link_to "#" do %>
         <div class="container-blok bookpage col-sm-12">
           <%= p.name %><br>
-          <%= p.html.html_safe %>
+          <%= render "html-templates/#{p.html}" %>
         </div>
       <% end %>
     <% end %>

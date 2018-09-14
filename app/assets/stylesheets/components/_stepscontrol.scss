@@ -1,0 +1,39 @@
+.stepscontrol-balk {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.control-button {
+  width: 60px;
+  height: 60px;
+  margin: 0px;
+  padding: 0px 4px 0px 0px;
+  font-size: 30px;
+  font-family: $bvj;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nu {
+  background-color: #FFCC33;
+  color: black;
+  cursor: default;
+}
+
+.pijl {
+  color: black
+}
+
+.terug {
+  background-color: lightgray;
+  color: gray;
+}
+
+.vooruit {
+  background-color: white;
+  color: gray;
+}

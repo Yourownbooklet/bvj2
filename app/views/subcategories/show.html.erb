@@ -23,7 +23,7 @@
     <p><%= @subcategory.name  %></p>
   </div>
   <% @booktemplates.each do |b| %>
-    <%= link_to new_book_path(b) do %>
+    <%= link_to booktemplate_path(b) do %>
       <div class="mobile-blok home-page-blok">
         <%= b.name %>
       </div>

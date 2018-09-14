@@ -1,0 +1,41 @@
+.page-size-kalender-ingrid {
+  height: 720px;
+  width: 420px;
+  padding: 20px;
+  background: white;
+}
+
+.content-kalender-ingrid {
+  height: 700px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content-kalender-ingrid-p1 {
+  background: center no-repeat url('/assets/Afbeelding 5.jpg');
+  background-size: auto 100%;
+}
+.content-kalender-ingrid-p2 {
+  background: center no-repeat url('/assets/Afbeelding 6.jpg');
+  background-size: auto 100%;
+  color:white;
+}
+.content-kalender-ingrid-p3 {
+  background: center no-repeat url('/assets/Afbeelding 7.jpg');
+  background-size: auto 100%;
+}
+.content-kalender-ingrid-p4 {
+  background: center no-repeat url('/assets/Afbeelding 8.jpg');
+  background-size: auto 100%;
+  color: white;
+}
+
+.tekstbox-kalender-ingrid {
+  height: 50px;
+  width: 400px;
+  padding: 20px 0px 20px 0px;
+  text-align: center;
+  margin-top: -650px;
+}

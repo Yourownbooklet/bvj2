@@ -1,36 +1,67 @@
-<div class="book-info bookpage">
-  Booktemplate
-  <p><%= @booktemplate.name  %></p>
-  <% @questions.each do |q| %>
-    <%= q.question  %>?<br>
-    Open vraag? <%= q.open %><br>
-    <% q.answers.each do |a| %>
-      <%= a.answer %><br>
+<div class="container-fluid booktemplate-page">
+  <div class="row-fuid">
+    <div class="col-md-6">
+    <p class="booktemplate"><%= @booktemplate.name  %></p>
+    <% id = 1 %>
+    <% @questions.each do |q| %>
+      <p class="question"><%= q.question  %>?</p>
+      <% if q.open %>
+        <input type="text" id="<%= id %>" placeholder="vul hier uw antwoord in" name="answer"><br>
+      <% else %>
+        <select name="answer" id="<%= id %>">
+          <% q.answers.each do |a| %>
+            <option value="<%= a.answer %>"><%= a.answer %></option>
+          <% end %>
+        </select><br>
+       <% end %>
+       <% id += 1 %>
     <% end %>
+    <br>
+    <br>
+    <br>
+    <button class="knop-1"> laat zien</button>
+    </div>
+    <div class="col-md-6">
+      <div class="stepscontrol-balk">
+        <div class="control-button pijl">&#x003C</div>
+        <div class="control-button nu">1</div>
+        <div class="control-button vooruit">2</div>
+        <div class="control-button vooruit">3</div>
+        <div class="control-button vooruit">4</div>
+        <div class="control-button vooruit">5</div>
+        <div class="control-button pijl">&#x003E</div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= @pagetemplates[0].name %><br>
+      <%= render "html-templates/#{@pagetemplates[0].html}" %>
+    </div>
+  </div>
+</div>
+
+<div class="hidden-xs hidden-sm hidden-md hidden-lg">
+  <p class="booktemplate"><%= @booktemplate.name  %></p>
+  <% id = 1 %>
+  <% @questions.each do |q| %>
+    <p class="question"><%= q.question  %>?</p>
+    <% if q.open %>
+      <input class="input" type="text" id="<%= id %>" placeholder="vul hier uw antwoord in" name="answer"><br>
+    <% else %>
+      <select class="input" name="answer" id="<%= id %>">
+        <% q.answers.each do |a| %>
+          <option value="<%= a.answer %>"><%= a.answer %></option>
+        <% end %>
+      </select><br>
+     <% end %>
+     <% id += 1 %>
   <% end %>
 </div>
-<div class="container-fluid bookpages-content hidden-xs flow">
-  <div class="row-fluid">
-    <% @pagetemplates.each do |p| %>
-      <%= link_to "#" do %>
-        <div class="container-blok bookpage col-sm-12">
-            <%= p.name %><br>
-            <%= render "html-templates/#{p.html}" %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="hidden-sm hidden-md hidden-lg">
-  <div class="mobile-blok home-page-blok">
-    Booktemplate
-    <p><%= @booktemplate.name  %></p>
-  </div>
+
+<div class="hidden-xs hidden-sm hidden-md hidden-lg">
   <% @pagetemplates.each do |p| %>
-    <%= link_to "#" do %>
-      <div class="mobile-blok home-page-blok">
-        <%= p.name %>
+      <div class="bookpage">
+        <%= p.name %><br>
+        <%= render "html-templates/#{p.html}" %>
       </div>
-    <% end %>
   <% end %>
 </div>

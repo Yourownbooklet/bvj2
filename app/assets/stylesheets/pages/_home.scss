@@ -18,6 +18,7 @@
 @media screen and (min-width: 601px) {
   .navbar-h {
     height: 70px;
+     margin-top: -70px;
   }
   .banner-h {
     padding: 40px;
@@ -25,18 +26,21 @@
   }
   .resp1 {
     font-size: 5vw;
-    font-style: bold;
+    font-weight: bold;
   }
   .resp2 {
-    font-size: 1.5vw;
-    font-style: bold;
+    font-size: 2vw;
+    font-weight: bold;
+  text-decoration: none !important;
+  color: white;
   }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   .navbar-h {
-    height: 50px;
+    height: 60px;
+    margin-top: -70px;
   }
   .banner-h {
     padding: 15px;
@@ -44,11 +48,12 @@
   }
   .resp1 {
     font-size: 8vw;
-    font-style: bold;
+    font-weight: bold;
   }
   .resp2 {
     font-size: 4vw;
-    font-style: bold;
+    font-weight: bold;
+
   }
 }
 
@@ -62,7 +67,6 @@
   border-width: 3px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% auto;
  }
 
 .home1 {
@@ -72,7 +76,6 @@
 }
 
 .home-blok {
-  height:140px;
   width:240px;
   padding: 20px;
   display: flex;
@@ -80,8 +83,17 @@
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% auto;
  }
+
+.home-blok-h1 {
+  height:140px;
+  background-size: 100% auto;
+}
+
+.home-blok-h2 {
+  height:200px;
+  background-size: auto 100%;
+}
 
 .home-tekst-blok {
   height: 30px;
@@ -94,6 +106,21 @@
   justify-content: center;
   margin-top: -10px;
   color:black;
+}
+
+.home-tekst-blok-product {
+  height: 60px;
+  width:60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  background-color: black;
+  opacity: 0.6;
+  color:white;
+  margin-top: -110px;
+  margin-right: -80px;
 }
 
 .link-to {

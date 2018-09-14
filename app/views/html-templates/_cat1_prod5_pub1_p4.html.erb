@@ -1,12 +1,17 @@
-<% answerq3 = "b" %><div class="tekst-ingrid">En ja hoor, daar is [answer q1].</div><div class="tekst-ingrid">Wat een
-<% if answerq3 == "g" %>
-mooi meisje.
-<br>
-<%= image_tag "img4-g.jpg", height: 300 %>
-<% end %>
-<%  if answerq3 == "b"  %>
-prachtig ventje.
-<br>
-<%= image_tag "img4-b.jpg", height: 300 %>
-<% end %>
+<span id="answerq3">
+<div class="page-size-voorleesboek-ingrid">
+  <div class="content-voorleesboek-ingrid">
+    <div class="tekstbox-voorleesboek-ingrid">
+      En ja hoor, daar is <span class="answerq1"><%= @questions[0].question %> </span>.
+    </div>
+
+
+  <img src="/assets/img4-b.jpg" class="img-voorleesboek-ingrid">
+  <div class="tekstbox-voorleesboek-ingrid">
+    Wat een prachtig ventje!
+  </div>
+  </div>
 </div>
+
+</span>
+
