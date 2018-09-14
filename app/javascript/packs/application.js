@@ -61,7 +61,7 @@ function updateAnswerQ4() {
       <div class="tekstbox-voorleesboek-ingrid">
         Papa en mama zaten thuis rustig een kopje koffie te drinken.
       </div>
-      <img src="/assets/Afbeelding 3a.jpg" class="img-voorleesboek-ingrid">
+      <img src="/assets/Afbeelding-3a.jpg" class="img-voorleesboek-ingrid">
       <div class="tekstbox-voorleesboek-ingrid">
         Zou <span class="answerq1">` + answerq1.value + `</span> vandaag misschien komen?
       </div>  </div>
@@ -73,7 +73,7 @@ function updateAnswerQ4() {
     <div class="tekstbox-voorleesboek-ingrid">
     Papa en Mama zijn naar het ziekenhuis gegaan omdat <span class="answerq1">` + answerq1.value + `</span> uit mama's buik wil.
     </div>
-    <img src="/assets/Afbeelding 3b.jpg" class="img-voorleesboek-ingrid">  </div>
+    <img src="/assets/Afbeelding-3b.jpg" class="img-voorleesboek-ingrid">  </div>
 </div>
   `;
   }
