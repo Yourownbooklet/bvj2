@@ -2,18 +2,23 @@
 // producttype: voorleesboek- ???
 // publisher: Ingrid
 
+.content-voorleesboek-ingrid-p1 {
+  background: center no-repeat url('/assets/Afbeelding-1.jpg');
+  background-size: 100% auto;
+}
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
   .page-size-voorleesboek-ingrid {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     padding: 20px;
     background: white;
   }
 
   .content-voorleesboek-ingrid {
-    height: 560px;
-    width: 560px;
+    height: 380px;
+    width: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,10 +42,6 @@
   .img-voorleesboek-ingrid {
     height: 330px;
     padding: 20px 0px 20px 0px;
-  }
-  .content-voorleesboek-ingrid-p1 {
-    background: center no-repeat url('/assets/Afbeelding-1.jpg');
-    background-size: 100% auto;
   }
 
   .tekstbox-voorleesboek-ingrid-p1 {
@@ -92,10 +93,6 @@
   .img-voorleesboek-ingrid {
     height: 160px;
     padding: 20px 0px 20px 0px;
-  }
-  .content-voorleesboek-ingrid-p1 {
-    background: center no-repeat url('/assets/Afbeelding 1.jpg');
-    background-size: 100% auto;
   }
 
   .tekstbox-voorleesboek-ingrid-p1 {

@@ -1,0 +1,26 @@
+<div class="page-size-voorleesboek-ingrid">
+  <div class="content-voorleesboek-ingrid">
+    <div class="tekstbox-voorleesboek-ingrid">
+      En ja hoor, daar is <%= @booktexts[0].text1 %>.
+    </div>
+    <% if @booktexts[0].text3 == "jongen" %>
+      <span id="10">
+        <img src="/assets/img4-b.jpg" class="img-voorleesboek-ingrid">
+      </span>
+      <div class="tekstbox-voorleesboek-ingrid">
+        <span id="11">
+            Wat een prachtig ventje!
+        </span>
+      </div>
+    <% else %>
+      <span id="12">
+        <img src="/assets/img4-g.jpg" class="img-voorleesboek-ingrid">
+      </span>
+      <div class="tekstbox-voorleesboek-ingrid">
+      <span id="13">
+        Wat een mooi meisje!
+      </span>
+      </div>
+    <% end %>
+  </div>
+</div>

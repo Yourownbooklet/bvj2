@@ -5,4 +5,5 @@ class Booktemplate < ApplicationRecord
   has_many :pagetemplates
   has_many :books
   has_many :imagegalleries, through: :user
+  has_one :booktemplatetext
 end

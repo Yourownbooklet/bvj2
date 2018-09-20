@@ -1,5 +1,14 @@
 class BooksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new]
+  skip_before_action :authenticate_user!, only: [:new, :show]
+
+  def show
+    @book = Book.find(params[:id])
+    @booktemplate = Booktemplate.find(@book.booktemplate_id)
+    @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
+    @booktexts = Booktext.where(book_id: @book.id)
+    @booktext = @booktexts[0]
+    @booktemplatetexts = Booktemplatetext.where(booktemplate_id: @booktemplate)
+  end
 
   def new
     @book = Book.new
@@ -16,6 +25,18 @@ class BooksController < ApplicationController
       @bookanswer.save!
     end
   end
+
+  def edit
+    @book = Book.find(params[:id])
+    @booktemplate = Booktemplate.find(@book.booktemplate_id)
+    @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
+    @booktexts = Booktext.where(book_id: @book.id)
+  end
+
+  def update
+
+  end
+
 
   def create
     @book = Book.new(book_params)

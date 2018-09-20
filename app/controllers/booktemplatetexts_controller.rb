@@ -1,0 +1,2 @@
+class BooktemplatetextsController < ApplicationController
+end

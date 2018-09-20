@@ -72,3 +72,32 @@
   font-family: $bvj;
   font-size: 16px;
 }
+
+.save-text:before {
+  content: "S";
+}
+.save-text {
+  color: black;
+  width: 25px;
+  height: 25px;
+  background-color: #FFCC33;
+  line-height: 0px;
+  padding-left: 6px;
+}
+
+.edit-text:before {
+  content: "T";
+}
+
+.edit-text {
+  color: black;
+  width: 25px;
+  height: 25px;
+  background-color: #FFCC33;
+  line-height: 0px;
+  padding-left: 6px;
+}
+
+.edit-text:hover {
+  background-color: #FEBE00;
+}

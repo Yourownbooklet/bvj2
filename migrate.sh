@@ -21,3 +21,6 @@ rails g migration AddImageToCategory image:references
 
 
 rails g migration AddItemsToUser user address1:string address2:string postalcode:string city:string country:string phonenumber:string
+rails g migration AddEditedToBook book edited:boolean
+
+rails g migration AddBooktemplateToBooktemplatetext booktemplate:references

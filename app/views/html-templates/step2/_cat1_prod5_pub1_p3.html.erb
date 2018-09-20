@@ -1,0 +1,26 @@
+<div class="page-size-voorleesboek-ingrid">
+  <div class="content-voorleesboek-ingrid">
+    <% if @booktexts[0].text4 == "thuis" %>
+      <div class="tekstbox-voorleesboek-ingrid">
+        <span id="text6">
+          Papa en mama zaten thuis rustig een kopje koffie te drinken.
+        </span>
+      </div>
+      <span id="text7">
+        <img src="/assets/Afbeelding-3a.jpg" class="img-voorleesboek-ingrid">
+      </span>
+       <div class="tekstbox-voorleesboek-ingrid">
+        Zou <%= @booktexts[0].text1 %> vandaag misschien komen?
+      </div>
+    <% else %>
+      <div class="tekstbox-voorleesboek-ingrid">
+        <span id="text8">
+          Papa en Mama zijn naar het ziekenhuis gegaan omdat <%= @booktexts[0].text1 %> uit mama's buik wil.
+        </span>
+      </div>
+      <span id="text9">
+        <img src="/assets/Afbeelding-3b.jpg" class="img-voorleesboek-ingrid">
+      </span>
+    <% end %>
+  </div>
+</div>

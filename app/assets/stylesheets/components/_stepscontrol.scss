@@ -1,21 +1,72 @@
+.knop {
+  width: 145px;
+  height: 40px;
+  padding: 10px;
+  font-size: medium;
+  border-radius: 2px;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.nu:hover {
+  color: black;
+  background-color: #FEBE00;
+}
+
+
+.flex1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .stepscontrol-balk {
-  width: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
 }
 
 .control-button {
-  width: 60px;
-  height: 60px;
-  margin: 0px;
-  padding: 0px 4px 0px 0px;
-  font-size: 30px;
   font-family: $bvj;
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+  text-decoration: none !important;
+}
+
+.control-button:hover {
+  color: black;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .stepscontrol-balk-s {
+    width: 500px;
+    margin: 20px;
+  }
+  .control-button-s {
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+    padding: 3px 4px 0px 0px;
+    font-size: 30px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .stepscontrol-balk-s {
+    width: 350px;
+    margin: 20px 0px 5px -15px;
+  }
+
+  .control-button-s {
+    width: 45px;
+    height: 45px;
+    margin: 0px;
+    padding: 0px 4px 0px 0px;
+    font-size: 25px;
+  }
 }
 
 .nu {
@@ -31,6 +82,11 @@
 .terug {
   background-color: lightgray;
   color: gray;
+}
+
+.terug:hover {
+  background-color: gray;
+  color: black;
 }
 
 .vooruit {

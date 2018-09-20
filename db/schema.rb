@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180910161316) do
+ActiveRecord::Schema.define(version: 20180918202537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180910161316) do
     t.datetime "updated_at", null: false
     t.bigint "buyer_id"
     t.bigint "booktemplate_id"
+    t.boolean "edited", default: false
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
   end
@@ -53,6 +54,42 @@ ActiveRecord::Schema.define(version: 20180910161316) do
     t.index ["productsubtype_id"], name: "index_booktemplates_on_productsubtype_id"
     t.index ["publisher_id"], name: "index_booktemplates_on_publisher_id"
     t.index ["subcategory_id"], name: "index_booktemplates_on_subcategory_id"
+  end
+
+  create_table "booktemplatetexts", force: :cascade do |t|
+    t.string "text1"
+    t.string "text2"
+    t.string "text3"
+    t.string "text4"
+    t.string "text5"
+    t.string "text6"
+    t.string "text7"
+    t.string "text8"
+    t.string "text9"
+    t.string "text10"
+    t.string "text11"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "booktemplate_id"
+    t.index ["booktemplate_id"], name: "index_booktemplatetexts_on_booktemplate_id"
+  end
+
+  create_table "booktexts", force: :cascade do |t|
+    t.string "text1"
+    t.string "text2"
+    t.string "text3"
+    t.string "text4"
+    t.string "text5"
+    t.string "text6"
+    t.string "text7"
+    t.string "text8"
+    t.string "text9"
+    t.string "text10"
+    t.string "text11"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "book_id"
+    t.index ["book_id"], name: "index_booktexts_on_book_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -152,6 +189,8 @@ ActiveRecord::Schema.define(version: 20180910161316) do
   add_foreign_key "booktemplates", "productsubtypes"
   add_foreign_key "booktemplates", "subcategories"
   add_foreign_key "booktemplates", "users", column: "publisher_id"
+  add_foreign_key "booktemplatetexts", "booktemplates"
+  add_foreign_key "booktexts", "books"
   add_foreign_key "categories", "images"
   add_foreign_key "imagegalleries", "users", column: "publisher_id"
   add_foreign_key "images", "imagegalleries"

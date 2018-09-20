@@ -1,0 +1,10 @@
+    <%= form_for @booktext, url: booktext_path(@booktext), method: :put do |bt| %>
+      <input type="hidden", name = "text5", value="<%= @booktemplatetexts[0].text5 %>">
+      <input type="hidden", name = "text6", value="<%= @booktemplatetexts[0].text6 %>">
+      <input type="hidden", name = "text7", value="<%= @booktemplatetexts[0].text7 %>">
+      <input type="hidden", name = "text8", value="<%= @booktemplatetexts[0].text8 %>">
+      <input type="hidden", name = "text9", value="<%= @booktemplatetexts[0].text9 %>">
+      <input type="hidden", name = "text10", value="<%= @booktemplatetexts[0].text10 %>">
+      <input type="hidden", name = "text11", value="<%= @booktemplatetexts[0].text11 %>">
+      <%= bt.submit "Next Step (3)", class: 'knop nu' %>
+    <% end %>

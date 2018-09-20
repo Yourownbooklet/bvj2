@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :subcategories, only: :show
   resources :booktemplates, only: :show
-  resources :books, except: [:edit, :update] do
+  resources :books do
     resources :bookanswers
   end
   resources :questions, only: [:show, :index] do
     resources :answers, only: :index
   end
+  resources :booktexts, only: [:create, :update]
+  resources :orders, except: :destroy
 end

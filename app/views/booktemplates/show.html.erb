@@ -2,34 +2,40 @@
   <div class="row-fuid">
     <div class="col-md-6">
     <p class="booktemplate"><%= @booktemplate.name  %></p>
-    <% id = 1 %>
-    <% @questions.each do |q| %>
-      <p class="question"><%= q.question  %>?</p>
-      <% if q.open %>
-        <input type="text" id="<%= id %>" placeholder="vul hier uw antwoord in" name="answer"><br>
-      <% else %>
-        <select name="answer" id="<%= id %>">
-          <% q.answers.each do |a| %>
-            <option value="<%= a.answer %>"><%= a.answer %></option>
-          <% end %>
-        </select><br>
-       <% end %>
-       <% id += 1 %>
+    <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
+        <% id = 1 %>
+        <% @questions.each do |q| %>
+          <p class="question"><%= q.question  %>?</p>
+          <% if q.open %>
+            <input type="text" id="<%= id %>" placeholder="vul hier uw antwoord in" name="text<%= id %>"><br>
+          <% else %>
+            <select name="text<%= id %>" id="<%= id %>">
+              <% q.answers.each do |a| %>
+                <option value="<%= a.answer %>"><%= a.answer %></option>
+              <% end %>
+            </select><br>
+           <% end %>
+           <% id += 1 %>
+        <% end %>
+        <input type="hidden", name = "booktemplate_id", value="<%= @booktemplate.id  %>">
+      <%= bt.submit "Next Step (2)", class: 'knop nu' %>
     <% end %>
+
+<!--       <input type="hidden" id="booktextid" value="1">
+      <button class="knop nu" id="answers">save answers</button> -->
+
+
     <br>
-    <br>
-    <br>
-    <button class="knop-1"> laat zien</button>
+    <button class="knop hidden-xs"> laat zien</button>
     </div>
     <div class="col-md-6">
-      <div class="stepscontrol-balk">
-        <div class="control-button pijl">&#x003C</div>
-        <div class="control-button nu">1</div>
-        <div class="control-button vooruit">2</div>
-        <div class="control-button vooruit">3</div>
-        <div class="control-button vooruit">4</div>
-        <div class="control-button vooruit">5</div>
-        <div class="control-button pijl">&#x003E</div>
+      <div class="stepscontrol-balk stepscontrol-balk-s">
+        <div class="control-button control-button-s pijl">&#x003C</div>
+        <div class="control-button control-button-s nu">1</div>
+       <div class="control-button control-button-s vooruit">2</div>        <div class="control-button control-button-s vooruit">3</div>
+        <div class="control-button control-button-s vooruit">4</div>
+        <div class="control-button control-button-s vooruit">5</div>
+        <div class="control-button control-button-s pijl">&#x003E</div>
       </div>
     </div>
     <div class="col-md-6">
@@ -57,11 +63,3 @@
   <% end %>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md hidden-lg">
-  <% @pagetemplates.each do |p| %>
-      <div class="bookpage">
-        <%= p.name %><br>
-        <%= render "html-templates/#{p.html}" %>
-      </div>
-  <% end %>
-</div>

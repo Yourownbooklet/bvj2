@@ -1,0 +1,6 @@
+<%= form_for @booktext, url: {action: "create"} do |bt| %>
+  <%= ba.text_field :answer1, autofocus: false, placeholder: 'answer' %>
+  <div class="form-actions">
+    <%= bt.submit "save answer", class: 'save' %>
+  </div>
+<% end %>

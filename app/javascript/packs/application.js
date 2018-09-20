@@ -1,5 +1,5 @@
 import "bootstrap";
-console.log('Hello World from Webpacker')
+console.log('Hello there from Webpacker');
 
   const answerq1 = document.getElementById("1");
   const answerq2 = document.getElementById("2");
@@ -7,8 +7,6 @@ console.log('Hello World from Webpacker')
   const answerq4 = document.getElementById("4");
   const answerq5 = document.getElementById("5");
   const answerq6 = document.getElementById("6");
-
-console.log(answerq1.value);
 
   answerq1.addEventListener("change", updateAnswerQ1);
   answerq2.addEventListener("change", updateAnswerQ2);
@@ -22,7 +20,7 @@ function updateAnswerQ1() {
   for ( i = 0; i < elements.length; i += 1) {
     elements[i].innerHTML = answerq1.value;
   }
-  console.log(answerq1.value);
+ console.log(answerq1.value);
 }
 
 function updateAnswerQ2() {
