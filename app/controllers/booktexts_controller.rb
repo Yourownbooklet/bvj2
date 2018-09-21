@@ -15,7 +15,7 @@ class BooktextsController < ApplicationController
   def update
     @booktext = Booktext.find(params[:id])
     @booktext.update!(booktext_params)
-    redirect_to edit_book_path
+    # redirect_to edit_book_path
   end
 
   private
@@ -25,6 +25,6 @@ class BooktextsController < ApplicationController
   end
 
   def booktext_params
-    params.permit(:text1, :text2, :text3, :text4, :text5, :text6, :text7, :text8, :text9, :text10, :text11, :text12, :text13, :text14, :text15, :text16, :text17)
+    params.permit(:text1, :text2, :text3, :text4, :text5, :text6, :text7, :text8, :text9, :text10, :text11, :text12, :text13, :text14, :text15, :text16, :text17, :id)
   end
 end

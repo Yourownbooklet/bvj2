@@ -43,7 +43,6 @@ console.log('updatetext');
 
 function updateText1() {
   const text01 = document.getElementById('text1').innerHTML;
-  console.log(button1.value);
   document.getElementById('bloktext1').innerHTML='<textarea id="newtext1" class="" name="">' + text01 + '</textarea><button id="savetext1" class="control-button save-text"></button>';
   const savetext1 = document.getElementById('savetext1');
   savetext1.addEventListener("click", saveText1);
@@ -56,4 +55,27 @@ function saveText1() {
   document.getElementById('bloktext1').innerHTML = '<span id="text1">' + newtext01 + '</span><button id="button1" class="control-button edit-text"></button>';
   const button1 = document.getElementById("button1");
   button1.addEventListener("click", updateText1);
+  // get booktext_id
+  const btid = document.getElementById("btid");
+  // const btid = document.getElementById('btid').value;
+  console.log(btid.value);
+  console.log(btid.dataset.tst);
+  // set route or path to update booktext
+  var urll = '/booktexts/' + btid.value;
+  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+
+  $.ajax({
+    type: 'PATCH',
+    url: urll,
+    datatype: 'json',
+    data: { text1: newtext01, authenticity_token: AUTH_TOKEN},
+    complete: function() {},
+    success: function() {
+      alert('Ajax kampioen!')
+    },
+    error: function() {
+      alert('Ajax gedegradeerd!')
+    }
+  });
+
 }

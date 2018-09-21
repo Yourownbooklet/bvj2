@@ -30,6 +30,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @booktemplate = Booktemplate.find(@book.booktemplate_id)
     @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
+    # this should be part of book: @book.text1, ....2, ...3 ect
     @booktexts = Booktext.where(book_id: @book.id)
   end
 
