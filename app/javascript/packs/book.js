@@ -49,21 +49,27 @@ function updateText1() {
 }
 
 function saveText1() {
+  // get content (everything between > and <) of element with id="newtext1" into variable :newtext01
   const newtext01 = $('#newtext1').val();
-  // const newtext01 = document.getElementById('newtext1').innerHTML;
+  // print content of newtext01 to console
   console.log(newtext01);
+  // set new content
   document.getElementById('bloktext1').innerHTML = '<span id="text1">' + newtext01 + '</span><button id="button1" class="control-button edit-text"></button>';
+  // get button
   const button1 = document.getElementById("button1");
+  // activate button to execute function "updatetext1"
   button1.addEventListener("click", updateText1);
-  // get booktext_id
+  // get all of element id="btid"
   const btid = document.getElementById("btid");
-  // const btid = document.getElementById('btid').value;
+  // get content of attribute value
   console.log(btid.value);
+  // get content of attribute data-tst
   console.log(btid.dataset.tst);
   // set route or path to update booktext
   var urll = '/booktexts/' + btid.value;
+  // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
   var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-
+  // update booktext.text1
   $.ajax({
     type: 'PATCH',
     url: urll,

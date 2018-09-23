@@ -76,7 +76,7 @@
 }
 
 .pijl {
-  color: black
+  color: gray
 }
 
 .terug {
@@ -92,4 +92,17 @@
 .vooruit {
   background-color: white;
   color: gray;
+}
+
+.disabled {
+  color: lightgray;
+  cursor: default;
+}
+
+.disabled:hover {
+  color: lightgray
+}
+
+button.fix {
+  padding-bottom: 11px;
 }

@@ -9,7 +9,7 @@ class BooktextsController < ApplicationController
     @booktext = Booktext.new(booktext_params)
     @booktext.book_id = @book.id
     @booktext.save!
-    redirect_to book_path(@book)
+    redirect_to edit_book_path(@book)
   end
 
   def update

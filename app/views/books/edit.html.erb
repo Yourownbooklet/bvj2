@@ -1,8 +1,13 @@
 <div class="container-fluid booktemplate-page">
   <div class="row-fuid">
     <div class="col-md-6">
-      <p class="booktemplate">Bekijk het boek</p>
-      <span>In de pagina staat aangegeven waar je aanpassingen kunt maken.</span>
+      <p class="booktemplate">
+        Bekijk het boek
+      </p>
+      <span>
+        In de pagina staat aangegeven waar je aanpassingen kunt maken.
+      </span>
+
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
     </div>
     <div class="col-md-6">
@@ -10,7 +15,12 @@
         <div class="control-button control-button-s pijl">&#x003C</div>
         <div class="control-button control-button-s terug">1</div>
         <div class="control-button control-button-s nu">2</div>
-        <div class="control-button control-button-s vooruit">3</div>
+
+        <% if user_signed_in? %>
+          <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
+        <% else %>
+          <%= link_to "3", new_user_session_path, class: "control-button control-button-s vooruit" %>
+        <% end %>
         <div class="control-button control-button-s vooruit">4</div>
         <div class="control-button control-button-s vooruit">5</div>
         <div class="control-button control-button-s pijl">&#x003E</div>
@@ -27,7 +37,7 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="0" class="tst1 active"></li>
     <li data-target="#myCarousel" data-slide-to="1" class="tst"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -76,7 +86,10 @@
   <div class="row-fuid">
     <div class="col-md-12">
       <div class="flex1">
-        <%= link_to "TERUG", book_path(@book.id), class: "knop terug" %>
+        <!-- <%#= link_to "TERUG", booktemplate_path(@book.booktemplate_id), class: "knop terug" %> -->
+        <form>
+          <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
+        </form>
         <% if user_signed_in? %>
           <%= link_to "KOOP", new_order_path, class: "knop nu" %>
         <% else %>

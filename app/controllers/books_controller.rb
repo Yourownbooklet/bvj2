@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  respond_to :html, :json, :js
   skip_before_action :authenticate_user!, only: [:new, :show]
 
   def show
@@ -38,6 +39,18 @@ class BooksController < ApplicationController
 
   end
 
+  def createa
+    # create book first
+    @book = Book.new(book_params)
+    @book.save!
+    # now create booktext
+    @booktext = Booktext.new(booktext_params)
+    @booktext.book_id = @book.id
+    @booktext.save!
+    respond_to do |format|
+        format.js
+    end
+  end
 
   def create
     @book = Book.new(book_params)
@@ -45,6 +58,10 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def booktext_params
+    params.permit(:text1, :text2, :text3, :text4, :text5, :text6, :text7, :text8, :text9, :text10, :text11, :text12, :text13, :text14, :text15, :text16, :text17, :id)
+  end
 
   def book_params
     params.permit(:booktemplate_id, :buyer_id, :name)

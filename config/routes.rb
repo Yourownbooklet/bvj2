@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
   resources :booktexts, only: [:create, :update]
   resources :orders, except: :destroy
+
+  post 'booka', to: 'books#createa', as: :booka
 end

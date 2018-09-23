@@ -1,5 +1,8 @@
 import "bootstrap";
-console.log('Hello there from Webpacker');
+import { saveBookText1 } from "./savebooktext";
+saveBookText1();
+
+console.log('Hello there from Webpacker application.js');
 
   const answerq1 = document.getElementById("1");
   const answerq2 = document.getElementById("2");
