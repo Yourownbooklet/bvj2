@@ -1,11 +1,11 @@
 function saveBookText1() {
-  const sbtbutton = document.getElementById("savebooktext1");
-  sbtbutton.addEventListener("click", createBook);
-  const sbtcontrol = document.getElementById("stepscontrolbutton");
-  sbtcontrol.addEventListener("click", createBook);
-  const sbtpijl = document.getElementById("stepscontrolpijl");
-  sbtpijl.addEventListener("click", createBook);
-  console.log("createBook loaded");
+  const sbtbutton = document.getElementById("savebooktext11");
+  sbtbutton.addEventListener("click", createBook11);
+  const sbtcontrol = document.getElementById("stepscontrolbutton11");
+  sbtcontrol.addEventListener("click", createBook11);
+  const sbtpijl = document.getElementById("stepscontrolpijl11");
+  sbtpijl.addEventListener("click", createBook11);
+  console.log("createBook11 loaded");
 }
 
 var newtext01;
@@ -41,17 +41,24 @@ function getText1() {
 }
 
 function getText2() {
+  const txtfixed = document.getElementById("tekst2");
+  const tf = txtfixed.dataset.txt;
+  newtext02 = tf;
+  console.log(newtext02);
+}
+
+function getText3() {
   if ( run === true ){
     // get everything between of answer on q1 ><
     const q_answer = $('#2').val();
     if ( q_answer ) {
       // get element with id "text2"
-      const txtfixed = document.getElementById("tekst2");
+      const txtfixed = document.getElementById("tekst3");
       // get content of atrribute data-txt
       const tf = txtfixed.dataset.txt;
       // build new text content based on q-answer and fixed text
-      newtext02 = q_answer + tf;
-      console.log(newtext02);
+      newtext03 = q_answer + tf;
+      console.log(newtext03);
       run = true;
     } else {
       alert('Voer een datum in!');
@@ -60,57 +67,92 @@ function getText2() {
   }
 }
 
-function getText3() {
-  const txtfixed = document.getElementById("tekst3");
-  const tf = txtfixed.dataset.txt;
-  newtext03 = tf;
-  console.log(newtext03);
+function getText4() {
+  const q_answer = $('#1').val();
+  const q_answer_4 = $('#4').val();
+  if ( q_answer_4 === "thuis") {
+    const txtfixed = document.getElementById("tekst4");
+    const tf = txtfixed.dataset.txt;
+    newtext04 = tf;
+    console.log(newtext04);
+  } else {
+    const txtfixed_1 = document.getElementById("tekst8");
+    const tf_1 = txtfixed_1.dataset.txt;
+    const txtfixed_2 = document.getElementById("tekst9");
+    const tf_2 = txtfixed_2.dataset.txt;
+    newtext04 = tf_1 + q_answer + tf_2;
+    console.log(newtext04);
+  }
 }
 
-function getText4() {
-  const txtfixed = document.getElementById("tekst4");
-  const tf = txtfixed.dataset.txt;
-  newtext04 = tf;
-}
 function getText5() {
-  const txtfixed = document.getElementById("tekst5");
-  const tf = txtfixed.dataset.txt;
-  newtext05 = tf;
+  const q_answer = $('#1').val();
+  const q_answer_4 = $('#4').val();
+  if ( q_answer_4 === "thuis" ) {
+    const txtfixed = document.getElementById("tekst5");
+    const tf = txtfixed.dataset.txt;
+    newtext05 = tf;
+    console.log(newtext05);
+  } else {
+    const txtfixed = document.getElementById("tekst10");
+    const tf = txtfixed.dataset.txt;
+    newtext05 = tf;
+    console.log(newtext05);
+  }
 }
+
 function getText6() {
-  const txtfixed = document.getElementById("tekst6");
-  const tf = txtfixed.dataset.txt;
-  newtext06 = tf;
+  const q_answer = $('#1').val();
+  const q_answer_4 = $('#4').val();
+  const txtfixed_1 = document.getElementById("tekst6");
+  const txtfixed_2 = document.getElementById("tekst7");
+  if (q_answer_4 === "thuis" ) {
+    const tf_1 = txtfixed_1.dataset.txt;
+    const tf_2 = txtfixed_2.dataset.txt;
+    newtext06 = tf_1 + q_answer + tf_2;
+    console.log(newtext06);
+  }
 }
+
 function getText7() {
-  const txtfixed = document.getElementById("tekst7");
-  const tf = txtfixed.dataset.txt;
-  newtext07 = tf;
-}
-function getText8() {
-  const txtfixed = document.getElementById("tekst8");
-  const tf = txtfixed.dataset.txt;
-  newtext08 = tf;
-}
-function getText9() {
-  const txtfixed = document.getElementById("tekst9");
-  const tf = txtfixed.dataset.txt;
-  newtext09 = tf;
-}
-function getText10() {
-  const txtfixed = document.getElementById("tekst10");
-  const tf = txtfixed.dataset.txt;
-  newtext10 = tf;
-}
-function getText11() {
+  const q_answer = $('#1').val();
   const txtfixed = document.getElementById("tekst11");
   const tf = txtfixed.dataset.txt;
-  newtext11 = tf;
-  console.log(newtext11);
+  newtext07 = tf + q_answer;
+  console.log(newtext07);
 }
 
+function getText8() {
+  const q_answer_3 = $('#3').val();
+  if ( q_answer_3 === "jongen") {
+    const txtfixed = document.getElementById("tekst12");
+    const tf = txtfixed.dataset.txt;
+    newtext08 = tf;
+    console.log(newtext08);
+  } else {
+    const txtfixed = document.getElementById("tekst14");
+    const tf = txtfixed.dataset.txt;
+    newtext08 = tf;
+    console.log(newtext08);
+  }
+}
 
-function createBook() {
+function getText9() {
+  const q_answer_3 = $('#3').val();
+  if ( q_answer_3 === "jongen") {
+    const txtfixed = document.getElementById("tekst13");
+    const tf = txtfixed.dataset.txt;
+    newtext09 = tf;
+    console.log(newtext09);
+  } else {
+    const txtfixed = document.getElementById("tekst15");
+    const tf = txtfixed.dataset.txt;
+    newtext09 = tf;
+    console.log(newtext09);
+  }
+}
+
+function createBook11() {
   // get newtext01
   getText1();
   // get newtext02
@@ -122,8 +164,6 @@ function createBook() {
   getText7();
   getText8();
   getText9();
-  getText10();
-  getText11();
   // get content of attribute value of element id="btid": booktemplate_id
   const btid = document.getElementById("btid").value;
   // set route or path to create book

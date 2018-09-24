@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeds started"
 
+Booktemplateimage.destroy_all
 Booktemplatetext.destroy_all
 Booktext.destroy_all
 Book.destroy_all
@@ -56,91 +57,113 @@ imagegalleries = Imagegallery.create([
 
 images = Image.create([
   {
+    filename: "Afbeelding-1.jpg",
     name: "rozet",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-2.jpg",
     name: "nieuwskrant",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-3a.jpg",
     name: "kopjes",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-3b.jpg",
     name: "verpleger",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-5.jpg",
     name: "voorpagina kalender",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-6.jpg",
     name: "kalender Jan",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-7.jpg",
     name: "kalender Feb",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-8.jpg",
     name: "kalender Mar",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-A.jpg",
     name: "Pot augurken",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-B.jpg",
     name: "meerdere",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "Afbeelding-C.jpg",
     name: "huwelijk man vrouw",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "img4-b.jpg",
     name: "baby jongen",
     imagegallery_id: imagegalleries[0].id
   },
   {
+    filename: "img4-g.jpg",
     name: "baby meisje",
     imagegallery_id: imagegalleries[0].id
   },
   {
-    name: "product 1.jpg",
+    name: "product 1",
+    filename: "product-1.jpg",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "product 2.jpg",
+    name: "product 2",
+    filename: "product-2.jpg",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "product 3.jpg",
+    name: "product 3",
+    filename: "product-3.jpg",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "product 4.jpg",
+    name: "product 4",
+    filename: "product-4.jpg",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "geboorte.png",
+    name: "geboorte",
+    filename: "geboorte.png",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "verjaardag.png",
+    name: "verjaardag",
+    filename: "verjaardag.png",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "huwelijk.png",
+    name: "huwelijk",
+    filename: "huwelijk.png",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "feestdagen.png",
+    name: "feestdagen",
+    filename: "feestdagen.png",
     imagegallery_id: imagegalleries[1].id
   },
   {
-    name: "overig.png",
+    name: "overig",
+    filename: "overig.png",
     imagegallery_id: imagegalleries[1].id
   }
 ])
@@ -361,6 +384,21 @@ booktemplates = Booktemplate.create([
     productsubtype_id: productsubtypes[18].id,
     subcategory_id: subcategories[4].id,
     publisher_id: users[1].id,
+  }
+])
+
+booktemplateimages = Booktemplateimage.create([
+  {
+    booktemplate_id: booktemplates[0].id,
+    image_id: images[8].id
+  },
+  {
+    booktemplate_id: booktemplates[0].id,
+    image_id: images[9].id
+  },
+  {
+    booktemplate_id: booktemplates[0].id,
+    image_id: images[10].id
   }
 ])
 

@@ -73,6 +73,30 @@
   font-size: 16px;
 }
 
+.save-img:before {
+  content: "S";
+}
+.save-img {
+  color: black;
+  width: 25px;
+  height: 25px;
+  background-color: #FFCC33;
+  line-height: 0px;
+  padding-left: 6px;
+  margin-top: -20px;
+}
+.edit-img:before {
+  content: "I";
+}
+.edit-img {
+  color: black;
+  width: 25px;
+  height: 25px;
+  background-color: #FFCC33;
+  line-height: 0px;
+  padding-left: 6px;
+  margin-top: -20px;
+}
 .save-text:before {
   content: "S";
 }
@@ -83,6 +107,7 @@
   background-color: #FFCC33;
   line-height: 0px;
   padding-left: 6px;
+  margin-top: -20px;
 }
 
 .edit-text:before {

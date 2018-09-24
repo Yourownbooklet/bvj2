@@ -25,17 +25,17 @@
       <br>
       <!-- get booktemplate_id for ajax save -->
       <input type="hidden", id="btid", value="<%= @booktemplate.id  %>">
-      <button class="knop nu hidden-xs" id="savebooktext1">Stap 2</button>
+      <button class="knop nu hidden-xs" id="savebooktext<%= @booktemplate.id  %>">Stap 2</button>
     </div>
     <div class="col-md-6">
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button control-button-s disabled">&#x003C</div>
         <div class="control-button control-button-s nu">1</div>
-       <button class="control-button control-button-s vooruit fix" id="stepscontrolbutton">2</button>
+       <button class="control-button control-button-s vooruit fix" id="stepscontrolbutton<%= @booktemplate.id  %>">2</button>
        <div class="control-button control-button-s disabled">3</div>
         <div class="control-button control-button-s disabled">4</div>
         <div class="control-button control-button-s disabled">5</div>
-        <div class="control-button control-button-s pijl" id="stepscontrolpijl">&#x003E</div>
+        <div class="control-button control-button-s pijl" id="stepscontrolpijl<%= @booktemplate.id  %>">&#x003E</div>
       </div>
     </div>
     <div class="col-md-6">

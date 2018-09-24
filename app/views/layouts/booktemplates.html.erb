@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Boekje voor Jou New Book</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+    <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <% if @booktemplate.id == 11 %>
+      <%= javascript_pack_tag 'booktemplate11' %>
+    <% elsif @booktemplate.id == 12 %>
+      <%= javascript_pack_tag 'booktemplate12' %>
+    <% else %>
+      <%= javascript_pack_tag 'application' %>
+    <% end %>
+  </body>
+</html>

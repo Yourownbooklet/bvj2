@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   respond_to :html, :json, :js
-  skip_before_action :authenticate_user!, only: [:new, :show]
+  skip_before_action :authenticate_user!, only: [:new, :show, :createa, :edit]
 
   def show
     @book = Book.find(params[:id])
@@ -33,6 +33,12 @@ class BooksController < ApplicationController
     @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
     # this should be part of book: @book.text1, ....2, ...3 ect
     @booktexts = Booktext.where(book_id: @book.id)
+    @booktemplateimages = Booktemplateimage.where(booktemplate_id: @booktemplate)
+    @btimages = []
+    @booktemplateimages.each do |bti|
+      img = Image.find(bti.image_id)
+      @btimages << img.filename
+    end
   end
 
   def update

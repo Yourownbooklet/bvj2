@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180918202537) do
+ActiveRecord::Schema.define(version: 20180924205144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20180918202537) do
     t.index ["question_id"], name: "index_bookanswers_on_question_id"
   end
 
+  create_table "bookimages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "book_id"
+    t.bigint "image_id"
+    t.index ["book_id"], name: "index_bookimages_on_book_id"
+    t.index ["image_id"], name: "index_bookimages_on_image_id"
+  end
+
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,6 +51,15 @@ ActiveRecord::Schema.define(version: 20180918202537) do
     t.boolean "edited", default: false
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
+  end
+
+  create_table "booktemplateimages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "booktemplate_id"
+    t.bigint "image_id"
+    t.index ["booktemplate_id"], name: "index_booktemplateimages_on_booktemplate_id"
+    t.index ["image_id"], name: "index_booktemplateimages_on_image_id"
   end
 
   create_table "booktemplates", force: :cascade do |t|
@@ -113,6 +131,8 @@ ActiveRecord::Schema.define(version: 20180918202537) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "imagegallery_id"
+    t.string "type"
+    t.string "filename"
     t.index ["imagegallery_id"], name: "index_images_on_imagegallery_id"
   end
 
@@ -177,6 +197,13 @@ ActiveRecord::Schema.define(version: 20180918202537) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "streetname"
+    t.integer "streetnumber"
+    t.string "number_extension"
+    t.string "postalcode"
+    t.string "city"
+    t.string "country"
+    t.string "phonenumber"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -184,8 +211,12 @@ ActiveRecord::Schema.define(version: 20180918202537) do
   add_foreign_key "answers", "questions"
   add_foreign_key "bookanswers", "books"
   add_foreign_key "bookanswers", "questions"
+  add_foreign_key "bookimages", "books"
+  add_foreign_key "bookimages", "images"
   add_foreign_key "books", "booktemplates"
   add_foreign_key "books", "users", column: "buyer_id"
+  add_foreign_key "booktemplateimages", "booktemplates"
+  add_foreign_key "booktemplateimages", "images"
   add_foreign_key "booktemplates", "productsubtypes"
   add_foreign_key "booktemplates", "subcategories"
   add_foreign_key "booktemplates", "users", column: "publisher_id"

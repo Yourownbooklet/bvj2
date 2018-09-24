@@ -20,7 +20,17 @@ rails g migration AddImageToSubcategory image:references
 rails g migration AddImageToCategory image:references
 
 
-rails g migration AddItemsToUser user address1:string address2:string postalcode:string city:string country:string phonenumber:string
+rails g migration AddMitemsToUser streetname:string streetnumber:integer number-extension:string postalcode:string city:string country:string phonenumber:string
 rails g migration AddEditedToBook book edited:boolean
 
 rails g migration AddBooktemplateToBooktemplatetext booktemplate:references
+
+rails g migration AddItemsToImage type:string filename:string
+
+rails g migration AddBookToBookimage book:references
+rails g migration AddImageToBookimage image:references
+
+
+rails g migration AddBooktemplateToBooktemplateimage booktemplate:references
+rails g migration AddImageToBooktemplateimage image:references
+

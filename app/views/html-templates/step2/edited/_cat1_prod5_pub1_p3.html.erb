@@ -1,26 +1,32 @@
 <div class="page-size-voorleesboek-ingrid">
   <div class="content-voorleesboek-ingrid">
-    <% if @booktexts[0].text4 == "thuis" %>
-      <div class="tekstbox-voorleesboek-ingrid">
-        <span id="text6">
-          Papa en mama zaten thuis rustig een kopje koffie te drinken.
-        </span>
-      </div>
-      <span id="text7">
-        <img src="/assets/Afbeelding-3a.jpg" class="img-voorleesboek-ingrid">
+    <div class="tekstbox-voorleesboek-ingrid" id="bloktext4">
+      <button id="button4" class="control-button edit-text"></button>
+      <span id="text4">
+        <%= @booktexts[0].text4 %>
       </span>
-       <div class="tekstbox-voorleesboek-ingrid">
-        Zou <%= @booktexts[0].text1 %> vandaag misschien komen?
-      </div>
-    <% else %>
-      <div class="tekstbox-voorleesboek-ingrid">
-        <span id="text8">
-          Papa en Mama zijn naar het ziekenhuis gegaan omdat <%= @booktexts[0].text1 %> uit mama's buik wil.
-        </span>
-      </div>
-      <span id="text9">
-        <img src="/assets/Afbeelding-3b.jpg" class="img-voorleesboek-ingrid">
+    </div>
+    <span>
+      <button id="button2" class="control-button edit-img" style="display: inline"></button>
+      <img id="tekst5" src="/assets/<%= @booktexts[0].text5 %>" class="img-voorleesboek-ingrid" id="img1">
+    </span>
+    <div class="tekstbox-voorleesboek-ingrid">
+      <span id="text6">
+        <%= @booktexts[0].text6 %>
       </span>
-    <% end %>
+    </div>
+    <input type="hidden" id="numberofimages" value="<%= @btimages.count  %>">
   </div>
 </div>
+
+    <div id="il" class="imglist" style="display: none">
+      Imagelist <br>
+      <% @nr = 1 %>
+      <% @btimages.each do |bti| %>
+        <button value="<%= bti %>" id="img<%= @nr %>" style="background-image: url('<%= asset_path bti %>'); background-size: cover; height: 100px; width: 100px; margin: 10px;"></button>
+        <br>
+        <% @nr += 1 %>
+      <% end %>
+    </div>
+
+
