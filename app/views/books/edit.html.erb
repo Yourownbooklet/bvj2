@@ -34,13 +34,19 @@
 <!--  carousel -->
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst1"></li>
-    <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst2"></li>
-    <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic"  style="background-image: url(<%= asset_path @booktexts[0].text5 %>);"></li>
-    <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url(<%= asset_path @booktexts[0].text8 %>);"></li>
+    <% if @booktemplate.id == 1 %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst1"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst2"></li>
+      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic"  style="background-image: url(<%= asset_path @booktexts[0].text5 %>);"></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url(<%= asset_path @booktexts[0].text8 %>);"></li>
+    <% else %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
+      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
+    <% end %>
 <!--     <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
     <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
  -->

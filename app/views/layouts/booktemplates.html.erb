@@ -14,12 +14,5 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <% if @booktemplate.id == 11 %>
-      <%= javascript_pack_tag 'booktemplate11' %>
-    <% elsif @booktemplate.id == 12 %>
-      <%= javascript_pack_tag 'booktemplate12' %>
-    <% else %>
-      <%= javascript_pack_tag 'application' %>
-    <% end %>
-  </body>
+    <%= javascript_pack_tag "booktemplate#{@booktemplate.id}" %>
 </html>

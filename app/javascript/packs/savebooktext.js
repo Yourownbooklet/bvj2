@@ -1,11 +1,12 @@
 function saveBookText1() {
-  const sbtbutton = document.getElementById("savebooktext11");
-  sbtbutton.addEventListener("click", createBook11);
-  const sbtcontrol = document.getElementById("stepscontrolbutton11");
-  sbtcontrol.addEventListener("click", createBook11);
-  const sbtpijl = document.getElementById("stepscontrolpijl11");
-  sbtpijl.addEventListener("click", createBook11);
-  console.log("createBook11 loaded");
+  const booktid = document.getElementById("btid").value;
+  const sbtbutton = document.getElementById(`savebooktext${booktid}`);
+  sbtbutton.addEventListener("click", createBook);
+  const sbtcontrol = document.getElementById(`stepscontrolbutton${booktid}`);
+  sbtcontrol.addEventListener("click", createBook);
+  const sbtpijl = document.getElementById(`stepscontrolpijl${booktid}`);
+  sbtpijl.addEventListener("click", createBook);
+  console.log(`createBook${booktid} loaded`);
 }
 
 var newtext01;
@@ -152,7 +153,7 @@ function getText9() {
   }
 }
 
-function createBook11() {
+function createBook() {
   // get newtext01
   getText1();
   // get newtext02

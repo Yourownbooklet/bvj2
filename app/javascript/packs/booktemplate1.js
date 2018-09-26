@@ -2,7 +2,7 @@ import "bootstrap";
 import { saveBookText1 } from "./savebooktext";
 saveBookText1();
 
-console.log('Hello there from Webpacker booktemplate11.js');
+console.log('Hello there from Webpacker booktemplate1.js');
 
 const answerq1 = document.getElementById("1");
 const answerq2 = document.getElementById("2");

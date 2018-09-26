@@ -2,7 +2,8 @@ import "bootstrap";
 import { saveKalText } from "./savekaltext";
 saveKalText();
 
-console.log('Hello there from Webpacker booktemplate12.js');
+const booktid = document.getElementById("btid").value;
+console.log(`Hello there from Webpacker booktemplate${booktid}.js`);
 
 const answerq1 = document.getElementById("1");
 
