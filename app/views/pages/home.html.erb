@@ -3,7 +3,7 @@
     <% @categories.each do |c| %>
       <%= link_to category_path(c), class: "link-to" do %>
       <% image = Image.find(c.image_id) %>
-    <div class="home-page-blok home-blok home-blok-h1" style="background-image: url('<%= asset_path image.name %>')" >
+    <div class="home-page-blok home-blok home-blok-h1" style="background-image: url('<%= asset_path image.filename %>')" >
       <div class="home-tekst-blok">
         <%= c.name  %>
       </div>
@@ -18,7 +18,7 @@
   <% @categories.each do |c| %>
     <%= link_to category_path(c), class: "link-to" do %>
       <% image = Image.find(c.image_id) %>
-      <div class="mobile-blok home-page-blok" style="background-image: url('<%= asset_path image.name %>')">
+      <div class="mobile-blok home-page-blok" style="background-image: url('<%= asset_path image.filename %>')">
       <div class="home-tekst-blok">
         <%= c.name  %>
       </div>
