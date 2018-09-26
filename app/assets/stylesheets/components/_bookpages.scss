@@ -74,7 +74,7 @@
 }
 
 .save-img:before {
-  content: "S";
+  content: "s";
 }
 .save-img {
   color: black;
@@ -107,7 +107,7 @@
   background-color: #FFCC33;
   line-height: 0px;
   padding-left: 6px;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .edit-text:before {
@@ -126,3 +126,8 @@
 .edit-text:hover {
   background-color: #FEBE00;
 }
+
+textarea.up {
+  margin: -30px 0px 0px 0px !important;
+}
+

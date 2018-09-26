@@ -25,8 +25,8 @@ import "bootstrap";
   const button11 = document.getElementById("button11");
 
  button1.addEventListener("click", updateText1);
- button2.addEventListener("click", updateImg1);
- // button3.addEventListener("click", updateText3);
+ button2.addEventListener("click", updateImgp3);
+ button3.addEventListener("click", saveImg1);
  button4.addEventListener("click", updateText4);
  // button5.addEventListener("click", updateText5);
  // button6.addEventListener("click", updateText6);
@@ -84,7 +84,7 @@ function saveText1() {
 
 function updateText4() {
   const text04 = document.getElementById('text4').innerHTML;
-  document.getElementById('bloktext4').innerHTML='<button id="savetext4" class="control-button save-text"></button><br><textarea id="newtext4" class="" name="">' + text04 + '</textarea>';
+  document.getElementById('bloktext4').innerHTML='<button id="savetext4" class="control-button save-text"></button><textarea rows="3" cols="40" maxlength="130" id="newtext4" class="up" name="">' + text04 + '</textarea>';
   const savetext4 = document.getElementById('savetext4');
   savetext4.addEventListener("click", saveText4);
 }
@@ -128,10 +128,13 @@ function saveText4() {
 
 var imagefilename1
 
-function updateImg1() {
+function updateImgp3() {
   // show imagelist
   const e = document.getElementById("il");
   e.style.display = 'block';
+  // show save image
+  const si = document.getElementById("button3");
+  si.style.display = 'inline';
   // hide edit image button
   const bt = document.getElementById("button2");
   bt.style.display = 'none';
@@ -140,64 +143,132 @@ function updateImg1() {
 
   if ( nr > 0 ) {
     const imgbutton1 = document.getElementById("img1");
-    imgbutton1.addEventListener("click", saveImg1);
+    imgbutton1.addEventListener("click", updateImg1);
     console.log("imgbutton1 loaded");
   }
   if ( nr > 1 ) {
     const imgbutton2 = document.getElementById("img2");
-    imgbutton2.addEventListener("click", saveImg2);
+    imgbutton2.addEventListener("click", updateImg2);
     console.log("imgbutton2 loaded");
   }
   if ( nr > 2 ) {
     const imgbutton3 = document.getElementById("img3");
-    imgbutton3.addEventListener("click", saveImg3);
+    imgbutton3.addEventListener("click", updateImg3);
     console.log("imgbutton3 loaded");
   }
   if ( nr > 3 ) {
     const imgbutton4 = document.getElementById("img4");
-    imgbutton4.addEventListener("click", saveImg4);
+    imgbutton4.addEventListener("click", updateImg4);
   }
   if ( nr > 4 ) {
     const imgbutton5 = document.getElementById("img5");
-    imgbutton5.addEventListener("click", saveImg5);
+    imgbutton5.addEventListener("click", updateImg5);
   }
   if ( nr > 5 ) {
     const imgbutton6 = document.getElementById("img6");
-    imgbutton6.addEventListener("click", saveImg6);
+    imgbutton6.addEventListener("click", updateImg6);
+  }
+  if ( nr > 6 ) {
+    const imgbutton6 = document.getElementById("img7");
+    imgbutton6.addEventListener("click", updateImg7);
+  }
+  if ( nr > 7 ) {
+    const imgbutton6 = document.getElementById("img8");
+    imgbutton6.addEventListener("click", updateImg8);
+  }
+  if ( nr > 8 ) {
+    const imgbutton6 = document.getElementById("img9");
+    imgbutton6.addEventListener("click", updateImg9);
   }
 }
 
-function saveImg1() {
-  const filename = document.getElementById("img1").value;
-  console.log(filename);
-  // get all of element id="btid" (booktext.id)
-  saveImg(filename);
+function updateImg1() {
+  const imagedata = document.getElementById("img1");
+  updateImg(imagedata);
 }
 
-function saveImg2() {
-  const filename = document.getElementById("img2").value;
-  console.log(filename);
-  // get all of element id="btid" (booktext.id)
-  saveImg(filename);
+function updateImg2() {
+  const imagedata = document.getElementById("img2");
+  updateImg(imagedata);
 }
 
-function saveImg3() {
-  const filename = document.getElementById("img3").value;
-  console.log(filename);
-  // get all of element id="btid" (booktext.id)
-  saveImg(filename);
+function updateImg3() {
+  const imagedata = document.getElementById("img3");
+  updateImg(imagedata);
 }
 
-function saveImg(file) {
-  const imagename = file;
+function updateImg4() {
+  const imagedata = document.getElementById("img4");
+  updateImg(imagedata);
+}
+
+function updateImg5() {
+  const imagedata = document.getElementById("img5");
+  updateImg(imagedata);
+}
+
+function updateImg6() {
+  const imagedata = document.getElementById("img6");
+  updateImg(imagedata);
+}
+
+function updateImg7() {
+  const imagedata = document.getElementById("img7");
+  updateImg(imagedata);
+}
+
+function updateImg8() {
+  const imagedata = document.getElementById("img8");
+  updateImg(imagedata);
+}
+
+function updateImg9() {
+  const imagedata = document.getElementById("img9");
+  updateImg(imagedata);
+}
+
+function updateImg(imagedata) {
+  const imagename = imagedata.value;
+  const imgurl = imagedata.dataset.img;
   const btid = document.getElementById("btid");
   // get content of attribute value
-  console.log(btid.value);
+  // console.log(btid.value);
   // get content of attribute data-tst
+  // var urll = '/booktexts/' + btid.value;
+  // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
+  // var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+  // update booktext.text5
+  // $.ajax({
+  //   type: 'PATCH',
+  //   url: urll,
+  //   datatype: 'json',
+  //   data: { text5: imagename, authenticity_token: AUTH_TOKEN},
+  //   complete: function() {},
+  //   success: function() {
+  //     alert('Ajax kampioenen!')
+  //   },
+  //   error: function() {
+  //     alert('Ajax gedegradeerd!')
+  //   }
+  // });
+  // hide imagelist
+  // const e = document.getElementById("il");
+  // e.style.display = 'none';
+  // show edit image button
+  // const bt = document.getElementById("button2");
+  // bt.style.display = 'inline';
+  document.getElementById("tekst5").src = `${imgurl}`;
+  document.getElementById("tekst5").value = `${imagename}`;
+  document.getElementById("ind3").style = `background-image: url(${imgurl});`;
+}
+
+function saveImg1() {
+  const imagename = document.getElementById("tekst5").value;
+  const btid = document.getElementById("btid");
   var urll = '/booktexts/' + btid.value;
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
   var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-  // update booktext.text1
+
   $.ajax({
     type: 'PATCH',
     url: urll,
@@ -205,17 +276,19 @@ function saveImg(file) {
     data: { text5: imagename, authenticity_token: AUTH_TOKEN},
     complete: function() {},
     success: function() {
-      alert('Ajax kampioenen!')
+      alert('Ajax saveImg done!')
     },
     error: function() {
       alert('Ajax gedegradeerd!')
     }
   });
-  // hide imagelist
-  const e = document.getElementById("il");
+  // hide saveimg
+  const e = document.getElementById("button3");
   e.style.display = 'none';
+  // hide imagelist
+  const il = document.getElementById("il");
+  il.style.display = 'none';
   // show edit image button
   const bt = document.getElementById("button2");
   bt.style.display = 'inline';
-  document.getElementById("tekst5").src = `/assets/${imagename}`;
 }

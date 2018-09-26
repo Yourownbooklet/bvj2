@@ -22,7 +22,7 @@
   }
   .banner-h {
     padding: 40px;
-    height: 50vh;
+    height: 40vh;
   }
   .resp1 {
     font-size: 5vw;
@@ -58,13 +58,17 @@
 }
 
 .home-page-blok {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
   border: solid;
-  border-top-color: white;
-  border-right-color: white;
-  border-left-color: #c1c1c1;
-  border-bottom-color: #c1c1c1;
-  border-radius: 20px;
-  border-width: 3px;
+  border-color: #c1c1c1;
+  // border-top-color: white;
+  // border-right-color: white;
+  // border-left-color: #c1c1c1;
+  // border-bottom-color: #c1c1c1;
+  border-radius: 3px;
+  border-width: 1px;
   background-repeat: no-repeat;
   background-position: center;
  }

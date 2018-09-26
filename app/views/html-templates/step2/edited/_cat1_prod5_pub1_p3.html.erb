@@ -8,7 +8,8 @@
     </div>
     <span>
       <button id="button2" class="control-button edit-img" style="display: inline"></button>
-      <img id="tekst5" src="/assets/<%= @booktexts[0].text5 %>" class="img-voorleesboek-ingrid" id="img1">
+      <button id="button3" class="control-button save-img" style="display: none"></button>
+      <img id="tekst5" src="<%= asset_path @booktexts[0].text5 %>" class="img-voorleesboek-ingrid" id="img1">
     </span>
     <div class="tekstbox-voorleesboek-ingrid">
       <span id="text6">
@@ -23,7 +24,7 @@
       Imagelist <br>
       <% @nr = 1 %>
       <% @btimages.each do |bti| %>
-        <button value="<%= bti %>" id="img<%= @nr %>" style="background-image: url('<%= asset_path bti %>'); background-size: cover; height: 100px; width: 100px; margin: 10px;"></button>
+        <button value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url('<%= asset_path bti %>'); background-size: cover; height: 100px; width: 100px; margin: 10px;"></button>
         <br>
         <% @nr += 1 %>
       <% end %>
