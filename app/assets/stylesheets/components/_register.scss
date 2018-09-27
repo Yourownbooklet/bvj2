@@ -1,0 +1,65 @@
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+    .input-number {
+    width: 60px;
+  }
+
+  .input-straat {
+    width: 320px;
+  }
+
+  .input-plaats {
+    width: 356px;
+  }
+
+  .input-postcode {
+    width: 88px;
+  }
+
+  .user-input {
+    width: 450px;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input-number {
+    width: 60px;
+  }
+
+  .input-straat {
+    width: 236px;
+  }
+
+  .input-plaats {
+    width: 272px;
+  }
+
+  .input-postcode {
+    width: 88px;
+  }
+
+  .user-input {
+    width: 365px;
+    margin: 20px;
+  }
+  .container-fluid {
+    padding-top: 0px;
+  }
+  h3 {
+    margin: 5px 0px 5px 0px;
+  }
+}
+
+.flex2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control {
+  height: 60px;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}

@@ -8,12 +8,10 @@
     </div>
     <div class="col-md-6 col-xs-12">
       <div class="stepscontrol-balk stepscontrol-balk-s">
-        <div class="control-button control-button-s pijl">&#x003C</div>
         <div class="control-button control-button-s terug">1</div>
         <div class="control-button control-button-s terug">2</div>
         <div class="control-button control-button-s nu">3</div>
         <div class="control-button control-button-s vooruit">4</div>
-        <div class="control-button control-button-s pijl">&#x003E</div>
       </div>
     </div>
   </div>
@@ -27,30 +25,35 @@
             <%= f.input :email,
                         required: true,
                         autofocus: true ,
-                        input_html: { autocomplete: "email" }%>
+                        input_html: { autocomplete: "email" }, label: false , placeholder: "email" %>
             <%= f.input :password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        hint: ("Minimaal #{@minimum_password_length} posities" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } , label: false , placeholder: "Wachtwoord" %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" } , label: false , placeholder: "Herhaal wachtwoord" %>
             <%= f.input :first_name,
-                        required: false %>
+                        required: false , label: false , placeholder: "Voornaam" %>
             <%= f.input :last_name,
-                        required: true %>
+                        required: true , label: false , placeholder: "Achternaam" %>
+<div class="flex2">
              <%= f.input :streetname,
-                        required: true %>
+                        required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
             <%= f.input :streetnumber,
-                        required: true %>
+                        required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
             <%= f.input :number_extension,
-                        required: false %>
+                        required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
+</div>
+<div class="flex2">
+
             <%= f.input :postalcode,
-                        required: true %>
+                        required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
             <%= f.input :city,
-                        required: true %>
+                        required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
+</div>
             <%= f.input :phonenumber,
-                        required: false %>
+                        required: false , label: false , placeholder: "Telefoonnummer" %>
           </div>
         </div>
         <div class="form-action">

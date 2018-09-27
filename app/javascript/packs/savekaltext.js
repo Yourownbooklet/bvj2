@@ -4,8 +4,6 @@ function saveKalText() {
   sbtbutton.addEventListener("click", createBook);
   const sbtcontrol = document.getElementById(`stepscontrolbutton${booktid}`);
   sbtcontrol.addEventListener("click", createBook);
-  const sbtpijl = document.getElementById(`stepscontrolpijl${booktid}`);
-  sbtpijl.addEventListener("click", createBook);
   console.log("createBook2 loaded");
 }
 

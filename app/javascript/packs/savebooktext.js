@@ -4,8 +4,6 @@ function saveBookText1() {
   sbtbutton.addEventListener("click", createBook);
   const sbtcontrol = document.getElementById(`stepscontrolbutton${booktid}`);
   sbtcontrol.addEventListener("click", createBook);
-  const sbtpijl = document.getElementById(`stepscontrolpijl${booktid}`);
-  sbtpijl.addEventListener("click", createBook);
   console.log(`createBook${booktid} loaded`);
 }
 
