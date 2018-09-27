@@ -12,17 +12,17 @@
     </div>
     <div class="col-md-6">
       <div class="stepscontrol-balk stepscontrol-balk-s">
-        <div class="control-button control-button-s pijl">&#x003C</div>
-        <div class="control-button control-button-s terug">1</div>
+
+        <input type="button" value="&#x003C" onclick="history.back()" class="control-button control-button-s pijl fix">
+        <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
         <div class="control-button control-button-s nu">2</div>
 
         <% if user_signed_in? %>
           <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
         <% else %>
-          <%= link_to "3", new_user_session_path, class: "control-button control-button-s vooruit" %>
+          <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
         <% end %>
-        <div class="control-button control-button-s vooruit">4</div>
-        <div class="control-button control-button-s vooruit">5</div>
+        <div class="control-button control-button-s disabled">4</div>
         <div class="control-button control-button-s pijl">&#x003E</div>
       </div>
     </div>

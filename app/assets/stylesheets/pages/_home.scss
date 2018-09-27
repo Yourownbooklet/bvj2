@@ -81,7 +81,7 @@
 
 .home-blok {
   width:240px;
-  padding: 20px;
+  padding: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,16 +99,30 @@
   background-size: auto 100%;
 }
 
+.col-xs-4.home-mobile-col {
+  padding: 5px !important;
+}
+
 .home-tekst-blok {
-  height: 30px;
+  height: 35px;
   width:140px;
   font-variant: small-caps;
-  font-size: 22px;
+  font-size: 20px;
   background-color: #FBD000;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -10px;
+  color:black;
+}
+
+.home-tekst-blok-mobile {
+  height: 35px;
+  font-variant: small-caps;
+  font-size: 20px;
+  background-color: #FBD000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color:black;
 }
 
@@ -121,7 +135,7 @@
   justify-content: center;
   margin-top: -10px;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.5;
   color:white;
   margin-top: -110px;
   margin-right: -80px;

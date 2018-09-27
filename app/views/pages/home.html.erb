@@ -15,16 +15,20 @@
 <!-- mobile view -->
 <!--  -->
 <div class="hidden-sm hidden-md hidden-lg">
-  <% @categories.each do |c| %>
-    <%= link_to category_path(c), class: "link-to" do %>
-      <% image = Image.find(c.image_id) %>
-      <div class="mobile-blok home-page-blok" style="background-image: url('<%= asset_path image.filename %>')">
-      <div class="home-tekst-blok">
-        <%= c.name  %>
-      </div>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="container">
+    <div class="row">
+        <% @categories.each do |c| %>
+          <%= link_to category_path(c), class: "link-to" do %>
+            <% image = Image.find(c.image_id) %>
+            <div class="col-xs-4 home-mobile-col">
+              <div class="home-tekst-blok-mobile">
+                <%= c.name  %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 </div>
 <!-- all media view -->
 <div class="banner banner-h">
@@ -60,26 +64,38 @@
 </div>
 <!-- mobile view -->
 <div class="hidden-sm hidden-md hidden-lg">
-  <%= link_to booktemplate_path(1) do  %>
-  <div class="mobile-blok-square home-page-blok " style="background-image: url(<%= asset_path 'product-1.jpg' %>)">
-    <div class="home-tekst-blok-product">
-      € 23,-
-    </div>
-  </div>
-  <% end %>
-  <div class="mobile-blok-square home-page-blok " style="background-image: url(<%= asset_path 'product-2.jpg' %>)">
-    <div class="home-tekst-blok-product">
-      € 27,-
-    </div>
-  </div>
-  <div class="mobile-blok-square home-page-blok " style="background-image: url(<%= asset_path 'product-3.jpg' %>)">
-    <div class="home-tekst-blok-product">
-      € 21,-
-    </div>
-  </div>
-  <div class="mobile-blok-square home-page-blok" style="background-image: url(<%= asset_path 'product-4.jpg' %>)">
-    <div class="home-tekst-blok-product">
-      € 28,-
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= link_to booktemplate_path(1) do  %>
+          <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-1.jpg' %>)">
+            <div class="home-tekst-blok-product">
+              € 23,-
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+        <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-2.jpg' %>)">
+          <div class="home-tekst-blok-product">
+            € 27,-
+          </div>
+        </div>
+        </div>
+      <div class="col-xs-6">
+        <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-3.jpg' %>)">
+          <div class="home-tekst-blok-product">
+            € 21,-
+          </div>
+        </div>
+        </div>
+      <div class="col-xs-6">
+        <div class="mobile-blok-square " style="background-image: url(<%= asset_path 'product-4.jpg' %>)">
+          <div class="home-tekst-blok-product">
+            € 28,-
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
