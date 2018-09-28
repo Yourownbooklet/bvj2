@@ -1,30 +1,28 @@
 <div class="page-size-voorleesboek-ingrid">
   <div class="content-voorleesboek-ingrid">
     <div class="tekstbox-voorleesboek-ingrid" id="bloktext4">
+      <button id="button4" class="text-button"><%= @booktexts[0].text4.html_safe %></button>
+<!--  <div class="flex3">
       <button id="button4" class="control-button edit-text"></button>
-      <span id="text4">
-        <%= @booktexts[0].text4 %>
-      </span>
+      <span id="text4"><%#= @booktexts[0].text4.html_safe %></span>
+      </div> -->
     </div>
     <span>
-      <button id="button2" class="control-button edit-img" style="display: inline"></button>
-      <button id="button3" class="control-button save-img" style="display: none"></button>
+      <button id="button2" class="control-button edit-img" style="display: none"></button>
+      <button id="button3" class="save-img" style="display: none"></button>
       <img id="tekst5" src="<%= asset_path @booktexts[0].text5 %>" class="img-voorleesboek-ingrid" id="img1">
     </span>
     <div class="tekstbox-voorleesboek-ingrid">
-      <span id="text6">
-        <%= @booktexts[0].text6 %>
-      </span>
+      <span id="text6"><%= @booktexts[0].text6.html_safe %></span>
     </div>
     <input type="hidden" id="numberofimages" value="<%= @btimages.count  %>">
   </div>
 </div>
 
-    <div id="il" class="imglist" style="display: none">
-      Imagelist <br>
+    <div id="il" class="imglist" style="display: block">
       <% @nr = 1 %>
       <% @btimages.each do |bti| %>
-        <button value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url('<%= asset_path bti %>'); background-size: cover; height: 100px; width: 100px; margin: 10px;"></button>
+        <button value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url(<%= asset_path bti %>); background-size: cover; height: 80px; width: 80px; margin: 5px;"></button>
         <br>
         <% @nr += 1 %>
       <% end %>

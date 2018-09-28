@@ -83,23 +83,21 @@ function saveText1() {
 }
 
 function updateText4() {
-  const text04 = document.getElementById('text4').innerHTML;
-  document.getElementById('bloktext4').innerHTML='<button id="savetext4" class="control-button save-text"></button><textarea rows="3" cols="40" maxlength="130" id="newtext4" class="up" name="">' + text04 + '</textarea>';
+  var text04 = document.getElementById('button4').innerHTML;
+  console.log(text04);
+  text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
+  console.log(text04);
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="control-button save-text"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   const savetext4 = document.getElementById('savetext4');
   savetext4.addEventListener("click", saveText4);
 }
 
 function saveText4() {
   // get content (everything between > and <) of element with id="newtext1" into variable :newtext01
-  const newtext04 = $('#newtext4').val();
+  var newtext04 = $('#newtext4').val();
+  newtext04 = newtext04.replace(/(\n)+/g, '<br />');
   // print content of newtext04 to console
   console.log(newtext04);
-  // set new content
-  document.getElementById('bloktext4').innerHTML = '<button id="button4" class="control-button edit-text"></button><span id="text4">' + newtext04 + '</span>';
-  // get button
-  const button4 = document.getElementById("button4");
-  // activate button to execute function "updatetext1"
-  button4.addEventListener("click", updateText4);
   // get all of element id="btid" (booktext.id)
   const btid = document.getElementById("btid");
   // get content of attribute value
@@ -118,26 +116,30 @@ function saveText4() {
     data: { text4: newtext04, authenticity_token: AUTH_TOKEN},
     complete: function() {},
     success: function() {
-      alert('Ajax kampioen!')
     },
     error: function() {
-      alert('Ajax gedegradeerd!')
     }
   });
+  // set new content
+  document.getElementById('bloktext4').innerHTML = '<button id="button4" class="text-button">' + newtext04 + '</button>';
+  // get button
+  const button4 = document.getElementById("button4");
+  // activate button to execute function "updatetext1"
+  button4.addEventListener("click", updateText4);
 }
 
 var imagefilename1
 
 function updateImgp3() {
   // show imagelist
-  const e = document.getElementById("il");
-  e.style.display = 'block';
+  // const e = document.getElementById("il");
+  // e.style.display = 'block';
   // show save image
-  const si = document.getElementById("button3");
-  si.style.display = 'inline';
+  // const si = document.getElementById("button3");
+  // si.style.display = 'inline';
   // hide edit image button
-  const bt = document.getElementById("button2");
-  bt.style.display = 'none';
+  // const bt = document.getElementById("button2");
+  // bt.style.display = 'none';
   const nr = document.getElementById("numberofimages").value;
   console.log(nr);
 
@@ -230,27 +232,23 @@ function updateImg9() {
 function updateImg(imagedata) {
   const imagename = imagedata.value;
   const imgurl = imagedata.dataset.img;
-  const btid = document.getElementById("btid");
-  // get content of attribute value
-  // console.log(btid.value);
-  // get content of attribute data-tst
-  // var urll = '/booktexts/' + btid.value;
+  const btid = document.getElementById("btid").value;
+  console.log(btid, imagename);
+  var urll = '/booktexts/' + btid;
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
-  // var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
   // update booktext.text5
-  // $.ajax({
-  //   type: 'PATCH',
-  //   url: urll,
-  //   datatype: 'json',
-  //   data: { text5: imagename, authenticity_token: AUTH_TOKEN},
-  //   complete: function() {},
-  //   success: function() {
-  //     alert('Ajax kampioenen!')
-  //   },
-  //   error: function() {
-  //     alert('Ajax gedegradeerd!')
-  //   }
-  // });
+  $.ajax({
+    type: 'PATCH',
+    url: urll,
+    datatype: 'json',
+    data: { text5: imagename, authenticity_token: AUTH_TOKEN},
+    complete: function() {},
+    success: function() {
+    },
+    error: function() {
+    }
+  });
   // hide imagelist
   // const e = document.getElementById("il");
   // e.style.display = 'none';
@@ -276,10 +274,8 @@ function saveImg1() {
     data: { text5: imagename, authenticity_token: AUTH_TOKEN},
     complete: function() {},
     success: function() {
-      alert('Ajax saveImg done!')
-    },
+          },
     error: function() {
-      alert('Ajax gedegradeerd!')
     }
   });
   // hide saveimg
@@ -292,3 +288,5 @@ function saveImg1() {
   const bt = document.getElementById("button2");
   bt.style.display = 'inline';
 }
+
+updateImgp3();

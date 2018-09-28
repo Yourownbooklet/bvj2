@@ -34,7 +34,11 @@ function getText1() {
     console.log(newtext01);
     run = true;
   } else {
-    alert('Voer een naam in!');
+    const b1 = document.getElementById("1");
+    b1.style.borderColor = 'red';
+    b1.style.borderStyle = 'solid';
+    b1.style.borderWidth = '3px';
+    // alert('Voer een naam in!');
     run = false;
   }
 }
@@ -60,7 +64,12 @@ function getText3() {
       console.log(newtext03);
       run = true;
     } else {
-      alert('Voer een datum in!');
+      const b1 = document.getElementById("1");
+      b1.style.borderStyle = 'none';
+      const b2 = document.getElementById("2");
+      b2.style.borderColor = 'red';
+      b2.style.borderStyle = 'solid';
+      b2.style.borderWidth = '3px';
       run = false;
     }
   }
@@ -181,7 +190,6 @@ function createBook() {
         console.log(data);
       },
       error: function() {
-        alert('Ajax gedegradeerd!')
       }
     });
   }
