@@ -31,6 +31,23 @@
   padding-left: 400px;
   // position: relative;
   }
+
+  .imglist {
+    max-height: 450px;
+    overflow: scroll;
+    margin: -2px 0px -14px -110px;
+  }
+
+  .imglist-img {
+    height: 80px;
+    width: 80px;
+    margin: 5px;
+   }
+  .booktemplate {
+    font-family: $bvj;
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.5)
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -51,6 +68,22 @@
     padding-left: 1px;
   // position: relative;
   }
+
+  .imglist {
+    max-height: 320px;
+    overflow: scroll;
+    margin: -2px 0px -14px -50px;
+  }
+  .imglist-img {
+    height: 55px;
+    width: 55px;
+    margin: 0px;
+   }
+  .booktemplate {
+    font-family: $bvj;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.5)
+  }
 }
 
 .book-info-mobile {
@@ -59,13 +92,7 @@
 }
 
 .booktemplate-page {
-  padding: 35px 0px 10px 0px;
-}
-
-.booktemplate {
-  font-family: $bvj;
-  font-size: 36px;
-  color: rgba(0, 0, 0, 0.5)
+  padding: 0px 0px 10px 0px;
 }
 
 .question {
@@ -126,7 +153,7 @@
 }
 
 textarea.up {
-  margin: -5px 0px 0px 0px !important;
+  margin: -10px 10px 0px 30px !important;
 }
 
 .flex3 {
@@ -139,12 +166,8 @@ textarea.up {
   padding: 0px;
   background-color: white;
   text-align: left;
-  margin: 0px 10px 0px 30px;
+  margin: 0px 10px 0px 0px;
   cursor:url(<%= asset_path 'pencil-edit-button-32.png'%>),text;
 }
 
-.imglist {
-  max-height: 450px;
-  overflow: scroll;
-  margin: -30px 0px -45px 0px;
-}
+

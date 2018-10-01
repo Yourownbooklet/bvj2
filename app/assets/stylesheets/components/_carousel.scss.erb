@@ -1,21 +1,57 @@
 .item1 {
-  margin: 30px;
+  // margin: 0px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
-.carousel {
-  padding: 10px 10px 50px 10px;
+@media screen and (min-width: 601px) {
+  .carousel {
+    width: 1200px;
+    padding: 10px 10px 50px 10px;
+  }
+
+  .car-indic {
+    margin: 0px 20px 0px 20px !important;
+    height: 50px !important;
+    width: 50px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+  }
 }
 
-.car-indic {
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-  height: 50px !important;
-  width: 50px !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
+// @media screen and (max-width: 1200px) and (min-width: 801) {
+//   .carousel {
+//     width: 800px;
+//     padding: 10px 10px 50px 10px;
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 350px;
+    padding: 5px 10px 25px 5px;
+  }
+  .car-indic {
+    height: 40px !important;
+    width: 40px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+  }
+}
+
+.carousel-control {
+  width: 5%
+}
+.carousel-inner {
+  // margin: 0px 50px 0px 50px;
+}
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-control.right {
+  background-image: none;
 }
 
 .tst1 {

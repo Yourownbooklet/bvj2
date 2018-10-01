@@ -1,17 +1,67 @@
 <div class="container-fluid booktemplate-page">
   <div class="row-fluid">
-    <div class="col-md-6 col-xs-12" style="height: 100px">
-
-      <h3>Jouw gegevens</h3>
-      <p>Persoonlijke gegevens worden niet voor commerciele doeleinden gebruikt.</p>
-
+    <div class="col-md-6 col-xs-12 hidden-sm hidden-md hidden-lg">
+      <div class="stepscontrol-balk stepscontrol-balk-s">
+       <div class="control-button-flex">
+        <div class="control-button control-button-s disabled">1</div>
+        <div class="button-label">
+          voor wie?
+        </div>
+        </div>
+       <div class="control-button-flex">
+        <input type="button" value="2" onclick="history.back()" class="control-button control-button-s terug fix">
+        <div class="button-label">
+          boekje
+        </div>
+        </div>
+       <div class="control-button-flex">
+        <div class="control-button control-button-s nu">3</div>
+        <div class="button-label">
+          n.a.w.
+        </div>
+        </div>
+       <div class="control-button-flex">
+        <div class="control-button control-button-s vooruit">4</div>
+        <div class="button-label">
+          betalen
+        </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-6 col-xs-12">
+      <p class="booktemplate">Jouw gegevens</p>
+      <p>Vul je gegevens in om verder te gaan.
+      Heb je al eens een boekje gekocht?</p>
+      <div class="flex3">
+      <%= link_to "Login", new_user_session_path, class: "knop nu" %>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
+       <div class="control-button-flex">
         <div class="control-button control-button-s disabled">1</div>
+        <div class="button-label">
+          voor wie?
+        </div>
+        </div>
+       <div class="control-button-flex">
         <input type="button" value="2" onclick="history.back()" class="control-button control-button-s terug fix">
+        <div class="button-label">
+          boekje
+        </div>
+        </div>
+       <div class="control-button-flex">
         <div class="control-button control-button-s nu">3</div>
+        <div class="button-label">
+          n.a.w.
+        </div>
+        </div>
+       <div class="control-button-flex">
         <div class="control-button control-button-s vooruit">4</div>
+        <div class="button-label">
+          betalen
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -37,27 +87,49 @@
                         required: false , label: false , placeholder: "Voornaam" %>
             <%= f.input :last_name,
                         required: true , label: false , placeholder: "Achternaam" %>
-<div class="flex2">
-             <%= f.input :streetname,
-                        required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
-            <%= f.input :streetnumber,
-                        required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
-            <%= f.input :number_extension,
-                        required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
-</div>
-<div class="flex2">
-
-            <%= f.input :postalcode,
-                        required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
-            <%= f.input :city,
+            <div class="flex2">
+               <%= f.input :streetname,
+                          required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
+              <%= f.input :streetnumber,
+                          required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
+              <%= f.input :number_extension,
+                          required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
+            </div>
+            <div class="flex2">
+              <%= f.input :postalcode,
+                          required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
+              <%= f.input :city,
                         required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
-</div>
+            </div>
             <%= f.input :phonenumber,
                         required: false , label: false , placeholder: "Telefoonnummer" %>
+            <div>
+            <input class="check" type="checkbox" id="address2Check" />Afleveradres hetzelfde? (klik vinkje aan)
+            </div>
+            <div class="address-2" id="address-2" style="display: block">
+              <input type="hidden" id="afleveradreshetzelfde" value="false" name="afleveradreshetzelfde">
+              <!-- invoer address2 hier -->
+              <%= f.input :geaddresseerde,
+                          required: false , label: false , placeholder: "Naam Ontvanger" %>
+              <div class="flex2">
+                 <%= f.input :streetname2,
+                            required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
+                <%= f.input :streetnumber2,
+                            required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
+                <%= f.input :number2_extension,
+                            required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
+              </div>
+              <div class="flex2">
+                <%= f.input :postalcode2,
+                            required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
+                <%= f.input :city2,
+                          required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
+              </div>
+            </div>
+            <div class="form-action">
+              <%= f.button :submit, "Registreer", class: "knop nu" %>
+            </div>
           </div>
-        </div>
-        <div class="form-action">
-          <%= f.button :submit, "Ga verder", class: "knop nu" %>
         </div>
       <% end %>
     </div>

@@ -1,3 +1,10 @@
+input.check {
+  height: 20px;
+  width: 20px;
+}
+.input-check {
+// height: 25px;
+}
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
     .input-number {

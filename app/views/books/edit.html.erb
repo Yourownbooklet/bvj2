@@ -1,5 +1,37 @@
 <div class="container-fluid booktemplate-page">
   <div class="row-fuid">
+    <div class="col-md-6 hidden-sm hidden-md hidden-lg">
+      <div class="stepscontrol-balk stepscontrol-balk-s">
+        <div class="control-button-flex">
+          <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
+          <div class="button-label">
+            voor wie?
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <div class="control-button control-button-s nu">2</div>
+          <div class="button-label">
+            boekje
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <% if user_signed_in? %>
+          <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
+          <% else %>
+            <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
+          <% end %>
+          <div class="button-label">
+            n.a.w.
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <div class="control-button control-button-s disabled">4</div>
+          <div class="button-label">
+            betalen
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="col-md-6">
       <p class="booktemplate">
         Bekijk het boekje en pas het aan.
@@ -11,23 +43,41 @@
 
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
-
-        <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
-        <div class="control-button control-button-s nu">2</div>
-
-        <% if user_signed_in? %>
+        <div class="control-button-flex">
+          <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
+          <div class="button-label">
+            voor wie?
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <div class="control-button control-button-s nu">2</div>
+          <div class="button-label">
+            boekje
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <% if user_signed_in? %>
           <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
-        <% else %>
-          <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
-        <% end %>
-        <div class="control-button control-button-s disabled">4</div>
+          <% else %>
+            <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
+          <% end %>
+          <div class="button-label">
+            n.a.w.
+          </div>
+        </div>
+        <div class="control-button-flex">
+          <div class="control-button control-button-s disabled">4</div>
+          <div class="button-label">
+            betalen
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-<div class="row-fluid">
+<div class="row-fluid item1">
   <div class="col-md-12 carousel" >
 
 <!--  carousel -->

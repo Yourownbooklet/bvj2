@@ -1,3 +1,10 @@
+<div class="page-size-voorleesboek-ingrid hidden-xs">
+  <div class="content-voorleesboek-ingrid">
+    <div class="tekstbox-voorleesboek-ingrid-p1">
+
+    </div>
+  </div>
+</div>
 <div class="page-size-voorleesboek-ingrid">
   <div class="content-voorleesboek-ingrid">
     <div class="tekstbox-voorleesboek-ingrid" id="bloktext4">
@@ -22,7 +29,7 @@
     <div id="il" class="imglist" style="display: block">
       <% @nr = 1 %>
       <% @btimages.each do |bti| %>
-        <button value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url(<%= asset_path bti %>); background-size: cover; height: 80px; width: 80px; margin: 5px;"></button>
+        <button class="imglist-img" value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url(<%= asset_path bti %>); background-size: cover;"></button>
         <br>
         <% @nr += 1 %>
       <% end %>
