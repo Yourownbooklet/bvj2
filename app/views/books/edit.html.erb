@@ -18,7 +18,7 @@
           <% if user_signed_in? %>
           <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
           <% else %>
-            <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
+            <%= link_to "3", new_user_registration_path(@book), class: "control-button control-button-s vooruit" %>
           <% end %>
           <div class="button-label">
             n.a.w.
@@ -61,7 +61,7 @@
           <% if user_signed_in? %>
           <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
           <% else %>
-            <%= link_to "3", new_user_registration_path, class: "control-button control-button-s vooruit" %>
+            <%= link_to "3", new_user_registration_path( :book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
           <div class="button-label">
             n.a.w.

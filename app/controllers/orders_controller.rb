@@ -8,6 +8,10 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @book=Book.find(params[:book_id])
+    @book.buyer_id = current_user.id
+    @book.save!
+    @booktext = Booktext.where(book_id: @book.id)
     @order = Order.new
   end
 
