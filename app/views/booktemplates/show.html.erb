@@ -30,31 +30,14 @@
       </div>
     </div>
     <div class="col-md-6">
-      <p class="booktemplate">
-        <%= @booktemplate.name  %>
-      </p>
-      <% @id = 1 %>
-      <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
-        <% @questions.each do |q| %>
-          <% if q.open %>
-            <input required="true" type="text" id="<%= @id %>" placeholder="<%= q.question  %>?" name="text<%= @id %>"><br>
-          <% else %>
-            <%= q.question  %>?<br>
-            <select required="true" name="text<%= @id %>" id="<%= @id %>">
-              <% q.answers.each do |a| %>
-                <option value="<%= a.answer %>"><%= a.answer %></option>
-              <% end %>
-            </select><br>
-          <% end %>
-          <% @id += 1 %>
-        <% end %>
-        <input type="hidden", name="booktemplate_id", value="<%= @booktemplate.id  %>">
-        <!-- <%#= bt.submit "Next Step (2)", class: 'knop nu' %> -->
-      <% end %>
-      <br>
-      <!-- get booktemplate_id for ajax save -->
-      <input type="hidden", id="btid", value="<%= @booktemplate.id  %>">
-      <button class="knop nu hidden-xs" id="savebooktext<%= @booktemplate.id  %>">Stap 2</button>
+      <div class="booktemplate-text">
+        <p class="booktemplate booktemplate-s">
+          <%= @booktemplate.name  %>
+        </p>
+        <span><em>
+            Deze gegevens worden verwerkt in het boek.</em>
+        </span>
+      </div>
     </div>
     <!-- step buttons -->
     <div class="col-md-6 hidden-xs">
@@ -85,12 +68,50 @@
         </div>
       </div>
     </div>
+    <div class="col-md-6 booktemplate-variabelen">
+      <% @id = 1 %>
+      <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
+        <% @questions.each do |q| %>
+          <% if q.open %>
+            <span class="booktemplate-label">
+            <%= q.question  %>?</span><br>
+            <input required="true" type="text" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
+          <% else %>
+            <span class="booktemplate-label"><%= q.question  %>?</span><br>
+            <select required="true" name="text<%= @id %>" id="<%= @id %>">
+              <% q.answers.each do |a| %>
+                <option value="<%= a.answer %>"><%= a.answer %></option>
+              <% end %>
+            </select><br>
+          <% end %>
+          <% @id += 1 %>
+        <% end %>
+        <input type="hidden", name="booktemplate_id", value="<%= @booktemplate.id  %>">
+        <!-- <%#= bt.submit "Next Step (2)", class: 'knop nu' %> -->
+      <% end %>
+      <br>
+      <!-- get booktemplate_id for ajax save -->
+      <input type="hidden", id="btid", value="<%= @booktemplate.id  %>">
+    </div>
     <div class="col-md-6">
       <%= @pagetemplates[0].name %><br>
       <%= render "html-templates/#{@pagetemplates[0].html}" %>
     </div>
   </div>
+  <div class="row-fuid">
+    <div class="col-md-12">
+      <br>
+      <br>
+      <div class="flex1">
+        <form>
+          <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
+        </form>
+        <button class="knop nu" id="savebooktext<%= @booktemplate.id  %>">VERDER</button>
+      </div>
+    </div>
+  </div>
 </div>
+
 <!-- ovderige pagina's zijn niet zichtbaar -->
 <div class="hidden-xs hidden-sm hidden-md hidden-lg">
   <p class="booktemplate"><%= @booktemplate.name  %></p>

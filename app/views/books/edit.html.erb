@@ -16,9 +16,9 @@
         </div>
         <div class="control-button-flex">
           <% if user_signed_in? %>
-          <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
+          <%= link_to "3", new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% else %>
-            <%= link_to "3", new_user_registration_path(@book), class: "control-button control-button-s vooruit" %>
+            <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
           <div class="button-label">
             n.a.w.
@@ -33,14 +33,14 @@
       </div>
     </div>
     <div class="col-md-6">
-      <p class="booktemplate">
-        Bekijk het boekje en pas het aan.
-      </p>
-      <span>
-        Als er en lijst met plaatjes weergegeven wordt, kun het plaatje op de pagina vervangen door op het plaatje in de lijst te klikken.
-        Als de tekst aangepast kan worden, verandert de cursor in een potlood symbool.
-      </span>
-
+      <div class="booktemplate-text">
+        <p class="booktemplate booktemplate-s">
+          Bekijk het boek
+        </p>
+        <span><em>
+          Daar waar aangegeven kun je beeld en tekst aanpassen.</em>
+        </span>
+      </div>
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
     </div>
     <div class="col-md-6 hidden-xs">
@@ -59,9 +59,9 @@
         </div>
         <div class="control-button-flex">
           <% if user_signed_in? %>
-          <%= link_to "3", new_order_path(@book), class: "control-button control-button-s vooruit" %>
+          <%= link_to "3", new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% else %>
-            <%= link_to "3", new_user_registration_path( :book_id => @book.id), class: "control-button control-button-s vooruit" %>
+            <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
           <div class="button-label">
             n.a.w.
@@ -149,9 +149,9 @@
           <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
         </form>
         <% if user_signed_in? %>
-          <%= link_to "KOOP", new_order_path, class: "knop nu" %>
+          <%= link_to "KOOP", new_order_path(:book_id => @book.id), class: "knop nu" %>
         <% else %>
-          <%= link_to "KOOP", new_user_registration_path, class: "knop nu" %>
+          <%= link_to "KOOP", new_user_registration_path(:book_id => @book.id), class: "knop nu" %>
         <% end %>
       </div>
     </div>

@@ -9,8 +9,27 @@
   border-width: 2px;
 }
 
+.booktemplate {
+  font-family: $bvj;
+  font-weight: bold;
+ }
+
+.booktemplate-label {
+  font-family: $bvj;
+  color: black;
+  padding: 0px;
+}
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
+  .booktemplate-variabelen {
+    padding: 5px 0px 0px 180px;
+  }
+
+  .booktemplate-text {
+    margin: 50px 0px 0px 130px;
+    font-family: $bvj;
+  }
 
   .bookpage-size {
     height: 500px;
@@ -43,10 +62,9 @@
     width: 80px;
     margin: 5px;
    }
-  .booktemplate {
-    font-family: $bvj;
-    font-size: 36px;
-    color: rgba(0, 0, 0, 0.5)
+
+  .booktemplate-s {
+    font-size: 25px;
   }
 }
 
@@ -79,10 +97,9 @@
     width: 55px;
     margin: 0px;
    }
-  .booktemplate {
-    font-family: $bvj;
+
+  .booktemplate-s {
     font-size: 22px;
-    color: rgba(0, 0, 0, 0.5)
   }
 }
 

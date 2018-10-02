@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     @book.buyer_id = current_user.id
     @book.save!
     @booktext = Booktext.where(book_id: @book.id)
+    @booktemplate = Booktemplate.find(@book.booktemplate_id)
     @order = Order.new
   end
 

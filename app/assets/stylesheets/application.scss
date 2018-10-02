@@ -18,6 +18,7 @@
 @import "templates/index";
 
 body {
+  color: $light-gray;
   width: 100vw;
   background-color: #e8e8e8;
 }
@@ -34,7 +35,7 @@ body {
 }
 
 input {
-  width: 265px;
+  width: 375px;
   height: 40px;
   margin: 0px 0px 10px 0px;
   padding: 11px 10px 11px 10px;
@@ -65,7 +66,7 @@ input:focus {
 }
 
 select {
-  width: 265px;
+  width: 375px;
   height: 40px;
   margin: 0px 0px 10px 0px;
   padding: 11px 10px 11px 10px;
