@@ -36,3 +36,6 @@ rails g migration AddImageToBooktemplateimage image:references
 
 rails g migration AddAfleveradresToUser geaddresseerde:string streetname2:string streetnumber2:integer number2_extension:string postalcode2:string city2:string country2:string
 rails g migration AddAfleveradreshetzelfdeToUser afleveradreshetzelfde:boolean, default: true
+
+rails g migration AddImageToCategoryimage image:references
+rails g migration AddImagecategoryToCategoryimage Imagecategory:references

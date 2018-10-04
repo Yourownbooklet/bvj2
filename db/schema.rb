@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181001152614) do
+ActiveRecord::Schema.define(version: 20181003204808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,21 @@ ActiveRecord::Schema.define(version: 20181001152614) do
     t.datetime "updated_at", null: false
     t.bigint "image_id"
     t.index ["image_id"], name: "index_categories_on_image_id"
+  end
+
+  create_table "categoryimages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "image_id"
+    t.bigint "imagecategory_id"
+    t.index ["image_id"], name: "index_categoryimages_on_image_id"
+    t.index ["imagecategory_id"], name: "index_categoryimages_on_imagecategory_id"
+  end
+
+  create_table "imagecategories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "imagegalleries", force: :cascade do |t|
@@ -232,6 +247,8 @@ ActiveRecord::Schema.define(version: 20181001152614) do
   add_foreign_key "booktemplatetexts", "booktemplates"
   add_foreign_key "booktexts", "books"
   add_foreign_key "categories", "images"
+  add_foreign_key "categoryimages", "imagecategories"
+  add_foreign_key "categoryimages", "images"
   add_foreign_key "imagegalleries", "users", column: "publisher_id"
   add_foreign_key "images", "imagegalleries"
   add_foreign_key "orders", "books"

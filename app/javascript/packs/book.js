@@ -1,4 +1,13 @@
 import "bootstrap";
+const images1_ids = document.getElementById("images1_ids").value;
+const images2_ids = document.getElementById("images2_ids").value;
+
+$('#myCarousel').on('slid.bs.carousel', function () {
+  const images = document.getElementById("images");
+  images.style.display = 'block';
+  console.log(images1_ids);
+  console.log(images2_ids);
+})
 
   const text01 = document.getElementById("text1");
   const text02 = document.getElementById("text2");

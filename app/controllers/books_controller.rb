@@ -39,6 +39,18 @@ class BooksController < ApplicationController
       img = Image.find(bti.image_id)
       @btimages << img.filename
     end
+    # now only two galleries. This will be relative: boottemplate_id <=> gallery_id's
+    @images1 = Image.where(imagegallery_id: 1)
+    @images1_ids = []
+    @images1.each do |i1|
+      @images1_ids << i1.id
+    end
+    @images2 = Image.where(imagegallery_id: 2)
+    @images2_ids = []
+    @images2.each do |i2|
+      @images2_ids << i2.id
+    end
+    @imagecategories = Imagecategory.all
   end
 
   def update

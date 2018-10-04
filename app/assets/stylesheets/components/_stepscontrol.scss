@@ -27,13 +27,12 @@
 
 .stepscontrol-balk {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .control-button {
   // font-family: $bvj;
-  border-radius: 50%;
+  font-weight: bold;
   text-align: center;
   cursor: pointer;
   text-decoration: none !important;
@@ -56,16 +55,16 @@
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
   .stepscontrol-balk-s {
-    padding: 25px 0px 0px 0px;
-    width: 500px;
-    margin: 20px;
+    padding: 5px 0px 5px 0px;
+    //width: 500px;
+    margin: 0px;
   }
   .control-button-s {
-    width: 95px;
-    height: 95px;
-    margin: 0px;
-    padding: 20px 4px 0px 0px;
-    font-size: 35px;
+    width: 125px;
+    height: 75px;
+    margin: 0px 10px 0px 5px;
+    padding: 0px 4px 0px 0px;
+    font-size: 45px;
   }
 }
 
@@ -78,16 +77,16 @@
 
   .control-button-s {
     width: 60px;
-    height: 60px;
-    margin: 0px;
-    padding: 12px 2px 0px 0px;
+    height: 36px;
+    margin: 0px 5px 0px 5px;
+    padding: 0px 2px 0px 0px;
     font-size: 25px;
   }
 }
 
 .nu {
-  background-color: #FFCC33;
-  color: black;
+  background-color: white;
+  color: #FFCC33;
   cursor: default;
 }
 
@@ -98,7 +97,7 @@
 
 .terug {
   background-color: lightgray;
-  color: gray;
+  color: white;
 }
 
 .terug:hover {
@@ -107,12 +106,13 @@
 }
 
 .vooruit {
-  background-color: white;
-  color: gray;
+  background-color: gray;
+  color: white;
 }
 
 .disabled {
-  color: gray;
+  color: white;
+  background-color: gray;
   cursor: default;
 }
 

@@ -4,15 +4,9 @@
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button-flex">
           <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
-          <div class="button-label">
-            voor wie?
-          </div>
         </div>
         <div class="control-button-flex">
           <div class="control-button control-button-s nu">2</div>
-          <div class="button-label">
-            boekje
-          </div>
         </div>
         <div class="control-button-flex">
           <% if user_signed_in? %>
@@ -20,14 +14,9 @@
           <% else %>
             <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
-          <div class="button-label">
-            n.a.w.
           </div>
-        </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">4</div>
-          <div class="button-label">
-            betalen
+          <div class="control-button-flex">
+            <div class="control-button control-button-s disabled">4</div>
           </div>
         </div>
       </div>
@@ -47,15 +36,9 @@
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button-flex">
           <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
-          <div class="button-label">
-            voor wie?
-          </div>
         </div>
         <div class="control-button-flex">
           <div class="control-button control-button-s nu">2</div>
-          <div class="button-label">
-            boekje
-          </div>
         </div>
         <div class="control-button-flex">
           <% if user_signed_in? %>
@@ -63,43 +46,20 @@
           <% else %>
             <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
-          <div class="button-label">
-            n.a.w.
-          </div>
         </div>
         <div class="control-button-flex">
           <div class="control-button control-button-s disabled">4</div>
-          <div class="button-label">
-            betalen
-          </div>
         </div>
       </div>
     </div>
   </div>
 
 <div class="row-fluid item1">
-  <div class="col-md-12 carousel" >
+  <div class="col-md-8 carousel" >
 
 <!--  carousel -->
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% if @booktemplate.id == 1 %>
-      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst1"></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst2"></li>
-      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic"  style="background-image: url(<%= asset_path @booktexts[0].text5 %>);"></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url(<%= asset_path @booktexts[0].text8 %>);"></li>
-    <% else %>
-      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
-      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
-    <% end %>
-<!--     <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
-    <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
- -->
-  </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
@@ -133,12 +93,62 @@
 </div>
 
   </div>
+  <div class="col-md-4 border">
+    <div class="imglist-flex">
+      <% @imagecategories.each do |ic| %>
+        <div class="img-categories">
+          <input class="check" type="checkbox" id="imagecagegory_ <%= ic.id  %> "><%= ic.name  %>
+        </div>
+      <% end %>
+    </div>
+    <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
+    <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
+    <div id="images" style="display: none;">
+      <div class="imglist-flex">
+        <% @nr = 1 %>
+        <% @images1.each do |i| %>
+        <div>
+          <button class="imglist-img" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;"></button>
+          <br>
+          <% @nr += 1 %>
+          </div>
+        <% end %>
+        <% @nr = 1 %>
+        <% @images2.each do |i| %>
+        <div>
+          <button class="imglist-img" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;"></button>
+          <br>
+          <% @nr += 1 %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <!-- end carousel -->
 
   <div class="row-fuid">
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin: 50px 0px 10px 0px">
+      <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% if @booktemplate.id == 1 %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst1"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst2"></li>
+      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic"  style="background-image: url(<%= asset_path @booktexts[0].text5 %>);"></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url(<%= asset_path @booktexts[0].text8 %>);"></li>
+    <% else %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
+      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
+    <% end %>
+<!--     <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
+    <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
+ -->
+  </ol>
+
     </div>
   </div>
   <div class="row-fuid">

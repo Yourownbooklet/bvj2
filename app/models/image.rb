@@ -1,4 +1,5 @@
 class Image < ApplicationRecord
   belongs_to :imagegallery
-  has_many :categories
+  has_many :categoryimages
+  has_one :category
 end

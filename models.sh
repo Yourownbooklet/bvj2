@@ -17,4 +17,7 @@ rails g model Booktext text1:string text2:string text3:string text4:string text5
 
 rails g model booktemplatetexts text1:string text2:string text3:string text4:string text5:string text6:string text7:string text8:string text9:string text10:string text11:string
 
-rails g model bookimages
+rails g model bookimage
+
+rails g model imagecategory name:string
+rails g model categoryimage
