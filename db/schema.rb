@@ -221,7 +221,6 @@ ActiveRecord::Schema.define(version: 20181004092248) do
     t.string "country"
     t.string "phonenumber"
     t.string "geaddresseerde"
-    t.string "string"
     t.string "streetname2"
     t.integer "streetnumber2"
     t.string "number2_extension"

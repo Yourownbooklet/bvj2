@@ -121,6 +121,8 @@ function getText6() {
     const tf_2 = txtfixed_2.dataset.txt;
     newtext06 = tf_1 + q_answer + tf_2;
     console.log(newtext06);
+  } else {
+    newtext06 = "";
   }
 }
 
