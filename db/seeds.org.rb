@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeds started"
 
+Imagecategory.destroy_all
+Categoryimage.destroy_all
 Booktemplateimage.destroy_all
 Imagecategory.destroy_all
 Booktemplateimage.destroy_all
@@ -82,56 +84,67 @@ images = Image.create([
   {
     filename: "Afbeelding-1.jpg",
     name: "rozet",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-2.jpg",
     name: "nieuwskrant",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-3a.jpg",
     name: "kopjes",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-3b.jpg",
     name: "verpleger",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-5.jpg",
     name: "voorpagina kalender",
+    type: "p",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-6.jpg",
     name: "kalender Jan",
+    type: "p",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-7.jpg",
     name: "kalender Feb",
+    type: "p",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-8.jpg",
     name: "kalender Mar",
+    type: "p",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-A.jpg",
     name: "Pot augurken",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-B.jpg",
     name: "meerdere",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     filename: "Afbeelding-C.jpg",
     name: "huwelijk man vrouw",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
@@ -142,58 +155,344 @@ images = Image.create([
   {
     filename: "img4-g.jpg",
     name: "baby meisje",
+    type: "s",
     imagegallery_id: imagegalleries[0].id
   },
   {
     name: "product 1",
     filename: "product-1.jpg",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "product 2",
     filename: "product-2.jpg",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "product 3",
     filename: "product-3.jpg",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "product 4",
     filename: "product-4.jpg",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "geboorte",
     filename: "geboorte.png",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "verjaardag",
     filename: "verjaardag.png",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "huwelijk",
     filename: "huwelijk.png",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "feestdagen",
     filename: "feestdagen.png",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
   },
   {
     name: "overig",
     filename: "overig.png",
+    type: "s",
     imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename: "meisje-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "meisje-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_spiegel-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_spiegel-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "diverse_dieren-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "diploma_zegel-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "bloempot-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "bloempotten-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "bloempotten-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "speelgoed-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "speelgoed-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "veel_geluk_liggend-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "veel_geluk-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "veel_geluk-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "schijfvanvijf-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "schijfvanvijf-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "schijfvanvijf-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "babykamer-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "babyproducten-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "babyspullen-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "een_jongen_liggend-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "een_jongen-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "ooievaar_meisje-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_zwanger_l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_zwanger-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "sport-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "sport-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "sport-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "bruidspaar-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "bruidspaar-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "felicitatie-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "just_married-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "kaarten_schrijven staand-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "kaarten_schrijven-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "kaarten_schrijven-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "trouwauto_just_married-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "volkswagen_busje-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "meisje-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "meisje-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_spiegel-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "vrouw_spiegel-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "cadeautjes_ 3-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "cadeautjes_2-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "cadeautjes-p.jpg",
+    name: "",
+    type: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "jongetje_feesthoedje-l.jpg",
+    name: "",
+    type: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "jongetje_feestmuts-s.jpg",
+    name: "",
+    type: "s",
+    imagegallery_id: imagegalleries[0].id
   }
 ])
 
 categories = Category.create([
   {
-    name: 'gezinsuitbreiding',
+    name: 'gezin',
     image_id: images[17].id
   },
   {
@@ -666,6 +965,193 @@ categoryimages = Categoryimage.create([
     image_id: images[10].id,
     imagecategory_id: imagecategory[6].id
   },
+])
+
+categoryimages = Categoryimage.create([
+  {
+    image_id: images[22].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[23.id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[24].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[25].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[26].id,
+    imagecategory_id: imagecategory[1].id,
+  },
+  {
+    image_id: images[27].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[28].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[29].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[30].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[31].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[32].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[33].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[34].id,
+    imagecategory_id: imagecategory[2].id,
+  },
+  {
+    image_id: images[35].id,
+    imagecategory_id: imagecategory[3].id,
+  },
+  {
+    image_id: images[36].id,
+    imagecategory_id: imagecategory[3].id,
+  },
+  {
+    image_id: images[37].id,
+    imagecategory_id: imagecategory[3].id,
+  },
+  {
+    image_id: images[38].id,
+    imagecategory_id: imagecategory[3].id,
+  },
+  {
+    image_id: images[39].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[40].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[41].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[42].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[43].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[44].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[45].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[46].id,
+    imagecategory_id: imagecategory[4].id,
+  },
+  {
+    image_id: images[47].id,
+    imagecategory_id: imagecategory[5].id,
+  },
+  {
+    image_id: images[48].id,
+    imagecategory_id: imagecategory[5].id,
+  },
+  {
+    image_id: images[49].id,
+    imagecategory_id: imagecategory[5].id,
+  },
+  {
+    image_id: images[50].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[51].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[52].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[53].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[54].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[55].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[56].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[57].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[58].id,
+    imagecategory_id: imagecategory[6].id,
+  },
+  {
+    image_id: images[59].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[60].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[61].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[62].id,
+    imagecategory_id: imagecategory[7].id,
+  },
+  {
+    image_id: images[63].id,
+    imagecategory_id: imagecategory[8].id,
+  },
+  {
+    image_id: images[64].id,
+    imagecategory_id: imagecategory[8].id,
+  },
+  {
+    image_id: images[65].id,
+    imagecategory_id: imagecategory[8].id,
+  },
+  {
+    image_id: images[66].id,
+    imagecategory_id: imagecategory[8].id,
+  },
+  {
+    image_id: images[67].id,
+    imagecategory_id: imagecategory[8].id,
+  }
 ])
 
 p "seeds done"

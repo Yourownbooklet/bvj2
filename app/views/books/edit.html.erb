@@ -59,11 +59,11 @@
 
 <!--  carousel -->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="false">
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-      <div class="item active">
+      <div class="item active" id="page1">
         <div class="item1">
         <%= render "html-templates/step2/edited/#{@pagetemplates[0].html}" %>
         </div>
@@ -71,7 +71,7 @@
     <% @count = @pagetemplates.count %>
     <% @ind = 1 %>
     <% until @ind == @count %>
-      <div class="item">
+      <div class="item" id="page<%= @ind +1 %> ">
         <div class="item1">
         <%= render "html-templates/step2/edited/#{@pagetemplates[@ind].html}" %>
         </div>
@@ -93,36 +93,67 @@
 </div>
 
   </div>
-  <div class="col-md-4 border">
-    <div class="imglist-flex">
+  <!-- start img app -->
+  <div class="col-md-4">
+    <!-- <button class="category-button">Button</button> -->
+    <!-- show imagecategories -->
+    <div id="categories" style="display: none">
+    <div class="catlist-flex imglist-categories-box">
       <% @imagecategories.each do |ic| %>
-        <div class="img-categories">
-          <input class="check" type="checkbox" id="imagecagegory_ <%= ic.id  %> "><%= ic.name  %>
+        <!-- <div class=""> -->
+         <div class="category-button" id="imagecategory_<%= ic.id  %>"><%= ic.name  %>
         </div>
       <% end %>
     </div>
+    </div>
+    <!-- get data for JS -->
     <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
     <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
-    <div id="images" style="display: none;">
-      <div class="imglist-flex">
+    <!-- show square images -->
+    <div id="square-images" style="display: none;">
+      <div class="imglist-flex imglist-images-box">
         <% @nr = 1 %>
-        <% @images1.each do |i| %>
-        <div>
-          <button class="imglist-img" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;"></button>
-          <br>
-          <% @nr += 1 %>
-          </div>
-        <% end %>
-        <% @nr = 1 %>
-        <% @images2.each do |i| %>
-        <div>
-          <button class="imglist-img" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;"></button>
-          <br>
-          <% @nr += 1 %>
-          </div>
+        <% @cat = 1 %>
+        <% @allcategories.each do |catimages| %>
+          <% catimages.each do |i| %>
+            <% if i.format == "s" %>
+              <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
+              <% @nr += 1 %>
+            <% end %>
+          <% end %>
+          <% @cat += 1 %>
         <% end %>
       </div>
     </div>
+    <!-- show portrait images -->
+    <div id="portrait-images" style="display: none;">
+      <div class="imglist-flex imglist-images-box">
+        <% @nr = 1 %>
+        <% @allcategories.each do |catimages| %>
+          <% catimages.each do |i| %>
+            <% if i.format == "p" %>
+              <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+              <% @nr += 1 %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <!-- show landscape images -->
+    <div id="landscape-images" style="display: none;">
+      <div class="imglist-flex imglist-images-box">
+        <% @nr = 1 %>
+        <% @allcategories.each do |catimages| %>
+          <% catimages.each do |i| %>
+            <% if i.format == "l" %>
+              <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+              <% @nr += 1 %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -153,7 +184,7 @@
   </div>
   <div class="row-fuid">
     <div class="col-md-12">
-      <div class="flex1">
+      <div class="bottom-control">
         <!-- <%#= link_to "TERUG", booktemplate_path(@book.booktemplate_id), class: "knop terug" %> -->
         <form>
           <input type="button" value="TERUG" onclick="history.back()" class="knop terug">

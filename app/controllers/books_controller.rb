@@ -50,7 +50,25 @@ class BooksController < ApplicationController
     @images2.each do |i2|
       @images2_ids << i2.id
     end
+    # get all imagecategory ids
     @imagecategories = Imagecategory.all
+    @imagecategory_ids = []
+    @imagecategories.each do |ic|
+      @imagecategory_ids << ic.id
+    end
+    @categoryimages = Categoryimage.all
+    # array of arrays: array of category-filename arrays
+    @allcategories = []
+    # get image filenames per category
+    @imagecategory_ids.each do |icid|
+      @imgs_filtered_by_cat = Categoryimage.where(imagecategory_id: icid)
+      @img_names_per_category = []
+      @imgs_filtered_by_cat.each do |cat|
+        tt = Image.find(cat.image_id)
+        @img_names_per_category << tt
+      end
+      @allcategories << @img_names_per_category
+    end
   end
 
   def update

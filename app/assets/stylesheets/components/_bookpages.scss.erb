@@ -51,18 +51,6 @@
   // position: relative;
   }
 
-  .imglist {
-    max-height: 450px;
-    overflow: scroll;
-    margin: -2px 0px -14px -110px;
-  }
-
-  .imglist-img {
-    height: 80px;
-    width: 80px;
-    margin: 5px;
-   }
-
   .booktemplate-s {
     font-size: 25px;
   }
@@ -70,7 +58,6 @@
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
-
 
   .bookpage-size {
     height: 350px;
@@ -86,17 +73,6 @@
     padding-left: 1px;
   // position: relative;
   }
-
-  .imglist {
-    max-height: 320px;
-    overflow: scroll;
-    margin: -2px 0px -14px -50px;
-  }
-  .imglist-img {
-    height: 55px;
-    width: 55px;
-    margin: 0px;
-   }
 
   .booktemplate-s {
     font-size: 22px;
@@ -148,21 +124,21 @@
   height: 25px;
   background-color: #FFCC33;
   line-height: 0px;
-  padding-left: 6px;
+  text-align: center;
   margin-top: 0px;
 }
 
-.edit-text:before {
+.eedit-text:before {
   content: "T";
 }
 
 .edit-text {
-  color: black;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+  margin-top: -20px;
+  padding: 4px;
   background-color: #FFCC33;
-  line-height: 0px;
-  padding-left: 6px;
+  border-radius: 50%;
 }
 
 .edit-text:hover {
@@ -178,9 +154,10 @@ textarea.up {
   // flex-direction: column;
 }
 
-.imglist-flex {
+.flex-column-center {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text-button {
@@ -192,11 +169,8 @@ textarea.up {
   cursor:url(<%= asset_path 'pencil-edit-button-32.png'%>),text;
 }
 
-
-.img-categories {
-  font-family: $bvj;
-  border: solid 1px lightgray;
-  padding: 2px;
-  border-radius: 4px;
-  margin: 2px;
+.bottom-control{
+  display:flex;
+  justify-content: space-between;
+  margin: 75px 0px 0px 0px;
 }

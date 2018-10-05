@@ -39,3 +39,4 @@ rails g migration AddAfleveradreshetzelfdeToUser afleveradreshetzelfde:boolean, 
 
 rails g migration AddImageToCategoryimage image:references
 rails g migration AddImagecategoryToCategoryimage Imagecategory:references
+rails g migration AddFormatToImage format:string

@@ -2,12 +2,58 @@ import "bootstrap";
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
 
-$('#myCarousel').on('slid.bs.carousel', function () {
-  const images = document.getElementById("images");
-  images.style.display = 'block';
-  console.log(images1_ids);
-  console.log(images2_ids);
+// toggle imglist square on pagenumber (3)
+$('#myCarousel').on('slide.bs.carousel', function (event) {
+  console.log(event.direction);
+  console.log(event.relatedTarget.id);
+  console.log(event.relatedTarget.id[4]);
+  if ( event.relatedTarget.id[4] === '3' ) {
+      const categories = document.getElementById("categories");
+      categories.style.display = 'block';
+      const images = document.getElementById("square-images");
+      images.style.display = 'block';
+      console.log(`het is page3`);
+    } else {
+      const categories = document.getElementById("categories");
+      categories.style.display = 'none';
+      const images = document.getElementById("square-images");
+      images.style.display = 'none';
+      console.log(`het is niet page3`)
+    }
 })
+// end toggle imglist square on pagenumber (3)
+
+
+//  toggle images in category (3)
+const cat3button = document.getElementById("imagecategory_3");
+cat3button.addEventListener("click", toggleCat3);
+
+function toggleCat3() {
+  var i, elements = document.getElementsByClassName('cat3');
+  for ( i = 0; i < elements.length; i += 1) {
+    if (elements[i].style.display === 'none') {
+      elements[i].style.display = 'inline';
+      cat3button.style.backgroundColor = '#f2f2f2';
+      cat3button.onmouseover = function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+      }
+      cat3button.onmouseout = function() {
+        this.style.backgroundColor = '#f2f2f2';
+      }
+    } else {
+      elements[i].style.display = 'none';
+      cat3button.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+      cat3button.onmouseover = function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+      }
+      cat3button.onmouseout = function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+      }
+    }
+  }
+}
+
+//  end toggle images in category (3)
 
   const text01 = document.getElementById("text1");
   const text02 = document.getElementById("text2");
@@ -96,9 +142,13 @@ function updateText4() {
   console.log(text04);
   text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
   console.log(text04);
-  document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
-  const savetext4 = document.getElementById('savetext4');
-  savetext4.addEventListener("click", saveText4);
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="45" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
+  // document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
+  const savetext4 = document.getElementById('newtext4');
+  savetext4.onmouseout = function() {
+    saveText4();
+  }
+  // savetext4.addEventListener("click", saveText4);
 }
 
 function saveText4() {
@@ -136,6 +186,7 @@ function saveText4() {
   // activate button to execute function "updatetext1"
   button4.addEventListener("click", updateText4);
 }
+
 
 var imagefilename1
 

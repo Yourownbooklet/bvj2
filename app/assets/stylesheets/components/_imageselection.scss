@@ -1,0 +1,85 @@
+.imglist-categories-box {
+  margin: 20px 0px 0px 0px;
+  width: 400px;
+  height: 100px;
+}
+
+.category-button {
+  height: 25px;
+  font-family: $bvj;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  margin: 0px 5px 5px 0px;
+  padding: 0px 5px 0px 5px;
+}
+
+.catlist-flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.category-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: default;
+}
+
+.category-button-unchecked {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: solid 1px rgba(0, 0, 0, 0.05);
+}
+
+.imglist-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.imglist-images-box {
+  width: 400px;
+  height: 255px;
+  overflow: auto;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .imglist {
+    max-height: 450px;
+    overflow: scroll;
+    margin: -2px 0px -14px -110px;
+  }
+
+  .imglist-img-l {
+    height: 40px;
+    width: 80px;
+    margin: 0px 5px 5px 0px;
+   }
+
+  .imglist-img-p {
+    height: 80px;
+    width: 40px;
+    margin: 0px 5px 5px 0px;
+   }
+
+  .imglist-img-s {
+    height: 80px;
+    width: 80px;
+    margin: 0px 5px 5px 0px;
+   }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .imglist {
+    max-height: 320px;
+    overflow: scroll;
+    margin: -2px 0px -14px -50px;
+  }
+  .imglist-img {
+    height: 55px;
+    width: 55px;
+    margin: 0px;
+   }
+}

@@ -1,71 +1,182 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-p "seed imagecategories started"
-
-imagecategories = Imagecategory.create([
-  {
-    name: "dieren",
-  },
-  {
-    name: "diploma",
-  },
-  {
-    name: "divers",
-  },
-  {
-    name: "eten & drinken",
-  },
-  {
-    name: "geboorte",
-  },
-  {
-    name: "hobby",
-  },
-  {
-    name: "huwelijk",
-  },
-  {
-    name: "mensen",
-  },
-  {
-    name: "verjaardag",
-  }
-])
-
 categoryimages = Categoryimage.create([
   {
-    image_id: 1,
-    imagecategory_id: imagecategories[4].id
+    image_id: 23,
+    imagecategory_id: 8,
   },
   {
-    image_id: 2,
-    imagecategory_id: imagecategories[4].id
+    image_id: 24,
+    imagecategory_id: 8,
   },
   {
-    image_id: 3,
-    imagecategory_id: imagecategories[4].id
+    image_id: 25,
+    imagecategory_id: 8,
   },
   {
-    image_id: 4,
-    imagecategory_id: imagecategories[4].id
+    image_id: 26,
+    imagecategory_id: 8,
   },
   {
-    image_id: 9,
-    imagecategory_id: imagecategories[6].id
+    image_id: 28,
+    imagecategory_id: 2,
   },
   {
-    image_id: 10,
-    imagecategory_id: imagecategories[6].id
+    image_id: 29,
+    imagecategory_id: 3,
   },
   {
-    image_id: 11,
-    imagecategory_id: imagecategories[6].id
+    image_id: 30,
+    imagecategory_id: 3,
   },
+  {
+    image_id: 31,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 32,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 33,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 34,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 35,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 36,
+    imagecategory_id: 3,
+  },
+  {
+    image_id: 37,
+    imagecategory_id: 4,
+  },
+  {
+    image_id: 38,
+    imagecategory_id: 4,
+  },
+  {
+    image_id: 39,
+    imagecategory_id: 4,
+  },
+  {
+    image_id: 40,
+    imagecategory_id: 4,
+  },
+  {
+    image_id: 41,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 42,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 43,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 44,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 45,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 46,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 47,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 48,
+    imagecategory_id: 14,
+  },
+  {
+    image_id: 49,
+    imagecategory_id: 6,
+  },
+  {
+    image_id: 50,
+    imagecategory_id: 6,
+  },
+  {
+    image_id: 51,
+    imagecategory_id: 6,
+  },
+  {
+    image_id: 52,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 53,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 54,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 55,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 56,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 57,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 58,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 59,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 60,
+    imagecategory_id: 16,
+  },
+  {
+    image_id: 61,
+    imagecategory_id: 8,
+  },
+  {
+    image_id: 62,
+    imagecategory_id: 8,
+  },
+  {
+    image_id: 63,
+    imagecategory_id: 8,
+  },
+  {
+    image_id: 64,
+    imagecategory_id: 8,
+  },
+  {
+    image_id: 65,
+    imagecategory_id: 18,
+  },
+  {
+    image_id: 66,
+    imagecategory_id: 18,
+  },
+  {
+    image_id: 67,
+    imagecategory_id: 18,
+  },
+  {
+    image_id: 68,
+    imagecategory_id: 18,
+  }
 ])
-
-p "seeds done"

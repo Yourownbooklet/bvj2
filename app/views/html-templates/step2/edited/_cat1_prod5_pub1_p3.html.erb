@@ -6,13 +6,15 @@
   </div>
 </div>
 <div class="page-size-voorleesboek-ingrid">
+    <div class="edit-text">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <path fill="#9b9b9b" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </div>
   <div class="content-voorleesboek-ingrid">
     <div class="tekstbox-voorleesboek-ingrid" id="bloktext4">
       <button id="button4" class="text-button"><%= @booktexts[0].text4.html_safe %></button>
-<!--  <div class="flex3">
-      <button id="button4" class="control-button edit-text"></button>
-      <span id="text4"><%#= @booktexts[0].text4.html_safe %></span>
-      </div> -->
     </div>
     <span>
       <button id="button2" class="control-button edit-img" style="display: none"></button>
@@ -26,13 +28,15 @@
   </div>
 </div>
 
+<!-- oude img list -->
+<!--
     <div id="il" class="imglist" style="display: block">
-      <% @nr = 1 %>
-      <% @btimages.each do |bti| %>
-        <button class="imglist-img" value="<%= bti %>" id="img<%= @nr %>" data-img="<%= asset_path bti %>" style="background-image: url(<%= asset_path bti %>); background-size: cover;"></button>
+      <%# @nr = 1 %>
+      <%# @btimages.each do |bti| %>
+        <button class="imglist-img" value="<%#= bti %>" id="img<%#= @nr %>" data-img="<%#= asset_path bti %>" style="background-image: url(<%#= asset_path bti %>); background-size: cover;"></button>
         <br>
-        <% @nr += 1 %>
-      <% end %>
+        <%# @nr += 1 %>
+      <%# end %>
     </div>
-
+ -->
 

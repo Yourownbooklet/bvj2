@@ -1,3 +1,20 @@
+// function array
+
+ for(var i=0; i< immageArray.length; i++) {
+       imageArray[i].addEventListener("click", bindClick(i));
+ }
+
+ function bindClick(i) {
+    return function() {
+        console.log("you clicked region number " + i);
+    };
+ }
+
+
+// ******
+
+
+
 console.log(btid.value);
 
 button.addEventListener("click", saveAnswers);
