@@ -697,12 +697,14 @@ productsubtypes = Productsubtype.create([
 booktemplates = Booktemplate.create([
   {
     name: 'kraamcadeau door Ingrid',
+    Jsfilename: 'booktemplate1_ingrid.js',
     productsubtype_id: productsubtypes[5].id,
     subcategory_id: subcategories[1].id,
     publisher_id: users[1].id,
   },
   {
     name: 'verjaardagscadeau door Ingrid',
+    Jsfilename: 'booktemplate2_ingrid.js',
     productsubtype_id: productsubtypes[18].id,
     subcategory_id: subcategories[4].id,
     publisher_id: users[1].id,

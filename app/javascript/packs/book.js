@@ -4,7 +4,8 @@ const images2_ids = document.getElementById("images2_ids").value;
 const imagecategory_ids = document.getElementById("imagecategory_ids").value;
 const array_of_all_image_ids = document.getElementById("array_of_all_image_ids").value;
 var imageArray = JSON.parse(array_of_all_image_ids);
-
+var imagecategoryArray = JSON.parse(imagecategory_ids);
+console.log(imagecategoryArray[2][1]);
 
 // toggle imglist square on pagenumber (3)
 $('#myCarousel').on('slide.bs.carousel', function (event) {
@@ -25,37 +26,73 @@ $('#myCarousel').on('slide.bs.carousel', function (event) {
       console.log(`het is niet page3`)
     }
 })
-// end toggle imglist square on pagenumber (3)
 
+var catmarkers = [];
+for (var i = 0; i < imagecategoryArray.length; ++i) {
+    catmarkers[i] = document.getElementById(`imagecategory_${imagecategoryArray[i][1]}`);
+    console.log(catmarkers[i]);
+    // if empty: skip
+    if (catmarkers[i]) {
+    catmarkers[i].addEventListener("click", toggleKat(i));
+  }
+}
 
-//  toggle images in category (3)
-const cat3button = document.getElementById("imagecategory_3");
-cat3button.addEventListener("click", toggleCat3);
-
-function toggleCat3() {
-  var i, elements = document.getElementsByClassName('cat3');
-  for ( i = 0; i < elements.length; i += 1) {
-    if (elements[i].style.display === 'none') {
-      elements[i].style.display = 'inline';
-      cat3button.style.backgroundColor = '#f2f2f2';
-      cat3button.onmouseover = function() {
-        this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
-      }
-      cat3button.onmouseout = function() {
-        this.style.backgroundColor = '#f2f2f2';
-      }
+function toggleKat(i) {
+  return function() {
+  var e, elements = document.getElementsByClassName(`cat${imagecategoryArray[i][0]}`);
+  for ( e = 0; e < elements.length; e += 1) {
+    console.log(elements[e]);
+    if (elements[e].style.display === 'none') {
+      elements[e].style.display = 'inline';
+       catmarkers[i].style.backgroundColor = '#f2f2f2';
+       catmarkers[i].onmouseover = function() {
+         this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+       }
+       catmarkers[i].onmouseout = function() {
+         this.style.backgroundColor = '#f2f2f2';
+       }
     } else {
-      elements[i].style.display = 'none';
-      cat3button.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
-      cat3button.onmouseover = function() {
+      elements[e].style.display = 'none';
+      catmarkers[i].style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+      catmarkers[i].onmouseover = function() {
         this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
       }
-      cat3button.onmouseout = function() {
+      catmarkers[i].onmouseout = function() {
         this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
       }
     }
   }
 }
+}
+
+// const cat3button = document.getElementById(`imagecategory_${imagecategoryArray[2][1]}`);
+// console.log(`imagecategory_${imagecategoryArray[2][1]}`);
+// cat3button.addEventListener("click", toggleCat);
+
+// function toggleCat() {
+//   var i, elements = document.getElementsByClassName(`cat${imagecategoryArray[2][0]}`);
+//   for ( i = 0; i < elements.length; i += 1) {
+//     if (elements[i].style.display === 'none') {
+//       elements[i].style.display = 'inline';
+//       cat3button.style.backgroundColor = '#f2f2f2';
+//       cat3button.onmouseover = function() {
+//         this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+//       }
+//       cat3button.onmouseout = function() {
+//         this.style.backgroundColor = '#f2f2f2';
+//       }
+//     } else {
+//       elements[i].style.display = 'none';
+//       cat3button.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+//       cat3button.onmouseover = function() {
+//         this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+//       }
+//       cat3button.onmouseout = function() {
+//         this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+//       }
+//     }
+//   }
+// }
 
 //  end toggle images in category (3)
 
@@ -84,7 +121,7 @@ function toggleCat3() {
   const button11 = document.getElementById("button11");
 
  button1.addEventListener("click", updateText1);
- button2.addEventListener("click", updateImgp3);
+ //button2.addEventListener("click", updateImgp3);
  button3.addEventListener("click", saveImg1);
  button4.addEventListener("click", updateText4);
  // button5.addEventListener("click", updateText5);
@@ -146,7 +183,7 @@ function updateText4() {
   console.log(text04);
   text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
   console.log(text04);
-  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="45" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="55" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   // document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   const savetext4 = document.getElementById('newtext4');
   savetext4.onmouseout = function() {
@@ -192,122 +229,112 @@ function saveText4() {
 }
 
 
-// var markers = [];
-// for (var i = 0; i < coords.length; ++i) {
-//     markers[i] = "some stuff";
+var markers = [];
+for (var i = 0; i < imageArray.length; ++i) {
+    markers[i] = document.getElementById(`${imageArray[i]}`);
+    if (markers[i]) {
+    markers[i].addEventListener("click", updateBeeld(i));
+  }
+}
+
+ function updateBeeld(i) {
+    return function() {
+      updateImg(markers[i]);
+      console.log("now showing image" + i);
+    };
+ }
+
+// var imagefilename1
+
+// function updateImgp3() {
+//   const nr = document.getElementById("numberofimages").value;
+//   console.log(nr);
+
+//   if ( nr > 0 ) {
+//     const imgbutton1 = document.getElementById("img1");
+//     imgbutton1.addEventListener("click", updateImg1);
+//     console.log("imgbutton1 loaded");
+//   }
+//   if ( nr > 1 ) {
+//     const imgbutton2 = document.getElementById("img2");
+//     imgbutton2.addEventListener("click", updateImg2);
+//     console.log("imgbutton2 loaded");
+//   }
+//   if ( nr > 2 ) {
+//     const imgbutton3 = document.getElementById("img3");
+//     imgbutton3.addEventListener("click", updateImg3);
+//     console.log("imgbutton3 loaded");
+//   }
+//   if ( nr > 3 ) {
+//     const imgbutton4 = document.getElementById("img4");
+//     imgbutton4.addEventListener("click", updateImg4);
+//   }
+//   if ( nr > 4 ) {
+//     const imgbutton5 = document.getElementById("img5");
+//     imgbutton5.addEventListener("click", updateImg5);
+//   }
+//   if ( nr > 5 ) {
+//     const imgbutton6 = document.getElementById("img6");
+//     imgbutton6.addEventListener("click", updateImg6);
+//   }
+//   if ( nr > 6 ) {
+//     const imgbutton6 = document.getElementById("img7");
+//     imgbutton6.addEventListener("click", updateImg7);
+//   }
+//   if ( nr > 7 ) {
+//     const imgbutton6 = document.getElementById("img8");
+//     imgbutton6.addEventListener("click", updateImg8);
+//   }
+//   if ( nr > 8 ) {
+//     const imgbutton6 = document.getElementById("img9");
+//     imgbutton6.addEventListener("click", updateImg9);
+//   }
 // }
 
+// function updateImg1() {
+//   const imagedata = document.getElementById("img1");
+//   updateImg(imagedata);
+// }
 
- // for(var i=0; i< imageArray.length; i++) {
- //    console.log(imageArray[i]);
- //    console.log(`${imageArray[i]}`)
- //    imageArray[i] = document.getElementById(`${imageArray[i]}`);
- // //   imageArray[i].addEventListener("click", updateImage(i));
- //    console.log(imageArray[i] + "loaded");
- // }
+// function updateImg2() {
+//   const imagedata = document.getElementById("img2");
+//   updateImg(imagedata);
+// }
 
- // function updateImage(i) {
- //    return function() {
- //      const imagedata = document.getElementById(`img${i+1}`);
- //      updateImg(imagedata);
- //      console.log("now showing image" + i);
- //    };
- // }
+// function updateImg3() {
+//   const imagedata = document.getElementById("img3");
+//   updateImg(imagedata);
+// }
 
+// function updateImg4() {
+//   const imagedata = document.getElementById("img4");
+//   updateImg(imagedata);
+// }
 
+// function updateImg5() {
+//   const imagedata = document.getElementById("img5");
+//   updateImg(imagedata);
+// }
 
+// function updateImg6() {
+//   const imagedata = document.getElementById("img6");
+//   updateImg(imagedata);
+// }
 
-var imagefilename1
+// function updateImg7() {
+//   const imagedata = document.getElementById("img7");
+//   updateImg(imagedata);
+// }
 
-function updateImgp3() {
-  const nr = document.getElementById("numberofimages").value;
-  console.log(nr);
+// function updateImg8() {
+//   const imagedata = document.getElementById("img8");
+//   updateImg(imagedata);
+// }
 
-  if ( nr > 0 ) {
-    const imgbutton1 = document.getElementById("img1");
-    imgbutton1.addEventListener("click", updateImg1);
-    console.log("imgbutton1 loaded");
-  }
-  if ( nr > 1 ) {
-    const imgbutton2 = document.getElementById("img2");
-    imgbutton2.addEventListener("click", updateImg2);
-    console.log("imgbutton2 loaded");
-  }
-  if ( nr > 2 ) {
-    const imgbutton3 = document.getElementById("img3");
-    imgbutton3.addEventListener("click", updateImg3);
-    console.log("imgbutton3 loaded");
-  }
-  if ( nr > 3 ) {
-    const imgbutton4 = document.getElementById("img4");
-    imgbutton4.addEventListener("click", updateImg4);
-  }
-  if ( nr > 4 ) {
-    const imgbutton5 = document.getElementById("img5");
-    imgbutton5.addEventListener("click", updateImg5);
-  }
-  if ( nr > 5 ) {
-    const imgbutton6 = document.getElementById("img6");
-    imgbutton6.addEventListener("click", updateImg6);
-  }
-  if ( nr > 6 ) {
-    const imgbutton6 = document.getElementById("img7");
-    imgbutton6.addEventListener("click", updateImg7);
-  }
-  if ( nr > 7 ) {
-    const imgbutton6 = document.getElementById("img8");
-    imgbutton6.addEventListener("click", updateImg8);
-  }
-  if ( nr > 8 ) {
-    const imgbutton6 = document.getElementById("img9");
-    imgbutton6.addEventListener("click", updateImg9);
-  }
-}
-
-function updateImg1() {
-  const imagedata = document.getElementById("img1");
-  updateImg(imagedata);
-}
-
-function updateImg2() {
-  const imagedata = document.getElementById("img2");
-  updateImg(imagedata);
-}
-
-function updateImg3() {
-  const imagedata = document.getElementById("img3");
-  updateImg(imagedata);
-}
-
-function updateImg4() {
-  const imagedata = document.getElementById("img4");
-  updateImg(imagedata);
-}
-
-function updateImg5() {
-  const imagedata = document.getElementById("img5");
-  updateImg(imagedata);
-}
-
-function updateImg6() {
-  const imagedata = document.getElementById("img6");
-  updateImg(imagedata);
-}
-
-function updateImg7() {
-  const imagedata = document.getElementById("img7");
-  updateImg(imagedata);
-}
-
-function updateImg8() {
-  const imagedata = document.getElementById("img8");
-  updateImg(imagedata);
-}
-
-function updateImg9() {
-  const imagedata = document.getElementById("img9");
-  updateImg(imagedata);
-}
+// function updateImg9() {
+//   const imagedata = document.getElementById("img9");
+//   updateImg(imagedata);
+// }
 
 function updateImg(imagedata) {
   const imagename = imagedata.value;
@@ -369,4 +396,4 @@ function saveImg1() {
   bt.style.display = 'inline';
 }
 
-updateImgp3();
+// updateImgp3();

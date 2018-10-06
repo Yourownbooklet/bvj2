@@ -3,7 +3,7 @@
     <% @categories.each do |c| %>
       <%= link_to category_path(c), class: "link-to" do %>
       <% image = Image.find(c.image_id) %>
-    <div class="home-page-blok home-blok home-blok-h1" style="background-image: url('<%= asset_path image.filename %>')" >
+    <div class="home-page-blok home-blok-h1" style="background-image: url('<%= asset_path image.filename %>')" >
       <div class="home-tekst-blok">
         <%= c.name  %>
       </div>
@@ -39,7 +39,7 @@
 </div>
 <!-- PC view -->
 <div class="home1 hidden-xs">
-  <%= link_to booktemplate_path(1) do  %>
+  <%= link_to booktemplate_path(@booktemplates[0].id) do  %>
   <div class="home-page-blok home-blok home-blok-h2" style="background-image: url(<%= asset_path 'product-1.jpg' %>)">
     <div class="home-tekst-blok-product">
       € 16,-
@@ -67,7 +67,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6">
-        <%= link_to booktemplate_path(1) do  %>
+        <%= link_to booktemplate_path(@booktemplates[0].id) do  %>
           <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-1.jpg' %>)">
             <div class="home-tekst-blok-product">
               € 23,-

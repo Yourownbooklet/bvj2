@@ -104,7 +104,7 @@
           <div class="category-unavailable-button"><%= ic.name  %>
           </div>
         <% else %>
-          <div class="category-button" id="imagecategory_<%= ic.id  %>"><%= ic.name  %>
+          <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
           </div>
         <% end %>
       <% end %>
@@ -119,16 +119,12 @@
     <!-- show square images -->
     <div id="square-images" style="display: none;">
       <div class="imglist-flex imglist-images-box">
-        <% @nr = 1 %>
-        <% @cat = 1 %>
         <% @allcategories.each do |catimages| %>
           <% catimages.each do |i| %>
             <% if i.format == "s" %>
-              <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
-              <% @nr += 1 %>
+              <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= i.id %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
             <% end %>
           <% end %>
-          <% @cat += 1 %>
         <% end %>
       </div>
     </div>
@@ -171,7 +167,7 @@
     <div class="col-md-12" style="margin: 50px 0px 10px 0px">
       <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% if @booktemplate.id == 1 %>
+    <% if @booktemplate.id == @booktemplates[0].id %>
       <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst1"></li>
       <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst2"></li>
       <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic"  style="background-image: url(<%= asset_path @booktexts[0].text5 %>);"></li>

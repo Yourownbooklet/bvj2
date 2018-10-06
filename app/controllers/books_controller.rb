@@ -30,6 +30,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(@book.booktemplate_id)
     @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
     # this should be part of book: @book.text1, ....2, ...3 ect
@@ -55,12 +56,12 @@ class BooksController < ApplicationController
     @imagecategories = Imagecategory.all
     @imagecategory_ids = []
     @imagecategories.each do |ic|
-      @imagecategory_ids << ic.id
+      @imagecategory_ids << [ ic.id , ic.name ]
     end
     @categoryimages = Categoryimage.all
     @array_of_all_image_ids = []
     @categoryimages.each do |ci|
-      @array_of_all_image_ids << "img" + ci.id.to_s
+      @array_of_all_image_ids << "img" + ci.image_id.to_s
     end
 
     # @array_of_all_image_ids = @array_of_all_image.map(&:to_s).join("")
