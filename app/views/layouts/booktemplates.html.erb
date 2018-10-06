@@ -14,5 +14,5 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag "booktemplate#{@booktemplate.id}" %>
+    <%= javascript_pack_tag "#{@booktemplate.Jsfilename}" %>
 </html>

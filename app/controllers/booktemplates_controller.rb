@@ -6,6 +6,7 @@ class BooktemplatesController < ApplicationController
   end
 
   def show
+    @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(params[:id])
     @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate.id)
     @subcategory = Subcategory.find(@booktemplate.subcategory_id)

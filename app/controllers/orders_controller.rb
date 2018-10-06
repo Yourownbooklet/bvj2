@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @booktemplates = Booktemplate.all
     @book=Book.find(params[:book_id])
     @book.buyer_id = current_user.id
     @book.save!
