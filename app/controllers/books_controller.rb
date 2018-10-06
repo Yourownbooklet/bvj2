@@ -1,3 +1,4 @@
+
 class BooksController < ApplicationController
   respond_to :html, :json, :js
   skip_before_action :authenticate_user!, only: [:new, :show, :createa, :edit]
@@ -57,6 +58,13 @@ class BooksController < ApplicationController
       @imagecategory_ids << ic.id
     end
     @categoryimages = Categoryimage.all
+    @array_of_all_image_ids = []
+    @categoryimages.each do |ci|
+      @array_of_all_image_ids << "img" + ci.id.to_s
+    end
+
+    # @array_of_all_image_ids = @array_of_all_image.map(&:to_s).join("")
+
     # array of arrays: array of category-filename arrays
     @allcategories = []
     # get image filenames per category

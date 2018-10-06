@@ -1,6 +1,10 @@
 import "bootstrap";
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
+const imagecategory_ids = document.getElementById("imagecategory_ids").value;
+const array_of_all_image_ids = document.getElementById("array_of_all_image_ids").value;
+var imageArray = JSON.parse(array_of_all_image_ids);
+
 
 // toggle imglist square on pagenumber (3)
 $('#myCarousel').on('slide.bs.carousel', function (event) {
@@ -188,18 +192,34 @@ function saveText4() {
 }
 
 
+// var markers = [];
+// for (var i = 0; i < coords.length; ++i) {
+//     markers[i] = "some stuff";
+// }
+
+
+ // for(var i=0; i< imageArray.length; i++) {
+ //    console.log(imageArray[i]);
+ //    console.log(`${imageArray[i]}`)
+ //    imageArray[i] = document.getElementById(`${imageArray[i]}`);
+ // //   imageArray[i].addEventListener("click", updateImage(i));
+ //    console.log(imageArray[i] + "loaded");
+ // }
+
+ // function updateImage(i) {
+ //    return function() {
+ //      const imagedata = document.getElementById(`img${i+1}`);
+ //      updateImg(imagedata);
+ //      console.log("now showing image" + i);
+ //    };
+ // }
+
+
+
+
 var imagefilename1
 
 function updateImgp3() {
-  // show imagelist
-  // const e = document.getElementById("il");
-  // e.style.display = 'block';
-  // show save image
-  // const si = document.getElementById("button3");
-  // si.style.display = 'inline';
-  // hide edit image button
-  // const bt = document.getElementById("button2");
-  // bt.style.display = 'none';
   const nr = document.getElementById("numberofimages").value;
   console.log(nr);
 

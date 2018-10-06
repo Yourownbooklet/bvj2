@@ -100,15 +100,22 @@
     <div id="categories" style="display: none">
     <div class="catlist-flex imglist-categories-box">
       <% @imagecategories.each do |ic| %>
-        <!-- <div class=""> -->
-         <div class="category-button" id="imagecategory_<%= ic.id  %>"><%= ic.name  %>
-        </div>
+        <% if ic.categoryimages.count == 0 %>
+          <div class="category-unavailable-button"><%= ic.name  %>
+          </div>
+        <% else %>
+          <div class="category-button" id="imagecategory_<%= ic.id  %>"><%= ic.name  %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     </div>
     <!-- get data for JS -->
     <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
     <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
+    <input id="imagecategory_ids" type="hidden" value="<%= @imagecategory_ids %>">
+    <input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
+
     <!-- show square images -->
     <div id="square-images" style="display: none;">
       <div class="imglist-flex imglist-images-box">
