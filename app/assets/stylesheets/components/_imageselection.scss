@@ -1,6 +1,6 @@
 .imglist-categories-box {
-  margin: 20px 0px 0px 0px;
-  width: 400px;
+  margin: 20px 10px 0px 10px;
+  // width: 400px;
   height: 100px;
 }
 
@@ -53,7 +53,8 @@
 }
 
 .imglist-images-box {
-  width: 400px;
+  // width: 400px;
+  margin: 0px 10px 0px 10px;
   height: 255px;
   overflow: auto;
 }
@@ -92,9 +93,9 @@
     overflow: scroll;
     margin: -2px 0px -14px -50px;
   }
-  .imglist-img {
-    height: 55px;
-    width: 55px;
+  .imglist-img-s {
+    height: 70px;
+    width: 70px;
     margin: 0px;
    }
 }

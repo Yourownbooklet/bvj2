@@ -37,9 +37,10 @@ function getText1() {
     run = true;
   } else {
     const b1 = document.getElementById("1");
-    b1.style.borderColor = 'red';
+    b1.style.borderColor = '#ef5353';
     b1.style.borderStyle = 'solid';
-    b1.style.borderWidth = '3px';
+    b1.style.borderWidth = '2px';
+    b1.focus();
     // alert('Voer een naam in!');
     run = false;
   }
@@ -69,9 +70,10 @@ function getText3() {
       const b1 = document.getElementById("1");
       b1.style.borderStyle = 'none';
       const b2 = document.getElementById("2");
-      b2.style.borderColor = 'red';
+      b2.style.borderColor = '#ef5353';
       b2.style.borderStyle = 'solid';
-      b2.style.borderWidth = '3px';
+      b2.style.borderWidth = '2px';
+      b2.focus();
       run = false;
     }
   }
