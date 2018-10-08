@@ -106,8 +106,8 @@
             <input class="check" type="checkbox" id="address2Check">Afleveradres hetzelfde? (klik vinkje aan)
             </div>
             <div class="address-2" id="address-2" style="display: block">
-              <input type="hidden" id="afleveradreshetzelfde" value="false" name="afleveradreshetzelfde">
               <!-- invoer address2 hier -->
+              <%= f.hidden_field :afleveradreshetzelfde, :value => false %>
               <%= f.input :geaddresseerde,
                           required: false , label: false , placeholder: "Naam Ontvanger" %>
               <div class="flex2">
