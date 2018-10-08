@@ -14,10 +14,9 @@
           <% else %>
             <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
           <% end %>
-          </div>
-          <div class="control-button-flex">
+        </div>
+        <div class="control-button-flex">
             <div class="control-button control-button-s disabled">4</div>
-          </div>
         </div>
       </div>
     </div>
@@ -54,111 +53,98 @@
     </div>
   </div>
 
-<div class="row-fluid item1">
-  <div class="col-md-8 carousel" >
-
-<!--  carousel -->
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="false">
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-      <div class="item active" id="page1">
-        <div class="item1">
-        <%= render "html-templates/step2/edited/#{@pagetemplates[0].html}" %>
+  <div class="row-fluid">
+    <div class="col-md-8 col-sm-12 carousel" >
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="false">
+        <div class="carousel-inner">
+          <div class="item active" id="page1">
+            <div class="item1">
+              <%= render "html-templates/step2/edited/#{@pagetemplates[0].html}" %>
+            </div>
+          </div>
+          <% @count = @pagetemplates.count %>
+          <% @ind = 1 %>
+          <% until @ind == @count %>
+            <div class="item" id="page<%= @ind +1 %> ">
+              <div class="item1">
+              <%= render "html-templates/step2/edited/#{@pagetemplates[@ind].html}" %>
+              </div>
+            </div>
+            <% @ind +=1 %>
+          <% end %>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+     <!-- start img app -->
+    <div class="col-md-4 col-sm-12">
+      <div id="categories" style="display: none">
+        <div class="catlist-flex imglist-categories-box">
+          <% @imagecategories.each do |ic| %>
+            <% if ic.categoryimages.count == 0 %>
+              <div class="category-unavailable-button"><%= ic.name  %>
+              </div>
+            <% else %>
+              <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
-    <% @count = @pagetemplates.count %>
-    <% @ind = 1 %>
-    <% until @ind == @count %>
-      <div class="item" id="page<%= @ind +1 %> ">
-        <div class="item1">
-        <%= render "html-templates/step2/edited/#{@pagetemplates[@ind].html}" %>
+      <!-- get data for JS -->
+      <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
+      <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
+      <input id="imagecategory_ids" type="hidden" value="<%= @imagecategory_ids %>">
+      <input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
+      <!-- show square images -->
+      <div id="square-images" style="display: none;">
+        <div class="imglist-flex imglist-images-box">
+          <% @allcategories.each do |catimages| %>
+            <% catimages.each do |i| %>
+              <% if i.format == "s" %>
+                <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= i.id %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
-      <% @ind +=1 %>
-    <% end %>
-
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-  </div>
-  <!-- start img app -->
-  <div class="col-md-4">
-    <!-- <button class="category-button">Button</button> -->
-    <!-- show imagecategories -->
-    <div id="categories" style="display: none">
-    <div class="catlist-flex imglist-categories-box">
-      <% @imagecategories.each do |ic| %>
-        <% if ic.categoryimages.count == 0 %>
-          <div class="category-unavailable-button"><%= ic.name  %>
-          </div>
-        <% else %>
-          <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    </div>
-    <!-- get data for JS -->
-    <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
-    <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
-    <input id="imagecategory_ids" type="hidden" value="<%= @imagecategory_ids %>">
-    <input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
-
-    <!-- show square images -->
-    <div id="square-images" style="display: none;">
-      <div class="imglist-flex imglist-images-box">
-        <% @allcategories.each do |catimages| %>
-          <% catimages.each do |i| %>
-            <% if i.format == "s" %>
-              <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= i.id %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
+      <!-- show portrait images -->
+      <div id="portrait-images" style="display: none;">
+        <div class="imglist-flex imglist-images-box">
+          <% @nr = 1 %>
+          <% @allcategories.each do |catimages| %>
+            <% catimages.each do |i| %>
+              <% if i.format == "p" %>
+                <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+                <% @nr += 1 %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-    <!-- show portrait images -->
-    <div id="portrait-images" style="display: none;">
-      <div class="imglist-flex imglist-images-box">
-        <% @nr = 1 %>
-        <% @allcategories.each do |catimages| %>
-          <% catimages.each do |i| %>
-            <% if i.format == "p" %>
-              <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
-              <% @nr += 1 %>
+      <!-- show landscape images -->
+      <div id="landscape-images" style="display: none;">
+        <div class="imglist-flex imglist-images-box">
+          <% @nr = 1 %>
+          <% @allcategories.each do |catimages| %>
+            <% catimages.each do |i| %>
+              <% if i.format == "l" %>
+                <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+                <% @nr += 1 %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
-    <!-- show landscape images -->
-    <div id="landscape-images" style="display: none;">
-      <div class="imglist-flex imglist-images-box">
-        <% @nr = 1 %>
-        <% @allcategories.each do |catimages| %>
-          <% catimages.each do |i| %>
-            <% if i.format == "l" %>
-              <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
-              <% @nr += 1 %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
   </div>
-</div>
 
 
 <!-- end carousel -->
