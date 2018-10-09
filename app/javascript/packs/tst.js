@@ -67,3 +67,17 @@ function updateAnswerQ3() {
 `;
   }
 }
+
+
+<!-- auto-generate carousel indicator html -->
+var myCarousel = $(".carousel");
+myCarousel.append("<ol class='carousel-indicators'></ol>");
+var indicators = $(".carousel-indicators");
+myCarousel.find(".carousel-inner").children(".item").each(function(index) {
+    (index === 0) ?
+    indicators.append("<li data-target='#myCarousel' data-slide-to='"+index+"' class='active'></li>") :
+    indicators.append("<li data-target='#myCarousel' data-slide-to='"+index+"'></li>");
+});
+
+<!-- then call carousel -->
+$('.carousel').carousel();

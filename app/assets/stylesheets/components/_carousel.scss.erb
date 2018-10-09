@@ -4,6 +4,26 @@
   justify-content: center;
 }
 
+.ci-content{
+  // width: 236px;
+  // height: 73px;
+  font-size: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ci-content-l {
+  width: 120px;
+  height: 73px;
+  background: white;
+}
+
+.ci-content-r {
+  width: 116px;
+  height: 73px;
+  background: white;
+}
+
 @media screen and (min-width: 601px) {
   .carousel {
     // width: 900px;
@@ -11,15 +31,15 @@
   }
 
   .car-indic {
-    margin: 0px 20px 0px 20px !important;
-    height: 80px !important;
+    margin: 0px 8px 0px 8px !important;
     width: 245px !important;
+    height: 80px !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
-    background-color: white !important;
+    //background-color: white !important;
     border-radius: 0px !important;
-
+    display: flex;
   }
   // .glyphicon-chevron-right {
   //   font-size: 60px !important;
@@ -98,4 +118,21 @@
   left: 0%;
   margin-left: 0%;
   width: 100%;
+}
+
+.carousel-indicators li {
+  text-indent: 0px;
+  border: none;
+  background: none;
+}
+
+
+.carousel-indicators .active {
+  border: solid 2px lightgray;
+  background-color: #e8e8e8;
+}
+
+.img-ic-3 {
+  width: 35px;
+  height: 35px;
 }
