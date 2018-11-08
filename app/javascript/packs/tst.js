@@ -69,7 +69,7 @@ function updateAnswerQ3() {
 }
 
 
-<!-- auto-generate carousel indicator html -->
+// auto-generate carousel indicator html
 var myCarousel = $(".carousel");
 myCarousel.append("<ol class='carousel-indicators'></ol>");
 var indicators = $(".carousel-indicators");
@@ -79,5 +79,5 @@ myCarousel.find(".carousel-inner").children(".item").each(function(index) {
     indicators.append("<li data-target='#myCarousel' data-slide-to='"+index+"'></li>");
 });
 
-<!-- then call carousel -->
+// then call carousel
 $('.carousel').carousel();
