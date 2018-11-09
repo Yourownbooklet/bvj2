@@ -1,0 +1,58 @@
+<div id="categories" style="display: none">
+  <div class="catlist-flex imglist-categories-box">
+    <% @imagecategories.each do |ic| %>
+      <% if ic.categoryimages.count == 0 %>
+        <div class="category-unavailable-button"><%= ic.name  %>
+        </div>
+      <% else %>
+        <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<!-- get data for JS -->
+<input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
+<input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
+<input id="imagecategory_ids" type="hidden" value="<%= @imagecategory_ids %>">
+<input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
+<!-- show square images -->
+<div id="square-images" style="display: none;">
+  <div class="imglist-flex imglist-images-box">
+    <% @allcategories.each do |catimages| %>
+      <% catimages.each do |i| %>
+        <% if i.format == "s" %>
+          <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= i.id %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<!-- show portrait images -->
+<div id="portrait-images" style="display: none;">
+  <div class="imglist-flex imglist-images-box">
+    <% @nr = 1 %>
+    <% @allcategories.each do |catimages| %>
+      <% catimages.each do |i| %>
+        <% if i.format == "p" %>
+          <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+          <% @nr += 1 %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<!-- show landscape images -->
+<div id="landscape-images" style="display: none;">
+  <div class="imglist-flex imglist-images-box">
+    <% @nr = 1 %>
+    <% @allcategories.each do |catimages| %>
+      <% catimages.each do |i| %>
+        <% if i.format == "l" %>
+          <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
+          <% @nr += 1 %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

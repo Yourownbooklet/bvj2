@@ -113,10 +113,18 @@
   background-image: image-url("Afbeelding-8.jpg");
 }
 
+.indicators-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
 .carousel-indicators {
+  position: unset;
+  display: flex;
   bottom: -40px;
   left: 0%;
-  margin-left: 0%;
+  margin-left: 3%;
   width: 100%;
 }
 
@@ -126,10 +134,14 @@
   background: none;
 }
 
-
 .carousel-indicators .active {
   border: solid 2px lightgray;
   background-color: #e8e8e8;
+}
+
+.carousel-button {
+  margin: 5px 2% 0px 2%;
+  float: right;
 }
 
 .img-ic-3 {

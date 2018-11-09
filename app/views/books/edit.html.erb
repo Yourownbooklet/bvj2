@@ -85,128 +85,94 @@
     </div>
      <!-- start img app -->
     <div class="col-md-4 col-sm-12">
-      <div id="categories" style="display: none">
+      <%= render 'partials/img-select' %>
+      <div id="no-image" style="display: block">
         <div class="catlist-flex imglist-categories-box">
           <% @imagecategories.each do |ic| %>
-            <% if ic.categoryimages.count == 0 %>
-              <div class="category-unavailable-button"><%= ic.name  %>
-              </div>
-            <% else %>
-              <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
-              </div>
-            <% end %>
+            <div class="category-unavailable-button"><%= ic.name  %>
+            </div>
           <% end %>
         </div>
-      </div>
-      <!-- get data for JS -->
-      <input id="images1_ids" type="hidden" value="<%= @images1_ids %>">
-      <input id="images2_ids" type="hidden" value="<%= @images2_ids %>">
-      <input id="imagecategory_ids" type="hidden" value="<%= @imagecategory_ids %>">
-      <input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
-      <!-- show square images -->
-      <div id="square-images" style="display: none;">
+
         <div class="imglist-flex imglist-images-box">
-          <% @allcategories.each do |catimages| %>
-            <% catimages.each do |i| %>
-              <% if i.format == "s" %>
-                <button class="imglist-img-<%= i.format %> cat<%= i.categoryimages[0].imagecategory_id %>" value="<%= i.filename %>" id="img<%= i.id %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover; display: inline;">
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <!-- show portrait images -->
-      <div id="portrait-images" style="display: none;">
-        <div class="imglist-flex imglist-images-box">
-          <% @nr = 1 %>
-          <% @allcategories.each do |catimages| %>
-            <% catimages.each do |i| %>
-              <% if i.format == "p" %>
-                <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
-                <% @nr += 1 %>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <!-- show landscape images -->
-      <div id="landscape-images" style="display: none;">
-        <div class="imglist-flex imglist-images-box">
-          <% @nr = 1 %>
-          <% @allcategories.each do |catimages| %>
-            <% catimages.each do |i| %>
-              <% if i.format == "l" %>
-                <button class="imglist-img-<%= i.format %> " value="<%= i.filename %>" id="img<%= @nr %>" data-img="<%= asset_path i.filename %>" style="background-image: url(<%= asset_path i.filename %>); background-size: cover;">
-                <% @nr += 1 %>
-              <% end %>
-            <% end %>
-          <% end %>
+          <div class="booktemplate-text">
+            <span>
+              <em>
+                Er zijn geen alternatieve afbeeldingen beschikbaar.
+              </em>
+            </span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>
 
 <!-- end carousel -->
-
+<!--
   <div class="row-fuid">
     <div class="col-md-12" style="margin: 50px 0px 10px 0px">
+-->
       <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% if @booktemplate.id == @booktemplates[0].id %>
-      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic">
-        <div class="ci-content">
-          <div class="ci-content-l">Caption</div>
-          <div class="ci-content-l">Caption</div>
-        </div>
-      </li>
-      <li data-target="#myCarousel" data-slide-to="1" class="car-indic">
-        <div class="ci-content">
-          <div class="ci-content-l">Caption</div>
-          <div class="ci-content-l">Caption</div>
-        </div>
-      </li>
-      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic">
-        <div class="ci-content">
-          <div class="ci-content-l">Caption</div>
-            <div class="ci-content-l">
-              Caption<br>
-               <img src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
+      <ol class="carousel-indicators flex3">
+        <div class="indicators-container">
+        <% if @booktemplate.id == @booktemplates[0].id %>
+          <li data-target="#myCarousel" data-slide-to="0" class="active car-indic">
+            <div class="ci-content">
+              <div class="ci-content-l">Caption</div>
+              <div class="ci-content-l">Caption</div>
             </div>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="1" class="car-indic">
+            <div class="ci-content">
+              <div class="ci-content-l">Caption</div>
+              <div class="ci-content-l">Caption</div>
+            </div>
+          </li>
+          <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic">
+            <div class="ci-content">
+              <div class="ci-content-l">Caption</div>
+                <div class="ci-content-l">
+                  Caption<br>
+                   <img src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
+                </div>
+            </div>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="3" class="car-indic">
+            <div class="ci-content">
+              <div class="ci-content-l">Caption</div>
+              <div class="ci-content-l">Caption</div>
+            </div>
+          </li>
+        <% else %>
+          <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
+          <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
+          <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
+        <% end %>
         </div>
-      </li>
-      <li data-target="#myCarousel" data-slide-to="3" class="car-indic">
-        <div class="ci-content">
-          <div class="ci-content-l">Caption</div>
-          <div class="ci-content-l">Caption</div>
-        </div>
-      </li>
-    <% else %>
-      <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
-      <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
-    <% end %>
-<!--     <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
-    <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
- -->
-  </ol>
-
+      <!--
+        <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
+        <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
+      -->
+      <% if user_signed_in? %>
+        <%= link_to "KOOP", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+      <% else %>
+        <%= link_to "KOOP", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+      <% end %>
+      </ol>
+<!--
     </div>
   </div>
   <div class="row-fuid">
     <div class="col-md-12">
       <div class="bottom-control">
-        <!-- <%#= link_to "TERUG", booktemplate_path(@book.booktemplate_id), class: "knop terug" %> -->
+        <%#= link_to "TERUG", booktemplate_path(@book.booktemplate_id), class: "knop terug" %>
         <form>
           <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
         </form>
-        <% if user_signed_in? %>
-          <%= link_to "KOOP", new_order_path(:book_id => @book.id), class: "knop nu" %>
-        <% else %>
-          <%= link_to "KOOP", new_user_registration_path(:book_id => @book.id), class: "knop nu" %>
-        <% end %>
       </div>
     </div>
   </div>
 </div>
+-->

@@ -15,12 +15,16 @@ $('#myCarousel').on('slide.bs.carousel', function (event) {
   if ( event.relatedTarget.id[4] === '3' ) {
       const categories = document.getElementById("categories");
       categories.style.display = 'block';
+      const no_image = document.getElementById("no-image");
+      no_image.style.display = 'none';
       const images = document.getElementById("square-images");
       images.style.display = 'block';
       console.log(`het is page3`);
     } else {
       const categories = document.getElementById("categories");
       categories.style.display = 'none';
+      const no_image = document.getElementById("no-image");
+      no_image.style.display = 'block';
       const images = document.getElementById("square-images");
       images.style.display = 'none';
       console.log(`het is niet page3`)
