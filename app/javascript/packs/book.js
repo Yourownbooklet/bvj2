@@ -368,7 +368,7 @@ function updateImg(imagedata) {
   // bt.style.display = 'inline';
   document.getElementById("tekst5").src = `${imgurl}`;
   document.getElementById("tekst5").value = `${imagename}`;
-  document.getElementById("ind3").style = `background-image: url(${imgurl});`;
+  document.getElementById("ind3").src = `${imgurl}`;
 }
 
 function saveImg1() {

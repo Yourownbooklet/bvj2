@@ -13,6 +13,20 @@
   z-index:10;
 }
 
+.navbar2 {
+  background: white;
+  color: black;
+  transition: all 0.3s ease;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  width: 100vw;
+  z-index:20;
+}
+
+
 /* Logo */
 .navbar-brand img {
   margin-top: -16px;
@@ -30,12 +44,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 22px;
+  font-style: bold;
+  line-height: 18px;
 }
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 10px;
+  margin-right: 30px;
+  // padding: 0 10px;
 }
 
 /* Navbar link */

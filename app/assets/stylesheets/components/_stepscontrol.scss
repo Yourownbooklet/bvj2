@@ -8,11 +8,6 @@
   text-decoration: none !important;
 }
 
-.nu:hover {
-  color: black;
-  background-color: #FEBE00;
-}
-
 .flex1 {
   margin-top: 20px;
   display: flex;
@@ -31,20 +26,20 @@
 }
 
 .control-button {
-  // font-family: $bvj;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none !important;
-}
-
-.control-button:hover {
-  color: black;
-}
-
-.control-button-flex {
   display: flex;
   flex-direction: column;
+  // font-family: $bvj;
+  //  font-weight: bold;
+  text-align: center;
+  // cursor: pointer;
+  text-decoration: none !important;
+  border-radius: 2px;
+}
+
+.control-button > span {
+  color: black;
+  font-size: 15px;
+  text-align: center;
 }
 
 .button-label {
@@ -60,11 +55,13 @@
     margin: 0px;
   }
   .control-button-s {
-    width: 125px;
+    width: 126px;
     height: 75px;
     margin: 0px 10px 0px 5px;
-    padding: 0px 4px 0px 0px;
+    padding: 4px 4px 0px 0px;
+    font-weight: bold;
     font-size: 45px;
+    line-height: 38px;
   }
 }
 
@@ -76,17 +73,18 @@
   }
 
   .control-button-s {
-    width: 60px;
-    height: 36px;
+    width: 84px;
+    height: 50px;
     margin: 0px 5px 0px 5px;
     padding: 0px 2px 0px 0px;
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 
 .nu {
   background-color: white;
   color: #FFCC33;
+  border: solid #FFCC33 1px;
   cursor: default;
 }
 
@@ -97,12 +95,14 @@
 
 .terug {
   background-color: lightgray;
-  color: white;
+  color: black;
+  cursor: pointer;
 }
 
 .terug:hover {
-  background-color: gray;
+  background-color: lightgray;
   color: black;
+  border: solid gray 1px;
 }
 
 .vooruit {
@@ -110,14 +110,15 @@
   color: black;
 }
 
-.disabled {
-  color: white;
-  background-color: gray;
-  cursor: default;
+.vooruit:hover {
+  background-color: #FEBE00;
+  color: black;
 }
 
-.disabled:hover {
-  color: lightgray
+.disabled {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: default;
 }
 
 button.fix {

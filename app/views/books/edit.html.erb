@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="booktemplate-text">
+      <div class="booktemplate-text box">
         <p class="booktemplate booktemplate-s">
           Bekijk het boek
         </p>
@@ -33,21 +33,38 @@
     </div>
     <div class="col-md-6 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
-        <div class="control-button-flex">
-          <input type="button" value="1" onclick="history.back()" class="control-button control-button-s terug fix">
+        <div class="control-button control-button-s terug">
+        1
+        <span class="txt">
+          VARIABELEN
+        </span>
         </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s nu">2</div>
+        <div class="control-button control-button-s nu">
+        2
+        <span class="txt">
+          INHOUD BOEK
+        </span>
         </div>
-        <div class="control-button-flex">
-          <% if user_signed_in? %>
-          <%= link_to "3", new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
-          <% else %>
-            <%= link_to "3", new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" %>
+        <% if user_signed_in? %>
+          <%= link_to new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" do %>
+            3
+            <span class="txt">
+              ADRES
+            </span>
           <% end %>
-        </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">4</div>
+        <% else %>
+          <%= link_to new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" do %>
+            3
+            <span class="txt">
+              ADRES
+            </span>
+          <% end %>
+        <% end %>
+        <div class="control-button control-button-s disabled">
+        4
+        <span class="txt">
+          BETALEN
+        </span>
         </div>
       </div>
     </div>
@@ -114,7 +131,7 @@
     <div class="col-md-12" style="margin: 50px 0px 10px 0px">
 -->
       <!-- Indicators -->
-      <ol class="carousel-indicators flex3">
+      <ol class="carousel-indicators">
         <div class="indicators-container">
         <% if @booktemplate.id == @booktemplates[0].id %>
           <li data-target="#myCarousel" data-slide-to="0" class="active car-indic">
@@ -129,12 +146,12 @@
               <div class="ci-content-l">Caption</div>
             </div>
           </li>
-          <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic">
+          <li data-target="#myCarousel" data-slide-to="2" class="car-indic">
             <div class="ci-content">
               <div class="ci-content-l">Caption</div>
                 <div class="ci-content-l">
                   Caption<br>
-                   <img src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
+                   <img id="ind3" src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
                 </div>
             </div>
           </li>
@@ -156,9 +173,9 @@
         <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
       -->
       <% if user_signed_in? %>
-        <%= link_to "KOOP", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+        <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
       <% else %>
-        <%= link_to "KOOP", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+        <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
       <% end %>
       </ol>
 <!--

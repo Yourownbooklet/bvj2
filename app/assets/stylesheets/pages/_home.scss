@@ -17,9 +17,15 @@
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
   .navbar-h {
-    height: 70px;
-     margin-top: -70px;
+    height: 45px;
+    margin-top: -110px;
   }
+
+  .navbar2-h {
+    height: 65px;
+    margin-top: -65px;
+  }
+
   .banner-h {
     padding: 40px;
     height: 38vh;

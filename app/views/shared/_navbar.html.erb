@@ -1,11 +1,6 @@
 <div class="navbar-main navbar-h">
   <!-- Logo -->
   <div class="navbar-section"> <!-- should be navbar-left!!! -->
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "bvj.jpg", height: 50 %>
-    <% end %>
-
-
     <div class="dropdown hidden-xs">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Voorleesboek</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
@@ -99,5 +94,9 @@
         </li>
     </div>
   </div>
+</div>
+<div class="navbar2 navbar2-h">
+  <%= link_to root_path, class: "logo" do %>
+  <% end %>
 </div>
 
