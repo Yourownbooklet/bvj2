@@ -1,4 +1,7 @@
 import "bootstrap";
+import { toggleSelection } from "./pagefocus";
+console.log('hello from book.js');
+
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
 const imagecategory_ids = document.getElementById("imagecategory_ids").value;
@@ -7,11 +10,31 @@ var imageArray = JSON.parse(array_of_all_image_ids);
 var imagecategoryArray = JSON.parse(imagecategory_ids);
 console.log(imagecategoryArray[2][1]);
 
+function switchFocus(pp) {
+  return function(){
+    toggleSelection(pp);
+  }
+}
+// activate toggleselection an all pages
+// i < number of pages (=== pagetemplates * 2)
+var pages = [];
+for (var i = 0; i < 9; ++i) {
+    pages[i] = document.getElementById(`p${[i]}`);
+    if (pages[i]) {
+    pages[i].addEventListener("click", switchFocus(pages[i]));
+  }
+}
+
 // toggle imglist square on pagenumber (3)
-$('#myCarousel').on('slide.bs.carousel', function (event) {
+$('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.direction);
   console.log(event.relatedTarget.id);
   console.log(event.relatedTarget.id[4]);
+  // console.log(event.relatedTarget.firstElementChild.firstElementChild);
+  const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  console.log(pp);
+  toggleSelection(pp);
+
   if ( event.relatedTarget.id[4] === '3' ) {
       const categories = document.getElementById("categories");
       categories.style.display = 'block';
@@ -241,104 +264,13 @@ for (var i = 0; i < imageArray.length; ++i) {
   }
 }
 
- function updateBeeld(i) {
-    return function() {
-      updateImg(markers[i]);
-      console.log("now showing image" + i);
-    };
+function updateBeeld(i) {
+  return function() {
+    updateImg(markers[i]);
+    console.log("now showing image" + i);
+  };
  }
 
-// var imagefilename1
-
-// function updateImgp3() {
-//   const nr = document.getElementById("numberofimages").value;
-//   console.log(nr);
-
-//   if ( nr > 0 ) {
-//     const imgbutton1 = document.getElementById("img1");
-//     imgbutton1.addEventListener("click", updateImg1);
-//     console.log("imgbutton1 loaded");
-//   }
-//   if ( nr > 1 ) {
-//     const imgbutton2 = document.getElementById("img2");
-//     imgbutton2.addEventListener("click", updateImg2);
-//     console.log("imgbutton2 loaded");
-//   }
-//   if ( nr > 2 ) {
-//     const imgbutton3 = document.getElementById("img3");
-//     imgbutton3.addEventListener("click", updateImg3);
-//     console.log("imgbutton3 loaded");
-//   }
-//   if ( nr > 3 ) {
-//     const imgbutton4 = document.getElementById("img4");
-//     imgbutton4.addEventListener("click", updateImg4);
-//   }
-//   if ( nr > 4 ) {
-//     const imgbutton5 = document.getElementById("img5");
-//     imgbutton5.addEventListener("click", updateImg5);
-//   }
-//   if ( nr > 5 ) {
-//     const imgbutton6 = document.getElementById("img6");
-//     imgbutton6.addEventListener("click", updateImg6);
-//   }
-//   if ( nr > 6 ) {
-//     const imgbutton6 = document.getElementById("img7");
-//     imgbutton6.addEventListener("click", updateImg7);
-//   }
-//   if ( nr > 7 ) {
-//     const imgbutton6 = document.getElementById("img8");
-//     imgbutton6.addEventListener("click", updateImg8);
-//   }
-//   if ( nr > 8 ) {
-//     const imgbutton6 = document.getElementById("img9");
-//     imgbutton6.addEventListener("click", updateImg9);
-//   }
-// }
-
-// function updateImg1() {
-//   const imagedata = document.getElementById("img1");
-//   updateImg(imagedata);
-// }
-
-// function updateImg2() {
-//   const imagedata = document.getElementById("img2");
-//   updateImg(imagedata);
-// }
-
-// function updateImg3() {
-//   const imagedata = document.getElementById("img3");
-//   updateImg(imagedata);
-// }
-
-// function updateImg4() {
-//   const imagedata = document.getElementById("img4");
-//   updateImg(imagedata);
-// }
-
-// function updateImg5() {
-//   const imagedata = document.getElementById("img5");
-//   updateImg(imagedata);
-// }
-
-// function updateImg6() {
-//   const imagedata = document.getElementById("img6");
-//   updateImg(imagedata);
-// }
-
-// function updateImg7() {
-//   const imagedata = document.getElementById("img7");
-//   updateImg(imagedata);
-// }
-
-// function updateImg8() {
-//   const imagedata = document.getElementById("img8");
-//   updateImg(imagedata);
-// }
-
-// function updateImg9() {
-//   const imagedata = document.getElementById("img9");
-//   updateImg(imagedata);
-// }
 
 function updateImg(imagedata) {
   const imagename = imagedata.value;
@@ -399,5 +331,3 @@ function saveImg1() {
   const bt = document.getElementById("button2");
   bt.style.display = 'inline';
 }
-
-// updateImgp3();

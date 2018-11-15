@@ -72,7 +72,7 @@
 
   <div class="row-fluid">
     <div class="col-md-8 col-sm-12 carousel" >
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="false">
+      <div id="spreadCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="false">
         <div class="carousel-inner">
           <div class="item active" id="page1">
             <div class="item1">
@@ -84,20 +84,65 @@
           <% until @ind == @count %>
             <div class="item" id="page<%= @ind +1 %> ">
               <div class="item1">
-              <%= render "html-templates/step2/edited/#{@pagetemplates[@ind].html}" %>
+                <%= render "html-templates/step2/edited/#{@pagetemplates[@ind].html}" %>
               </div>
             </div>
             <% @ind +=1 %>
           <% end %>
         </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <a class="left carousel-control" href="#spreadCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <a class="right carousel-control" href="#spreadCarousel" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
         </a>
+        <!-- Indicators -->
+        <div class="indicators-container">
+          <ol class="carousel-indicators">
+              <% if @booktemplate.id == @booktemplates[0].id %>
+                <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
+                  <div class="ci-content">
+                    <div class="ci-content-l">Caption</div>
+                    <div class="ci-content-l">Caption</div>
+                  </div>
+                </li>
+                <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic">
+                  <div class="ci-content">
+                    <div class="ci-content-l">Caption</div>
+                    <div class="ci-content-l">Caption</div>
+                  </div>
+                </li>
+                <li data-target="#spreadCarousel" data-slide-to="2" class="car-indic">
+                  <div class="ci-content">
+                    <div class="ci-content-l">Caption</div>
+                    <div class="ci-content-l">
+                      Caption<br>
+                       <img id="ind3" src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
+                    </div>
+                  </div>
+                </li>
+                <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic">
+                  <div class="ci-content">
+                    <div class="ci-content-l">Caption</div>
+                    <div class="ci-content-l">Caption</div>
+                  </div>
+                </li>
+              <% else %>
+                <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic tst5"></li>
+                <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic tst6"></li>
+                <li id="ind3" data-target="#spreadCarousel" data-slide-to="2" class="car-indic tst7"></li>
+                <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic tst8"></li>
+              <% end %>
+          </ol>
+          <% if user_signed_in? %>
+            <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+          <% else %>
+            <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+          <% end %>
+        </div>
+        <!-- end indicators -->
       </div>
     </div>
      <!-- start img app -->
@@ -121,6 +166,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -129,67 +175,4 @@
 <!--
   <div class="row-fuid">
     <div class="col-md-12" style="margin: 50px 0px 10px 0px">
--->
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <div class="indicators-container">
-        <% if @booktemplate.id == @booktemplates[0].id %>
-          <li data-target="#myCarousel" data-slide-to="0" class="active car-indic">
-            <div class="ci-content">
-              <div class="ci-content-l">Caption</div>
-              <div class="ci-content-l">Caption</div>
-            </div>
-          </li>
-          <li data-target="#myCarousel" data-slide-to="1" class="car-indic">
-            <div class="ci-content">
-              <div class="ci-content-l">Caption</div>
-              <div class="ci-content-l">Caption</div>
-            </div>
-          </li>
-          <li data-target="#myCarousel" data-slide-to="2" class="car-indic">
-            <div class="ci-content">
-              <div class="ci-content-l">Caption</div>
-                <div class="ci-content-l">
-                  Caption<br>
-                   <img id="ind3" src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
-                </div>
-            </div>
-          </li>
-          <li data-target="#myCarousel" data-slide-to="3" class="car-indic">
-            <div class="ci-content">
-              <div class="ci-content-l">Caption</div>
-              <div class="ci-content-l">Caption</div>
-            </div>
-          </li>
-        <% else %>
-          <li data-target="#myCarousel" data-slide-to="0" class="active car-indic tst5"></li>
-          <li data-target="#myCarousel" data-slide-to="1" class="car-indic tst6"></li>
-          <li id="ind3" data-target="#myCarousel" data-slide-to="2" class="car-indic tst7"></li>
-          <li data-target="#myCarousel" data-slide-to="3" class="car-indic tst8"></li>
-        <% end %>
-        </div>
-      <!--
-        <li data-target="#myCarousel" data-slide-to="2" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img3 %>')"></li>
-        <li data-target="#myCarousel" data-slide-to="3" class="car-indic" style="background-image: url('<%#= asset_path @booktexts[0].img4 %>')"></li>
-      -->
-      <% if user_signed_in? %>
-        <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
-      <% else %>
-        <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
-      <% end %>
-      </ol>
-<!--
-    </div>
-  </div>
-  <div class="row-fuid">
-    <div class="col-md-12">
-      <div class="bottom-control">
-        <%#= link_to "TERUG", booktemplate_path(@book.booktemplate_id), class: "knop terug" %>
-        <form>
-          <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 -->

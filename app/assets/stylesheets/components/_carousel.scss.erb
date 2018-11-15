@@ -43,11 +43,20 @@
   }
 
   .glyphicon.glyphicon-chevron-left {
+    top: 0%;
     font-size: 40px;
   }
 
   .glyphicon.glyphicon-chevron-right {
+    top: 0%;
     font-size: 40px;
+  }
+
+  .carousel-control.glyphicon-chevron-left {
+  }
+
+  .carousel-control.glyphicon-chevron-right {
+    top: 35%;
   }
 }
 
@@ -75,6 +84,7 @@
 .carousel-control {
   width: 5%;
   text-align: center;
+  top: 35%;
 }
 
 .carousel-inner {
@@ -119,18 +129,24 @@
 }
 
 .indicators-container {
+  margin-top: 70px;
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
+  width: 90vw;
+  justify-content: space-between;
+  // flex-wrap: nowrap;
+  // overflow-x: scroll;
 }
 
 .carousel-indicators {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
   position: unset;
   display: flex;
   // bottom: -40px;
   // left: 0%;
-  margin-left: 10px;
-  width: 100%;
+  // margin-left: 10px;
+  width: unset;
+  margin-left: unset;
 }
 
 .carousel-indicators li {
@@ -145,7 +161,7 @@
 }
 
 .carousel-button {
-  margin: 5px 2% 0px 2%;
+  margin: 32px 0px 0px 10px;
   float: right;
 }
 
