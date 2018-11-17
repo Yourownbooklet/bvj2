@@ -33,9 +33,9 @@
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="booktemplate-text box">
-        <p class="booktemplate booktemplate-s">
+        <p class="booktemplate-s">
           Variabelen
         </p>
         <span><em>
@@ -45,7 +45,7 @@
     </div>
 
     <!-- control buttons desktop -->
-    <div class="col-md-6 hidden-xs">
+    <div class="col-md-5 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button control-button-s nu">
           1
@@ -90,6 +90,7 @@
           <% else %>
             <span class="booktemplate-label"><%= q.question  %>?</span><br>
             <select required="true" name="text<%= @id %>" id="<%= @id %>">
+              <option hidden disabled selected value> kies uit de lijst </option>
               <% q.answers.each do |a| %>
                 <option value="<%= a.answer %>"><%= a.answer %></option>
               <% end %>
@@ -104,7 +105,7 @@
       <input type="hidden", id="btid", value="<%= @booktemplate.id  %>">
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 booktemplate-frontpage">
       <div class="blok-header">
         Voorkant boek
       </div>

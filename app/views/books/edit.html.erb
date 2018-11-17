@@ -20,19 +20,19 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="booktemplate-text box">
-        <p class="booktemplate booktemplate-s">
-          Bekijk het boek
+        <p class="booktemplate-s">
+          Inhoud boek
         </p>
         <span><em>
-          Daar waar aangegeven kun je beeld en tekst aanpassen.</em>
+          Tekstblokken met een geel kader kun je aanpassen door er op te klikken! Als je een ander beeld wilt kun je dat rechts kiezen (indien beschikbaar).</em>
         </span>
       </div>
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
     </div>
     <!-- control buttons desktop -->
-    <div class="col-md-6 hidden-xs">
+    <div class="col-md-5 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button control-button-s terug">
           1
@@ -152,7 +152,7 @@
       <div id="no-image" style="display: block">
         <div class="catlist-flex imglist-categories-box">
           <% @imagecategories.each do |ic| %>
-            <div class="category-unavailable-button"><%= ic.name  %>
+            <div class="category-unavailable-button"><%= ic.name  %><span> &#9711;</span>
             </div>
           <% end %>
         </div>

@@ -13,7 +13,7 @@
   border-radius: 2px;
   background-color: #f2f2f2;
   margin: 0px 5px 5px 0px;
-  padding: 0px 5px 0px 5px;
+  padding: 2px 5px 0px 5px;
 }
 
 .category-unavailable-button {
@@ -25,7 +25,7 @@
   border-radius: 2px;
   background-color: #f2f2f2;
   margin: 0px 5px 5px 0px;
-  padding: 0px 5px 0px 5px;
+  padding: 2px 5px 0px 5px;
 }
 .category-unavailable-button:hover {
   cursor: default;
@@ -57,6 +57,10 @@
   margin: 0px 10px 0px 10px;
   height: 255px;
   overflow: auto;
+}
+
+.sel {
+  color: #FFCC33;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */

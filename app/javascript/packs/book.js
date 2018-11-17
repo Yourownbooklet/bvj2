@@ -74,6 +74,7 @@ function toggleKat(i) {
     console.log(elements[e]);
     if (elements[e].style.display === 'none') {
       elements[e].style.display = 'inline';
+      // get catmarkers[i] child with class sel and change innerHTML to 9711
        catmarkers[i].style.backgroundColor = '#f2f2f2';
        catmarkers[i].onmouseover = function() {
          this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
@@ -83,6 +84,7 @@ function toggleKat(i) {
        }
     } else {
       elements[e].style.display = 'none';
+      // get catmarkers[i] child with class sel and change innerHTML to 9673
       catmarkers[i].style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
       catmarkers[i].onmouseover = function() {
         this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';

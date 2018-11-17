@@ -166,6 +166,16 @@ function getText9() {
   }
 }
 
+function getText10() {
+  const q_answer = $('#5').val();
+  if ( q_answer ) {
+    newtext10 = q_answer;
+  } else {
+    newtext10 = "no text";
+  }
+  console.log(newtext10);
+}
+
 function createBook() {
   // get newtext01
   getText1();
@@ -178,6 +188,7 @@ function createBook() {
   getText7();
   getText8();
   getText9();
+  getText10();
   // get content of attribute value of element id="btid": booktemplate_id
   const btid = document.getElementById("btid").value;
   // set route or path to create book

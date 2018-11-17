@@ -2,10 +2,10 @@
   <div class="catlist-flex imglist-categories-box">
     <% @imagecategories.each do |ic| %>
       <% if ic.categoryimages.count == 0 %>
-        <div class="category-unavailable-button"><%= ic.name  %>
+        <div class="category-unavailable-button"><%= ic.name  %><span> &#9711;</span>
         </div>
       <% else %>
-        <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %>
+        <div class="category-button" id="imagecategory_<%= ic.name  %>"><%= ic.name  %><span class="sel"> &#9673;</span>
         </div>
       <% end %>
     <% end %>
