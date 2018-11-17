@@ -2,6 +2,7 @@ import "bootstrap";
 import { toggleSelection } from "./pagefocus";
 console.log('hello from book.js');
 
+
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
 const imagecategory_ids = document.getElementById("imagecategory_ids").value;
@@ -13,6 +14,24 @@ console.log(imagecategoryArray[2][1]);
 function switchFocus(pp) {
   return function(){
     toggleSelection(pp);
+    console.log(pp.id);
+    if ( pp.id === "p6") {
+      const categories = document.getElementById("categories");
+      categories.style.display = 'block';
+      const no_image = document.getElementById("no-image");
+      no_image.style.display = 'none';
+      const images = document.getElementById("square-images");
+      images.style.display = 'block';
+      console.log(`het is page3`);
+    } else {
+      const categories = document.getElementById("categories");
+      categories.style.display = 'none';
+      const no_image = document.getElementById("no-image");
+      no_image.style.display = 'block';
+      const images = document.getElementById("square-images");
+      images.style.display = 'none';
+      console.log(`het is niet page3`)
+    }
   }
 }
 // activate toggleselection an all pages
@@ -32,25 +51,9 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.relatedTarget.id[4]);
   // console.log(event.relatedTarget.firstElementChild.firstElementChild);
   const pp = event.relatedTarget.firstElementChild.firstElementChild;
-  console.log(pp);
   toggleSelection(pp);
-
-  if ( event.relatedTarget.id[4] === '3' ) {
-      const categories = document.getElementById("categories");
-      categories.style.display = 'block';
-      const no_image = document.getElementById("no-image");
-      no_image.style.display = 'none';
-      const images = document.getElementById("square-images");
-      images.style.display = 'block';
-      console.log(`het is page3`);
-    } else {
-      const categories = document.getElementById("categories");
-      categories.style.display = 'none';
-      const no_image = document.getElementById("no-image");
-      no_image.style.display = 'block';
-      const images = document.getElementById("square-images");
-      images.style.display = 'none';
-      console.log(`het is niet page3`)
+  // if on spread3 (pages 5 and 6, do this....
+  if ( event.relatedTarget.id[4] === '3') {
     }
 })
 
@@ -149,7 +152,7 @@ function toggleKat(i) {
 
  button1.addEventListener("click", updateText1);
  //button2.addEventListener("click", updateImgp3);
- button3.addEventListener("click", saveImg1);
+ //button3.addEventListener("click", saveImg1);
  button4.addEventListener("click", updateText4);
  // button5.addEventListener("click", updateText5);
  // button6.addEventListener("click", updateText6);
@@ -210,12 +213,14 @@ function updateText4() {
   console.log(text04);
   text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
   console.log(text04);
-  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="55" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="45" maxlength="90" id="newtext4" class="up" name="" autofocus>' + text04 + '</textarea></div>';
+  console.log('autofocus');
   // document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   const savetext4 = document.getElementById('newtext4');
-  savetext4.onmouseout = function() {
-    saveText4();
-  }
+  savetext4.addEventListener('focusout', saveText4);
+  // savetext4.onmouseout = function() {
+  //   saveText4();
+  // }
   // savetext4.addEventListener("click", saveText4);
 }
 
@@ -247,8 +252,11 @@ function saveText4() {
     error: function() {
     }
   });
+  console.log('text4 saved!');
+  // remove focusout function on savetext4 not necessary, since content is replaced and id newtext4 is no longer available
+  // savetext4.removeEventListener('focusout', saveText4);
   // set new content
-  document.getElementById('bloktext4').innerHTML = '<button id="button4" class="text-button">' + newtext04 + '</button>';
+  document.getElementById('bloktext4').innerHTML = '<div id="button4" class="text-button">' + newtext04 + '</div>';
   // get button
   const button4 = document.getElementById("button4");
   // activate button to execute function "updatetext1"
@@ -331,3 +339,19 @@ function saveImg1() {
   const bt = document.getElementById("button2");
   bt.style.display = 'inline';
 }
+
+$(".swipe").on("touchstart", function(event){
+        var xClick = event.originalEvent.touches[0].pageX;
+    $(this).one("touchmove", function(event){
+        var xMove = event.originalEvent.touches[0].pageX;
+        if( Math.floor(xClick - xMove) > 5 ){
+            $(this).carousel('next');
+        }
+        else if( Math.floor(xClick - xMove) < -5 ){
+            $(this).carousel('prev');
+        }
+    });
+    $(".carousel").on("touchend", function(){
+            $(this).off("touchmove");
+    });
+});

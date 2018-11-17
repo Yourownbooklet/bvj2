@@ -1,10 +1,10 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow|Archivo+Narrow:700|Playfair+Display:700|Playfair+Display");
 
 // Define fonts for body and headers
 
-$body-font: "Archivo Narrow", "sans-serif";
-$headers-font: "Playfair Display", "serif";
+$body-font: "Archivo Narrow", sans-serif;
+$headers-font: "Playfair Display", serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,4 +15,4 @@ $headers-font: "Playfair Display", "serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-$bvj: "Playfair Display", "serif";
+$bvj: "Playfair Display", serif;

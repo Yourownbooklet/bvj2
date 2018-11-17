@@ -1,6 +1,8 @@
 <div class="container-fluid booktemplate-page">
-  <div class="row-fuid">
-    <!-- step buttons -->
+
+
+  <div class="row-fluid">
+
     <div class="col-md-6 hidden-sm hidden-md hidden-lg">
       <div class="stepscontrol-balk stepscontrol-balk-s">
         <div class="control-button-flex">
@@ -29,46 +31,55 @@
         </div>
       </div>
     </div>
+
+
     <div class="col-md-6">
-      <div class="booktemplate-text">
+      <div class="booktemplate-text box">
         <p class="booktemplate booktemplate-s">
-          <%= @booktemplate.name  %>
+          Variabelen
         </p>
         <span><em>
             Deze gegevens worden verwerkt in het boek.</em>
         </span>
       </div>
     </div>
-    <!-- step buttons -->
+
+    <!-- control buttons desktop -->
     <div class="col-md-6 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
-        <div class="control-button-flex">
-          <div class="control-button control-button-s nu">1</div>
-          <div class="button-label">
-            voor wie?
-          </div>
+        <div class="control-button control-button-s nu">
+          1
+          <span class="txt">
+            VARIABELEN
+          </span>
         </div>
-        <div class="control-button-flex">
-          <button class="control-button control-button-s vooruit fix" id="stepscontrolbutton-2<%= @booktemplate.id  %>">2</button>
-          <div class="button-label">
-            boekje
-          </div>
+        <div class="control-button control-button-s vooruit" id="stepscontrolbutton-2<%= @booktemplate.id  %>">
+          2
+          <span class="txt">
+            INHOUD BOEK
+          </span>
         </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">3</div>
-          <div class="button-label">
-            n.a.w.
-          </div>
+
+        <div class="control-button control-button-s disabled">
+          3
+          <span class="txt">
+            ADRES
+          </span>
         </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">4</div>
-          <div class="button-label">
-            betalen
-          </div>
+        <div class="control-button control-button-s disabled">
+          4
+          <span class="txt">
+            BETALEN
+          </span>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row-fluid">
     <div class="col-md-6 booktemplate-variabelen">
+      <div class="blok-header">
+        Gegevens boek
+      </div>
       <% @id = 1 %>
       <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
         <% @questions.each do |q| %>
@@ -87,47 +98,35 @@
           <% @id += 1 %>
         <% end %>
         <input type="hidden", name="booktemplate_id", value="<%= @booktemplate.id  %>">
-        <!-- <%#= bt.submit "Next Step (2)", class: 'knop nu' %> -->
       <% end %>
       <br>
       <!-- get booktemplate_id for ajax save -->
       <input type="hidden", id="btid", value="<%= @booktemplate.id  %>">
     </div>
+
     <div class="col-md-6">
-      <%= @pagetemplates[0].name %><br>
+      <div class="blok-header">
+        Voorkant boek
+      </div>
       <%= render "html-templates/#{@pagetemplates[0].html}" %>
+      <div class="page-front-button-ingrid">
+        <button class="knop vooruit" id="savebooktext<%= @booktemplate.id  %>">
+          VERDER
+        </button>
+      </div>
     </div>
   </div>
-  <div class="row-fuid">
+
+  <div class="row-fluid">
     <div class="col-md-12">
       <br>
       <br>
       <div class="flex1">
-        <form>
+<!--    <form>
           <input type="button" value="TERUG" onclick="history.back()" class="knop terug">
-        </form>
-        <button class="knop nu" id="savebooktext<%= @booktemplate.id  %>">VERDER</button>
+        </form> -->
       </div>
     </div>
   </div>
-</div>
-
-<!-- ovderige pagina's zijn niet zichtbaar -->
-<div class="hidden-xs hidden-sm hidden-md hidden-lg">
-  <p class="booktemplate"><%= @booktemplate.name  %></p>
-  <% id = 1 %>
-  <% @questions.each do |q| %>
-    <p class="question"><%= q.question  %>?</p>
-    <% if q.open %>
-      <input class="input" type="text" id="<%= id %>" placeholder="vul hier uw antwoord in" name="answer"><br>
-    <% else %>
-      <select class="input" name="answer" id="<%= id %>">
-        <% q.answers.each do |a| %>
-          <option value="<%= a.answer %>"><%= a.answer %></option>
-        <% end %>
-      </select><br>
-     <% end %>
-     <% id += 1 %>
-  <% end %>
 </div>
 

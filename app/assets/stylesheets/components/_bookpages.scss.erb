@@ -16,8 +16,13 @@
 
 .booktemplate-label {
   font-family: $bvj;
-  color: black;
+  font-size: 16px;
+  color: rgba(0,0,0,0.9);
   padding: 0px;
+}
+
+.selected {
+  border: solid 2px #FFCC33;
 }
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
@@ -28,6 +33,7 @@
 
   .booktemplate-text {
     margin: 10px 0px 0px 0px;
+    font-size: 20px;
     font-family: $bvj;
   }
 
@@ -57,7 +63,7 @@
 
   .booktemplate-s {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
@@ -80,7 +86,8 @@
   }
 
   .booktemplate-s {
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 
@@ -166,16 +173,24 @@ textarea.up {
 }
 
 .text-button {
-  border-style: none;
   padding: 0px;
-  background-color: white;
   text-align: left;
   margin: 0px 10px 0px 0px;
-  cursor:url(<%= asset_path 'pencil-edit-button-32.png'%>),text;
+  cursor: pointer;
+  // cursor:url(<%= asset_path 'pencil-edit-button-32.png'%>),text;
+}
+
+.text-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: solid 2px #FFCC33;
 }
 
 .bottom-control{
   display:flex;
   justify-content: space-between;
   margin: 75px 0px 0px 0px;
+}
+
+.editable {
+
 }
