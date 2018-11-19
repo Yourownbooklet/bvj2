@@ -20,7 +20,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-7">
+
+    <div class="col-md-7 col-xs-12">
       <div class="booktemplate-text box">
         <p class="booktemplate-s">
           Inhoud boek
@@ -31,6 +32,8 @@
       </div>
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
     </div>
+
+
     <!-- control buttons desktop -->
     <div class="col-md-5 hidden-xs">
       <div class="stepscontrol-balk stepscontrol-balk-s">
@@ -42,9 +45,9 @@
         </div>
         <div class="control-button control-button-s nu">
           2
-        <span class="txt">
-          INHOUD BOEK
-        </span>
+          <span class="txt">
+            INHOUD BOEK
+          </span>
         </div>
         <% if user_signed_in? %>
           <%= link_to new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" do %>
@@ -105,8 +108,10 @@
               <% if @booktemplate.id == @booktemplates[0].id %>
                 <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
                   <div class="ci-content">
-                    <div class="ci-content-l">Caption</div>
-                    <div class="ci-content-l">Caption</div>
+                  <div class="dummy-content">
+
+                  </div>
+                    <div class="ci-content-r">Caption</div>
                   </div>
                 </li>
                 <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic">
@@ -128,6 +133,14 @@
                   <div class="ci-content">
                     <div class="ci-content-l">Caption</div>
                     <div class="ci-content-l">Caption</div>
+                  </div>
+                </li>
+                <li data-target="#spreadCarousel" data-slide-to="4" class="car-indic">
+                  <div class="ci-content">
+                    <div class="ci-content-l">Caption</div>
+                    <div class="dummy-content">
+
+                    </div>
                   </div>
                 </li>
               <% else %>

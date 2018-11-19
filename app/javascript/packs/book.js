@@ -1,5 +1,6 @@
 import "bootstrap";
 import { toggleSelection } from "./pagefocus";
+import { switchFocus } from "./pagefocus";
 console.log('hello from book.js');
 
 
@@ -11,36 +12,18 @@ var imageArray = JSON.parse(array_of_all_image_ids);
 var imagecategoryArray = JSON.parse(imagecategory_ids);
 console.log(imagecategoryArray[2][1]);
 
-function switchFocus(pp) {
-  return function(){
-    toggleSelection(pp);
-    console.log(pp.id);
-    if ( pp.id === "p6") {
-      const categories = document.getElementById("categories");
-      categories.style.display = 'block';
-      const no_image = document.getElementById("no-image");
-      no_image.style.display = 'none';
-      const images = document.getElementById("square-images");
-      images.style.display = 'block';
-      console.log(`het is page3`);
-    } else {
-      const categories = document.getElementById("categories");
-      categories.style.display = 'none';
-      const no_image = document.getElementById("no-image");
-      no_image.style.display = 'block';
-      const images = document.getElementById("square-images");
-      images.style.display = 'none';
-      console.log(`het is niet page3`)
-    }
+function addSwitchFocus(pp) {
+  return function() {
+    switchFocus(pp);
   }
-}
+ }
 // activate toggleselection an all pages
 // i < number of pages (=== pagetemplates * 2)
 var pages = [];
 for (var i = 0; i < 9; ++i) {
     pages[i] = document.getElementById(`p${[i]}`);
     if (pages[i]) {
-    pages[i].addEventListener("click", switchFocus(pages[i]));
+    pages[i].addEventListener("click", addSwitchFocus(pages[i]));
   }
 }
 
@@ -50,11 +33,16 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.relatedTarget.id);
   console.log(event.relatedTarget.id[4]);
   // console.log(event.relatedTarget.firstElementChild.firstElementChild);
-  const pp = event.relatedTarget.firstElementChild.firstElementChild;
-  toggleSelection(pp);
+  if ( event.direction === "left") {
+    const pp = event.relatedTarget.firstElementChild.firstElementChild;
+    console.log(pp.id);
+    switchFocus(pp);
+  } else {
+    const pp = event.relatedTarget.firstElementChild.children[1];
+    console.log(pp.id);
+    switchFocus(pp);
+  }
   // if on spread3 (pages 5 and 6, do this....
-  if ( event.relatedTarget.id[4] === '3') {
-    }
 })
 
 var catmarkers = [];
@@ -75,26 +63,30 @@ function toggleKat(i) {
     if (elements[e].style.display === 'none') {
       elements[e].style.display = 'inline';
       // get catmarkers[i] child with class sel and change innerHTML to 9711
-       catmarkers[i].style.backgroundColor = '#f2f2f2';
-       catmarkers[i].onmouseover = function() {
-         this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
-       }
-       catmarkers[i].onmouseout = function() {
-         this.style.backgroundColor = '#f2f2f2';
-       }
+      catmarkers[i].children[0].innerHTML = ' &#9673;';
+      catmarkers[i].children[0].style.color = '#FFCC33';
+      catmarkers[i].style.backgroundColor = '#f2f2f2';
+      catmarkers[i].onmouseover = function() {
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+      }
+      catmarkers[i].onmouseout = function() {
+        this.style.backgroundColor = '#f2f2f2';
+      }
     } else {
       elements[e].style.display = 'none';
       // get catmarkers[i] child with class sel and change innerHTML to 9673
+      catmarkers[i].children[0].innerHTML = ' &#9711;';
+      catmarkers[i].children[0].style.color = 'rgba(0,0,0,0.5)';
       catmarkers[i].style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
       catmarkers[i].onmouseover = function() {
         this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-      }
-      catmarkers[i].onmouseout = function() {
-        this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+        }
+        catmarkers[i].onmouseout = function() {
+          this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+        }
       }
     }
   }
-}
 }
 
 // const cat3button = document.getElementById(`imagecategory_${imagecategoryArray[2][1]}`);

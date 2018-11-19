@@ -1,46 +1,38 @@
 <div class="navbar-main navbar-h">
   <!-- Logo -->
   <div class="navbar-section"> <!-- should be navbar-left!!! -->
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "bvj.jpg", height: 50 %>
-    <% end %>
+
+  </div>
+  <div class="navbar-section hidden-xs">
+      <div class="dropdown">
+        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+          makers voor jou
+        </span>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li><a href="#">over vormgevers</a></li>
+          <li><a href="#">algemene voorwaarden</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+          zakelijk
+        </span>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li><a href="#">zakelijk 1</a></li>
+          <li><a href="#">zakelijk 2</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <span class="dropdown-toggle navbar-item-right far-right" data-toggle="dropdown">
+          contact
+        </span>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
   <!-- Right Navigation -->
-  <div class="navbar-section hidden-xs">
-    <div class="dropdown">
-      <span class="dropdown-toggle navbar-item" data-toggle="dropdown">Over BOEKJE voor JOU</span>
-      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li><a href="#">missie</a></li>
-        <li><a href="#">contact</a></li>
-        <li><a href="#">algemene voorwaarden</a></li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <i class="dropdown-toggle navbar-item fas fa-shopping-cart" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li>
-          <%= link_to "#{""}" do %>
-            <i class="fas fa-shopping-basket"></i> Shopping basket
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_user_session_path do %>
-            <i class="fa fa-sign-in-alt"></i> Log in
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_user_registration_path do %>
-            <i class="fa fa-cog"></i> Register
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out-alt"></i>  Log out
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-item hidden-sm hidden-md hidden-lg">
@@ -69,10 +61,42 @@
         </li>
     </div>
   </div>
-<div class="navbar2">
-  <div class="logo">
-
+</div>
+<div class="navbar2 navbar2-h">
+  <%= link_to root_path, class: "logo" do %>
+  <% end %>
+  <div class="navbar-section hidden-xs">
+    <div id="save" class="navbar-item2">
+      <i class="fas fa-save"></i>
+    </div>
+    <div id="search" class="navbar-item2">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="dropdown">
+      <i class="dropdown-toggle navbar-item2 fas fa-user-alt" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <% if !user_signed_in? %>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in-alt"></i> Log in
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-cog"></i> Register
+            <% end %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out-alt"></i>  Log out
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
-</div>
+
 
