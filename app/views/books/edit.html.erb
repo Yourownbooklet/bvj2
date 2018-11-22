@@ -27,7 +27,7 @@
           Inhoud boek
         </p>
         <span><em>
-          Tekstblokken met een geel kader kun je aanpassen door er op te klikken! Als je een ander beeld wilt kun je dat rechts kiezen (indien beschikbaar).</em>
+          Teksten en afbeeldingen met een geel kader kun je aanpassen. (Het gele kader is in het drukwerk NIET zichtbaar).</em>
         </span>
       </div>
       <input type="hidden" id="btid" data-tst="jaaa" value="<%= @booktexts[0].id %>">
@@ -40,7 +40,7 @@
         <div class="control-button control-button-s terug">
           1
           <span class="txt">
-            VARIABELEN
+            VOOR WIE?
           </span>
         </div>
         <div class="control-button control-button-s nu">
@@ -75,7 +75,7 @@
   </div>
 
   <div class="row-fluid">
-    <div class="col-md-8 col-sm-12 carousel" >
+    <div class="col-md-8 col-sm-12 carousel-div" >
       <div id="spreadCarousel" class="carousel slide swipe" data-ride="carousel" data-wrap="false" data-interval="false">
         <div class="carousel-inner">
           <div class="item active" id="page1">
@@ -107,11 +107,10 @@
           <ol class="carousel-indicators">
               <% if @booktemplate.id == @booktemplates[0].id %>
                 <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
-                  <div class="ci-content">
-                  <div class="dummy-content">
-
-                  </div>
-                    <div class="ci-content-r">Caption</div>
+                  <div class="ci-content-cover">
+                    <!-- no left page -->
+                    <div class="ci-content-r content-voorleesboek-ingrid-p1">
+                    </div>
                   </div>
                 </li>
                 <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic">
@@ -150,11 +149,6 @@
                 <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic tst8"></li>
               <% end %>
           </ol>
-          <% if user_signed_in? %>
-            <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
-          <% else %>
-            <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
-          <% end %>
         </div>
         <!-- end indicators -->
       </div>
@@ -170,7 +164,7 @@
           <% end %>
         </div>
 
-        <div class="imglist-flex imglist-images-box">
+        <div class="imglist-images-box">
           <div class="booktemplate-text">
             <span>
               <em>
@@ -181,6 +175,15 @@
         </div>
       </div>
 
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <% if user_signed_in? %>
+          <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+        <% else %>
+          <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

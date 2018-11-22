@@ -18,7 +18,7 @@
 <input id="array_of_all_image_ids" type="hidden" value="<%= @array_of_all_image_ids %>">
 <!-- show square images -->
 <div id="square-images" style="display: none;">
-  <div class="imglist-flex imglist-images-box">
+  <div class="imglist-images-box">
     <% @allcategories.each do |catimages| %>
       <% catimages.each do |i| %>
         <% if i.format == "s" %>
@@ -30,7 +30,7 @@
 </div>
 <!-- show portrait images -->
 <div id="portrait-images" style="display: none;">
-  <div class="imglist-flex imglist-images-box">
+  <div class="imglist-images-box">
     <% @nr = 1 %>
     <% @allcategories.each do |catimages| %>
       <% catimages.each do |i| %>
@@ -44,7 +44,7 @@
 </div>
 <!-- show landscape images -->
 <div id="landscape-images" style="display: none;">
-  <div class="imglist-flex imglist-images-box">
+  <div class="imglist-images-box">
     <% @nr = 1 %>
     <% @allcategories.each do |catimages| %>
       <% catimages.each do |i| %>

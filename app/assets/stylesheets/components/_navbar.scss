@@ -4,7 +4,7 @@
   background: rgba( 0,0,0,0.8);
   color: white;
   transition: all 0.3s ease;
-  padding: 0px 30px;
+  padding: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,14 +43,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 18px;
 }
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  margin-right: 30px;
+  margin-right: 25px;
   color: #E9EAEB;
 }
 
@@ -58,7 +58,7 @@
   margin-left: 6px;
   padding-right: 6px;
   border-right: solid 2px #FFCC33;
-  font-size: 16px;
+  font-size: 14px;
   color: #FFCC33;
   cursor: pointer;
 }

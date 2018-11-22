@@ -1,53 +1,149 @@
-.bookpage {
-  padding: 20px;
-  border: solid;
-  border-top-color: white;
-  border-right-color: white;
-  border-left-color: #c1c1c1;
-  border-bottom-color: #c1c1c1;
-  border-radius: 10px;
-  border-width: 2px;
+@media screen and (max-width: 600px) {
+
+  .bookpage-size {
+    height: 350px;
+    width: 350px;
+    padding: 5px;
+  }
+  .book-info {
+    margin-top: 70px;
+    padding: 20px;
+    position: none;
+  }
+  .bookpages-content {
+    padding-left: 1px;
+  // position: relative;
+  }
+
+  .booktemplate-s {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 700;
+  }
 }
 
-.booktemplate {
-  font-family: $bvj;
-  font-weight: bold;
- }
+@media screen and (min-width: 601px) and (max-width: 1000px) {
 
-.booktemplate-label {
-  font-family: $bvj;
-  font-size: 16px;
-  color: rgba(0,0,0,0.9);
-  padding: 0px;
-}
-
-.selected {
-  border: solid 2px #FFCC33;
-}
-
-.blok-header {
-  padding: 0px 0px 20px 0px;
-  font-size: 30px;
-}
-
-/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-@media screen and (min-width: 601px) {
   .booktemplate-variabelen {
-    padding: 5px 0px 0px 240px;
+    padding: 5px 0px 0px 20px;
   }
 
   .booktemplate-frontpage {
-    padding: 5px 0px 0px 100px;
+    padding: 5px 0px 0px 40px;
   }
 
   .booktemplate-text {
-    margin: 10px 0px 0px 0px;
     font-size: 20px;
     font-family: $bvj;
   }
 
   .booktemplate-text.box {
-    margin-left: 120px;
+    margin: 0px 0px -30px 25px;
+  }
+
+  .bookpage-size {
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+  }
+
+  .book-info {
+    margin-top: 70px;
+    padding: 20px 0px 20px 35px;
+    position:fixed;
+    height:100vw;
+    width:400px;
+    top:0;
+    left:0;
+  }
+  .bookpages-content {
+    padding-left: 400px;
+    // position: relative;
+  }
+
+  .booktemplate-s {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .booktemplate-a {
+    margin: 0px;
+    font-family: $body-font;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1340px) {
+
+  .booktemplate-variabelen {
+    padding: 5px 0px 0px 90px;
+  }
+
+  .booktemplate-frontpage {
+    padding: 5px 0px 0px 90px;
+  }
+
+  .booktemplate-text {
+    font-size: 20px;
+    font-family: $bvj;
+  }
+
+  .booktemplate-text.box {
+    margin: 0px 0px -30px 75px;
+  }
+
+  .bookpage-size {
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+  }
+
+  .book-info {
+    margin-top: 70px;
+    padding: 20px 0px 20px 35px;
+    position:fixed;
+    height:100vw;
+    width:400px;
+    top:0;
+    left:0;
+  }
+  .bookpages-content {
+    padding-left: 400px;
+    // position: relative;
+  }
+
+  .booktemplate-s {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .booktemplate-a {
+    margin: 0px;
+    font-family: $body-font;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1341px) {
+  .booktemplate-variabelen {
+    padding: 5px 0px 0px 120px;
+  }
+
+  .booktemplate-frontpage {
+    padding: 5px 0px 0px 60px;
+  }
+
+  .booktemplate-text {
+    font-size: 20px;
+    font-family: $bvj;
+  }
+
+  .booktemplate-text.box {
+    margin: 0px 0px -30px 100px;
   }
 
   .bookpage-size {
@@ -84,29 +180,40 @@
   }
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-@media screen and (max-width: 600px) {
-
-  .bookpage-size {
-    height: 350px;
-    width: 350px;
-    padding: 5px;
-  }
-  .book-info {
-    margin-top: 70px;
-    padding: 20px;
-    position: none;
-  }
-  .bookpages-content {
-    padding-left: 1px;
-  // position: relative;
-  }
-
-  .booktemplate-s {
+ .booktemplate-text {
     margin: 0px;
-    font-size: 30px;
-    font-weight: 700;
-  }
+}
+
+.bookpage {
+  padding: 20px;
+  border: solid;
+  border-top-color: white;
+  border-right-color: white;
+  border-left-color: #c1c1c1;
+  border-bottom-color: #c1c1c1;
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+.booktemplate {
+  font-family: $bvj;
+  font-weight: bold;
+ }
+
+.booktemplate-label {
+  font-family: $bvj;
+  font-size: 16px;
+  color: rgba(0,0,0,0.9);
+  padding: 0px;
+}
+
+.selected {
+  border: solid 2px #FFCC33;
+}
+
+.blok-header {
+  padding: 0px 0px 20px 0px;
+  font-size: 30px;
 }
 
 .book-info-mobile {
@@ -115,7 +222,7 @@
 }
 
 .booktemplate-page {
-  padding: 20px 0px 10px 0px;
+  padding: 15px 0px 10px 0px;
 }
 
 .question {
@@ -191,9 +298,9 @@ textarea.up {
 }
 
 .text-button {
+  margin: 0px 10px 0px 0px;
   padding: 0px;
   text-align: left;
-  margin: 0px 10px 0px 0px;
   cursor: pointer;
   // cursor:url(<%= asset_path 'pencil-edit-button-32.png'%>),text;
 }
@@ -210,5 +317,5 @@ textarea.up {
 }
 
 .editable {
-
+  border: solid 1px #FFCC33;
 }
