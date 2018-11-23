@@ -55,32 +55,31 @@
     </div>
   </div>
   <div class="navbar-section hidden-xs">
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
-          makers voor jou
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">over vormgevers</a></li>
-          <li><a href="#">algemene voorwaarden</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
-          zakelijk
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">zakelijk 1</a></li>
-          <li><a href="#">zakelijk 2</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right far-right" data-toggle="dropdown">
-          contact
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">contact</a></li>
-        </ul>
-      </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+        makers voor jou
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">over vormgevers</a></li>
+        <li><a href="#">algemene voorwaarden</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+        zakelijk
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">zakelijk 1</a></li>
+        <li><a href="#">zakelijk 2</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right far-right" data-toggle="dropdown">
+        contact
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">contact</a></li>
+      </ul>
     </div>
   </div>
   <!-- Right Navigation -->
@@ -114,7 +113,9 @@
   </div>
 </div>
 <div class="navbar2 navbar2-h">
-  <%= link_to root_path, class: "logo" do %>
+  <%= link_to root_path, class: "logo hidden-xs" do %>
+  <% end %>
+  <%= link_to root_path, class: "logo-s hidden-sm hidden-md hidden-lg" do %>
   <% end %>
   <div class="navbar-section hidden-xs">
     <div id="save" class="navbar-item2">
@@ -148,5 +149,42 @@
       </ul>
     </div>
   </div>
+  <div class="navbar-section hidden-sm hidden-md hidden-lg">
+    <div id="save" class="navbar-item2-s">
+      <i class="fas fa-save"></i>
+    </div>
+    <div id="search" class="navbar-item2-s">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="dropdown">
+      <i class="dropdown-toggle navbar-item2-s fas fa-user-alt" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <% if !user_signed_in? %>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in-alt"></i> Log in
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-cog"></i> Register
+            <% end %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out-alt"></i>  Log out
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
 </div>
 
