@@ -1,11 +1,33 @@
 // subcategorie: gezinsuitbreiding-geboorte
 // producttype: voorleesboek- ???
 // publisher: Ingrid
+.page-size-voorleesboek-ingrid {
+  width: 330px;
+  height: 225px;
+  padding: 20px 20px 10px 20px;
+  background: white;
+  margin: 0px 5px 0px 5px;
+}
+
+.page-size-voorleesboek-ingrid.front{
+  margin: 0px 5px 0px 0px;
+}
 
 .content-voorleesboek-ingrid-p1 {
   background: center no-repeat url(<%= asset_path 'Afbeelding-1.jpg'%>);
   background-size: 100% auto;
 }
+
+.content-voorleesboek-ingrid {
+  width: 290px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+}
+
 .front-page {
   font-family: $bvj;
   font-size: 25px;
@@ -18,6 +40,16 @@
 .right-page {
 
 }
+
+.page-front-button-ingrid {
+  width: 330px;
+  margin: 0px 5px 0px 0px;
+  padding: 20px 0px 0px 0px;
+}
+
+.page-front-button-ingrid > button {
+  float: right;
+}
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
   .dummy-page {
@@ -26,35 +58,8 @@
     background: none;
   }
 
-  .page-size-voorleesboek-ingrid {
-    width: 330px;
-    height: 225px;
-    padding: 20px 20px 10px 20px;
-    background: white;
-    margin: 0px 5px 0px 5px;
-  }
-
   .page-size-voorleesboek-ingrid.front {
     margin: 0px 5px 0px 0px;
-  }
-
-  .page-front-button-ingrid {
-    width: 330px;
-    margin: 0px 5px 0px 0px;
-    padding: 20px 0px 0px 0px;
-  }
-
-  .page-front-button-ingrid > button {
-    float: right;
-  }
-  .content-voorleesboek-ingrid {
-    width: 290px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 18px;
   }
 
   .tekstbox-voorleesboek-ingrid {
@@ -77,26 +82,15 @@
     margin-top: -70px;
     color:black;
   }
+
+  .front-page {
+    font-family: $bvj;
+    font-size: 25px;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
-  .page-size-voorleesboek-ingrid {
-    height: 300px;
-    width: 300px;
-    padding: 10px;
-    background: white;
-  }
-
-  .content-voorleesboek-ingrid {
-    font-size: 12px;
-    height: 290px;
-    width: 290px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
 
   .tekstbox-voorleesboek-ingrid {
     height: 50px;
@@ -121,13 +115,18 @@
     height: 30px;
     width: 250px;
     text-align: center;
-  //  font-size: px;
+    font-size: 16px;
   // //  background-color:;
   //   display: flex;
   //   align-items: center;
   //   justify-content: center;
     margin-top: -35px;
     color:black;
+  }
+
+  .front-page {
+    font-family: $bvj;
+    font-size: 16px;
   }
 }
 

@@ -27,19 +27,31 @@ body {
   body {
   margin-top: 110px;
   }
+
+  input {
+  width: 435px;
+  }
+
+  select {
+  width: 435px;
+  }
+
 }
 @media screen and (max-width: 600px) {
   body {
     margin-top: 90px;
   }
-}
 
-.testing {
+  input {
+  width: 325px;
+  }
 
+  select {
+  width: 325px;
+  }
 }
 
 input {
-  width: 435px;
   height: 40px;
   margin: 0px 0px 23px 0px;
   padding: 11px 10px 11px 10px;
@@ -63,7 +75,6 @@ input:focus {
 }
 
 select {
-  width: 435px;
   height: 40px;
   margin: 0px 0px 23px 0px;
   padding: 11px 10px 11px 10px;
@@ -93,4 +104,16 @@ select:not([multiple]) {
 
 select {
   border-radius: 2px;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: rgba(0, 0, 0, 0.5);
+        background: white;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
 }

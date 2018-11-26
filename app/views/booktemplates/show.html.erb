@@ -1,32 +1,30 @@
 <div class="container-fluid booktemplate-page">
   <div class="row-fluid">
-    <div class="col-md-6 hidden-sm hidden-md hidden-lg">
-      <div class="stepscontrol-balk stepscontrol-balk-s">
-        <div class="control-button-flex">
-          <div class="control-button control-button-s nu">1</div>
-          <div class="button-label">
+    <div class="col-md-6 hidden-sm hidden-md hidden-lg stepscontrol-balk stepscontrol-balk-s">
+        <div class="control-button control-button-s nu">
+          1
+          <span class="txt">
             VOOR WIE?
-          </div>
+          </span>
         </div>
-        <div class="control-button-flex">
-          <button class="control-button control-button-s vooruit fix" id="stepscontrolbutton<%= @booktemplate.id  %>">2</button>
-          <div class="button-label">
+        <div class="control-button control-button-s vooruit" id="stepscontrolbutton-s<%= @booktemplate.id  %>">
+          2
+          <span class="txt">
             INHOUD BOEK
-          </div>
+          </span>
         </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">3</div>
-          <div class="button-label">
+        <div class="control-button control-button-s disabled">
+          3
+          <span class="txt">
             ADRES
-          </div>
+          </span>
         </div>
-        <div class="control-button-flex">
-          <div class="control-button control-button-s disabled">4</div>
-          <div class="button-label">
+        <div class="control-button control-button-s disabled">
+          4
+          <span class="txt">
             BETALEN
-          </div>
+          </span>
         </div>
-      </div>
     </div>
 
 
@@ -50,7 +48,7 @@
             VOOR WIE?
           </span>
         </div>
-        <div class="control-button control-button-s vooruit" id="stepscontrolbutton-2<%= @booktemplate.id  %>">
+        <div class="control-button control-button-s vooruit" id="stepscontrolbutton<%= @booktemplate.id  %>">
           2
           <span class="txt">
             INHOUD BOEK

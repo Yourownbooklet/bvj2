@@ -2,10 +2,10 @@ function saveBookText1() {
   const booktid = document.getElementById("btid").value;
   const sbtbutton = document.getElementById(`savebooktext${booktid}`);
   sbtbutton.addEventListener("click", createBook);
-  const sbtcontrol = document.getElementById(`stepscontrolbutton${booktid}`);
-  sbtcontrol.addEventListener("click", createBook);
-  const sbt_2control = document.getElementById(`stepscontrolbutton-2${booktid}`);
+  const sbt_2control = document.getElementById(`stepscontrolbutton${booktid}`);
   sbt_2control.addEventListener("click", createBook);
+  const sbt_2_scontrol = document.getElementById(`stepscontrolbutton-s${booktid}`);
+  sbt_2_scontrol.addEventListener("click", createBook);
   console.log(`createBook${booktid} loaded`);
 }
 
