@@ -71,17 +71,23 @@
   <div class="row-fluid">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 booktemplate-variabelen">
       <div class="blok-header">
-        Gegevens boek
+        Gegevens boek <span class="light">(</span><i class="material-icons" style="color: #FFCC33;">
+star
+</i><span class="light">is verplicht) </span>
       </div>
       <% @id = 1 %>
       <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
         <% @questions.each do |q| %>
           <% if q.open %>
             <span class="booktemplate-label">
-            <%= q.question  %>?</span><br>
+            <%= q.question  %></span>  <i class="material-icons" style="color: #FFCC33;">
+star
+</i><br>
             <input required="true" type="text" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
           <% else %>
-            <span class="booktemplate-label"><%= q.question  %>?</span><br>
+            <span class="booktemplate-label"><%= q.question  %>?</span>  <i class="material-icons" style="color: #FFCC33;">
+star
+</i><br>
             <select required="true" name="text<%= @id %>" id="<%= @id %>">
               <option hidden disabled selected value> kies uit de lijst </option>
               <% q.answers.each do |a| %>
