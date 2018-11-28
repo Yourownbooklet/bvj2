@@ -8,6 +8,9 @@ function toggleSelection(pp) {
     pp.classList.toggle('selected');
     console.log('toggled');
   }
+  if (screen.width > 400){
+    pp.scrollIntoView({behavior: "smooth"});
+  }
 }
 
 function switchFocus(pp) {

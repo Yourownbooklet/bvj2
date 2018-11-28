@@ -1,44 +1,64 @@
 .item1 {
-  padding-left: 12px;
   display: flex;
   overflow-x: auto;
-}
-
-.dummy-content {
-  width: 120px;
-  height: 80px;
-}
-
-.ci-content{
-  width: 245px;
-  height: 78px;
-  font-size: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.ci-content-cover {
-  width: 120px;
-  height: 80px;
-}
-
-.ci-content-l {
-  width: 120px;
-  height: 80px;
-  background: white;
-}
-
-.ci-content-r {
-  width: 120px;
-  height: 80px;
-  background: white;
+  // ::-webkit-scrollbar {
+  //   -webkit-appearance: none;
+  //   width: 20px;
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //     border-radius: 4px;
+  //     background-color: rgba(0,0,0,.5);
+  //     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  // }
 }
 
 @media screen and (min-width: 601px) {
+  .item1 {
+    padding-left: 12px;
+  }
+
+  .indicators-container {
+    width: 95vw;
+    overflow: auto;
+    margin: 30px 0px 0px -10px;
+  }
+
   .carousel-div {
     // width: 900px;
     padding: 140px 10px 0px 10px;
     max-width: 720px;
+  }
+
+  .dummy-content {
+    width: 120px;
+    height: 80px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .ci-content{
+    width: 245px;
+    height: 78px;
+    font-size: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ci-content-cover {
+    width: 120px;
+    height: 80px;
+  }
+
+  .ci-content-l {
+    width: 120px;
+    height: 80px;
+    background: white;
+  }
+
+  .ci-content-r {
+    width: 120px;
+    height: 80px;
+    background: white;
   }
 
   .car-indic {
@@ -51,6 +71,11 @@
     //background-color: white !important;
     border-radius: 0px !important;
     display: flex;
+  }
+
+  .img-ic-3 {
+    width: 35px;
+    height: 35px;
   }
 
   .glyphicon.glyphicon-chevron-left {
@@ -79,17 +104,69 @@
 // }
 
 @media screen and (max-width: 600px) {
+
+  .carousel-div {
+    // width: 900px;
+    padding: 0px;
+  }
+
+  .item1 {
+    padding: 0px;
+  }
+
+  .indicators-container {
+    width: 325px;
+    overflow: auto;
+    margin: 5px 0px 0px 0px;
+  }
+
+  .dummy-content {
+    width: 60px;
+    height: 40px;
+  }
+
+  .ci-content{
+    width: 122px;
+    height: 39px;
+    font-size: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ci-content-cover {
+    width: 60px;
+    height: 40px;
+  }
+
+  .ci-content-l {
+    width: 60px;
+    height: 40px;
+    background: white;
+  }
+
+  .ci-content-r {
+    width: 60px;
+    height: 40px;
+    background: white;
+  }
+
   .carousel {
     width: 350px;
     padding: 5px 10px 25px 5px;
   }
   .car-indic {
+    width: 122px !important;
     height: 40px !important;
-    width: 40px !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% auto;
   }
+
+  .img-ic-3 {
+    width: 25px;
+    height: 25px;
+  }
+
 }
 
 .carousel-control {
@@ -139,11 +216,6 @@
   background-image: image-url("Afbeelding-8.jpg");
 }
 
-.indicators-container {
-  margin: 30px 0px 0px -10px;
-  width: 95vw;
-  overflow: auto;
-}
 
 .carousel-indicators {
   flex-wrap: nowrap;
@@ -169,9 +241,4 @@
 
 .carousel-button {
   float: right;
-}
-
-.img-ic-3 {
-  width: 35px;
-  height: 35px;
 }
