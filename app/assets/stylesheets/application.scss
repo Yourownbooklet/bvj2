@@ -119,12 +119,6 @@ input:-webkit-autofill {
     -webkit-animation-fill-mode: both;
 }
 
-input[required=true]:before {
-  content: 'j';
-  width: 10px;
-  height: 10px;
-}
-
 .light {
   color: rgba(0, 0, 0, 0.3);
 }
