@@ -1,6 +1,6 @@
 <div class="navbar-main navbar-h">
   <!-- Logo -->
-  <div class="navbar-section"> <!-- should be navbar-left!!! -->
+  <div class="navbar-section hidden-xs"> <!-- should be navbar-left!!! -->
     <div class="dropdown hidden-xs">
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">voorleesboek</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
@@ -55,59 +55,75 @@
     </div>
   </div>
   <div class="navbar-section hidden-xs">
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
-          makers voor jou
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">over vormgevers</a></li>
-          <li><a href="#">algemene voorwaarden</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
-          zakelijk
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">zakelijk 1</a></li>
-          <li><a href="#">zakelijk 2</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <span class="dropdown-toggle navbar-item-right far-right" data-toggle="dropdown">
-          contact
-        </span>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">contact</a></li>
-        </ul>
-      </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+        makers voor jou
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">over vormgevers</a></li>
+        <li><a href="#">algemene voorwaarden</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right" data-toggle="dropdown">
+        zakelijk
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">zakelijk 1</a></li>
+        <li><a href="#">zakelijk 2</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-toggle navbar-item-right far-right" data-toggle="dropdown">
+        contact
+      </span>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">contact</a></li>
+      </ul>
     </div>
   </div>
   <!-- Right Navigation -->
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-item hidden-sm hidden-md hidden-lg">
+  <div class="navbar-item-mobile-left hidden-sm hidden-md hidden-lg">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <i class="material-icons md-36 dropdown-toggle" data-toggle="dropdown">dehaze</i>
+      <!-- <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i> -->
+      <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
+        <li>
+          <%= link_to root_path do %>
+            - voorleesboek
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path do %>
+            - invulboek
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path do %>
+            - doe-boek
+          <% end %>
+        </li>
+    </div>
+  </div>
+  <div class="navbar-item-mobile-right hidden-sm hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="material-icons md-36 dropdown-toggle" data-toggle="dropdown">dehaze</i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <li>
           <%= link_to about_path do %>
-            <i class="fas fa-info-circle"></i> Hoe werkt het?
+            - makers voor jou
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_session_path do %>
-            <i class="fa fa-sign-in-alt"></i> Log in
+          <%= link_to root_path do %>
+            - zakelijk
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_registration_path do %>
-            <i class="fa fa-cog"></i> Register
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out-alt"></i>  Log out
+          <%= link_to root_path do %>
+            - contact
           <% end %>
         </li>
     </div>
@@ -115,6 +131,7 @@
 </div>
 <div class="navbar2 navbar2-h">
   <%= link_to root_path, class: "logo" do %>
+  <span class="logo1">BOEKJE</span><span class="logo2">VOOR JOU</span>
   <% end %>
   <div class="navbar-section hidden-xs">
     <div id="save" class="navbar-item2">
@@ -125,6 +142,38 @@
     </div>
     <div class="dropdown">
       <i class="dropdown-toggle navbar-item2 fas fa-user-alt" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <% if !user_signed_in? %>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in-alt"></i> Log in
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-cog"></i> Register
+            <% end %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out-alt"></i>  Log out
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-section hidden-sm hidden-md hidden-lg">
+    <div id="save" class="navbar-item2-s">
+      <i class="fas fa-save"></i>
+    </div>
+    <div id="search" class="navbar-item2-s">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="dropdown">
+      <i class="dropdown-toggle navbar-item2-s fas fa-user-alt" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <% if !user_signed_in? %>
           <li>

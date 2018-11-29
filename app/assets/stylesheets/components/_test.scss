@@ -1,3 +1,13 @@
+.inner-testbox {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.test-txt {
+  width: 100%;
+  overflow: auto;
+}
+
 .testbutton {
   font-size: 20px;
   background-color: lightgrey;
@@ -7,4 +17,46 @@
   justify-content: center;
   width: 180px;
   height: 60px;
+}
+
+.test-text {
+  text-align: center;
+  padding: 20px 0px 0px 20px;
+  font-size: 30px;
+}
+
+.s1440 {
+  margin: -110px 0px 0px 5px;
+  width: 1440px;
+  height: 860px;
+}
+
+.s1200 {
+  margin: 5px 0px 0px 5px;
+  width: 1200px;
+  height: 860px;
+}
+
+.s900 {
+  margin: 5px 0px 0px 5px;
+  width: 900px;
+  height: 860px;
+}
+
+.s500 {
+  margin: 5px 0px 0px 5px;
+  width: 500px;
+  height: 860px;
+}
+
+.s375 {
+  margin: 5px 0px 0px 5px;
+  width: 375px;
+  height: 860px;
+}
+
+.s300 {
+  margin: 5px 0px 0px 5px;
+  width: 300px;
+  height: 860px;
 }

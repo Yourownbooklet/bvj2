@@ -21,9 +21,7 @@
 }
 
 .stepscontrol-balk {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .control-button {
@@ -39,7 +37,7 @@
 
 .control-button > span {
   color: black;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -50,16 +48,20 @@
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
+  .stepscontrol-balk {
+    justify-content: flex-end;
+  }
+
   .stepscontrol-balk-s {
-    padding: 5px 0px 45px 0px;
+    padding: 0px 0px 30px 0px;
     //width: 500px;
-    margin: 0px;
+    margin: 0px -30px 0px 0px;
   }
   .control-button-s {
-    width: 126px;
+    width: 90px;
     height: 75px;
-    margin: 0px;
-    padding: 4px 0px 0px 0px;
+    margin: 0px 0px 0px 12px;
+    padding: 6px 0px 0px 0px;
     font-size: 45px;
     font-weight: bold;
     line-height: 38px;
@@ -72,17 +74,27 @@
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
+  .stepscontrol-balk {
+    justify-content: space-between;
+  }
+
   .stepscontrol-balk-s {
-    width: 300px;
-    margin: 20px 0px 5px 25px;
+    margin: 5px 0px 5px 0px;
   }
 
   .control-button-s {
-    width: 84px;
+    width: 75px;
     height: 50px;
-    margin: 0px;
-    padding: 0px 2px 0px 0px;
+    margin: 0px 5px 0px 0px;
+    padding: 2px 2px 0px 0px;
     font-size: 30px;
+    line-height: 28px;
+  }
+
+  .control-button-s > .txt {
+    font-size: 11px;
+    font-weight: normal;
+    margin: -5px 0px 0px 0px;
   }
 }
 

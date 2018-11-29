@@ -1,13 +1,17 @@
 input.check {
-  height: 20px;
-  width: 20px;
+  margin: 0px 10px 0px 0px;
+  height: 25px;
+  width: 25px;
 }
-.input-check {
-// height: 25px;
+
+.check-textbox {
+  margin: 5px 0px 5px 0px;
 }
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
-    .input-number {
+
+  .input-number {
     width: 60px;
   }
 
@@ -16,7 +20,7 @@ input.check {
   }
 
   .input-plaats {
-    width: 356px;
+    width: 350px;
   }
 
   .input-postcode {
@@ -27,32 +31,52 @@ input.check {
     width: 450px;
     margin: 20px;
   }
+
+  .input-block {
+    width: 440px;
+  }
+
+  .input-block-left {
+    float: right;
+  }
+
+  .input-block-right {
+    float: left;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .input-number {
-    width: 60px;
-  }
+  // .input-number {
+  //   width: 60px;
+  // }
 
-  .input-straat {
-    width: 236px;
-  }
+  // .input-straat {
+  //   width: 236px;
+  // }
 
-  .input-plaats {
-    width: 272px;
-  }
+  // .input-plaats {
+  //   width: 272px;
+  // }
 
-  .input-postcode {
-    width: 88px;
-  }
+  // .input-postcode {
+  //   width: 88px;
+  // }
 
   .user-input {
     width: 365px;
     margin: 20px;
   }
+
+  .input-block {
+  }
+
+  .input-block-right {
+  }
+
   .container-fluid {
     padding-top: 0px;
   }
+
   h3 {
     margin: 5px 0px 5px 0px;
   }
@@ -61,10 +85,6 @@ input.check {
 .flex2 {
   display: flex;
   justify-content: space-between;
-}
-
-.form-control {
-  height: 60px;
 }
 
 .form-group {

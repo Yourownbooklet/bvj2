@@ -1,38 +1,64 @@
 .item1 {
-  // margin: 0px;
   display: flex;
-  justify-content: center;
-}
-
-.dummy-content {
-  width: 120px;
-  height: 73px;
-}
-
-.ci-content{
-  width: 245px;
-  height: 78px;
-  font-size: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.ci-content-l {
-  width: 120px;
-  height: 73px;
-  background: white;
-}
-
-.ci-content-r {
-  width: 120px;
-  height: 73px;
-  background: white;
+  overflow-x: auto;
+  // ::-webkit-scrollbar {
+  //   -webkit-appearance: none;
+  //   width: 20px;
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //     border-radius: 4px;
+  //     background-color: rgba(0,0,0,.5);
+  //     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  // }
 }
 
 @media screen and (min-width: 601px) {
-  .carousel {
+  .item1 {
+    padding-left: 12px;
+  }
+
+  .indicators-container {
+    width: 95vw;
+    overflow: auto;
+    margin: 30px 0px 0px -10px;
+  }
+
+  .carousel-div {
     // width: 900px;
-    padding: 40px 10px 40px 10px;
+    padding: 140px 10px 0px 10px;
+    max-width: 720px;
+  }
+
+  .dummy-content {
+    width: 120px;
+    height: 80px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .ci-content{
+    width: 245px;
+    height: 78px;
+    font-size: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ci-content-cover {
+    width: 120px;
+    height: 80px;
+  }
+
+  .ci-content-l {
+    width: 120px;
+    height: 80px;
+    background: white;
+  }
+
+  .ci-content-r {
+    width: 120px;
+    height: 80px;
+    background: white;
   }
 
   .car-indic {
@@ -47,13 +73,18 @@
     display: flex;
   }
 
+  .img-ic-3 {
+    width: 35px;
+    height: 35px;
+  }
+
   .glyphicon.glyphicon-chevron-left {
-    top: 0%;
+    top: 25%;
     font-size: 40px;
   }
 
   .glyphicon.glyphicon-chevron-right {
-    top: 0%;
+    top: 25%;
     font-size: 40px;
   }
 
@@ -61,7 +92,7 @@
   }
 
   .carousel-control.glyphicon-chevron-right {
-    top: 35%;
+
   }
 }
 
@@ -73,23 +104,75 @@
 // }
 
 @media screen and (max-width: 600px) {
+
+  .carousel-div {
+    // width: 900px;
+    padding: 0px;
+  }
+
+  .item1 {
+    padding: 0px;
+  }
+
+  .indicators-container {
+    width: 325px;
+    overflow: auto;
+    margin: 5px 0px 0px 0px;
+  }
+
+  .dummy-content {
+    width: 60px;
+    height: 40px;
+  }
+
+  .ci-content{
+    width: 122px;
+    height: 39px;
+    font-size: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ci-content-cover {
+    width: 60px;
+    height: 40px;
+  }
+
+  .ci-content-l {
+    width: 60px;
+    height: 40px;
+    background: white;
+  }
+
+  .ci-content-r {
+    width: 60px;
+    height: 40px;
+    background: white;
+  }
+
   .carousel {
     width: 350px;
     padding: 5px 10px 25px 5px;
   }
   .car-indic {
+    width: 122px !important;
     height: 40px !important;
-    width: 40px !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% auto;
   }
+
+  .img-ic-3 {
+    width: 25px;
+    height: 25px;
+  }
+
 }
 
 .carousel-control {
-  width: 5%;
+  width: 25px;
   text-align: center;
-  top: 35%;
+  z-index: 30;
 }
 
 .carousel-inner {
@@ -133,18 +216,9 @@
   background-image: image-url("Afbeelding-8.jpg");
 }
 
-.indicators-container {
-  margin-top: 70px;
-  display: flex;
-  width: 90vw;
-  justify-content: space-between;
-  // flex-wrap: nowrap;
-  // overflow-x: scroll;
-}
 
 .carousel-indicators {
   flex-wrap: nowrap;
-  overflow-x: scroll;
   position: unset;
   display: flex;
   // bottom: -40px;
@@ -166,11 +240,5 @@
 }
 
 .carousel-button {
-  margin: 32px 0px 0px 10px;
   float: right;
-}
-
-.img-ic-3 {
-  width: 35px;
-  height: 35px;
 }
