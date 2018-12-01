@@ -1,126 +1,100 @@
 <div class="container-fluid booktemplate-page">
   <div class="row-fuid">
-    <div class="col-md-6 col-xs-12 hidden-sm hidden-md hidden-lg">
-      <div class="stepscontrol-balk stepscontrol-balk-s">
-       <div class="control-button-flex">
-        <div class="control-button control-button-s disabled">1</div>
-        <div class="button-label">
-          voor wie?
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <div class="control-button control-button-s disabled">2</div>
-        <div class="button-label">
-          boekje
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <input type="button" value="3" onclick="history.back()" class="control-button control-button-s terug fix">
-        <div class="button-label">
-          n.a.w.
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <div class="control-button control-button-s nu">4</div>
-        <div class="button-label">
-          betalen
-        </div>
-        </div>
-      </div>
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-4" %>
     </div>
-    <div class="col-md-6">
-      <div class="booktemplate-text">
-        <p class="booktemplate booktemplate-s">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="booktemplate-text box">
+        <p class="booktemplate-s">
           Gegevens controleren.
         </p>
         <span>
-        Overzicht van het bestelde product en klatn- en aflevergegevens.
-        User-id:<%= current_user.id  %> / Book-id:<%= params[:book_id]  %> / <%= @booktext[0].text1  %> / <%= @booktemplate.name  %>
+        Overzicht van het bestelde product en klant- en aflevergegevens.
+
+
         </span>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12  hidden-xs">
-      <div class="stepscontrol-balk stepscontrol-balk-s">
-       <div class="control-button-flex">
-        <div class="control-button control-button-s disabled">1</div>
-        <div class="button-label">
-          voor wie?
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <div class="control-button control-button-s disabled">2</div>
-        <div class="button-label">
-          boekje
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <input type="button" value="3" onclick="history.back()" class="control-button control-button-s terug fix">
-        <div class="button-label">
-          n.a.w.
-        </div>
-        </div>
-       <div class="control-button-flex">
-        <div class="control-button control-button-s nu">4</div>
-        <div class="button-label">
-          betalen
-        </div>
-        </div>
-      </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-4" %>
     </div>
-    <div class="col-sm-12 col-md-6 flex5">
-      <div class="box-product flex4">
-          <%= image_tag @booktext[0].text8, class: "img-product" %>
-        <p class="gegevens gegevens-header">
-          <%= @booktext[0].text1  %>
-        </p>
-        <input type="number" class="input-aantal" value="1">
-      </div>
     </div>
-    <div class="col-xs-6 col-md-3 flex5">
-      <div class="box-adresgegevens box-adresgegevens-s">
-        <p class="gegevens gegevens-header">
-          Klantgegevens.
-        </p>
-        <p class="gegevens gegevensregel">Bedrijf?</p>
-        <p class="gegevens gegevensregel">T.a.v. <%= current_user.first_name %> <%= current_user.last_name %></p>
-        <p class="gegevens gegevensregel"><%= current_user.streetname %> <%= current_user.streetnumber %> - <%= current_user.number_extension %></p>
-        <p class="gegevens gegevensregel"><%= current_user.postalcode %><%= current_user.city %></p>
-        <p class="gegevens gegevensregel"><%= current_user.country %></p>
-        <br>
-        <p class="gegevens gegevensregel"><%= current_user.email %></p>
-        <p class="gegevens gegevensregel"><%= current_user.phonenumber %></p>
-        <button class="knop nu">
-          wijzigen
-        </button>
+  <div class="row-fluid flex4">
+
+
+    <div class="col-xs-12 box-product">
+      <div class="hidden">
+          boek id: <%= @book.id %><br>
+          booktemplate: <%= @book.booktemplate.HTMLPrefix %><br>
+          boeknaam<%= @book.name %><br>
       </div>
+
+        Vormgever: <%= @book.booktemplate.user.first_name %> <%= @book.booktemplate.user.last_name %><br>
+        boeksoort: <%= @book.booktemplate.productsubtype.name %><br>
+        <div class="flex1">
+          <%= render "html-templates/step2/edited/#{@book.booktemplate.HTMLPrefix}_p1.html" %>
+          <div>
+          Aantal: <input type="number" class="input-aantal" value="1">
+          <br>
+          Per stuk: <span class="price"> € 12,50 </span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          Totaal: <span class="total">€ 12,50</span>
+        </div>
+
     </div>
-    <div class="col-xs-6 col-md-3 flex5">
-      <div class="box-adresgegevens box-adresgegevens-s">
-        <p class="gegevens gegevens-header">
-          Aflevergegevens.
-        </p>
-        <% if current_user.afleveradreshetzelfde %>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row-fuid">
+    <div class="flex4">
+      <div class="col-xs-6 col-md-3 box-adresgegevens box-adresgegevens-s" style="margin-right: 10px">
+        <div class="">
+          <p class="gegevens gegevens-header">
+            Klantgegevens.
+          </p>
           <p class="gegevens gegevensregel">Bedrijf?</p>
-          <p class="gegevens gegevensregel">T.a.v. <%= current_user.first_name %> <%= current_user.last_name %></p>
-          <p class="gegevens gegevensregel"><%= current_user.streetname %> <%= current_user.streetnumber %> - <%= current_user.number_extension %></p>
-          <p class="gegevens gegevensregel"><%= current_user.postalcode %><%= current_user.city %></p>
-          <p class="gegevens gegevensregel"><%= current_user.country %></p>
+          <p class="gegevens gegevensregel">T.a.v. </p>
+          <p class="gegevens gegevensregel"></p>
+          <p class="gegevens gegevensregel"></p>
+          <p class="gegevens gegevensregel"></p>
           <br>
-          <br>
-          <br>
-        <% else %>
-          <p class="gegevens gegevensregel">Bedrijf?</p>
-          <p class="gegevens gegevensregel">T.a.v. <%= current_user.geaddresseerde %></p>
-          <p class="gegevens gegevensregel"><%= current_user.streetname2 %> <%= current_user.streetnumber2 %> <%= current_user.number2_extension %></p>
-          <p class="gegevens gegevensregel"><%= current_user.postalcode2 %> <%= current_user.city2 %></p>
-          <p class="gegevens gegevensregel"><%= current_user.country2 %></p>
-          <br>
-          <br>
-          <br>
-        <% end %>
-        <button class="knop nu">
-          wijzigen
-        </button>
+          <p class="gegevens gegevensregel"><%= %></p>
+          <p class="gegevens gegevensregel"><%= %></p>
+          <button class="knop nu">
+            wijzigen
+          </button>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3 box-adresgegevens box-adresgegevens-s"  style="margin-left: 10px">
+        <div class="">
+          <p class="gegevens gegevens-header">
+            Aflevergegevens.
+          </p>
+          <%# if current_user.afleveradreshetzelfde %>
+            <p class="gegevens gegevensregel">Bedrijf?</p>
+            <p class="gegevens gegevensregel">T.a.v. <%#= current_user.first_name %> <%#= current_user.last_name %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.streetname %> <%#= current_user.streetnumber %> - <%#= current_user.number_extension %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.postalcode %><%#= current_user.city %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.country %></p>
+            <br>
+            <br>
+            <br>
+          <%# else %>
+            <p class="gegevens gegevensregel">Bedrijf?</p>
+            <p class="gegevens gegevensregel">T.a.v. <%#= current_user.geaddresseerde %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.streetname2 %> <%#= current_user.streetnumber2 %> <%#= current_user.number2_extension %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.postalcode2 %> <%#= current_user.city2 %></p>
+            <p class="gegevens gegevensregel"><%#= current_user.country2 %></p>
+            <br>
+            <br>
+            <br>
+          <%# end %>
+          <button class="knop nu">
+            wijzigen
+          </button>
+        </div>
       </div>
     </div>
   </div>

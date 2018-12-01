@@ -1,0 +1,27 @@
+<div class="container-fluid booktemplate-page">
+  <div class="row-fluid">
+    <!-- control buttons mobile -->
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-3" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="booktemplate-text box">
+        <p class="booktemplate-s">
+          Jouw gegevens (aflever) adres
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-3" %>
+    </div>
+  </div>
+
+payment
+<ul>
+  <li>book id: <%= @book.id %></li>
+  <li>booktemplate: <%= @book.booktemplate_id %></li>
+  <li>book naam<%= @book.name %></li>
+  <li>Uitgever: <%= @book.booktemplate.user.first_name %> <%= @book.booktemplate.user.last_name %></li>
+  <li>category: <%= @book.booktemplate.subcategory.name %></li>
+  <li>type: <%= @book.booktemplate.productsubtype.name %></li>
+</ul>

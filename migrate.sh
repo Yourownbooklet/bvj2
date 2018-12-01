@@ -40,3 +40,5 @@ rails g migration AddAfleveradreshetzelfdeToUser afleveradreshetzelfde:boolean, 
 rails g migration AddImageToCategoryimage image:references
 rails g migration AddImagecategoryToCategoryimage Imagecategory:references
 rails g migration AddJsfilenameToBooktemplate Jsfilename:string
+
+rails g migration AddHTMLPrefixToBooktemplate HTMLPrefix:string
