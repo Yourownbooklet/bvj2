@@ -1,0 +1,34 @@
+<!-- stepscontrol ADRES page (2) -->
+      <div class="control-button control-button-s terug" onclick="history.back()">
+        1
+        <span class="txt">
+          VOOR WIE?
+        </span>
+      </div>
+      <div class="control-button control-button-s nu">
+        2
+        <span class="txt">
+          INHOUD BOEK
+        </span>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to new_order_path(:book_id => @book.id), class: "control-button control-button-s vooruit" do %>
+          3
+          <span class="txt">
+            ADRES
+          </span>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_registration_path(:book_id => @book.id), class: "control-button control-button-s vooruit" do %>
+          3
+          <span class="txt">
+            ADRES
+          </span>
+        <% end %>
+      <% end %>
+      <div class="control-button control-button-s disabled">
+        4
+        <span class="txt">
+          BETALEN
+        </span>
+      </div>

@@ -42,3 +42,4 @@ rails g migration AddImagecategoryToCategoryimage Imagecategory:references
 rails g migration AddJsfilenameToBooktemplate Jsfilename:string
 
 rails g migration AddHTMLPrefixToBooktemplate HTMLPrefix:string
+rails g migration AddNrOfPagesToBooktemplate NrOfPages:integer

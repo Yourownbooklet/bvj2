@@ -1,7 +1,8 @@
 import "bootstrap";
-// import { toggleSelection } from "./pagefocus";
+import { toggleSelection } from "./pagefocus";
 import { switchFocus } from "./pagefocus";
 console.log('hello from book.js');
+
 
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
@@ -37,7 +38,7 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
     console.log(pp.id);
     switchFocus(pp);
   } else {
-    const pp = event.relatedTarget.firstElementChild.firstElementChild;
+    const pp = event.relatedTarget.firstElementChild.children[1];
     console.log(pp.id);
     switchFocus(pp);
   }

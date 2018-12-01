@@ -1,0 +1,14 @@
+<div id="p5" class="page-size-voorleesboek-ingrid">
+  <div class="content-voorleesboek-ingrid">
+    <div class="tekstbox-voorleesboek-ingrid" id="bloktext4">
+      <div id="button4" class="text-button editable"><%= @booktexts.text4.html_safe %></div>
+    </div>
+    <span class="editable">
+      <img id="tekst5" src="<%= asset_path @booktexts.text5 %>" class="img-voorleesboek-ingrid" id="img1">
+    </span>
+    <div class="tekstbox-voorleesboek-ingrid">
+      <span id="text6"><%= @booktexts.text6.html_safe %></span>
+    </div>
+    <input type="hidden" id="numberofimages" value="<%= @btimages.count  %>">
+  </div>
+</div>

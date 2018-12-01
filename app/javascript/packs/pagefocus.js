@@ -14,16 +14,16 @@ function toggleSelection(pp) {
 }
 
 function switchFocus(pp) {
-    toggleSelection(pp);
+    // toggleSelection(pp);
     console.log(pp.id);
-    if ( pp.id === "p6") {
+    if ( pp.id === "p5") {
       const categories = document.getElementById("categories");
       categories.style.display = 'block';
       const no_image = document.getElementById("no-image");
       no_image.style.display = 'none';
       const images = document.getElementById("square-images");
       images.style.display = 'block';
-      console.log(`het is page3`);
+      console.log(`it is page5`);
     } else {
       const categories = document.getElementById("categories");
       categories.style.display = 'none';
@@ -31,12 +31,12 @@ function switchFocus(pp) {
       no_image.style.display = 'block';
       const images = document.getElementById("square-images");
       images.style.display = 'none';
-      console.log(`het is niet page3`)
+      console.log(`it is not page5`)
     }
 }
 
 
-console.log('toggleSelection loaded');
-export { toggleSelection };
+// console.log('toggleSelection loaded');
+// export { toggleSelection };
 console.log('switchFocus loaded');
 export { switchFocus };

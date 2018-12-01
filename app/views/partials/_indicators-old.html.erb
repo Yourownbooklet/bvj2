@@ -1,0 +1,55 @@
+<div class="indicators-container">
+  <ol class="carousel-indicators">
+      <% if @booktemplate.id == @booktemplates[0].id %>
+        <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
+          <div class="ci-content hidden-xs">
+            <!-- no left page -->
+            <div class="dummy-content">
+              - no page -
+            </div>
+            <div class="ci-content-r content-voorleesboek-ingrid-p1">
+            </div>
+          </div>
+          <div class="ci-content-cover hidden-sm hidden-md hidden-lg">
+            <!-- no left page -->
+            <div class="ci-content-r content-voorleesboek-ingrid-p1">
+            </div>
+          </div>
+        </li>
+        <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic">
+          <div class="ci-content">
+            <div class="ci-content-l">Caption</div>
+            <div class="ci-content-l">Caption</div>
+          </div>
+        </li>
+        <li data-target="#spreadCarousel" data-slide-to="2" class="car-indic">
+          <div class="ci-content">
+            <div class="ci-content-l">Caption</div>
+            <div class="ci-content-l">
+              Caption<br>
+               <img id="ind3" src="<%= asset_path @booktexts[0].text5 %>" class="img-ic-3">
+            </div>
+          </div>
+        </li>
+        <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic">
+          <div class="ci-content">
+            <div class="ci-content-l">Caption</div>
+            <div class="ci-content-l">Caption</div>
+          </div>
+        </li>
+        <li data-target="#spreadCarousel" data-slide-to="4" class="car-indic">
+          <div class="ci-content">
+            <div class="ci-content-l">Caption</div>
+            <div class="dummy-content">
+
+            </div>
+          </div>
+        </li>
+      <% else %>
+        <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic tst5"></li>
+        <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic tst6"></li>
+        <li id="ind3" data-target="#spreadCarousel" data-slide-to="2" class="car-indic tst7"></li>
+        <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic tst8"></li>
+      <% end %>
+  </ol>
+</div>
