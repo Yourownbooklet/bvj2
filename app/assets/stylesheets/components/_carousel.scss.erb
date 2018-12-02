@@ -1,15 +1,6 @@
 .item1 {
   display: flex;
   overflow-x: auto;
-  // ::-webkit-scrollbar {
-  //   -webkit-appearance: none;
-  //   width: 20px;
-  // }
-  // ::-webkit-scrollbar-thumb {
-  //     border-radius: 4px;
-  //     background-color: rgba(0,0,0,.5);
-  //     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-  // }
 }
 
 .selected {
@@ -18,8 +9,10 @@
 
 @media screen and (min-width: 601px) {
   .carousel-indicators .active {
-    border-left: solid 3px lightgrey;
-    border-bottom: solid 3px lightgrey;
+    border-radius: unset;
+    margin-bottom: -6px;
+    border-bottom: solid 6px lightgrey;
+    background-color: lightgrey;
   }
 
   .item1 {
@@ -59,9 +52,9 @@
   }
 
   .ci-content-l {
-    width: 120px;
-    height: 80px;
-    background: white;
+    // width: 120px;
+    // height: 80px;
+    // background: white;
   }
 
   .ci-content-r {
@@ -71,13 +64,9 @@
   }
 
   .car-indic {
-    margin: 0px 8px 0px 8px !important;
-    width: 120px !important;
+    // margin: 0px 8px 0px 8px !important;
+    width: 132px !important;
     height: 84px !important;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: auto 100%;
-    //background-color: white !important;
     border-radius: 0px !important;
     display: flex;
   }
@@ -105,23 +94,13 @@
   }
 }
 
-// @media screen and (max-width: 1200px) and (min-width: 801) {
-//   .carousel {
-//     width: 800px;
-//     padding: 10px 10px 50px 10px;
-//   }
-// }
-
 @media screen and (max-width: 600px) {
 
-  .carousel-indicators li {
-    margin: 0px 5px 0px 0px;
-  }
-
   .carousel-indicators .active {
-    margin: 0px 5px 0px 0px;
-    border-left: solid 2px lightgrey;
-    border-bottom: solid 2px lightgrey;
+    border-radius: unset;
+    // margin-bottom: -2px;
+    // border-bottom: solid 2px lightgrey;
+    background-color: lightgrey;
   }
 
   .carousel-div {
@@ -158,9 +137,9 @@
   }
 
   .ci-content-l {
-    width: 60px;
-    height: 40px;
-    background: white;
+  //   width: 60px;
+  //   height: 40px;
+  //   background: white;
   }
 
   .ci-content-r {
@@ -174,7 +153,7 @@
     padding: 5px 10px 25px 5px;
   }
   .car-indic {
-    width: 62px !important;
+    width: 66px !important;
     height: 42px !important;
     background-repeat: no-repeat;
     background-position: center;
@@ -240,15 +219,12 @@
   flex-wrap: nowrap;
   position: unset;
   display: flex;
-  // bottom: -40px;
-  // left: 0%;
-  // margin-left: 10px;
   width: unset;
   margin-left: unset;
 }
 
 .carousel-indicators li {
-  border-radius: 0px;
+  border: none;
   text-indent: 0px;
   background: none;
 }
