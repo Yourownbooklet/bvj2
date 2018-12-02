@@ -3,12 +3,14 @@
       <% if @booktemplate.HTMLPrefix == "ingrid1" %>
         <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
           <div class="ci-content-l">
+            <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p1" %>
           </div>
         </li>
         <% @cind = 1 %>
         <% until @cind == @booktemplate.NrOfPages %>
-          <li data-target="#spreadCarousel" data-slide-to="<%= @cind  %>" class="car-indic">
+          <li data-target="#spreadCarousel" data-slide-to="<%= @cind %>" class="car-indic">
             <div class="ci-content-l">
+              <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p#{@cind + 1}" %>
             </div>
           </li>
           <% @cind += 1 %>
