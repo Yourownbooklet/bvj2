@@ -27,10 +27,6 @@
     background-color: lightgrey;
   }
 
-  .item1 {
-    padding-left: 12px;
-  }
-
   .indicators-container {
     width: 85vw;
     overflow: auto;
@@ -95,12 +91,14 @@
   }
 
   .glyphicon.glyphicon-chevron-left {
-    top: 25%;
+    display: none;
+    margin-left: -30px;
+    top: 40%;
     font-size: 40px;
   }
 
   .glyphicon.glyphicon-chevron-right {
-    top: 25%;
+    top: 40%;
     font-size: 40px;
   }
 
@@ -192,22 +190,19 @@
 }
 
 .carousel-control {
-  width: 25px;
+  // width: 25px;
+  height: 65%;
+  margin: 0px 0px 35% 0px;
   text-align: center;
   z-index: 30;
 }
 
-.carousel-inner {
- // display: flex;
- // justify-content: center;
-}
-
-
 .carousel-control.left {
-  margin-left: -30px;
+  margin-left: -10px;
   color: #FFCC33;
   background-image: none;
 }
+
 .carousel-control.right {
   margin-right: -20px;
   color: #FFCC33;

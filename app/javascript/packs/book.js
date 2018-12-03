@@ -1,6 +1,7 @@
 import "bootstrap";
 // import { toggleSelection } from "./pagefocus";
 import { switchFocus } from "./pagefocus";
+import { toggleCarouselControl } from "./components/togglecarrouselcontrol";
 console.log('hello from book.js');
 
 const images1_ids = document.getElementById("images1_ids").value;
@@ -32,16 +33,20 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.relatedTarget.id);
   console.log(event.relatedTarget.id[4]);
   // console.log(event.relatedTarget.firstElementChild.firstElementChild);
-  if ( event.direction === "left") {
-    const pp = event.relatedTarget.firstElementChild.firstElementChild;
-    console.log(pp.id);
-    switchFocus(pp);
-  } else {
-    const pp = event.relatedTarget.firstElementChild.firstElementChild;
-    console.log(pp.id);
-    switchFocus(pp);
-  }
-  // if on spread3 (pages 5 and 6, do this....
+
+  const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  console.log(pp.id);
+  switchFocus(pp);
+  toggleCarouselControl(pp);
+  // if ( event.direction === "left") {
+  //   const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  //   console.log(pp.id);
+  //   switchFocus(pp);
+  // } else {
+  //   const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  //   console.log(pp.id);
+  //   switchFocus(pp);
+  // }
 })
 
 var catmarkers = [];
