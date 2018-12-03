@@ -1,6 +1,14 @@
+.car-body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.car-body-speudo {
+}
+
 .item1 {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
 }
 
 .selected {
@@ -8,6 +16,10 @@
 }
 
 @media screen and (min-width: 601px) {
+  .carousel {
+    width: 450px;
+  }
+
   .carousel-indicators .active {
     border-radius: unset;
     margin-bottom: -6px;
@@ -20,15 +32,21 @@
   }
 
   .indicators-container {
-    width: 95vw;
+    width: 85vw;
     overflow: auto;
-    margin: 30px 0px 0px -10px;
+    margin: 30px 0px 0px -8%;
   }
 
   .carousel-div {
     // width: 900px;
     padding: 140px 10px 0px 10px;
     max-width: 720px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-div {
+    max-width: 500px;
   }
 
   .dummy-content {
@@ -92,6 +110,10 @@
   .carousel-control.glyphicon-chevron-right {
 
   }
+
+  .carousel-button-container {
+    padding: 15px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -113,9 +135,9 @@
   }
 
   .indicators-container {
-    width: 325px;
+    // width: 325px;
     overflow: auto;
-    margin: 5px 0px 0px 0px;
+    margin: 5px 0px 0px 5px;
   }
 
   .dummy-content {
@@ -149,7 +171,7 @@
   }
 
   .carousel {
-    width: 350px;
+    // width: 350px;
     padding: 5px 10px 25px 5px;
   }
   .car-indic {
@@ -164,7 +186,9 @@
     width: 25px;
     height: 25px;
   }
-
+  .carousel-button {
+    margin: 20px 0px;
+  }
 }
 
 .carousel-control {
@@ -174,7 +198,8 @@
 }
 
 .carousel-inner {
-  // margin: 0px 50px 0px 50px;
+ // display: flex;
+ // justify-content: center;
 }
 
 

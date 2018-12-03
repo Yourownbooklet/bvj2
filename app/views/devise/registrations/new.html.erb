@@ -18,8 +18,8 @@
   <div class="row-fluid">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name, :bookid => params[:book_id] )) do |f| %>
       <%= f.error_notification %>
-      <div class="col-xs-12 col-md-6">
-        <div class="input-block input-block-left">
+      <div class="col-xs-12 col-md-6 booktemplate-variabelen">
+        <div class="">
           <div class="booktemplate-text">
             <p class="booktemplate-a">
               Jouw adres (factuuradres)
@@ -43,26 +43,24 @@
                       required: false , label: false , placeholder: "Voornaam" %>
           <%= f.input :last_name,
                       required: true , label: false , placeholder: "Achternaam" %>
-          <div class="flex2">
             <%= f.input :streetname,
                         required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
             <%= f.input :streetnumber,
                         required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
             <%= f.input :number_extension,
                         required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
-          </div>
-          <div class="flex2">
+
             <%= f.input :postalcode,
                         required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
             <%= f.input :city,
                       required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
-          </div>
+
           <%= f.input :phonenumber,
                       required: false , label: false , placeholder: "Telefoonnummer" %>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
-        <div class="input-block input-block-right">
+        <div class="">
           <div class="booktemplate-text">
             <p class="booktemplate-a">
               Afleveradres
@@ -78,22 +76,18 @@
             <%= f.hidden_field :afleveradreshetzelfde, :value => false %>
             <%= f.input :geaddresseerde,
                         required: false , label: false , placeholder: "Naam Ontvanger" %>
-            <div class="flex2">
                <%= f.input :streetname2,
                           required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
               <%= f.input :streetnumber2,
                           required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
               <%= f.input :number2_extension,
                           required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
-            </div>
-            <div class="flex2">
               <%= f.input :postalcode2,
                           required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
               <%= f.input :city2,
                         required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
-            </div>
           </div>
-          <div class="form-action" style="float:right;">
+          <div class="form-action register-button">
             <%= f.button :submit, "VERDER", class: "knop vooruit" %>
           </div>
         </div>

@@ -33,7 +33,15 @@ body {
   width: 435px;
   }
 
+  input.form-control {
+    width: 435px;
+  }
+
   select {
+  width: 435px;
+  }
+
+  select.form-control {
   width: 435px;
   }
 
@@ -47,7 +55,15 @@ body {
   width: 325px;
   }
 
+  input.form-control {
+    width: 325px;
+  }
+
   select {
+  width: 325px;
+  }
+
+  select.form-control {
   width: 325px;
   }
 }
