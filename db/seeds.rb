@@ -806,32 +806,38 @@ questions = Question.create([
   {
     question: 'Naam van het kind',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: true
   },
   {
     question: 'Wat is de geboortedatum',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: true
   },
   {
     question: 'Wat is het geslacht van het kindje',
     subcategory_id: subcategories[1].id,
-    open: false
+    open: false,
+    required: true
   },
   {
     question: 'Waar is het kindje geboren',
     subcategory_id: subcategories[1].id,
-    open: false
+    open: false,
+    required: true
   },
   {
     question: 'Extra tekst pagina 1',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: false
   },
   {
     question: 'Wat is de naam van de jarige',
     subcategory_id: subcategories[4].id,
-    open: true
+    open: true,
+    required: true
   }
 ])
 

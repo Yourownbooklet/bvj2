@@ -43,3 +43,8 @@ rails g migration AddJsfilenameToBooktemplate Jsfilename:string
 
 rails g migration AddHTMLPrefixToBooktemplate HTMLPrefix:string
 rails g migration AddNrOfPagesToBooktemplate NrOfPages:integer
+
+rails g migration AddRequiredToQuestion required:boolean
+
+rails g migration AddItemsToBook email:string company:string sender:string streetname_and_number:string postalcode:string city:string country:string phonenumber:string addressee:string company2:string streetname_and_number2:string postalcode_city2:string country2:string
+

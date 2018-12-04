@@ -4,6 +4,13 @@ import { switchFocus } from "./pagefocus";
 import { toggleCarouselControl } from "./components/togglecarrouselcontrol";
 console.log('hello from book.js');
 
+document.getElementById("ttt").addEventListener("click", ttt);
+function ttt() {
+  $('#savebook').modal('hide');
+}
+
+
+
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
 const imagecategory_ids = document.getElementById("imagecategory_ids").value;
