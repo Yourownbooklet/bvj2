@@ -1,5 +1,5 @@
 // subcategorie: gezinsuitbreiding-geboorte
-// producttype: voorleesboek- ???
+// producttype: kraambezoekboek
 // publisher: Ingrid
 .page-size-voorleesboek-ingrid {
   width: 330px;
@@ -9,13 +9,42 @@
   margin: 0px 5px 0px 5px;
 }
 
-.page-size-voorleesboek-ingrid.front{
-  margin: 0px 5px 0px 0px;
+.pseudo-page-ingrid {
+  width: 33px;
+  height: 225px;
+  // padding: 20px 20px 10px 20px;
+  background: white;
+  margin: 0px 5px 0px 5px;
 }
 
+.flex-ingrid {
+  display: flex;
+  justify-content: center;
+}
+
+
 .content-voorleesboek-ingrid-p1 {
+  height: 100%;
   background: center no-repeat url(<%= asset_path 'Afbeelding-1.jpg'%>);
   background-size: 100% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-voorleesboek-ingrid-p1-indic {
+  height: 100%;
+  background: center no-repeat url(<%= asset_path 'Afbeelding-1.jpg'%>);
+  background-size: 90% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.tekstbox-voorleesboek-ingrid-p1 {
+  text-align: center;
+  margin-top: -35px;
 }
 
 .content-voorleesboek-ingrid {
@@ -26,6 +55,25 @@
   justify-content: center;
   flex-direction: column;
   font-size: 18px;
+}
+
+.content-voorleesboek-ingrid-indic-blank {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+
+.content-voorleesboek-ingrid-indic {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
 }
 
 .front-page {
@@ -50,38 +98,25 @@
 .page-front-button-ingrid > button {
   float: right;
 }
-  .dummy-page {
-    width: 330px;
-    height: 225px;
-    background: none;
-    text-align: center;
-    padding-top: 60px;
-  }
 
-  .page-size-voorleesboek-ingrid.front {
-    margin: 0px 5px 0px 0px;
-  }
+.dummy-page {
+  width: 330px;
+  height: 225px;
+  background: none;
+  text-align: center;
+  padding-top: 60px;
+}
 
-  .tekstbox-voorleesboek-ingrid {
-    height: 50px;
-    text-align: left;
-    overflow: hidden;
-  }
+.tekstbox-voorleesboek-ingrid {
+  height: 50px;
+  text-align: left;
+  overflow: hidden;
+}
 
-  .img-voorleesboek-ingrid {
-    height: 85px;
-    padding: 0px 0px 0px 0px;
-  }
-
-  .tekstbox-voorleesboek-ingrid-p1 {
-    height: 15px;
-    width: 250px;
-  //  font-size: px;
-  //  background-color:;
-    text-align: center;
-    margin-top: -70px;
-    color:black;
-  }
+.img-voorleesboek-ingrid {
+  height: 85px;
+  padding: 0px 0px 0px 0px;
+}
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
@@ -89,46 +124,119 @@
     font-family: $bvj;
     font-size: 25px;
   }
+
+  .page-size-voorleesboek-ingrid-indic {
+    width: 120px;
+    height: 80px;
+  }
+
+  .leftpage {
+    margin: 0px 2px 0px 14px;
+    box-shadow:
+      -1px 1px 0px 0px #a9a9a9,
+      -2px 2px 0px 0px #888,
+      -3px 3px 0px 0px #a9a9a9,
+      -4px 4px 0px 0px #888,
+      -5px 5px 0px 0px #a9a9a9,
+      -6px 6px 0px 0px #888,
+    ;
+  }
+
+  .rightpage {
+    margin: 0px 0px 0px 3px;
+    box-shadow:
+      1px 1px 0px 0px #a9a9a9,
+      2px 2px 0px 0px #888,
+      3px 3px 0px 0px #a9a9a9,
+      4px 4px 0px 0px #888,
+      5px 5px 0px 0px #a9a9a9,
+      6px 6px 0px 0px #888,
+    ;
+  }
+
+  .content-voorleesboek-ingrid-indic {
+    font-size: 7px;
+  }
+
+  .tekstbox-voorleesboek-ingrid-p1-indic {
+    font-size: 7px;
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  .tekstbox-voorleesboek-ingrid-indic {
+    margin: 5px 0px 5px 0px;
+    max-width: 104px;
+    font-size: 6px;
+    text-align: left;
+  }
+
+  .tekstbox-voorleesboek-ingrid-indic span {
+    padding: 0px;
+  }
+
+  .img-voorleesboek-ingrid-indic {
+    height: 33px;
+    padding: 0px 0px 0px 0px;
+ }
+
 }
-
-
-  // .tekstbox-voorleesboek-ingrid {
-  //   height: 50px;
-  //   width: 250px;
-  //   padding: 20px 0px 20px 0px;
-  // //  font-size: px;
-  // //  background-color:;
-  //   text-align: center;
-  //   // display: flex;
-  //   // align-items: center;
-  //   // justify-content: center;
-  //  margin:0px;
-  // //  color:black;
-  // }
-
-  // .img-voorleesboek-ingrid {
-  //   height: 160px;
-  //   padding: 20px 0px 20px 0px;
-  // }
-
-  // .tekstbox-voorleesboek-ingrid-p1 {
-  //   height: 30px;
-  //   width: 250px;
-  //   text-align: center;
-  //   font-size: 16px;
-  // // //  background-color:;
-  // //   display: flex;
-  // //   align-items: center;
-  // //   justify-content: center;
-  //   margin-top: -35px;
-  //   color:black;
-  // }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   .front-page {
     font-family: $bvj;
     font-size: 16px;
+  }
+
+  .page-size-voorleesboek-ingrid-indic {
+    width: 60px;
+    height: 40px;
+  }
+
+  .leftpage {
+    margin: 0px 0px 0px 12px;
+    box-shadow:
+      -1px 1px 0px 0px #a9a9a9,
+      -2px 2px 0px 0px #888,
+      -3px 3px 0px 0px #a9a9a9,
+      -4px 4px 0px 0px #888,
+    ;
+  }
+
+  .rightpage {
+    margin: 0px 0px 0px 6px;
+    box-shadow:
+      1px 1px 0px 0px #a9a9a9,
+      2px 2px 0px 0px #888,
+      3px 3px 0px 0px #a9a9a9,
+      4px 4px 0px 0px #888,
+    ;
+  }
+
+  .content-voorleesboek-ingrid-indic {
+    font-size: 3px;
+  }
+
+  .tekstbox-voorleesboek-ingrid-p1-indic {
+    font-size: 3px;
+    text-align: center;
+    margin-top: -7px;
+  }
+
+  .tekstbox-voorleesboek-ingrid-indic {
+    margin: 4px;
+    font-size: 3px;
+    text-align: left;
+  }
+
+  .tekstbox-voorleesboek-ingrid-indic span {
+    padding: 0px;
+  }
+
+  .img-voorleesboek-ingrid-indic {
+    height: 15px;
+    padding: 0px 0px 0px 0px;
   }
 }
 

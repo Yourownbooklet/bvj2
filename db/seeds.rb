@@ -698,6 +698,8 @@ booktemplates = Booktemplate.create([
   {
     name: 'kraamcadeau door Ingrid',
     Jsfilename: 'booktemplate1_ingrid.js',
+    HTMLPrefix: 'ingrid1',
+    NrOfPages: 8,
     productsubtype_id: productsubtypes[5].id,
     subcategory_id: subcategories[1].id,
     publisher_id: users[1].id,
@@ -705,6 +707,8 @@ booktemplates = Booktemplate.create([
   {
     name: 'verjaardagscadeau door Ingrid',
     Jsfilename: 'booktemplate2_ingrid.js',
+    HTMLPrefix: 'ingrid2',
+    NrOfPages: 4,
     productsubtype_id: productsubtypes[18].id,
     subcategory_id: subcategories[4].id,
     publisher_id: users[1].id,
@@ -802,32 +806,38 @@ questions = Question.create([
   {
     question: 'Naam van het kind',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: true
   },
   {
     question: 'Wat is de geboortedatum',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: true
   },
   {
     question: 'Wat is het geslacht van het kindje',
     subcategory_id: subcategories[1].id,
-    open: false
+    open: false,
+    required: true
   },
   {
     question: 'Waar is het kindje geboren',
     subcategory_id: subcategories[1].id,
-    open: false
+    open: false,
+    required: true
   },
   {
     question: 'Extra tekst pagina 1',
     subcategory_id: subcategories[1].id,
-    open: true
+    open: true,
+    required: false
   },
   {
     question: 'Wat is de naam van de jarige',
     subcategory_id: subcategories[4].id,
-    open: true
+    open: true,
+    required: true
   }
 ])
 

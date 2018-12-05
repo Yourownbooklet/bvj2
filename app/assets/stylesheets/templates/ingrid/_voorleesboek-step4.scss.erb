@@ -1,0 +1,126 @@
+// subcategorie: gezinsuitbreiding-geboorte
+// producttype: kraambezoekboek
+// publisher: Ingrid
+.page-size-voorleesboek-ingrid {
+  height: 100px;
+  background: white;
+}
+
+.page-size-voorleesboek-ingrid.front{
+  margin: 0px 5px 0px 0px;
+}
+
+.content-voorleesboek-ingrid-p1 {
+  background: center no-repeat url(<%= asset_path 'Afbeelding-1.jpg'%>);
+  background-size: 100% auto;
+}
+
+.content-voorleesboek-ingrid {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.front-page {
+  font-family: $bvj;
+  font-size: 25px;
+}
+
+.left-page {
+
+}
+
+.right-page {
+
+}
+
+.page-front-button-ingrid {
+  width: 330px;
+  margin: 0px 5px 0px 0px;
+  padding: 20px 0px 0px 0px;
+}
+
+.page-front-button-ingrid > button {
+  float: right;
+}
+.dummy-page {
+  width: 330px;
+  height: 225px;
+  background: none;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.page-size-voorleesboek-ingrid.front {
+  margin: 0px 5px 0px 0px;
+}
+
+.img-voorleesboek-ingrid {
+  height: 85px;
+  padding: 0px 0px 0px 0px;
+}
+
+.tekstbox-voorleesboek-ingrid-p1 {
+  margin: -5px 0px 0px 0px;
+  height: 15px;
+  font-size: 12px;
+//  background-color:;
+  text-align: center;
+  color:black;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .front-page {
+    font-family: $bvj;
+    font-size: 25px;
+  }
+}
+
+
+  // .tekstbox-voorleesboek-ingrid {
+  //   height: 50px;
+  //   width: 250px;
+  //   padding: 20px 0px 20px 0px;
+  // //  font-size: px;
+  // //  background-color:;
+  //   text-align: center;
+  //   // display: flex;
+  //   // align-items: center;
+  //   // justify-content: center;
+  //  margin:0px;
+  // //  color:black;
+  // }
+
+  // .img-voorleesboek-ingrid {
+  //   height: 160px;
+  //   padding: 20px 0px 20px 0px;
+  // }
+
+  // .tekstbox-voorleesboek-ingrid-p1 {
+  //   height: 30px;
+  //   width: 250px;
+  //   text-align: center;
+  //   font-size: 16px;
+  // // //  background-color:;
+  // //   display: flex;
+  // //   align-items: center;
+  // //   justify-content: center;
+  //   margin-top: -35px;
+  //   color:black;
+  // }
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .front-page {
+    font-family: $bvj;
+    font-size: 16px;
+  }
+}
+
+span {
+  padding: 0px 3px 0px 3px;
+}

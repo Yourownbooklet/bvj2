@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
+
   def index
     @orders = Order.all
   end
@@ -8,13 +10,14 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @booktemplates = Booktemplate.all
-    @book=Book.find(params[:book_id])
-    @book.buyer_id = current_user.id
-    @book.save!
-    @booktext = Booktext.where(book_id: @book.id)
-    @booktemplate = Booktemplate.find(@book.booktemplate_id)
+    # @booktemplates = Booktemplate.all
+    @book = Book.find(params[:book_id])
+    # @book.buyer_id = current_user.id
+    # @book.save!
+    @booktexts = Booktext.where(book_id: @book.id)[0]
+    # @booktemplate = Booktemplate.find(@book.booktemplate_id)
     @order = Order.new
+    render layout: 'devise'
   end
 
   def create

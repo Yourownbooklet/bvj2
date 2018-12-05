@@ -1,5 +1,6 @@
 /* Main navbar */
 .navbar-main {
+  width: 100%;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: rgba( 0,0,0,0.8);
   color: white;
@@ -9,11 +10,11 @@
   align-items: center;
   justify-content: space-between;
   position:fixed;
-  width: 100vw;
   z-index:20;
 }
 
 .navbar2 {
+  width: 100%;
   background: white;
   color: black;
   transition: all 0.3s ease;
@@ -22,7 +23,6 @@
   align-items: center;
   justify-content: space-between;
   position:fixed;
-  width: 100vw;
   z-index:10;
 }
 
@@ -163,7 +163,6 @@
   line-height: 2;
  }
 
-// .material-icons {
-//   font-size: 35px;
-//   line-height: 2;
-// }
+.yellow {
+  color: #FFCC33;
+}

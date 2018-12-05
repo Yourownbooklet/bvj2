@@ -134,9 +134,36 @@
   <span class="logo1">BOEKJE</span><span class="logo2">VOOR JOU</span>
   <% end %>
   <div class="navbar-section hidden-xs">
-    <div id="save" class="navbar-item2">
-      <i class="fas fa-save"></i>
-    </div>
+
+
+
+    <% if @save %>
+
+      <% if @book.email %>
+
+        <div id="saved-button" class="navbar-item2-s">
+          <i class="fas fa-save"></i>
+        </div>
+
+      <% else %>
+
+        <div id="save-button">
+          <div class="navbar-item2" data-toggle="modal" data-target="#savebook">
+            <i class="fas fa-save yellow"></i>
+          </div>
+        </div>
+        <div id="saved-button" style="display: none;">
+          <div class="navbar-item2">
+            <i class="fas fa-save"></i>
+          </div>
+        </div>
+
+      <% end %>
+
+    <% end %>
+
+
+
     <div id="search" class="navbar-item2">
       <i class="fas fa-search"></i>
     </div>
@@ -166,9 +193,33 @@
     </div>
   </div>
   <div class="navbar-section hidden-sm hidden-md hidden-lg">
-    <div id="save" class="navbar-item2-s">
-      <i class="fas fa-save"></i>
-    </div>
+
+    <% if @save %>
+
+      <% if @book.email %>
+
+        <div id="saved-button-s" class="navbar-item2-s">
+          <i class="fas fa-save"></i>
+        </div>
+
+      <% else %>
+
+        <div id="save-button-s">
+          <div class="navbar-item2-s" data-toggle="modal" data-target="#savebook">
+            <i class="fas fa-save yellow"></i>
+          </div>
+        </div>
+        <div id="saved-button-s" style="display: none;">
+          <div class="navbar-item2-s">
+            <i class="fas fa-save"></i>
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
+
+
+
     <div id="search" class="navbar-item2-s">
       <i class="fas fa-search"></i>
     </div>
@@ -198,4 +249,5 @@
     </div>
   </div>
 </div>
+
 

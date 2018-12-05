@@ -1,0 +1,3 @@
+delete value of email in book row with id = 91:
+
+update books set email = Null where id = 91;

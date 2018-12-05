@@ -1,32 +1,48 @@
+.car-body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.car-body-speudo {
+}
+
 .item1 {
   display: flex;
-  overflow-x: auto;
-  // ::-webkit-scrollbar {
-  //   -webkit-appearance: none;
-  //   width: 20px;
-  // }
-  // ::-webkit-scrollbar-thumb {
-  //     border-radius: 4px;
-  //     background-color: rgba(0,0,0,.5);
-  //     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-  // }
+  justify-content: center;
+}
+
+.selected {
+  border: solid 2px #FFCC33;
 }
 
 @media screen and (min-width: 601px) {
-  .item1 {
-    padding-left: 12px;
+  .carousel {
+    width: 450px;
+  }
+
+  .carousel-indicators .active {
+    border-radius: unset;
+    margin-bottom: -6px;
+    border-bottom: solid 6px lightgrey;
+    background-color: lightgrey;
   }
 
   .indicators-container {
-    width: 95vw;
+    width: 85vw;
     overflow: auto;
-    margin: 30px 0px 0px -10px;
+    margin: 30px 0px 0px -8%;
   }
 
   .carousel-div {
     // width: 900px;
     padding: 140px 10px 0px 10px;
     max-width: 720px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-div {
+    max-width: 500px;
   }
 
   .dummy-content {
@@ -50,9 +66,9 @@
   }
 
   .ci-content-l {
-    width: 120px;
-    height: 80px;
-    background: white;
+    // width: 120px;
+    // height: 80px;
+    // background: white;
   }
 
   .ci-content-r {
@@ -62,13 +78,9 @@
   }
 
   .car-indic {
-    margin: 0px 8px 0px 8px !important;
-    width: 245px !important;
-    height: 80px !important;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: auto 100%;
-    //background-color: white !important;
+    // margin: 0px 8px 0px 8px !important;
+    width: 132px !important;
+    height: 84px !important;
     border-radius: 0px !important;
     display: flex;
   }
@@ -79,12 +91,14 @@
   }
 
   .glyphicon.glyphicon-chevron-left {
-    top: 25%;
+    display: none;
+    margin-left: -30px;
+    top: 40%;
     font-size: 40px;
   }
 
   .glyphicon.glyphicon-chevron-right {
-    top: 25%;
+    top: 40%;
     font-size: 40px;
   }
 
@@ -94,16 +108,20 @@
   .carousel-control.glyphicon-chevron-right {
 
   }
+
+  .carousel-button-container {
+    padding: 15px;
+  }
 }
 
-// @media screen and (max-width: 1200px) and (min-width: 801) {
-//   .carousel {
-//     width: 800px;
-//     padding: 10px 10px 50px 10px;
-//   }
-// }
-
 @media screen and (max-width: 600px) {
+
+  .carousel-indicators .active {
+    border-radius: unset;
+    // margin-bottom: -2px;
+    // border-bottom: solid 2px lightgrey;
+    background-color: lightgrey;
+  }
 
   .carousel-div {
     // width: 900px;
@@ -115,9 +133,9 @@
   }
 
   .indicators-container {
-    width: 325px;
+    // width: 325px;
     overflow: auto;
-    margin: 5px 0px 0px 0px;
+    margin: 5px 0px 0px 5px;
   }
 
   .dummy-content {
@@ -139,9 +157,9 @@
   }
 
   .ci-content-l {
-    width: 60px;
-    height: 40px;
-    background: white;
+  //   width: 60px;
+  //   height: 40px;
+  //   background: white;
   }
 
   .ci-content-r {
@@ -151,12 +169,12 @@
   }
 
   .carousel {
-    width: 350px;
+    // width: 350px;
     padding: 5px 10px 25px 5px;
   }
   .car-indic {
-    width: 122px !important;
-    height: 40px !important;
+    width: 66px !important;
+    height: 42px !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% auto;
@@ -166,25 +184,25 @@
     width: 25px;
     height: 25px;
   }
-
+  .carousel-button {
+    margin: 20px 0px;
+  }
 }
 
 .carousel-control {
-  width: 25px;
+  // width: 25px;
+  height: 65%;
+  margin: 0px 0px 35% 0px;
   text-align: center;
   z-index: 30;
 }
 
-.carousel-inner {
-  // margin: 0px 50px 0px 50px;
-}
-
-
 .carousel-control.left {
-  margin-left: -30px;
+  margin-left: -10px;
   color: #FFCC33;
   background-image: none;
 }
+
 .carousel-control.right {
   margin-right: -20px;
   color: #FFCC33;
@@ -221,22 +239,14 @@
   flex-wrap: nowrap;
   position: unset;
   display: flex;
-  // bottom: -40px;
-  // left: 0%;
-  // margin-left: 10px;
   width: unset;
   margin-left: unset;
 }
 
 .carousel-indicators li {
-  text-indent: 0px;
   border: none;
+  text-indent: 0px;
   background: none;
-}
-
-.carousel-indicators .active {
-  border: solid 2px lightgray;
-  background-color: #e8e8e8;
 }
 
 .carousel-button {

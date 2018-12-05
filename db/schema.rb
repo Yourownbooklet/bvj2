@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181006110104) do
+ActiveRecord::Schema.define(version: 20181204083213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20181006110104) do
     t.bigint "buyer_id"
     t.bigint "booktemplate_id"
     t.boolean "edited", default: false
+    t.string "email"
+    t.string "company"
+    t.string "sender"
+    t.string "streetname_and_number"
+    t.string "postalcode"
+    t.string "city"
+    t.string "country"
+    t.string "phonenumber"
+    t.string "addressee"
+    t.string "company2"
+    t.string "streetname_and_number2"
+    t.string "postalcode_city2"
+    t.string "country2"
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
   end
@@ -70,6 +83,8 @@ ActiveRecord::Schema.define(version: 20181006110104) do
     t.bigint "productsubtype_id"
     t.bigint "subcategory_id"
     t.string "Jsfilename"
+    t.string "HTMLPrefix"
+    t.integer "NrOfPages"
     t.index ["productsubtype_id"], name: "index_booktemplates_on_productsubtype_id"
     t.index ["publisher_id"], name: "index_booktemplates_on_publisher_id"
     t.index ["subcategory_id"], name: "index_booktemplates_on_subcategory_id"
@@ -191,6 +206,7 @@ ActiveRecord::Schema.define(version: 20181006110104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subcategory_id"
+    t.boolean "required"
     t.index ["subcategory_id"], name: "index_questions_on_subcategory_id"
   end
 

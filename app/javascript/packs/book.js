@@ -1,7 +1,14 @@
 import "bootstrap";
-import { toggleSelection } from "./pagefocus";
+// import { toggleSelection } from "./pagefocus";
 import { switchFocus } from "./pagefocus";
+import { toggleCarouselControl } from "./components/togglecarrouselcontrol";
 console.log('hello from book.js');
+
+document.getElementById("ttt").addEventListener("click", ttt);
+function ttt() {
+  $('#savebook').modal('hide');
+}
+
 
 
 const images1_ids = document.getElementById("images1_ids").value;
@@ -33,16 +40,20 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.relatedTarget.id);
   console.log(event.relatedTarget.id[4]);
   // console.log(event.relatedTarget.firstElementChild.firstElementChild);
-  if ( event.direction === "left") {
-    const pp = event.relatedTarget.firstElementChild.firstElementChild;
-    console.log(pp.id);
-    switchFocus(pp);
-  } else {
-    const pp = event.relatedTarget.firstElementChild.children[1];
-    console.log(pp.id);
-    switchFocus(pp);
-  }
-  // if on spread3 (pages 5 and 6, do this....
+
+  const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  console.log(pp.id);
+  switchFocus(pp);
+  toggleCarouselControl(pp);
+  // if ( event.direction === "left") {
+  //   const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  //   console.log(pp.id);
+  //   switchFocus(pp);
+  // } else {
+  //   const pp = event.relatedTarget.firstElementChild.firstElementChild;
+  //   console.log(pp.id);
+  //   switchFocus(pp);
+  // }
 })
 
 var catmarkers = [];
@@ -207,7 +218,7 @@ function updateText4() {
   console.log(text04);
   text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
   console.log(text04);
-  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="30" maxlength="90" id="newtext4" class="up" name="" autofocus>' + text04 + '</textarea></div>';
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="35" maxlength="90" id="newtext4" class="up" name="" autofocus>' + text04 + '</textarea></div>';
   console.log('autofocus');
   // document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   const savetext4 = document.getElementById('newtext4');
@@ -247,10 +258,12 @@ function saveText4() {
     }
   });
   console.log('text4 saved!');
+
+  document.getElementById('txt-indic-p5').innerHTML = newtext04;
   // remove focusout function on savetext4 not necessary, since content is replaced and id newtext4 is no longer available
   // savetext4.removeEventListener('focusout', saveText4);
   // set new content
-  document.getElementById('bloktext4').innerHTML = '<div id="button4" class="text-button">' + newtext04 + '</div>';
+  document.getElementById('bloktext4').innerHTML = '<div id="button4" class="editable">' + newtext04 + '</div>';
   // get button
   const button4 = document.getElementById("button4");
   // activate button to execute function "updatetext1"
@@ -302,7 +315,7 @@ function updateImg(imagedata) {
   // bt.style.display = 'inline';
   document.getElementById("tekst5").src = `${imgurl}`;
   document.getElementById("tekst5").value = `${imagename}`;
-  document.getElementById("ind3").src = `${imgurl}`;
+  document.getElementById("img-indic-p5").src = `${imgurl}`;
 }
 
 function saveImg1() {
@@ -338,10 +351,10 @@ $(".swipe").on("touchstart", function(event){
         var xClick = event.originalEvent.touches[0].pageX;
     $(this).one("touchmove", function(event){
         var xMove = event.originalEvent.touches[0].pageX;
-        if( Math.floor(xClick - xMove) > 8 ){
+        if( Math.floor(xClick - xMove) > 5 ){
             $(this).carousel('next');
         }
-        else if( Math.floor(xClick - xMove) < -8 ){
+        else if( Math.floor(xClick - xMove) < -5 ){
             $(this).carousel('prev');
         }
     });

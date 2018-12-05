@@ -1,0 +1,140 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "layouts/index";
+@import "components/index-minimal";
+@import "pages/index";
+
+// CSS templates
+@import "templates/ingrid/voorleesboek-step4";
+
+
+body {
+  color: $light-gray;
+  // width: 100vw;
+  background-color: #e8e8e8;
+}
+
+@media screen and (min-width: 601px) {
+  body {
+  margin-top: 80px;
+  }
+
+  input {
+  width: 435px;
+  }
+
+  input.form-control {
+    width: 435px;
+  }
+
+  select {
+  width: 435px;
+  }
+
+  select.form-control {
+  width: 435px;
+  }
+
+}
+@media screen and (max-width: 600px) {
+  body {
+    margin-top: 60px;
+  }
+
+  input {
+  width: 325px;
+  }
+
+  input.form-control {
+    width: 325px;
+  }
+
+  select {
+  width: 325px;
+  }
+
+  select.form-control {
+  width: 325px;
+  }
+}
+
+input {
+  height: 40px;
+  margin: 0px 0px 23px 0px;
+  padding: 11px 10px 11px 10px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 0px;
+  border-style: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+  outline: none;
+  border: 2px;
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+select {
+  height: 40px;
+  margin: 0px 0px 23px 0px;
+  padding: 11px 10px 11px 10px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 2px !important;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 0px;
+  border-style: none;
+}
+
+.border {
+  border: solid black 1px;
+}
+
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1"><path d="M4 8L0 4h8z"/></svg>');
+    padding: .5em;
+    padding-right: 1.5em
+}
+
+select {
+  border-radius: 2px;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: rgba(0, 0, 0, 0.5);
+        background: white;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+.light {
+  color: rgba(0, 0, 0, 0.3);
+}

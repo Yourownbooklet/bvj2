@@ -1,0 +1,25 @@
+<!-- stepscontrol ADRES page (3) -->
+<div class="control-button control-button-s disabled">
+  1
+  <span class="txt">
+    VOOR WIE?
+  </span>
+</div>
+<div class="control-button control-button-s terug" onclick="history.back()">
+  2
+  <span class="txt">
+    INHOUD BOEK
+  </span>
+</div>
+<div class="control-button control-button-s nu">
+  3
+  <span class="txt">
+    ADRES
+  </span>
+</div>
+<%= link_to new_order_path(:book_id => params[:book_id]), class: "control-button control-button-s vooruit" do %>
+  4
+  <span class="txt">
+    BETALEN
+  </span>
+<% end %>
