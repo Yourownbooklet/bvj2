@@ -8,10 +8,15 @@ class BooktemplatesController < ApplicationController
   def show
     @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(params[:id])
+    @booktemplatetexts = Booktemplatetext.where(booktemplate_id: @booktemplate.id)
     @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate.id)
     @subcategory = Subcategory.find(@booktemplate.subcategory_id)
     @questions = Question.where(subcategory_id: @subcategory.id)
-    @booktext = Booktext.new
+    if params[:book_id]
+      @booktext = Booktext.where(book_id: params[:book_id])[0]
+    else
+      @booktext = Booktext.new
+    end
   end
 
   def new

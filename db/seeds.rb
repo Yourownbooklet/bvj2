@@ -873,17 +873,19 @@ answers = Answer.create([
 booktemplatetexts = Booktemplatetext.create([
   {
     booktemplate_id: booktemplates[0].id,
-    text1: "Boekje voor<span class='answerq1'><%= @questions[0].question %><\/span>",
+    text1: "Boekje voor ~name~",
     text2: "Je hebt van die dagen die je nooit meer vergeet.",
-    text3: "<&#x0025= &#x0040booktexts[0].text2 &#x0025> is er zo &#x00E9&#x00E9n.",
+    text3: " is er zo &#x00E9&#x00E9n.",
     text4: "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
-    text5: "<img src=&#x0022/assets/Afbeelding-3a.jpg&#x0022 class=&#x0022img-voorleesboek-ingrid&#x0022>",
-    text6: "Zou <&#x0025= &#x0040booktexts[0].text1 &#x0025> vandaag misschien komen?",
-    text7: "Papa en Mama zijn naar het ziekenhuis gegaan omdat <&#x0025= &#x0040booktexts[0].text1 &#x0025> uit mama's buik wil.",
-    text8: "<img src=&#x0022/assets/Afbeelding-3b.jpg&#x0022 class=&#x0022img-voorleesboek-ingrid&#x0022>",
-    text9: "En ja hoor, daar is <span class=&#x0022answerq1&#x0022><&#x0025= &#x0040questions[0].question &#x0025> </span>.",
-    text10: "<img src=&#x0022/assets/img4-b.jpg&#x0022 class=&#x0022img-voorleesboek-ingrid&#x0022><div class=&#x0022tekstbox-voorleesboek-ingrid&#x0022>Wat een prachtig ventje!</div>",
-    text11: ""
+    text5: "Afbeelding-3a.jpg",
+    text6: "Zou ~name~ vandaag misschien komen?",
+    text7: "Papa en Mama zijn naar het ziekenhuis gegaan omdat ~name~ uit mama's buik wil.",
+    text8: "Afbeelding-3b.jpg",
+    text9: "En ja hoor, daar is ~name~",
+    text10: "img4-b.jpg",
+    text11: "Wat een prachtig ventje!",
+    text12: "img4-g.jpg",
+    text13: "Wat een mooi meisje!",
   },
   {
     booktemplate_id: booktemplates[1].id,
@@ -897,7 +899,9 @@ booktemplatetexts = Booktemplatetext.create([
     text8: "",
     text9: "",
     text10: "",
-    text11: ""
+    text11: "",
+    text12: "",
+    text13: ""
   }
 ])
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181204083213) do
+ActiveRecord::Schema.define(version: 20181206121901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 20181204083213) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "booktemplate_id"
+    t.string "text12"
+    t.string "text13"
     t.index ["booktemplate_id"], name: "index_booktemplatetexts_on_booktemplate_id"
   end
 
