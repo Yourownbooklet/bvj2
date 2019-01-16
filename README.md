@@ -8,7 +8,7 @@ Bootstrap (sass) 3.3
 Javascript ES6
 ajax
 jquery
-psql (PostgreSQL) 10.5
+psql 10.5
 
 by Joannes Paanakker
 QED WebDevelopment
