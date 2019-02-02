@@ -218,7 +218,7 @@ function updateText4() {
   console.log(text04);
   text04 = text04.replace(/<br\s*[\/]?>/gi, '\n');
   console.log(text04);
-  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="35" maxlength="90" id="newtext4" class="up" name="" autofocus>' + text04 + '</textarea></div>';
+  document.getElementById('bloktext4').innerHTML='<div class="flex3"><textarea rows="2" cols="37" maxlength="77" id="newtext4" class="up" name="" autofocus>' + text04 + '</textarea></div>';
   console.log('autofocus');
   // document.getElementById('bloktext4').innerHTML='<div class="flex3"><button id="savetext4" class="save-img"></button><textarea rows="2" cols="40" maxlength="100" id="newtext4" class="up" name="">' + text04 + '</textarea></div>';
   const savetext4 = document.getElementById('newtext4');

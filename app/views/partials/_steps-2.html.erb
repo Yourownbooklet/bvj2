@@ -1,10 +1,10 @@
-<!-- stepscontrol ADRES page (2) -->
-      <div class="control-button control-button-s terug" onclick="history.back()">
+<!-- stepscontrol INHOUD BOEK page (2) -->
+      <%= link_to booktemplate_path(@booktemplates[0].id, :book_id => @book.id), class: "control-button control-button-s terug" do  %>
         1
         <span class="txt">
-          VOOR WIE?
+          VOOR WIE
         </span>
-      </div>
+      <% end %>
       <div class="control-button control-button-s nu">
         2
         <span class="txt">

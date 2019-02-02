@@ -32,7 +32,8 @@ function getText1() {
     // get content of atrribute data-txt
     const tf = txtfixed.dataset.txt;
     // build new text content based on q-answer and fixed text
-    newtext01 = tf + q_answer;
+    newtext01 = tf.replace("~name~", q_answer);
+    // newtext01 = tf + q_answer;
     console.log(newtext01);
     run = true;
   } else {
@@ -88,11 +89,10 @@ function getText4() {
     newtext04 = tf;
     console.log(newtext04);
   } else {
-    const txtfixed_1 = document.getElementById("tekst8");
+    const txtfixed_1 = document.getElementById("tekst7");
     const tf_1 = txtfixed_1.dataset.txt;
-    const txtfixed_2 = document.getElementById("tekst9");
-    const tf_2 = txtfixed_2.dataset.txt;
-    newtext04 = tf_1 + q_answer + tf_2;
+    newtext04 = tf_1.replace("~name~", q_answer);
+    // newtext04 = tf_1 + q_answer + tf_2;
     console.log(newtext04);
   }
 }
@@ -106,7 +106,7 @@ function getText5() {
     newtext05 = tf;
     console.log(newtext05);
   } else {
-    const txtfixed = document.getElementById("tekst10");
+    const txtfixed = document.getElementById("tekst8");
     const tf = txtfixed.dataset.txt;
     newtext05 = tf;
     console.log(newtext05);
@@ -117,11 +117,9 @@ function getText6() {
   const q_answer = $('#1').val();
   const q_answer_4 = $('#4').val();
   const txtfixed_1 = document.getElementById("tekst6");
-  const txtfixed_2 = document.getElementById("tekst7");
   if (q_answer_4 === "thuis" ) {
     const tf_1 = txtfixed_1.dataset.txt;
-    const tf_2 = txtfixed_2.dataset.txt;
-    newtext06 = tf_1 + q_answer + tf_2;
+    newtext06 = tf_1.replace("~name~", q_answer);
     console.log(newtext06);
   } else {
     newtext06 = "";
@@ -130,21 +128,22 @@ function getText6() {
 
 function getText7() {
   const q_answer = $('#1').val();
-  const txtfixed = document.getElementById("tekst11");
+  const txtfixed = document.getElementById("tekst9");
   const tf = txtfixed.dataset.txt;
-  newtext07 = tf + q_answer;
+  newtext07 = tf.replace("~name~", q_answer);
+  // newtext07 = tf + q_answer;
   console.log(newtext07);
 }
 
 function getText8() {
   const q_answer_3 = $('#3').val();
   if ( q_answer_3 === "jongen") {
-    const txtfixed = document.getElementById("tekst12");
+    const txtfixed = document.getElementById("tekst10");
     const tf = txtfixed.dataset.txt;
     newtext08 = tf;
     console.log(newtext08);
   } else {
-    const txtfixed = document.getElementById("tekst14");
+    const txtfixed = document.getElementById("tekst12");
     const tf = txtfixed.dataset.txt;
     newtext08 = tf;
     console.log(newtext08);
@@ -154,12 +153,12 @@ function getText8() {
 function getText9() {
   const q_answer_3 = $('#3').val();
   if ( q_answer_3 === "jongen") {
-    const txtfixed = document.getElementById("tekst13");
+    const txtfixed = document.getElementById("tekst11");
     const tf = txtfixed.dataset.txt;
     newtext09 = tf;
     console.log(newtext09);
   } else {
-    const txtfixed = document.getElementById("tekst15");
+    const txtfixed = document.getElementById("tekst13");
     const tf = txtfixed.dataset.txt;
     newtext09 = tf;
     console.log(newtext09);
@@ -171,7 +170,7 @@ function getText10() {
   if ( q_answer ) {
     newtext10 = q_answer;
   } else {
-    newtext10 = "no text";
+    newtext10 = "no text (hard coded in JS)";
   }
   console.log(newtext10);
 }
