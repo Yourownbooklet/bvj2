@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181206121901) do
+ActiveRecord::Schema.define(version: 20190213113708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,10 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.string "Jsfilename"
     t.string "HTMLPrefix"
     t.integer "NrOfPages"
+    t.integer "normal_price"
+    t.integer "large_price"
+    t.integer "normal_hardcover_extra_price"
+    t.integer "large_hardcover_extra_price"
     t.index ["productsubtype_id"], name: "index_booktemplates_on_productsubtype_id"
     t.index ["publisher_id"], name: "index_booktemplates_on_publisher_id"
     t.index ["subcategory_id"], name: "index_booktemplates_on_subcategory_id"
@@ -247,6 +251,8 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.string "city2"
     t.string "country2"
     t.boolean "afleveradreshetzelfde", default: true
+    t.integer "loyalty_points"
+    t.string "company_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

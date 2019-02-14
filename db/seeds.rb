@@ -65,7 +65,9 @@ users = User.create([
     postalcode2: '6789YZ',
     city2: 'De allergrootstestad',
     country2: 'Nederland',
-    afleveradreshetzelfde: false
+    afleveradreshetzelfde: false,
+    company_name: "firma x",
+    loyalty_points: 2,
   }
 ])
 
@@ -703,6 +705,11 @@ booktemplates = Booktemplate.create([
     productsubtype_id: productsubtypes[5].id,
     subcategory_id: subcategories[1].id,
     publisher_id: users[1].id,
+    normal_hardcover_extra_price: 3,
+    large_hardcover_extra_price: 5,
+    normal_price: 10,
+    large_price: 15,
+
   },
   {
     name: 'verjaardagscadeau door Ingrid',
@@ -712,6 +719,10 @@ booktemplates = Booktemplate.create([
     productsubtype_id: productsubtypes[18].id,
     subcategory_id: subcategories[4].id,
     publisher_id: users[1].id,
+    normal_hardcover_extra_price: 3,
+    large_hardcover_extra_price: 5,
+    normal_price: 20,
+    large_price: 25,
   }
 ])
 
