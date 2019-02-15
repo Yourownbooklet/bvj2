@@ -7,12 +7,22 @@
 
 .content-kalender-ingrid {
   height: 700px;
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
+.content-kalender-ingrid-indic {
+  height: 100%;
+  // width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .content-kalender-ingrid-p1 {
   background: center no-repeat url(<%= asset_path 'Afbeelding-5.jpg'%>);
   background-size: auto 100%;
@@ -38,4 +48,26 @@
   padding: 20px 0px 20px 0px;
   text-align: center;
   margin-top: -650px;
+}
+
+.tekstbox-kalender-ingrid-indic {
+  height: 5px;
+  width: 40px;
+  margin-top: -90px;
+  font-size: 3px;
+}
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .page-size-kalender-ingrid-indic {
+    height: 80px;
+    // width: 420px;
+  }
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .page-size-kalender-ingrid-indic {
+    height: 120px;
+    // width: 210px;
+  }
 }

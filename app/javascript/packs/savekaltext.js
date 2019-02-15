@@ -45,7 +45,12 @@ function createBook() {
       type: 'POST',
       url: urll,
       datatype: 'json',
-      data: { text1: newtext01, booktemplate_id: btid, authenticity_token: AUTH_TOKEN},
+      data: {
+        book: {
+          text1: newtext01, booktemplate_id: btid
+        },
+        authenticity_token: AUTH_TOKEN
+      },
       complete: function() {},
       success: function(data) {
         console.log(data);

@@ -20,8 +20,10 @@
   transition: all 0.3s ease;
   padding: 0px 0px 0px 16px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // align-items: right;
+  // align-items: center;
+  // justify-content: space-between;
+  justify-content: flex-end;
   position:fixed;
   z-index:10;
 }
@@ -80,7 +82,7 @@
 
 .navbar-item2 {
   width: 35px;
-  height: 45px;
+  height: 35px;
   border: solid 1px #E9EAEB;
   display: flex;
   align-items: center;
