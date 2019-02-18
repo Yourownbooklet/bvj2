@@ -18,11 +18,15 @@ if (sessionStorage.getItem("answers")) {
     for (var j = 0, len = answers.length; j < len; j++) {
         if (null !== answers[j]) {
             document.getElementById(answers[j]['id']).value = answers[j]['answer'];
+
+            if (document.getElementsByClassName('answerq' + answers[j]['id'])) {
+                document.getElementsByClassName('answerq' + answers[j]['id'])[0].innerHTML = answers[j]['answer'];
+            }
         }
     }
 }
 
-// Update the answer in the sessionsStorage
+// Update the answer in the sessionsStorage and screen elements
 function updateAnswer(e) {
     var elem = e.srcElement;
     let answers = sessionStorage.getItem('answers') ? JSON.parse(sessionStorage.getItem('answers')) : [];
@@ -34,4 +38,8 @@ function updateAnswer(e) {
         answers.push({id: elem.id, answer: elem.value});
     }
     sessionStorage.setItem("answers", JSON.stringify(answers));
+
+    if (document.getElementsByClassName('answerq' + elem.id)) {
+        document.getElementsByClassName('answerq' + elem.id)[0].innerHTML = elem.value;
+    }
 }
