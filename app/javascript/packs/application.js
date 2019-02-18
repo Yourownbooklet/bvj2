@@ -1,6 +1,6 @@
 import "bootstrap";
-import { displayAddress2Input } from "./displayaddress2";
+import {toggleBtDetails} from "./components/buttons";
 
 console.log('Hello there from Webpacker application.js');
 
-// displayAddress2Input();
+toggleBtDetails();

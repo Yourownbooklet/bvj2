@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :categories, only: :show
   resources :subcategories, only: :show
-  resources :booktemplates, only: :show
+  resources :booktemplates, except: :destroy
   resources :books do
     resources :bookanswers
   end

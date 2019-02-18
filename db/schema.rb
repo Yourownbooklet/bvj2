@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190213113708) do
+ActiveRecord::Schema.define(version: 20190216105435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20190213113708) do
     t.string "streetname_and_number2"
     t.string "postalcode_city2"
     t.string "country2"
+    t.text "booktexts", default: [], array: true
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
   end
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20190213113708) do
     t.integer "large_price"
     t.integer "normal_hardcover_extra_price"
     t.integer "large_hardcover_extra_price"
+    t.text "booktemplatetexts", default: [], array: true
     t.index ["productsubtype_id"], name: "index_booktemplates_on_productsubtype_id"
     t.index ["publisher_id"], name: "index_booktemplates_on_publisher_id"
     t.index ["subcategory_id"], name: "index_booktemplates_on_subcategory_id"

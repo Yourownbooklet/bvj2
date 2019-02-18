@@ -9,13 +9,12 @@ p "seeds started"
 
 Categoryimage.destroy_all
 Imagecategory.destroy_all
-Booktemplateimage.destroy_all
 Imagecategory.destroy_all
-Booktemplateimage.destroy_all
+# Booktemplateimage.destroy_all
 Booktemplatetext.destroy_all
 Booktext.destroy_all
 Book.destroy_all
-Pagetemplate.destroy_all
+# Pagetemplate.destroy_all
 Booktemplate.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -726,92 +725,92 @@ booktemplates = Booktemplate.create([
   }
 ])
 
-booktemplateimages = Booktemplateimage.create([
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[8].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[9].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[10].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[0].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[1].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[2].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[3].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[11].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[12].id
-  }
-])
+# booktemplateimages = Booktemplateimage.create([
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[8].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[9].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[10].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[0].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[1].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[2].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[3].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[11].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[12].id
+#   }
+# ])
 
-pagetemplates = Pagetemplate.create([
-  {
-    name: 'Pagina 1',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p1',
-  },
-  {
-    name: 'Pagina 2',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p2',
-  },
-  {
-    name: 'Pagina 3',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p3',
-  },
-  {
-    name: 'Pagina 4',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p4',
-  },
-  {
-    name: 'Pagina 5',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p5',
-  },
-  {
-    name: 'Pagina 1',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p1',
-  },
-  {
-    name: 'Pagina 2',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p2',
-  },
-  {
-    name: 'Pagina 3',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p3',
-  },
-  {
-    name: 'Pagina 4',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p4',
-  },
-])
+# pagetemplates = Pagetemplate.create([
+#   {
+#     name: 'Pagina 1',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p1',
+#   },
+#   {
+#     name: 'Pagina 2',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p2',
+#   },
+#   {
+#     name: 'Pagina 3',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p3',
+#   },
+#   {
+#     name: 'Pagina 4',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p4',
+#   },
+#   {
+#     name: 'Pagina 5',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p5',
+#   },
+#   {
+#     name: 'Pagina 1',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p1',
+#   },
+#   {
+#     name: 'Pagina 2',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p2',
+#   },
+#   {
+#     name: 'Pagina 3',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p3',
+#   },
+#   {
+#     name: 'Pagina 4',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p4',
+#   },
+# ])
 
 questions = Question.create([
   {
