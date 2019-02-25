@@ -6,5 +6,5 @@ class Book < ApplicationRecord
   has_one :publisher, through: :booktemplate
   has_one :subcategory, through: :booktemplate
   has_many :pagetemplates, through: :booktemplate
-  has_many :bookanswers, dependent: :destroy
+  # has_many :bookanswers, dependent: :destroy
 end

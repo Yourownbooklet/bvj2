@@ -9,13 +9,12 @@ p "seeds started"
 
 Categoryimage.destroy_all
 Imagecategory.destroy_all
-Booktemplateimage.destroy_all
 Imagecategory.destroy_all
-Booktemplateimage.destroy_all
+# Booktemplateimage.destroy_all
 Booktemplatetext.destroy_all
 Booktext.destroy_all
 Book.destroy_all
-Pagetemplate.destroy_all
+# Pagetemplate.destroy_all
 Booktemplate.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -33,6 +32,7 @@ users = User.create([
     first_name: 'Kristel',
     last_name: 'Vrolijk',
     password: '123456',
+    admin: true,
   },
   {
     email: 'vormgever@bvj.nl',
@@ -65,7 +65,9 @@ users = User.create([
     postalcode2: '6789YZ',
     city2: 'De allergrootstestad',
     country2: 'Nederland',
-    afleveradreshetzelfde: false
+    afleveradreshetzelfde: false,
+    company_name: "firma x",
+    loyalty_points: 2,
   }
 ])
 
@@ -703,6 +705,25 @@ booktemplates = Booktemplate.create([
     productsubtype_id: productsubtypes[5].id,
     subcategory_id: subcategories[1].id,
     publisher_id: users[1].id,
+    normal_hardcover_extra_price: 3,
+    large_hardcover_extra_price: 5,
+    normal_price: 10,
+    large_price: 15,
+    booktemplatetexts: [
+      "Boekje voor ~name~",
+      "Je hebt van die dagen die je nooit meer vergeet.",
+      " is er zo &#x00E9&#x00E9n.",
+      "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
+      "Afbeelding-3a.jpg",
+      "Zou ~name~ vandaag misschien komen?",
+      "Papa en Mama zijn naar het ziekenhuis gegaan omdat ~name~ uit mama's buik wil.",
+      "Afbeelding-3b.jpg",
+      "En ja hoor, daar is ~name~",
+      "img4-b.jpg",
+      "Wat een prachtig ventje!",
+      "img4-g.jpg",
+      "Wat een mooi meisje!",
+    ],
   },
   {
     name: 'verjaardagscadeau door Ingrid',
@@ -712,95 +733,100 @@ booktemplates = Booktemplate.create([
     productsubtype_id: productsubtypes[18].id,
     subcategory_id: subcategories[4].id,
     publisher_id: users[1].id,
+    normal_hardcover_extra_price: 3,
+    large_hardcover_extra_price: 5,
+    normal_price: 20,
+    large_price: 25,
+    booktemplatetexts: [],
   }
 ])
 
-booktemplateimages = Booktemplateimage.create([
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[8].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[9].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[10].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[0].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[1].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[2].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[3].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[11].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[12].id
-  }
-])
+# booktemplateimages = Booktemplateimage.create([
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[8].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[9].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[10].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[0].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[1].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[2].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[3].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[11].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[12].id
+#   }
+# ])
 
-pagetemplates = Pagetemplate.create([
-  {
-    name: 'Pagina 1',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p1',
-  },
-  {
-    name: 'Pagina 2',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p2',
-  },
-  {
-    name: 'Pagina 3',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p3',
-  },
-  {
-    name: 'Pagina 4',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p4',
-  },
-  {
-    name: 'Pagina 5',
-    booktemplate_id: booktemplates[0].id,
-    html: 'cat1_prod5_pub1_p5',
-  },
-  {
-    name: 'Pagina 1',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p1',
-  },
-  {
-    name: 'Pagina 2',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p2',
-  },
-  {
-    name: 'Pagina 3',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p3',
-  },
-  {
-    name: 'Pagina 4',
-    booktemplate_id: booktemplates[1].id,
-    html: 'cat4_prod18_pub1_p4',
-  },
-])
+# pagetemplates = Pagetemplate.create([
+#   {
+#     name: 'Pagina 1',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p1',
+#   },
+#   {
+#     name: 'Pagina 2',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p2',
+#   },
+#   {
+#     name: 'Pagina 3',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p3',
+#   },
+#   {
+#     name: 'Pagina 4',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p4',
+#   },
+#   {
+#     name: 'Pagina 5',
+#     booktemplate_id: booktemplates[0].id,
+#     html: 'cat1_prod5_pub1_p5',
+#   },
+#   {
+#     name: 'Pagina 1',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p1',
+#   },
+#   {
+#     name: 'Pagina 2',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p2',
+#   },
+#   {
+#     name: 'Pagina 3',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p3',
+#   },
+#   {
+#     name: 'Pagina 4',
+#     booktemplate_id: booktemplates[1].id,
+#     html: 'cat4_prod18_pub1_p4',
+#   },
+# ])
 
 questions = Question.create([
   {
@@ -905,32 +931,32 @@ booktemplatetexts = Booktemplatetext.create([
   }
 ])
 
-booktemplateimages = Booktemplateimage.create([
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[0].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[1].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[2].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[3].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[8].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[9].id
-  }
-])
+# booktemplateimages = Booktemplateimage.create([
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[0].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[1].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[2].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[3].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[8].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[9].id
+#   }
+# ])
 
 imagecategories = Imagecategory.create([
   {

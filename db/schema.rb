@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181206121901) do
+ActiveRecord::Schema.define(version: 20190219134816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.string "streetname_and_number2"
     t.string "postalcode_city2"
     t.string "country2"
+    t.text "booktexts", default: [], array: true
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
   end
@@ -85,6 +86,11 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.string "Jsfilename"
     t.string "HTMLPrefix"
     t.integer "NrOfPages"
+    t.integer "normal_price"
+    t.integer "large_price"
+    t.integer "normal_hardcover_extra_price"
+    t.integer "large_hardcover_extra_price"
+    t.text "booktemplatetexts", default: [], array: true
     t.index ["productsubtype_id"], name: "index_booktemplates_on_productsubtype_id"
     t.index ["publisher_id"], name: "index_booktemplates_on_publisher_id"
     t.index ["subcategory_id"], name: "index_booktemplates_on_subcategory_id"
@@ -179,15 +185,6 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.index ["buyer_id"], name: "index_orders_on_buyer_id"
   end
 
-  create_table "pagetemplates", force: :cascade do |t|
-    t.string "name"
-    t.text "html"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "booktemplate_id"
-    t.index ["booktemplate_id"], name: "index_pagetemplates_on_booktemplate_id"
-  end
-
   create_table "productsubtypes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -247,6 +244,9 @@ ActiveRecord::Schema.define(version: 20181206121901) do
     t.string "city2"
     t.string "country2"
     t.boolean "afleveradreshetzelfde", default: true
+    t.integer "loyalty_points"
+    t.string "company_name"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -272,7 +272,6 @@ ActiveRecord::Schema.define(version: 20181206121901) do
   add_foreign_key "images", "imagegalleries"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users", column: "buyer_id"
-  add_foreign_key "pagetemplates", "booktemplates"
   add_foreign_key "productsubtypes", "producttypes"
   add_foreign_key "questions", "subcategories"
   add_foreign_key "subcategories", "categories"

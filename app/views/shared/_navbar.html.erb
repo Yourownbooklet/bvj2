@@ -1,7 +1,9 @@
 <div class="navbar-main navbar-h">
-  <!-- Logo -->
   <div class="navbar-section hidden-xs"> <!-- should be navbar-left!!! -->
     <div class="dropdown hidden-xs">
+      <%= link_to root_path do %>
+        <%= image_tag "BVJ_logo_blanco.png", class: "logo"  %>
+      <% end %>
       <span class="dropdown-toggle navbar-item" data-toggle="dropdown">voorleesboek</span>
       <ul class="dropdown-menu dropdown-menu-left navbar-dropdown-menu">
         <li><a href="#">biologisch verhaal</a></li>
@@ -130,9 +132,6 @@
   </div>
 </div>
 <div class="navbar2 navbar2-h">
-  <%= link_to root_path, class: "logo" do %>
-  <span class="logo1">BOEKJE</span><span class="logo2">VOOR JOU</span>
-  <% end %>
   <div class="navbar-section hidden-xs">
 
 
@@ -170,25 +169,7 @@
     <div class="dropdown">
       <i class="dropdown-toggle navbar-item2 fas fa-user-alt" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <% if !user_signed_in? %>
-          <li>
-            <%= link_to new_user_session_path do %>
-              <i class="fa fa-sign-in-alt"></i> Log in
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa fa-cog"></i> Register
-            <% end %>
-          </li>
-        <% end %>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out-alt"></i>  Log out
-            <% end %>
-          </li>
-        <% end %>
+        <%= render 'partials/usermenu' %>
       </ul>
     </div>
   </div>
@@ -226,25 +207,7 @@
     <div class="dropdown">
       <i class="dropdown-toggle navbar-item2-s fas fa-user-alt" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <% if !user_signed_in? %>
-          <li>
-            <%= link_to new_user_session_path do %>
-              <i class="fa fa-sign-in-alt"></i> Log in
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa fa-cog"></i> Register
-            <% end %>
-          </li>
-        <% end %>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out-alt"></i>  Log out
-            <% end %>
-          </li>
-        <% end %>
+        <%= render 'partials/usermenu' %>
       </ul>
     </div>
   </div>

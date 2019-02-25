@@ -33,15 +33,14 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(@book.booktemplate_id)
-    @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate)
     # this should be part of book: @book.text1, ....2, ...3 ect
     @booktexts = Booktext.where(book_id: @book.id)[0]
-    @booktemplateimages = Booktemplateimage.where(booktemplate_id: @booktemplate)
-    @btimages = []
-    @booktemplateimages.each do |bti|
-      img = Image.find(bti.image_id)
-      @btimages << img.filename
-    end
+    # @booktemplateimages = Booktemplateimage.where(booktemplate_id: @booktemplate)
+    # @btimages = []
+    # @booktemplateimages.each do |bti|
+    #   img = Image.find(bti.image_id)
+    #   @btimages << img.filename
+    # end
     # now only two galleries. This will be relative: boottemplate_id <=> gallery_id's
     @images1 = Image.where(imagegallery_id: 1)
     @images1_ids = []
@@ -135,7 +134,8 @@ class BooksController < ApplicationController
       :company2,
       :streetname_and_number2,
       :postalcode_city2,
-      :country2
+      :country2,
+      :booktexts
       )
   end
 end

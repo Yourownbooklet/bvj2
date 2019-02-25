@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :booktemplates
   has_many :imagegalleries
   has_many :images, through: :imagegallery
+
+  def label_method
+    "#{first_name} #{last_name}"
+  end
 end

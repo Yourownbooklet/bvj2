@@ -1,0 +1,17 @@
+<div class="user-page">
+  <h4>Klant / User pagina</h4>
+  <table>
+    <tr>
+      <td>Naam:</td>
+      <td><%= @user.first_name %> <%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @user.email %></td>
+    </tr>
+  </table>
+
+  <% if @user.admin %>
+    <%= link_to "Booktemplates", booktemplates_path, class: "knop"%>
+  <% end %>
+</div>

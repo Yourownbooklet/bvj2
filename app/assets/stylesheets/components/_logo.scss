@@ -1,45 +1,14 @@
-.logo {
-  text-decoration: none !important;
+@media screen and (min-width: 601px) {
+ .logo {
+  height: 80px;
+  margin-top: 35px;
+  background-color: white;
+  border-radius: 50%;
+ }
 }
-
-.logo-s {
-  text-decoration: none;
-}
-
-.logo1 {
-  color: black;
-  font-family: $bvj;
-  font-weight: 700;
-  line-height: 23px;
-  letter-spacing: 3px;
-}
-
-.logo2 {
-  color: black;
-  font-family: $body-font;
-  font-size: 17px;
-  font-weight: normal;
-  line-height: 23px;
-  letter-spacing: 0.5px;
-}
-
 
 @media screen and (max-width: 600px) {
- .logo1 {
-  font-size: 12px;
- }
-
- .logo2 {
-  font-size: 12px;
- }
-}
-
-@media screen and (min-width: 601px) {
- .logo1 {
-  font-size: 17px;
- }
-
- .logo2 {
-  font-size: 17px;
+ .logo {
+  height: 30px;
  }
 }

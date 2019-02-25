@@ -1,25 +1,16 @@
 <div class="indicators-container">
   <ol class="carousel-indicators">
-      <% if @booktemplate.HTMLPrefix == "ingrid1" %>
-        <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
-          <div class="ci-content-l">
-            <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p1" %>
-          </div>
-        </li>
-        <% @cind = 1 %>
-        <% until @cind == @booktemplate.NrOfPages %>
-          <li data-target="#spreadCarousel" data-slide-to="<%= @cind %>" class="car-indic">
-
-              <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p#{@cind + 1}" %>
-
-          </li>
-          <% @cind += 1 %>
-        <% end %>
-      <% else %>
-        <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic tst5"></li>
-        <li data-target="#spreadCarousel" data-slide-to="1" class="car-indic tst6"></li>
-        <li id="ind3" data-target="#spreadCarousel" data-slide-to="2" class="car-indic tst7"></li>
-        <li data-target="#spreadCarousel" data-slide-to="3" class="car-indic tst8"></li>
-      <% end %>
+    <li data-target="#spreadCarousel" data-slide-to="0" class="active car-indic">
+      <div class="ci-content-l">
+        <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p1" %>
+      </div>
+    </li>
+    <% @cind = 1 %>
+    <% until @cind == @booktemplate.NrOfPages %>
+      <li data-target="#spreadCarousel" data-slide-to="<%= @cind %>" class="car-indic">
+        <%= render "html-templates/edit-indic//#{@booktemplate.HTMLPrefix}_p#{@cind + 1}" %>
+      </li>
+      <% @cind += 1 %>
+    <% end %>
   </ol>
 </div>
