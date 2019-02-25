@@ -1,0 +1,6 @@
+      <% @booktemplate.booktemplatetexts.each do |btt| %>
+        Textblok <%= @btt_count %>
+        <input type="text" name="booktemplate[booktemplatetexts][]" value=" <%= btt %> ">
+        <br>
+        <% @btt_count += 1 %>
+      <% end %>

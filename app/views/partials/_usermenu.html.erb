@@ -1,0 +1,24 @@
+<% if !user_signed_in? %>
+  <li>
+    <%= link_to new_user_session_path do %>
+      <i class="fa fa-sign-in-alt"></i> Log in
+    <% end %>
+  </li>
+  <li>
+    <%= link_to new_user_registration_path do %>
+      <i class="fa fa-cog"></i> Register
+    <% end %>
+  </li>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fa fa-sign-out-alt"></i>  Log out
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_path(current_user.id) do %>
+      <i class="fa fa-user-cog"></i> Jouw Pagina
+    <% end %>
+  </li>
+<% end %>

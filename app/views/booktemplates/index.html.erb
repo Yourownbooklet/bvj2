@@ -1,57 +1,79 @@
-<input id = "btids" type="hidden" data-btids="<%= @btids %>">
-<ul class="bt-list">
-  <% @booktemplates.each do |bt|%>
-  <li class="bt-item">
-    <%= link_to booktemplate_path(bt), class: "bt-link" do %>
-      <%= bt.name  %> <%= bt.user.first_name %> <%= bt.user.last_name %>
-    <% end %>
-    <button id="bt-button-details-<%= bt.id %>">details</button>
-    <table id="bt-<%= bt.id %>"" class="bt-details" style="display: none">
-      <tr>
-        <td class="bt-data">Publisher (id):</td>
-        <td><%= bt.user.first_name %> <%= bt.user.last_name %> (<%= bt.publisher_id  %>)</td>
-      </tr>
-      <tr>
-        <td class="bt-data">Product subtype:</td>
-        <td><%= bt.productsubtype.name %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Subcategory:</td>
-        <td><%= bt.subcategory.name %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Javascript filename:</td>
-        <td><%= bt.Jsfilename %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">HTMLPrefix:</td>
-        <td><%= bt.HTMLPrefix %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Aantal pagina's:</td>
-        <td><%= bt.NrOfPages %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Prijs (standaard):</td>
-        <td><%= bt.normal_price %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Toeslag hardcover (standaard)</td>
-        <td><%= bt.normal_hardcover_extra_price %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Prijs groot:</td>
-        <td><%= bt.large_price %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Toeslag hardcover groot:</td>
-        <td><%= bt.large_hardcover_extra_price %></td>
-      </tr>
-      <tr>
-        <td class="bt-data">Booktemplate texten:</td>
-        <td><%= bt.booktemplatetexts %></td>
-      </tr>
-    </table>
-  </li>
+<div class="admin-page">
+  <h4>Booktemplates</h4>
+  <%= link_to new_booktemplate_path, class: "bt-new" do %>
+    <i class="fas fa-plus-square"></i> Nieuw Booktemplate
   <% end %>
-</ul>
+  <input id = "btids" type="hidden" data-btids="<%= @btids %>">
+  <ul class="bt-list">
+    <% @booktemplates.each do |bt|%>
+    <li class="bt-item">
+      <%= link_to booktemplate_path(bt), class: "bt-link" do %>
+        <%= bt.name  %> <%= bt.user.first_name %> <%= bt.user.last_name %>
+      <% end %>
+      <span id="bt-button-details-<%= bt.id %>" class="bt-details">
+        <i class="fas fa-arrow-circle-down"></i>
+      </span>
+
+      <%= link_to booktemplate_path(bt), data: { confirm: "verwijder booktemplate #{bt.name}?" }, method: :delete, class: "bt-new" do %>
+        <i class="fas fa-minus-square"></i>
+      <% end %>
+
+
+      <table id="bt-<%= bt.id %>"" class="" style="display: none">
+        <tr>
+          <td class="bt-data">Publisher (id):</td>
+          <td><%= bt.user.first_name %> <%= bt.user.last_name %> (<%= bt.publisher_id  %>)</td>
+        </tr>
+        <tr>
+          <td class="bt-data">Product subtype:</td>
+          <td><%= bt.productsubtype.name %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Subcategory:</td>
+          <td><%= bt.subcategory.name %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Javascript filename:</td>
+          <td><%= bt.Jsfilename %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">HTMLPrefix:</td>
+          <td><%= bt.HTMLPrefix %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Aantal pagina's:</td>
+          <td><%= bt.NrOfPages %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Prijs (standaard):</td>
+          <td><%= bt.normal_price %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Toeslag hardcover (standaard)</td>
+          <td><%= bt.normal_hardcover_extra_price %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Prijs groot:</td>
+          <td><%= bt.large_price %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Toeslag hardcover groot:</td>
+          <td><%= bt.large_hardcover_extra_price %></td>
+        </tr>
+        <tr>
+          <td class="bt-data">Booktemplate textblokken:</td>
+          <td>
+            <ol>
+            <% bt.booktemplatetexts.each do |btt|%>
+              <li>
+              <%= btt %> <br>
+              </li>
+            <% end %>
+            </ol>
+          </td>
+        </tr>
+      </table>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -32,6 +32,7 @@ users = User.create([
     first_name: 'Kristel',
     last_name: 'Vrolijk',
     password: '123456',
+    admin: true,
   },
   {
     email: 'vormgever@bvj.nl',
@@ -708,7 +709,21 @@ booktemplates = Booktemplate.create([
     large_hardcover_extra_price: 5,
     normal_price: 10,
     large_price: 15,
-
+    booktemplatetexts: [
+      "Boekje voor ~name~",
+      "Je hebt van die dagen die je nooit meer vergeet.",
+      " is er zo &#x00E9&#x00E9n.",
+      "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
+      "Afbeelding-3a.jpg",
+      "Zou ~name~ vandaag misschien komen?",
+      "Papa en Mama zijn naar het ziekenhuis gegaan omdat ~name~ uit mama's buik wil.",
+      "Afbeelding-3b.jpg",
+      "En ja hoor, daar is ~name~",
+      "img4-b.jpg",
+      "Wat een prachtig ventje!",
+      "img4-g.jpg",
+      "Wat een mooi meisje!",
+    ],
   },
   {
     name: 'verjaardagscadeau door Ingrid',
@@ -722,6 +737,7 @@ booktemplates = Booktemplate.create([
     large_hardcover_extra_price: 5,
     normal_price: 20,
     large_price: 25,
+    booktemplatetexts: [],
   }
 ])
 
@@ -915,32 +931,32 @@ booktemplatetexts = Booktemplatetext.create([
   }
 ])
 
-booktemplateimages = Booktemplateimage.create([
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[0].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[1].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[2].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[3].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[8].id
-  },
-  {
-    booktemplate_id: booktemplates[0].id,
-    image_id: images[9].id
-  }
-])
+# booktemplateimages = Booktemplateimage.create([
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[0].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[1].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[2].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[3].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[8].id
+#   },
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     image_id: images[9].id
+#   }
+# ])
 
 imagecategories = Imagecategory.create([
   {
