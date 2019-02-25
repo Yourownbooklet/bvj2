@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :categories, only: :show
   resources :subcategories, only: :show
-  resources :booktemplates, except: :destroy
+  resources :booktemplates
   resources :books do
     resources :bookanswers
   end
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
   resources :booktexts, only: [:create, :update]
   resources :orders, except: :destroy
+
+  resources :users, only: [:show, :update]
 
   post 'booka', to: 'books#createa', as: :booka
 end

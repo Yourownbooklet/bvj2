@@ -13,13 +13,13 @@ function toggle(btid) {
   return function() {
     const bt_details = document.getElementById(`bt-` + `${btid}`)
     if (bt_details.style.display === 'none') {
-      document.getElementById(`bt-button-details-` + `${btid}`).innerHTML = 'sluit details';
+      document.getElementById(`bt-button-details-` + `${btid}`).innerHTML = '<i class="fas fa-arrow-circle-up"></i>';
       bt_details.style.display = 'block';
     } else {
-      document.getElementById(`bt-button-details-` + `${btid}`).innerHTML = 'details';
+      document.getElementById(`bt-button-details-` + `${btid}`).innerHTML = '<i class="fas fa-arrow-circle-down"></i>';
       bt_details.style.display = 'none';
     }
-  }
+   }
 }
 
 export { toggleBtDetails };

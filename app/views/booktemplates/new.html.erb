@@ -1,0 +1,25 @@
+<div class="admin-page">
+  <h4>Booktemplates</h4>
+  <%= simple_form_for(@booktemplate, url: booktemplates_path(@booktemplate), html: { method: :post }, wrapper: :horizontal_form) do |f| %>
+    <div class="form-inputs">
+      <%= f.association :user, label: "Publisher", label_method: :label_method,  required: true  %>
+      <%= f.association :productsubtype, label: "Product sub type", required: true  %>
+      <%= f.association :subcategory, label: "Subcategorie", required: true  %><%= f.input :name, required: true %>
+      <%= f.input :Jsfilename, label: "Javascript bestandsnaam"%>
+      <%= f.input :HTMLPrefix, label: "HTML voorvoegsel"%>
+      <%= f.input :NrOfPages, label: "Aantal pagina's" %>
+      <%= f.input :normal_price, label: "Prijs (standaard)" %>
+      <%= f.input :normal_hardcover_extra_price, label: "Prijs hardcover" %>
+      <%= f.input :large_price, label: "Prijs groot" %>
+      <%= f.input :large_hardcover_extra_price, label: "Prijs groot hardcover" %>
+      <%#= f.input :booktemplatetexts, label: "Textblok" %>
+      Textblok 1:
+        <input type="text" name="textblok1" value=" <%= @booktemplate.booktemplatetexts[0] %> ">
+        <br>
+
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Bewaar", class: "knop" %>
+    </div>
+  <% end %>
+</div>
