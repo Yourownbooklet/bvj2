@@ -80,10 +80,20 @@ class BooksController < ApplicationController
     end
   end
 
+  def bookedit2
+    @book = Book.find(params[:id])
+    get_book_templates
+    @booktemplate = Booktemplate.find(@book.booktemplate_id)
+    render layout: "devise"
+  end
+
   def update
-    if book_params[:email] != ""
       @book = Book.find(params[:id])
       @book.update!(book_params)
+
+    respond_to do |format|
+        format.js
+        format.html { redirect_to new_order_path(:book_id => @book) }
     end
   end
 
@@ -135,7 +145,8 @@ class BooksController < ApplicationController
       :streetname_and_number2,
       :postalcode_city2,
       :country2,
-      :booktexts
+      :booktexts,
+      :afleveradreshetzelfde
       )
   end
 end

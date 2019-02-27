@@ -21,4 +21,9 @@
       <i class="fa fa-user-cog"></i> Jouw Pagina
     <% end %>
   </li>
+  <li>
+    <%= link_to edit_user_registration_path(current_user.id) do %>
+      <i class="fa fa-user-cog"></i> Pas gegevens aan
+    <% end %>
+  </li>
 <% end %>

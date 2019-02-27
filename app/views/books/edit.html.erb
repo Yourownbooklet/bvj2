@@ -83,7 +83,7 @@
   <div class="row">
     <div class="col-xs-12 carousel-button-container">
       <% if user_signed_in? %>
-        <%= link_to "VERDER", new_order_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
+        <%= link_to "VERDER", bookedit2_path(:id => @book.id), class: "knop vooruit carousel-button" %>
       <% else %>
         <%= link_to "VERDER", new_user_registration_path(:book_id => @book.id), class: "knop vooruit carousel-button" %>
       <% end %>
