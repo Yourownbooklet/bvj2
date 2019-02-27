@@ -73,7 +73,8 @@
           </div>
           <div class="address-2" id="address-2" style="display: block">
             <!-- invoer address2 hier -->
-            <%= f.hidden_field :afleveradreshetzelfde, :value => false %>
+            <%#= f.hidden_field :afleveradreshetzelfde, :value => false %>
+            <input value="false" type="hidden" name="user[afleveradreshetzelfde]" id="afleveradreshetzelfde">
             <%= f.input :geaddresseerde,
                         required: false , label: false , placeholder: "Naam Ontvanger" %>
                <%= f.input :streetname2,

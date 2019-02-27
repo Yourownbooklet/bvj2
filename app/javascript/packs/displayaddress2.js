@@ -5,7 +5,7 @@ console.log("address check loaded");
 
 function displayAddress2Input() {
   const da = document.getElementById("address-2");
-  const bb = document.getElementById("user_afleveradreshetzelfde");
+  const bb = document.getElementById("afleveradreshetzelfde");
   if (da.style.display === 'none') {
     da.style.display = 'block';
     bb.value = "false";
@@ -13,7 +13,6 @@ function displayAddress2Input() {
     da.style.display = 'none';
     bb.value = "true";
   }
-  console.log(bb.value);
 }
 
 console.log('displayAddres2Input loaded')

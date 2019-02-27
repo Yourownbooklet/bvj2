@@ -1,0 +1,75 @@
+<div class="container-fluid booktemplate-page">
+  <div class="row-fluid">
+    <!-- control buttons mobile -->
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-3" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="booktemplate-text box">
+        <p class="booktemplate-s">
+          Jouw gegevens (aflever) adres
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs stepscontrol-balk stepscontrol-balk-s">
+      <%= render "partials/steps-3" %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <%= simple_form_for(@book, url: book_path(@book.id), html: { method: :patch }) do |b| %>
+      <%= b.error_notification %>
+      <div class="col-xs-12 col-md-6 booktemplate-variabelen">
+        <div class="">
+          <div class="booktemplate-text">
+            <p class="booktemplate-a">
+              Jouw adres (factuuradres)
+            </p>
+            <span><em>Als je een account hebt, dan worden je gegevens automatisch ingevuld na het inloggen.</em>
+            </span>
+          </div>
+          <%= b.input :sender,
+                      required: false , label: false , input_html: { value: "#{current_user.first_name} #{current_user.last_name}" } %>
+            <%= b.input :streetname_and_number,
+                        required: true, input_html: { value: "#{current_user.streetname} #{current_user.streetnumber} #{current_user.number_extension}", class: 'input-straat' }, label: false  %>
+            <%= b.input :postalcode,
+                        required: true, input_html: { class: 'input-postcode', value: "#{current_user.postalcode}" } , label: false  %>
+            <%= b.input :city,
+                      required: true, input_html: { class: 'input-plaats', value: "#{current_user.city}" }, label: false %>
+
+          <%= b.input :phonenumber,
+                      required: false , label: false , input_html: { value: "#{current_user.phonenumber}" }%>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="">
+          <div class="booktemplate-text">
+            <p class="booktemplate-a">
+              Afleveradres
+            </p>
+            <span><em>Het is mogelijk het boek op een ander adres af te laten leveren.</em>
+            </span>
+          </div>
+          <div class="check-textbox">
+            <input class="check" type="checkbox" id="address2Check"> afleveradres is gelijk aan factuuradres
+          </div>
+          <div class="address-2" id="address-2" style="display: block">
+            <!-- invoer address2 hier -->
+            <%#= b.hidden_field :afleveradreshetzelfde, :value => false %>
+            <input value="false" type="hidden" name="book[afleveradreshetzelfde]" id="afleveradreshetzelfde">
+            <%= b.input :addressee,
+                        required: false , label: false , placeholder: "Naam ontvanger" %>
+               <%= b.input :streetname_and_number2,
+                          required: true, input_html: { class: 'input-straat', value: "#{current_user.streetname2} #{current_user.streetnumber2} #{current_user.number2_extension}" }, label: false %>
+              <%= b.input :postalcode_city2,
+                          required: true, input_html: { class: 'input-straat', value: "#{current_user.postalcode2} #{current_user.city2}" } , label: false %>
+              <%= b.input :country2,
+                        required: true, input_html: { class: 'input-plaats', value: "#{current_user.country2}" }, label: false  %>
+          </div>
+          <div class="form-action register-button">
+            <%= b.button :submit, "VERDER", class: "knop vooruit" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

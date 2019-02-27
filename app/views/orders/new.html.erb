@@ -32,7 +32,7 @@
         Vormgever: <%= @book.booktemplate.user.first_name %> <%= @book.booktemplate.user.last_name %><br>
         boeksoort: <%= @book.booktemplate.productsubtype.name %><br>
         <div class="flex1">
-          <%= render "html-templates/step2/edited/#{@book.booktemplate.HTMLPrefix}_p1.html" %>
+          <%= render "html-templates/edit/#{@book.booktemplate.HTMLPrefix}_p1.html" %>
           <div>
           Aantal: <input type="number" class="input-aantal" value="1">
           <br>
@@ -56,7 +56,7 @@
           </p>
           <p class="gegevens gegevensregel">Bedrijf?</p>
           <p class="gegevens gegevensregel">T.a.v. </p>
-          <p class="gegevens gegevensregel"></p>
+          <p class="gegevens gegevensregel">Hi there</p>
           <p class="gegevens gegevensregel"></p>
           <p class="gegevens gegevensregel"></p>
           <br>

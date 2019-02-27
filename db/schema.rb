@@ -62,18 +62,10 @@ ActiveRecord::Schema.define(version: 20190219134816) do
     t.string "streetname_and_number2"
     t.string "postalcode_city2"
     t.string "country2"
+    t.boolean "afleveradreshetzelfde", default: true
     t.text "booktexts", default: [], array: true
     t.index ["booktemplate_id"], name: "index_books_on_booktemplate_id"
     t.index ["buyer_id"], name: "index_books_on_buyer_id"
-  end
-
-  create_table "booktemplateimages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "booktemplate_id"
-    t.bigint "image_id"
-    t.index ["booktemplate_id"], name: "index_booktemplateimages_on_booktemplate_id"
-    t.index ["image_id"], name: "index_booktemplateimages_on_image_id"
   end
 
   create_table "booktemplates", force: :cascade do |t|
@@ -258,8 +250,6 @@ ActiveRecord::Schema.define(version: 20190219134816) do
   add_foreign_key "bookimages", "images"
   add_foreign_key "books", "booktemplates"
   add_foreign_key "books", "users", column: "buyer_id"
-  add_foreign_key "booktemplateimages", "booktemplates"
-  add_foreign_key "booktemplateimages", "images"
   add_foreign_key "booktemplates", "productsubtypes"
   add_foreign_key "booktemplates", "subcategories"
   add_foreign_key "booktemplates", "users", column: "publisher_id"
