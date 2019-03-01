@@ -1,7 +1,7 @@
 
 class BooksController < ApplicationController
   respond_to :html, :json, :js
-  skip_before_action :authenticate_user!, only: [:new, :show, :createa, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:new, :show, :createa, :updatea, :edit, :update]
 
   def show
     @book = Book.find(params[:id])
@@ -35,6 +35,7 @@ class BooksController < ApplicationController
     @booktemplate = Booktemplate.find(@book.booktemplate_id)
     # this should be part of book: @book.text1, ....2, ...3 ect
     @booktexts = Booktext.where(book_id: @book.id)[0]
+    @booktextsnew = @book.booktexts
     # @booktemplateimages = Booktemplateimage.where(booktemplate_id: @booktemplate)
     # @btimages = []
     # @booktemplateimages.each do |bti|
@@ -88,12 +89,19 @@ class BooksController < ApplicationController
   end
 
   def update
-      @book = Book.find(params[:id])
-      @book.update!(book_params)
-
+    @book = Book.find(params[:id])
+    @book.update!(book_params)
     respond_to do |format|
         format.js
         format.html { redirect_to new_order_path(:book_id => @book) }
+    end
+  end
+
+  def updatea
+    @book = Book.find(params[:id])
+    @book.update!(book_params)
+    respond_to do |format|
+        format.js
     end
   end
 

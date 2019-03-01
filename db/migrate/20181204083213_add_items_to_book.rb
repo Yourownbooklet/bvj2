@@ -14,5 +14,6 @@ class AddItemsToBook < ActiveRecord::Migration[5.1]
     add_column :books, :postalcode_city2, :string
     add_column :books, :country2, :string
     add_column :books, :afleveradreshetzelfde, :boolean, default: true
+    add_column :books, :booktexts, :text, array: true, default: []
   end
 end

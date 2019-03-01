@@ -1,14 +1,25 @@
 function saveBookText1() {
   const booktid = document.getElementById("btid").value;
   const sbtbutton = document.getElementById(`savebooktext${booktid}`);
-  sbtbutton.addEventListener("click", createBook);
   const sbt_2control = document.getElementById(`stepscontrolbutton${booktid}`);
-  sbt_2control.addEventListener("click", createBook);
   const sbt_2_scontrol = document.getElementById(`stepscontrolbutton-s${booktid}`);
-  sbt_2_scontrol.addEventListener("click", createBook);
+  if (sessionStorage.getItem("bookid")) {
+    sbtbutton.addEventListener("click", updateBook);
+    sbt_2control.addEventListener("click", updateBook);
+    sbt_2_scontrol.addEventListener("click", updateBook);
+  } else {
+    sbtbutton.addEventListener("click", createBook);
+    sbt_2control.addEventListener("click", createBook);
+    sbt_2_scontrol.addEventListener("click", createBook);
+  }
   console.log(`createBook${booktid} loaded`);
 }
 
+var btid;
+var AUTH_TOKEN;
+var urll;
+var jsbooktexts;
+var booktexts;
 var newtext01;
 var newtext02;
 var newtext03;
@@ -175,10 +186,8 @@ function getText10() {
   console.log(newtext10);
 }
 
-function createBook() {
-  // get newtext01
+function getBookData() {
   getText1();
-  // get newtext02
   getText2();
   getText3();
   getText4();
@@ -188,17 +197,23 @@ function createBook() {
   getText8();
   getText9();
   getText10();
+  jsbooktexts = [newtext01,newtext02,newtext03,newtext04,newtext05,newtext06,newtext07,newtext08,newtext09,newtext10,"dummy, for some reason the last entry in skipped by active record"];
+  booktexts = JSON.stringify(jsbooktexts);
   // get content of attribute value of element id="btid": booktemplate_id
-  const btid = document.getElementById("btid").value;
+  btid = document.getElementById("btid").value;
   // set route or path to create book
-  var urll = '/booka/';
+  urll = '/booka/';
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
-  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-  // create book with booktemplate_id en newtext01 in booktext
+  AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+  console.log(AUTH_TOKEN);
+}
+
+function createBook() {
+  getBookData();
   if ( run === true ){
     $.ajax({
       type: 'POST',
-      url: urll,
+      url: '/booka/',
       datatype: 'json',
       data: {
         book: {
@@ -208,6 +223,33 @@ function createBook() {
           text7: newtext07, text8: newtext08,
           text9: newtext09, text10: newtext10,
           text11: newtext11,
+          booktemplate_id: btid,
+          booktexts: booktexts
+          },
+        authenticity_token: AUTH_TOKEN
+      },
+      complete: function() {},
+      success: function(data) {
+        console.log(data);
+      },
+      error: function() {
+      }
+    });
+  }
+}
+
+function updateBook() {
+  getBookData();
+  const bookid = sessionStorage.getItem("bookid");
+  //TODO update book
+  if ( run === true ){
+    $.ajax({
+      type: 'PATCH',
+      url: '/booka/' + bookid,
+      datatype: 'json',
+      data: {
+        book: {
+          booktexts: booktexts,
           booktemplate_id: btid,
           },
         authenticity_token: AUTH_TOKEN

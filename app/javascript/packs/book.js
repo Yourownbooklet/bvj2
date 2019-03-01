@@ -9,7 +9,10 @@ function ttt() {
   $('#savebook').modal('hide');
 }
 
-
+// set bookid in session store:
+const bookid = document.getElementById("bookid").value;
+sessionStorage.setItem("bookid", bookid);
+console.log("het bookid is: " + bookid);
 
 const images1_ids = document.getElementById("images1_ids").value;
 const images2_ids = document.getElementById("images2_ids").value;
@@ -230,7 +233,7 @@ function updateText4() {
 }
 
 function saveText4() {
-  // get content (everything between > and <) of element with id="newtext1" into variable :newtext01
+  // get content (everything between > and <) of element with id="newtext4" into variable :newtext01
   var newtext04 = $('#newtext4').val();
   newtext04 = newtext04.replace(/(\n)+/g, '<br />');
   // print content of newtext04 to console

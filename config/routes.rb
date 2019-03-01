@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update]
 
   post 'booka', to: 'books#createa', as: :booka
+  patch 'booka/:id', to: 'books#updatea'
 end
