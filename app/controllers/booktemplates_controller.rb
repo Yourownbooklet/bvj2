@@ -14,7 +14,7 @@ class BooktemplatesController < ApplicationController
   def show
     @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(params[:id])
-    @booktemplatetexts = Booktemplatetext.where(booktemplate_id: @booktemplate.id)
+    @booktemplatetexts = @booktemplate.booktemplatetexts
     # @pagetemplates = Pagetemplate.where(booktemplate_id: @booktemplate.id)
     @html_prefix = @booktemplate.HTMLPrefix
     @subcategory = Subcategory.find(@booktemplate.subcategory_id)

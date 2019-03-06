@@ -11,8 +11,8 @@ Categoryimage.destroy_all
 Imagecategory.destroy_all
 Imagecategory.destroy_all
 # Booktemplateimage.destroy_all
-Booktemplatetext.destroy_all
-Booktext.destroy_all
+# Booktemplatetext.destroy_all
+# Booktext.destroy_all
 Book.destroy_all
 # Pagetemplate.destroy_all
 Booktemplate.destroy_all
@@ -712,7 +712,7 @@ booktemplates = Booktemplate.create([
     booktemplatetexts: [
       "Boekje voor ~name~",
       "Je hebt van die dagen die je nooit meer vergeet.",
-      " is er zo &#x00E9&#x00E9n.",
+      " is er zo één.",
       "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
       "Afbeelding-3a.jpg",
       "Zou ~name~ vandaag misschien komen?",
@@ -896,40 +896,40 @@ answers = Answer.create([
 
 # &#x0040 = @ -- &#x0022 = " -- &#x0025 = %
 
-booktemplatetexts = Booktemplatetext.create([
-  {
-    booktemplate_id: booktemplates[0].id,
-    text1: "Boekje voor ~name~",
-    text2: "Je hebt van die dagen die je nooit meer vergeet.",
-    text3: " is er zo &#x00E9&#x00E9n.",
-    text4: "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
-    text5: "Afbeelding-3a.jpg",
-    text6: "Zou ~name~ vandaag misschien komen?",
-    text7: "Papa en Mama zijn naar het ziekenhuis gegaan omdat ~name~ uit mama's buik wil.",
-    text8: "Afbeelding-3b.jpg",
-    text9: "En ja hoor, daar is ~name~",
-    text10: "img4-b.jpg",
-    text11: "Wat een prachtig ventje!",
-    text12: "img4-g.jpg",
-    text13: "Wat een mooi meisje!",
-  },
-  {
-    booktemplate_id: booktemplates[1].id,
-    text1: "",
-    text2: "",
-    text3: "",
-    text4: "",
-    text5: "",
-    text6: "",
-    text7: "",
-    text8: "",
-    text9: "",
-    text10: "",
-    text11: "",
-    text12: "",
-    text13: ""
-  }
-])
+# booktemplatetexts = Booktemplatetext.create([
+#   {
+#     booktemplate_id: booktemplates[0].id,
+#     text1: "Boekje voor ~name~",
+#     text2: "Je hebt van die dagen die je nooit meer vergeet.",
+#     text3: " is er zo &#x00E9&#x00E9n.",
+#     text4: "Papa en mama zaten thuis rustig een kopje koffie te drinken.",
+#     text5: "Afbeelding-3a.jpg",
+#     text6: "Zou ~name~ vandaag misschien komen?",
+#     text7: "Papa en Mama zijn naar het ziekenhuis gegaan omdat ~name~ uit mama's buik wil.",
+#     text8: "Afbeelding-3b.jpg",
+#     text9: "En ja hoor, daar is ~name~",
+#     text10: "img4-b.jpg",
+#     text11: "Wat een prachtig ventje!",
+#     text12: "img4-g.jpg",
+#     text13: "Wat een mooi meisje!",
+#   },
+#   {
+#     booktemplate_id: booktemplates[1].id,
+#     text1: "",
+#     text2: "",
+#     text3: "",
+#     text4: "",
+#     text5: "",
+#     text6: "",
+#     text7: "",
+#     text8: "",
+#     text9: "",
+#     text10: "",
+#     text11: "",
+#     text12: "",
+#     text13: ""
+#   }
+# ])
 
 # booktemplateimages = Booktemplateimage.create([
 #   {

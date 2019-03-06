@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
     @book = Book.find(params[:book_id])
     # @book.buyer_id = current_user.id
     # @book.save!
-    @booktexts = Booktext.where(book_id: @book.id)[0]
     @booktextsnew = @book.booktexts
     # @booktemplate = Booktemplate.find(@book.booktemplate_id)
     @order = Order.new

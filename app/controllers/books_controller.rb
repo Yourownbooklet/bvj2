@@ -33,8 +33,6 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @booktemplates = Booktemplate.all
     @booktemplate = Booktemplate.find(@book.booktemplate_id)
-    # this should be part of book: @book.text1, ....2, ...3 ect
-    @booktexts = Booktext.where(book_id: @book.id)[0]
     @booktextsnew = @book.booktexts
     # @booktemplateimages = Booktemplateimage.where(booktemplate_id: @booktemplate)
     # @btimages = []
