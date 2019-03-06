@@ -1,7 +1,7 @@
 
 class BooksController < ApplicationController
   respond_to :html, :json, :js
-  skip_before_action :authenticate_user!, only: [:new, :show, :createa, :updatea, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:new, :show, :createa, :updatea, :edit, :update, :create, :update_textblock]
 
   def show
     @book = Book.find(params[:id])
@@ -105,35 +105,23 @@ class BooksController < ApplicationController
     end
   end
 
-  def createa
-    # create book first
+  def create
     @book = Book.new(book_params)
     @book.save!
-    # now create booktext
-    @booktext = Booktext.new(booktext_params)
-    @booktext.book_id = @book.id
-    @booktext.save!
     respond_to do |format|
-        format.js
+      format.js
     end
   end
 
-  def create
-    @book = Book.new(book_params)
-    @bookanswer.save!
+  def update_textblock
+    @book = Book.find(params[:id])
+    index = params[:textblock].to_i
+    indeks = index - 1
+    @book.booktexts[indeks] = params[:text]
+    @book.update!(booktexts: @book.booktexts)
   end
 
   private
-
-  def booktext_params
-    params.require(:book).permit(
-      :text1, :text2, :text3,
-      :text4, :text5, :text6, :text7, :text8,
-      :text9, :text10, :text11, :text12,
-      :text13, :text14, :text15, :text16, :text17,
-      :id
-      )
-  end
 
   def book_params
     params.require(:book).permit(

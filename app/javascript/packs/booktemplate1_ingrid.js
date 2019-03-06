@@ -26,7 +26,7 @@ if (sessionStorage.getItem("bookid")) {
 // get answers from sessionStore (if available):
 if (sessionStorage.getItem("answerq1")) {
   console.log(sessionStorage.getItem("answerq1"));
-  // document.getElementsByClassName('answerq1')[0].innerHTML = sessionStorage.answerq1;
+  document.getElementsByClassName('answerq1')[0].innerHTML = sessionStorage.answerq1;
   document.getElementById("1").value = sessionStorage.answerq1;
 };
 
@@ -56,7 +56,7 @@ if (sessionStorage.getItem("bookid")) {
 };
 
 function updateAnswerQ1() {
-  // document.getElementsByClassName('answerq1')[0].innerHTML = answerq1.value;
+  document.getElementsByClassName('answerq1')[0].innerHTML = answerq1.value;
   sessionStorage.setItem("answerq1", answerq1.value );
   console.log(answerq1.value);
 }

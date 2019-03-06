@@ -42,7 +42,6 @@ $('#spreadCarousel').on('slide.bs.carousel', function (event) {
   console.log(event.direction);
   console.log(event.relatedTarget.id);
   console.log(event.relatedTarget.id[4]);
-  // console.log(event.relatedTarget.firstElementChild.firstElementChild);
 
   const pp = event.relatedTarget.firstElementChild.firstElementChild;
   console.log(pp.id);
@@ -238,14 +237,10 @@ function saveText4() {
   newtext04 = newtext04.replace(/(\n)+/g, '<br />');
   // print content of newtext04 to console
   console.log(newtext04);
-  // get all of element id="btid" (booktext.id)
-  const btid = document.getElementById("btid");
-  // get content of attribute value
-  console.log(btid.value);
-  // get content of attribute data-tst
-  console.log(btid.dataset.tst);
-  // set route or path to update booktext
-  var urll = '/booktexts/' + btid.value;
+  const bookid = sessionStorage.getItem("bookid");
+  console.log(bookid);
+  // set route or path to update booktextblock in book
+  var urll = '/booktextblock/' + bookid;
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
   var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
   // update booktext.text1
@@ -253,7 +248,7 @@ function saveText4() {
     type: 'PATCH',
     url: urll,
     datatype: 'json',
-    data: { text4: newtext04, authenticity_token: AUTH_TOKEN},
+    data: { textblock: 4, text: newtext04, authenticity_token: AUTH_TOKEN},
     complete: function() {},
     success: function() {
     },
@@ -289,21 +284,19 @@ function updateBeeld(i) {
   };
  }
 
-
 function updateImg(imagedata) {
   const imagename = imagedata.value;
   const imgurl = imagedata.dataset.img;
-  const btid = document.getElementById("btid").value;
-  console.log(btid, imagename);
-  var urll = '/booktexts/' + btid;
+  const bookid = sessionStorage.getItem("bookid");
+  var urll = '/booktextblock/' + bookid;
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
   var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-  // update booktext.text5
+  // update book textblock 5
   $.ajax({
     type: 'PATCH',
     url: urll,
     datatype: 'json',
-    data: { text5: imagename, authenticity_token: AUTH_TOKEN},
+    data: { textblock: 5, text: imagename, authenticity_token: AUTH_TOKEN},
     complete: function() {},
     success: function() {
     },

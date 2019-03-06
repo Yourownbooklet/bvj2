@@ -19,11 +19,7 @@ class BooktemplatesController < ApplicationController
     @html_prefix = @booktemplate.HTMLPrefix
     @subcategory = Subcategory.find(@booktemplate.subcategory_id)
     @questions = Question.where(subcategory_id: @subcategory.id)
-    if params[:book_id]
-      @booktext = Booktext.where(book_id: params[:book_id])[0]
-    else
-      @booktext = Booktext.new
-    end
+    @book = Book.new
   end
 
   def new

@@ -76,7 +76,7 @@ star
 </i><span class="light">is verplicht) </span>
       </div>
       <% @id = 1 %>
-      <%= form_for @booktext, url: booktexts_path, method: :post do |bt| %>
+      <%= form_for @book, url: books_path, method: :post do |bt| %>
         <% @questions.each do |q| %>
           <% if q.open %>
             <span class="booktemplate-label">
@@ -110,6 +110,7 @@ star
             </select><br>
           <% end %>
           <% @id += 1 %>
+          <!-- submit is removed: taken over by ajax post button -->
         <% end %>
         <input type="hidden", name="booktemplate_id", value="<%= @booktemplate.id  %>">
       <% end %>

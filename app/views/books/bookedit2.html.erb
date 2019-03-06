@@ -27,7 +27,7 @@
             <span><em>Als je een account hebt, dan worden je gegevens automatisch ingevuld na het inloggen.</em>
             </span>
           </div>
-          <input type="hidden" name="book[buyer_id]" value="#{current_user.id}">
+          <input type="hidden" name="book[buyer_id]" value="<%= current_user.id %>">
           <%= b.input :sender,
                       required: false , label: false , input_html: { value: "#{current_user.first_name} #{current_user.last_name}" } %>
             <%= b.input :streetname_and_number,
@@ -67,7 +67,7 @@
                         required: true, input_html: { class: 'input-plaats', value: "#{current_user.country2}" }, label: false  %>
           </div>
           <div class="form-action register-button">
-            <%= b.button :submit, "VERDER", class: "knop vooruit" %>
+            <%= b.button :submit, "VERDER", class: 'knop vooruit', id: 'to-step4' %>
           </div>
         </div>
       </div>

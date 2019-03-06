@@ -17,9 +17,10 @@
     ADRES
   </span>
 </div>
-<%= link_to new_order_path(:book_id => params[:book_id]), class: "control-button control-button-s vooruit" do %>
+<div class="control-button control-button-s vooruit" onclick="document.getElementById('to-step4').click()">
   4
   <span class="txt">
     BETALEN
   </span>
-<% end %>
+</div>
+

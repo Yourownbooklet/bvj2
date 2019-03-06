@@ -202,7 +202,7 @@ function getBookData() {
   // get content of attribute value of element id="btid": booktemplate_id
   btid = document.getElementById("btid").value;
   // set route or path to create book
-  urll = '/booka/';
+  // urll = '/booka/';
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
   AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
   console.log(AUTH_TOKEN);
@@ -213,16 +213,10 @@ function createBook() {
   if ( run === true ){
     $.ajax({
       type: 'POST',
-      url: '/booka/',
+      url: '/books/',
       datatype: 'json',
       data: {
         book: {
-          text1: newtext01, text2: newtext02,
-          text3: newtext03, text4: newtext04,
-          text5: newtext05, text6: newtext06,
-          text7: newtext07, text8: newtext08,
-          text9: newtext09, text10: newtext10,
-          text11: newtext11,
           booktemplate_id: btid,
           booktexts: booktexts
           },

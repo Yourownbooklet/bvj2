@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :subcategories, only: :show
   resources :booktemplates
-  resources :books do
-    resources :bookanswers
-  end
+  resources :books
   resources :questions, only: [:show, :index] do
     resources :answers, only: :index
   end
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update]
 
-  post 'booka', to: 'books#createa', as: :booka
+  # post 'booka', to: 'books#createa', as: :booka
   patch 'booka/:id', to: 'books#updatea'
+  patch 'booktextblock/:id', to: 'books#update_textblock'
 end
