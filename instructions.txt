@@ -1,0 +1,68 @@
+** [] are used to indicate free format text-input: do not use these in commands.
+
+** UNIX command line quick ref **
+
+pwd   :(show) Print working directory to (on) screen (where am I)
+
+cd [directory name]   :change to directory with name "directory name". Use TAB key to list subdirs (when using ..)
+
+ll   :List Long  :show filenames in directory including details (time stamp and such)
+
+cd ..   :move up directory
+
+cd ../..   :move up two levels
+
+cd ../../..   :three levels ectetera
+
+mkdir [directory name]   :create subdirectory with name "directory name".
+
+cat [filename]   :output content of file to screen (usefull to read textfiles).
+
+sst   :start sublime text editor from this directory
+
+exit   :close session
+
+
+** GIT command line quick ref **
+
+git status   :show status (anything to commit? what branch am I on?)
+git remote -v   :show remote git repositories (push and pull)
+
+git checkout [branchname / master]   :change to branch with name "branchname" of to master.
+
+**** NEVER PUSH to MASTER!!!!! only PULL from MASTER!! ***
+
+git add .   :add changed files from branch to "commit" session
+git commit -m "description of changes (like update function x of fix bug z)"   :prepare push with description "".
+git push origin [branchname]   :push branch changes to origin repository
+
+/* Request for merge....
+/* after merge get new master:
+
+git checkout master
+git pull origin master
+
+/* create new branche
+
+git checkout -b [new-branch-name]   :create new branche and switch to it.
+
+
+** Rails server commands **
+
+rails s   :start rails server (in browser go to http://localhost:3000/)
+
+rails c   :start rails console (to execute ruby commands)
+
+/* to stop server and/or console  :Ctrl-C (in active window)
+
+bundle install   :update/install gems
+
+rails db:migrate   :run database migrations (if/when instructed)
+rails db:seed   :run database seed (fill database with test data)
+
+./dbrebuild.sh   :rebuild complete database (only on instructions)
+
+
+
+
+

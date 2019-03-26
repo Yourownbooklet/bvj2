@@ -43,16 +43,14 @@
                       required: false , label: false , placeholder: "Voornaam" %>
           <%= f.input :last_name,
                       required: true , label: false , placeholder: "Achternaam" %>
-            <%= f.input :streetname,
+          <%= f.input :company_name,
+                        required: false , label: false , placeholder: "Bedrijfsnaam" %>
+          <%= f.input :streetname_and_number,
                         required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
-            <%= f.input :streetnumber,
-                        required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
-            <%= f.input :number_extension,
-                        required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
 
-            <%= f.input :postalcode,
+          <%= f.input :postalcode,
                         required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
-            <%= f.input :city,
+          <%= f.input :city,
                       required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
 
           <%= f.input :phonenumber,
@@ -75,18 +73,18 @@
             <!-- invoer address2 hier -->
             <%#= f.hidden_field :afleveradreshetzelfde, :value => false %>
             <input value="false" type="hidden" name="user[afleveradreshetzelfde]" id="afleveradreshetzelfde">
-            <%= f.input :geaddresseerde,
+            <%= f.input :addressee,
                         required: false , label: false , placeholder: "Naam Ontvanger" %>
-               <%= f.input :streetname2,
+            <%= f.input :company_name2,
+                        required: false , label: false , placeholder: "Bedrijfsnaam" %>
+            <%= f.input :streetname_and_number2,
                           required: true, input_html: { class: 'input-straat' } , label: false , placeholder: "Straatnaam" %>
-              <%= f.input :streetnumber2,
-                          required: true, input_html: { class: 'input-number' }, label: false, placeholder: "Nr." %>
-              <%= f.input :number2_extension,
-                          required: false, input_html: { class: 'input-number' }, label: false, placeholder: "Extra" %>
-              <%= f.input :postalcode2,
+            <%= f.input :postalcode2,
                           required: true, input_html: { class: 'input-postcode' } , label: false , placeholder: "Postcode" %>
-              <%= f.input :city2,
+            <%= f.input :city2,
                         required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Woonplaats" %>
+            <%= f.input :country2,
+                        required: true, input_html: { class: 'input-plaats' }, label: false , placeholder: "Land" %>
           </div>
           <div class="form-action register-button">
             <%= f.button :submit, "VERDER", class: "knop vooruit" %>

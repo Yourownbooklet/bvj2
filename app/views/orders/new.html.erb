@@ -10,24 +10,74 @@
         </p>
         <span>
         Overzicht van het bestelde product en klant- en aflevergegevens.
-
-
         </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs stepscontrol-balk stepscontrol-balk-s">
       <%= render "partials/steps-4" %>
     </div>
-    </div>
+  </div>
+
+  <%= simple_form_for(@order, url: orders_path(@order), html: { method: :post } ) do |f| %>
+
   <div class="row-fluid flex4">
-
-
     <div class="col-xs-12 box-product">
       <div class="hidden">
           boek id: <%= @book.id %><br>
           booktemplate: <%= @book.booktemplate.HTMLPrefix %><br>
-          boeknaam<%= @book.name %><br>
+          boeknaam<%= @book.name %><br><%= @book.created_at %><br>
+<%= @book.updated_at %><br>
+<%= @book.buyer_id %><br>
+<%= @book.booktemplate_id %><br>
+<%= @book.edited %><br>
+<%= @book.email %><br>
+<%= @book.company %><br>
+<%= @book.sender %><br>
+<%= @book.streetname_and_number %><br>
+<%= @book.postalcode %><br>
+<%= @book.city %><br>
+<%= @book.country %><br>
+<%= @book.phonenumber %><br>
+<%= @book.addressee %><br>
+<%= @book.company2 %><br>
+<%= @book.streetname_and_number2 %><br>
+<%= @book.postalcode_city2 %><br>
+<%= @book.country2 %><br>
+<%= @book.afleveradreshetzelfde %><br>
+<%= @book.booktexts %><br>
+<%= @book.booktemplate_id %><br>
+<%= @book.buyer_id %><br>
+
+
+
+
+<%= @book.company %><br>
+<%= @book.sender %><br>
+<%= @book.streetname_and_number %><br>
+<%= @book.postalcode %><br>
+<%= @book.city %><br>
+<%= @book.country %><br>
+<%= @book.phonenumber %><br>
+<%= @book.addressee %><br>
+<%= @book.company2 %><br>
+<%= @book.streetname_and_number2 %><br>
+<%= @book.postalcode_city2 %><br>
+<%= @book.country2 %><br>
+<%= @book.afleveradreshetzelfde %><br>
+<%= @book.booktexts %><br>
+<%= @book.booktemplate_id %><br>
+<%= @book.buyer_id %><br>
       </div>
+
+    <div class="form-inputs">
+
+
+      <%= f.input :book_id, label: "book id", value: @book.id %>
+      <%= f.input :buyer_id, label: "Kopers id", value: current_user.id %>
+      <%= f.input :order_amount, label: "order bedrag" %>
+      <%= f.input :number_of_books, label: "aantal" %>
+
+   </div>
 
         Vormgever: <%= @book.booktemplate.user.first_name %> <%= @book.booktemplate.user.last_name %><br>
         boeksoort: <%= @book.booktemplate.productsubtype.name %><br>
@@ -54,14 +104,21 @@
           <p class="gegevens gegevens-header">
             Klantgegevens.
           </p>
-          <p class="gegevens gegevensregel">Bedrijf?</p>
-          <p class="gegevens gegevensregel">T.a.v. </p>
-          <p class="gegevens gegevensregel">Hi there</p>
-          <p class="gegevens gegevensregel"></p>
-          <p class="gegevens gegevensregel"></p>
-          <br>
-          <p class="gegevens gegevensregel"><%= %></p>
-          <p class="gegevens gegevensregel"><%= %></p>
+
+          <input type="text" name="book[email]" value="<%= current_user.email %>">
+          <input type="text" name="book[sender]" value="<%= current_user.first_name %> <%= current_user.last_name %>">
+          <input type="text" name="book[company]" value="<%= current_user.company_name %>">
+          <input type="text" name="book[streetname_and_number]" value="<%= current_user.streetname_and_number%>">
+          <input type="text" name="book[postalcode]" value="<%= current_user.postalcode %>">
+          <input type="text" name="book[city]" value="<%= current_user.city %>">
+          <input type="text" name="book[country]" value="<%= current_user.country %>">
+
+          <input type="text" name="book[addressee]" value="<%= current_user.addressee %>">
+          <input type="text" name="book[company2]" value="<%= current_user.company_name2 %>">
+          <input type="text" name="book[streetname_and_number2]" value="<%= current_user.streetname_and_number2 %>">
+          <input type="text" name="book[postalcode_city]" value=" <%= current_user.postalcode2 %> <%= current_user.postalcode2 %>">
+          <input type="text" name="book[country2]" value="<%= current_user.country2 %>">
+
           <button class="knop nu">
             wijzigen
           </button>
@@ -98,6 +155,8 @@
       </div>
     </div>
   </div>
+    <%= f.button :submit, "Bestel", class: "knop" %>
+  <% end %>
 </div>
 
 

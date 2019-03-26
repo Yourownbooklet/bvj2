@@ -8,7 +8,16 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :streetname, :streetnumber, :number_extension, :postalcode, :city, :phonenumber, :geaddresseerde, :streetname2, :streetnumber2, :number2_extension, :postalcode2, :city2, :afleveradreshetzelfde])
+      devise_parameter_sanitizer.permit(:sign_up, keys:
+        [
+          :first_name, :last_name, :company_name,
+          :streetname_and_number, :postalcode, :city,
+          :phonenumber, :addressee,
+          :streetname_and_number2, :postalcode2, :city2,
+          :afleveradreshetzelfde, :company_name2,
+          :country2
+        ]
+      )
       devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :streetname, :streetnumber, :number_extension, :postalcode, :city, :phonenumber, :geaddresseerde, :streetname2, :streetnumber2, :number2_extension, :postalcode2, :city2, :afleveradreshetzelfde])
   end
 

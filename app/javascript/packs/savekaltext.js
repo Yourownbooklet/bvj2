@@ -7,7 +7,21 @@ function saveKalText() {
   console.log("createBook2 loaded");
 }
 
+var btid;
+var AUTH_TOKEN;
+var jsbooktexts;
+var booktexts;
 var newtext01;
+var newtext02;
+var newtext03;
+var newtext04;
+var newtext05;
+var newtext06;
+var newtext07;
+var newtext08;
+var newtext09;
+var newtext10;
+var newtext11;
 
 var run = true;
 
@@ -29,25 +43,31 @@ function getText1() {
   }
 }
 
-function createBook() {
+function getBookData() {
   // get newtext01
   getText1();
-
+  jsbooktexts = [newtext01,"dummy, for some reason the last entry in skipped by active record"];
+  booktexts = JSON.stringify(jsbooktexts);
   // get content of attribute value of element id="btid": booktemplate_id
-  const btid = document.getElementById("btid").value;
+  btid = document.getElementById("btid").value;
   // set route or path to create book
-  var urll = '/booka/';
+  // urll = '/booka/';
   // get session auth token: value of attribute "content" of element "meta", where name="csrf-token"
-  var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
-  // create book with booktemplate_id en newtext01 in booktext
+  AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+  console.log(AUTH_TOKEN);
+}
+
+function createBook() {
+  getBookData();
   if ( run === true ){
     $.ajax({
       type: 'POST',
-      url: urll,
+      url: '/books/',
       datatype: 'json',
       data: {
         book: {
-          text1: newtext01, booktemplate_id: btid
+          booktemplate_id: btid,
+          booktexts: booktexts
         },
         authenticity_token: AUTH_TOKEN
       },

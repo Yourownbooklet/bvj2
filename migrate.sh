@@ -50,3 +50,6 @@ rails g migration AddItemsToBook email:string company:string sender:string stree
 
 rails g migration AddItemsToBooktemplate normal_price:integer large_price:integer softcover_price:integer hardcover_price:integer
 rails g migration AddCompanyToUser loyalty_points:integer company_name:string
+
+
+rails g migration AddItemsToOrder order_amount:integer number_of_books:integer
