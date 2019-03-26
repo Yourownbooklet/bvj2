@@ -87,10 +87,10 @@ star
                 star
               </i>
               <br>
-              <input required="true" type="text" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
+              <input required="true" type="text" class="booktemplate-variabele" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
             <% else %>
               <br>
-              <input required="false" type="text" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
+              <input required="false" type="text" class="booktemplate-variabele" id="<%= @id %>" placeholder="antwoord" name="text<%= @id %>"><br>
             <% end %>
           <% else %>
             <span class="booktemplate-label">
@@ -102,7 +102,7 @@ star
               </i>
             <% end %>
             <br>
-            <select required="true" name="text<%= @id %>" id="<%= @id %>">
+            <select required="true" class="booktemplate-variabele" name="text<%= @id %>" id="<%= @id %>">
               <option hidden disabled selected value> kies uit de lijst </option>
               <% q.answers.each do |a| %>
                 <option value="<%= a.answer %>"><%= a.answer %></option>
