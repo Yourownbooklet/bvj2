@@ -17,7 +17,6 @@ function saveBookText1() {
 
 var btid;
 var AUTH_TOKEN;
-var urll;
 var jsbooktexts;
 var booktexts;
 var newtext01;

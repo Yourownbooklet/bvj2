@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190219134816) do
+ActiveRecord::Schema.define(version: 20190326163439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,6 +173,8 @@ ActiveRecord::Schema.define(version: 20190219134816) do
     t.datetime "updated_at", null: false
     t.bigint "book_id"
     t.bigint "buyer_id"
+    t.integer "order_amount"
+    t.integer "number_of_books"
     t.index ["book_id"], name: "index_orders_on_book_id"
     t.index ["buyer_id"], name: "index_orders_on_buyer_id"
   end
@@ -221,23 +223,20 @@ ActiveRecord::Schema.define(version: 20190219134816) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "streetname"
-    t.integer "streetnumber"
-    t.string "number_extension"
+    t.string "streetname_and_number"
     t.string "postalcode"
     t.string "city"
     t.string "country"
     t.string "phonenumber"
-    t.string "geaddresseerde"
-    t.string "streetname2"
-    t.integer "streetnumber2"
-    t.string "number2_extension"
+    t.string "addressee"
+    t.string "streetname_and_number2"
     t.string "postalcode2"
     t.string "city2"
     t.string "country2"
     t.boolean "afleveradreshetzelfde", default: true
     t.integer "loyalty_points"
     t.string "company_name"
+    t.string "company_name2"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
