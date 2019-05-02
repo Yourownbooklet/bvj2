@@ -1,9 +1,22 @@
+/* main topbar */
+.topbar-main {
+  position: fixed;
+  background: #008F98;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding-top: 10px;
+
+}
+
 /* Main navbar */
 .navbar-main {
   width: 100%;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: rgba( 0,0,0,0.8);
-  color: white;
+  background: white;
+  color: black !important;
   transition: all 0.3s ease;
   padding: 0px 15px;
   display: flex;
@@ -16,7 +29,7 @@
 .navbar2 {
   width: 100%;
   background: white;
-  color: black;
+  color: black !important;
   transition: all 0.3s ease;
   padding: 0px 0px 0px 16px;
   display: flex;
@@ -53,7 +66,7 @@
 .navbar-item {
   cursor: pointer;
   margin-right: 25px;
-  color: #E9EAEB;
+  color: #505050;
 }
 
 .navbar-item-mobile-right {
@@ -70,9 +83,9 @@
 .navbar-item-right {
   margin-left: 6px;
   padding-right: 6px;
-  border-right: solid 2px #FFCC33;
+  border-right: solid 2px white;
   font-size: 14px;
-  color: #FFCC33;
+  color: white;
   cursor: pointer;
 }
 
@@ -89,7 +102,7 @@
   justify-content: center;
   font-size: 18px;
   cursor: pointer;
-  color: rgba(0,0,0,0.5);
+  color: #008F98;
 }
 
 .navbar-item2-s {
@@ -101,7 +114,7 @@
   justify-content: center;
   font-size: 17px;
   cursor: pointer;
-  color: rgba(0,0,0,0.5);
+  color: #008F98;
 }
 
 /* Navbar link */
