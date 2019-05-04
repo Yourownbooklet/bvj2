@@ -1,9 +1,10 @@
 import "bootstrap";
 import { saveBookText1 } from "./savebooktext";
+
 saveBookText1();
 
-const booktid = document.getElementById("btid").value;
-console.log(`Hello there from Webpacker booktemplate${booktid}.js`);
+// const booktid = document.getElementById("btid").value;
+console.log(`Hello there from Webpacker booktemplate.js`);
 
 // TODO: create following in loop on number of questions in template
 const answerq1 = document.getElementById("1");
@@ -49,10 +50,6 @@ if (sessionStorage.getItem("answerq4")) {
 if (sessionStorage.getItem("answerq5")) {
   console.log(sessionStorage.getItem("answerq5"));
   document.getElementById("5").value = sessionStorage.answerq5;
-};
-
-if (sessionStorage.getItem("bookid")) {
-  console.log(sessionStorage.getItem("bookid"));
 };
 
 function updateAnswerQ1() {
