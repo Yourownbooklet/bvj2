@@ -1,8 +1,8 @@
 function saveBookText1() {
-  const booktid = document.getElementById("btid").value;
-  const sbtbutton = document.getElementById(`savebooktext${booktid}`);
-  const sbt_2control = document.getElementById(`stepscontrolbutton${booktid}`);
-  const sbt_2_scontrol = document.getElementById(`stepscontrolbutton-s${booktid}`);
+  // const booktid = document.getElementById("btid").value;
+  const sbtbutton = document.getElementById('savebooktext');
+  const sbt_2control = document.getElementById('stepscontrolbutton');
+  const sbt_2_scontrol = document.getElementById('stepscontrolbutton-s');
   if (sessionStorage.getItem("bookid")) {
     sbtbutton.addEventListener("click", updateBook);
     sbt_2control.addEventListener("click", updateBook);
@@ -12,7 +12,7 @@ function saveBookText1() {
     sbt_2control.addEventListener("click", createBook);
     sbt_2_scontrol.addEventListener("click", createBook);
   }
-  console.log(`createBook${booktid} loaded`);
+  console.log(`createBook loaded`);
 }
 
 var btid;
