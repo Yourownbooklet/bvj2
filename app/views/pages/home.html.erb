@@ -76,12 +76,14 @@
         <% end %>
       </div>
       <div class="col-xs-6">
-        <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-2.jpg' %>)">
-          <div class="home-tekst-blok-product">
-            € 27,-
+        <%= link_to booktemplate_path(@booktemplates[2].id) do  %>
+          <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-2.jpg' %>)">
+            <div class="home-tekst-blok-product">
+              € 27,-
+            </div>
           </div>
-        </div>
-        </div>
+        <% end %>
+      </div>
       <div class="col-xs-6">
         <div class="mobile-blok-square  " style="background-image: url(<%= asset_path 'product-3.jpg' %>)">
           <div class="home-tekst-blok-product">
