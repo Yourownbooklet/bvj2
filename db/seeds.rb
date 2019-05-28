@@ -596,12 +596,6 @@ images = Image.create([
     imagegallery_id: imagegalleries[0].id
   },
   {
-    filename: "goal_game_p.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
     filename: "kader_2.jpeg",
     name: "",
     format: "l",
@@ -1475,14 +1469,6 @@ categoryimages = Categoryimage.create([
   {
     image_id: images[86].id,
     imagecategory_id: imagecategories[6].id
-  },
-  {
-    image_id: images[88].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[89].id,
-    imagecategory_id: imagecategories[3].id
   }
 ])
 
