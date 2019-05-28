@@ -74,7 +74,7 @@ imagegalleries = Imagegallery.create([
     publisher_id: users[1].id
   },
   {
-    name: "Afbeeldingen van Kristel",
+    name: "Afbeeldingen algemeen",
     publisher_id: users[0].id
   }
 ])
@@ -106,7 +106,7 @@ images = Image.create([
   },
   {
     filename: "Afbeelding-5.jpg",
-    name: "voorpagina kalender",
+    name: "",
     format: "p",
     imagegallery_id: imagegalleries[0].id
   },
@@ -486,6 +486,138 @@ images = Image.create([
     name: "",
     format: "s",
     imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"12345_opt.png",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"babay_socks_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"baby_bed_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"baby_bed2_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"baby_draagdoek_roze_opt.png",
+    name: "",
+    format: "s",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"back_cover_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename:"bags_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename:"book_cover_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename: "couple_2_p.jpeg",
+    name: "",
+    format: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "couple_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "couple_p.jpeg",
+    name: "",
+    format: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "couple_window_l.jpeg",
+    name: "",
+    format: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "cover_back_3_opt.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename: "cover_front_3_opt.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename: "fam_3_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "fam_window_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "female_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "frame_couple_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "goal_game_p.jpeg",
+    name: "",
+    format: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "kader_2.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[1].id
+  },
+  {
+    filename: "male_tanker_top_p.jpeg",
+    name: "",
+    format: "p",
+    imagegallery_id: imagegalleries[0].id
+  },
+  {
+    filename: "underware_l.jpeg",
+    name: "",
+    format: "l",
+    imagegallery_id: imagegalleries[0].id
   }
 ])
 
@@ -514,7 +646,7 @@ categories = Category.create([
 
 subcategories = Subcategory.create([
   {
-    name: 'zwanger',
+    name: 'geboorte2',
     category_id: categories[0].id
   },
   {
@@ -735,6 +867,35 @@ booktemplates = Booktemplate.create([
     normal_price: 20,
     large_price: 25,
     booktemplatetexts: [],
+  },
+  {
+    name: 'kraamcadeau 2',
+    Jsfilename: '',
+    HTMLPrefix: 'kraamcadeau2',
+    NrOfPages: 6,
+    productsubtype_id: productsubtypes[5].id,
+    subcategory_id: subcategories[0].id,
+    publisher_id: users[1].id,
+    normal_hardcover_extra_price: 3,
+    large_hardcover_extra_price: 5,
+    normal_price: 20,
+    large_price: 25,
+    booktemplatetexts: [
+      "Welkom live ~var1~",
+      "Zie je deze coole, hippe jongeman? Dat is ~var2~. Jouw papa dus.",
+      "~var2~ ontmoet deze mooie, lieve vrouw.",
+      "~var4~. Hij is stapelgek op haar en wil de rest van zijn leven met haar delen!",
+      "Ze zijn heel gelukkig samen. Ze zijn gek op reizen, ~var6~ en dol op ~var7~.",
+      "Wat zou het fantastisch zijn om zelf een gezin te hebben.",
+      "~var2~. zou zo’n leuke papa zijn en ~var4~ een super mama!",
+      "Het is even wennen, met z’n drieën. Maar ze genieten, met volle teugen. ~var1~ is een kleine zoete baby.",
+      "En ja hoor, daar is ~var1~",
+      "img4-b.jpg",
+      "Wat een prachtig ventje!",
+      "img4-g.jpg",
+      "Wat een mooi meisje!",
+      "~var4~ en ~var2~. zouden dat wel heel speciaal vinden! ’Dan kan ik ook jongensspullen kopen’ fantaseert ~var4~. ‘En met een jongen kan ik later voetballen’,zegt ~var2~.Ze moeten erom lachen."
+       ],
   }
 ])
 
@@ -827,6 +988,60 @@ booktemplates = Booktemplate.create([
 
 questions = Question.create([
   {
+    question: 'Naam van het kindje',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: true
+  },
+  {
+    question: 'Het kindje is een',
+    subcategory_id: subcategories[0].id,
+    open: false,
+    required: true
+  },
+  {
+    question: 'Voornaam Papa',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: true
+  },
+  {
+    question: 'Achternaam Papa',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: false
+  },
+  {
+    question: 'Hobby of werk Papa',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: false
+  },
+  {
+    question: 'Voornaam Mama',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: true
+  },
+  {
+    question: 'Achternaam Mama',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: false
+  },
+  {
+    question: 'Mama\'s lievelingseten',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: true
+  },
+  {
+    question: 'Geboortedatum kindje',
+    subcategory_id: subcategories[0].id,
+    open: true,
+    required: true
+  },
+  {
     question: 'Naam van het kind',
     subcategory_id: subcategories[1].id,
     open: true,
@@ -866,28 +1081,28 @@ questions = Question.create([
 
 answers = Answer.create([
   {
-    answer: "jongen",
-    question_id: questions[2].id
+    answer: "jongetje",
+    question_id: questions[1].id
   },
   {
     answer: "meisje",
-    question_id: questions[2].id
+    question_id: questions[1].id
   },
   {
-    answer: "onbekend",
-    question_id: questions[2].id
+    answer: "jongen",
+    question_id: questions[11].id
+  },
+  {
+    answer: "meisje",
+    question_id: questions[11].id
   },
   {
     answer: "thuis",
-    question_id: questions[3].id
+    question_id: questions[12].id
   },
   {
     answer: "in het ziekenhuis",
-    question_id: questions[3].id
-  },
-  {
-    answer: "onderweg",
-    question_id: questions[3].id
+    question_id: questions[12].id
   }
 ])
 
@@ -1200,6 +1415,74 @@ categoryimages = Categoryimage.create([
   {
     image_id: images[67].id,
     imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[68].id,
+    imagecategory_id: imagecategories[3].id
+  },
+  {
+    image_id: images[69].id,
+    imagecategory_id: imagecategories[5].id
+  },
+  {
+    image_id: images[70].id,
+    imagecategory_id: imagecategories[5].id
+  },
+  {
+    image_id: images[71].id,
+    imagecategory_id: imagecategories[5].id
+  },
+  {
+    image_id: images[72].id,
+    imagecategory_id: imagecategories[5].id
+  },
+  {
+    image_id: images[74].id,
+    imagecategory_id: imagecategories[3].id
+  },
+  {
+    image_id: images[76].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[77].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[78].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[79].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[82].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[83].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[84].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[85].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[86].id,
+    imagecategory_id: imagecategories[6].id
+  },
+  {
+    image_id: images[88].id,
+    imagecategory_id: imagecategories[8].id
+  },
+  {
+    image_id: images[89].id,
+    imagecategory_id: imagecategories[3].id
   }
 ])
 

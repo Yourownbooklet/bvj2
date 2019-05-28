@@ -22,6 +22,7 @@ function switchFocus(pp) {
       const no_image = document.getElementById("no-image");
       no_image.style.display = 'none';
       const images = document.getElementById("square-images");
+      // const images = document.getElementById("landscape-images");
       images.style.display = 'block';
       console.log(`it is page5`);
     } else {
@@ -30,6 +31,7 @@ function switchFocus(pp) {
       const no_image = document.getElementById("no-image");
       no_image.style.display = 'block';
       const images = document.getElementById("square-images");
+      // const images = document.getElementById("landscape-images");
       images.style.display = 'none';
       console.log(`it is not page5`)
     }
