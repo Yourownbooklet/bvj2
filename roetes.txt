@@ -1,52 +1,57 @@
-                  Prefix Verb   URI Pattern                                    Controller#Action
-        new_user_session GET    /users/sign_in(.:format)                       devise/sessions#new
-            user_session POST   /users/sign_in(.:format)                       devise/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)                      devise/sessions#destroy
-       new_user_password GET    /users/password/new(.:format)                  devise/passwords#new
-      edit_user_password GET    /users/password/edit(.:format)                 devise/passwords#edit
-           user_password PATCH  /users/password(.:format)                      devise/passwords#update
-                         PUT    /users/password(.:format)                      devise/passwords#update
-                         POST   /users/password(.:format)                      devise/passwords#create
-cancel_user_registration GET    /users/cancel(.:format)                        devise/registrations#cancel
-   new_user_registration GET    /users/sign_up(.:format)                       devise/registrations#new
-  edit_user_registration GET    /users/edit(.:format)                          devise/registrations#edit
-       user_registration PATCH  /users(.:format)                               devise/registrations#update
-                         PUT    /users(.:format)                               devise/registrations#update
-                         DELETE /users(.:format)                               devise/registrations#destroy
-                         POST   /users(.:format)                               devise/registrations#create
-                    root GET    /                                              pages#home
-                   about GET    /about(.:format)                               pages#about
-                    test GET    /test(.:format)                                pages#test
-                category GET    /categories/:id(.:format)                      categories#show
-             subcategory GET    /subcategories/:id(.:format)                   subcategories#show
-            booktemplate GET    /booktemplates/:id(.:format)                   booktemplates#show
-        book_bookanswers GET    /books/:book_id/bookanswers(.:format)          bookanswers#index
-                         POST   /books/:book_id/bookanswers(.:format)          bookanswers#create
-     new_book_bookanswer GET    /books/:book_id/bookanswers/new(.:format)      bookanswers#new
-    edit_book_bookanswer GET    /books/:book_id/bookanswers/:id/edit(.:format) bookanswers#edit
-         book_bookanswer GET    /books/:book_id/bookanswers/:id(.:format)      bookanswers#show
-                         PATCH  /books/:book_id/bookanswers/:id(.:format)      bookanswers#update
-                         PUT    /books/:book_id/bookanswers/:id(.:format)      bookanswers#update
-                         DELETE /books/:book_id/bookanswers/:id(.:format)      bookanswers#destroy
-                   books GET    /books(.:format)                               books#index
-                         POST   /books(.:format)                               books#create
-                new_book GET    /books/new(.:format)                           books#new
-               edit_book GET    /books/:id/edit(.:format)                      books#edit
-                    book GET    /books/:id(.:format)                           books#show
-                         PATCH  /books/:id(.:format)                           books#update
-                         PUT    /books/:id(.:format)                           books#update
-                         DELETE /books/:id(.:format)                           books#destroy
-        question_answers GET    /questions/:question_id/answers(.:format)      answers#index
-               questions GET    /questions(.:format)                           questions#index
-                question GET    /questions/:id(.:format)                       questions#show
-               booktexts POST   /booktexts(.:format)                           booktexts#create
-                booktext PATCH  /booktexts/:id(.:format)                       booktexts#update
-                         PUT    /booktexts/:id(.:format)                       booktexts#update
-                  orders GET    /orders(.:format)                              orders#index
-                         POST   /orders(.:format)                              orders#create
-               new_order GET    /orders/new(.:format)                          orders#new
-              edit_order GET    /orders/:id/edit(.:format)                     orders#edit
-                   order GET    /orders/:id(.:format)                          orders#show
-                         PATCH  /orders/:id(.:format)                          orders#update
-                         PUT    /orders/:id(.:format)                          orders#update
-                   booka POST   /booka(.:format)                               books#createa
+                  Prefix Verb   URI Pattern                               Controller#Action
+        new_user_session GET    /users/sign_in(.:format)                  devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                  devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                 devise/sessions#destroy
+       new_user_password GET    /users/password/new(.:format)             devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)            devise/passwords#edit
+           user_password PATCH  /users/password(.:format)                 devise/passwords#update
+                         PUT    /users/password(.:format)                 devise/passwords#update
+                         POST   /users/password(.:format)                 devise/passwords#create
+cancel_user_registration GET    /users/cancel(.:format)                   devise/registrations#cancel
+   new_user_registration GET    /users/sign_up(.:format)                  devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                     devise/registrations#edit
+       user_registration PATCH  /users(.:format)                          devise/registrations#update
+                         PUT    /users(.:format)                          devise/registrations#update
+                         DELETE /users(.:format)                          devise/registrations#destroy
+                         POST   /users(.:format)                          devise/registrations#create
+                    root GET    /                                         pages#home
+                   about GET    /about(.:format)                          pages#about
+                    test GET    /test(.:format)                           pages#test
+                 payment GET    /payment(.:format)                        pages#payment
+               bookedit2 GET    /bookedit2(.:format)                      books#bookedit2
+                category GET    /categories/:id(.:format)                 categories#show
+             subcategory GET    /subcategories/:id(.:format)              subcategories#show
+           booktemplates GET    /booktemplates(.:format)                  booktemplates#index
+                         POST   /booktemplates(.:format)                  booktemplates#create
+        new_booktemplate GET    /booktemplates/new(.:format)              booktemplates#new
+       edit_booktemplate GET    /booktemplates/:id/edit(.:format)         booktemplates#edit
+            booktemplate GET    /booktemplates/:id(.:format)              booktemplates#show
+                         PATCH  /booktemplates/:id(.:format)              booktemplates#update
+                         PUT    /booktemplates/:id(.:format)              booktemplates#update
+                         DELETE /booktemplates/:id(.:format)              booktemplates#destroy
+                   books GET    /books(.:format)                          books#index
+                         POST   /books(.:format)                          books#create
+                new_book GET    /books/new(.:format)                      books#new
+               edit_book GET    /books/:id/edit(.:format)                 books#edit
+                    book GET    /books/:id(.:format)                      books#show
+                         PATCH  /books/:id(.:format)                      books#update
+                         PUT    /books/:id(.:format)                      books#update
+                         DELETE /books/:id(.:format)                      books#destroy
+        question_answers GET    /questions/:question_id/answers(.:format) answers#index
+               questions GET    /questions(.:format)                      questions#index
+                question GET    /questions/:id(.:format)                  questions#show
+               booktexts POST   /booktexts(.:format)                      booktexts#create
+                booktext PATCH  /booktexts/:id(.:format)                  booktexts#update
+                         PUT    /booktexts/:id(.:format)                  booktexts#update
+                  orders GET    /orders(.:format)                         orders#index
+                         POST   /orders(.:format)                         orders#create
+               new_order GET    /orders/new(.:format)                     orders#new
+              edit_order GET    /orders/:id/edit(.:format)                orders#edit
+                   order GET    /orders/:id(.:format)                     orders#show
+                         PATCH  /orders/:id(.:format)                     orders#update
+                         PUT    /orders/:id(.:format)                     orders#update
+                    user GET    /users/:id(.:format)                      users#show
+                         PATCH  /users/:id(.:format)                      users#update
+                         PUT    /users/:id(.:format)                      users#update
+                         PATCH  /booka/:id(.:format)                      books#updatea
+                         PATCH  /booktextblock/:id(.:format)              books#update_textblock
