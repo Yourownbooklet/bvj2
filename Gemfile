@@ -18,8 +18,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem "figaro"
-gem 'bootsnap', require: false
-gem 'aws-sdk-s3', require: false
+gem 'bootsnap'
+gem 'aws-sdk', '~> 3'
+# gem 'aws-sdk-s3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'list', to: 'images#list'
   get 'about', to: 'pages#about', as: :about
   get 'test', to: 'pages#test'
   get 'payment', to: 'pages#payment'
