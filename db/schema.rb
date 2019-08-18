@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_200233) do
+ActiveRecord::Schema.define(version: 2019_08_11_123710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -222,6 +222,12 @@ ActiveRecord::Schema.define(version: 2019_06_12_200233) do
     t.bigint "subcategory_id"
     t.boolean "required"
     t.index ["subcategory_id"], name: "index_questions_on_subcategory_id"
+  end
+
+  create_table "rimages", force: :cascade do |t|
+    t.string "format"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subcategories", force: :cascade do |t|

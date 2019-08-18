@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'list', to: 'images#list'
+  get 'list', to: 'rimages#list'
   get 'about', to: 'pages#about', as: :about
   get 'test', to: 'pages#test'
   get 'payment', to: 'pages#payment'
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :orders, except: :destroy
 
   resources :users, only: [:show, :update]
+  resources :rimages, only: [:index, :create, :new, :show]
 
   # post 'booka', to: 'books#createa', as: :booka
   patch 'booka/:id', to: 'books#updatea'

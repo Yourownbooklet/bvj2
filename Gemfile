@@ -19,8 +19,10 @@ gem 'uglifier'
 gem 'webpacker'
 gem "figaro"
 gem 'bootsnap'
-gem 'aws-sdk', '~> 3'
-# gem 'aws-sdk-s3'
+gem 'aws-sdk-rails'
+# gem 'aws-sdk', '~> 3'
+gem 'aws-sdk-s3'
+gem 'mini_magick'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

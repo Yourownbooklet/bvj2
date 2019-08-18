@@ -1,0 +1,2 @@
+module RimagesHelper
+end
