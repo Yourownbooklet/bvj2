@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'batchupdate', to: 'images#batch_update'
   get 'list', to: 'rimages#list'
   get 'about', to: 'pages#about', as: :about
   get 'test', to: 'pages#test'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update]
   resources :rimages, only: [:index, :create, :new, :show]
+  resources :images
 
   # post 'booka', to: 'books#createa', as: :booka
   patch 'booka/:id', to: 'books#updatea'

@@ -178,6 +178,13 @@ ActiveRecord::Schema.define(version: 2019_08_11_123710) do
     t.index ["publisher_id"], name: "index_imagegalleries_on_publisher_id"
   end
 
+
+  create_table "rimages", force: :cascade do |t|
+    t.string "format"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -222,12 +229,6 @@ ActiveRecord::Schema.define(version: 2019_08_11_123710) do
     t.bigint "subcategory_id"
     t.boolean "required"
     t.index ["subcategory_id"], name: "index_questions_on_subcategory_id"
-  end
-
-  create_table "rimages", force: :cascade do |t|
-    t.string "format"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "subcategories", force: :cascade do |t|

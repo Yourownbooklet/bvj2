@@ -42,7 +42,7 @@ class RimagesController < ApplicationController
      image_tn = MiniMagick::Image.new(params[:rimage][:image].tempfile.path)
      image_tn.resize "50x50"
      @rimage.image_tn.attach(io: File.open(image_tn.path), filename: params[:rimage][:image].original_filename)
-     # binding.pry
+     #binding.pry
     @rimage.save!
     redirect_to rimages_path
   end
