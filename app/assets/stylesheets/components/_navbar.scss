@@ -26,7 +26,7 @@
     padding-top: 10px;
   }
   .navbartop-h {
-    height: 55px;
+    height: 45px;
     margin-top: -125px;
   }
   .navbar-h {
@@ -48,6 +48,7 @@
   width: 100%;
   text-align: center;
   transition: all 0.3s ease;
+  z-index:30;
 }
 
 /* Main navbar */
