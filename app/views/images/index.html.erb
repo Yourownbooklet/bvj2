@@ -1,0 +1,21 @@
+<div class="admin-page">
+  <h4>Images</h4>
+  <%= link_to new_image_path, class: "bt-new" do %>
+    <i class="fas fa-plus-square"></i> Nieuw image
+  <% end %>
+  <ul class="bt-list">
+    <% @images.each do |image|%>
+    <li>
+      naam: <%= image.name %>
+      Image Gallery: <%= image.imagegallery_id %>
+      type: <%= image.type %>
+      filename: <%= image.filename %>
+      formaat: <%= image.format %>
+      <%=image_tag url_for(image.image)%>
+
+      <%=image_tag url_for(image.image_tn)%>
+
+    </li>
+    <% end %>
+  </ul>
+</div>

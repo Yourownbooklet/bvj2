@@ -1,0 +1,18 @@
+<ul class="key">
+<% @bucket.objects.each do |rimage|%>
+  <li class="url">
+    <a href="<%= rimage.presigned_url(:get) %>">
+    <%= rimage.key %>
+      <%=image_tag rimage.presigned_url(:get) %>
+    </a>
+  </li>
+<% end %>
+</ul>
+
+<ul class="key">
+<% @arr2.each do |i|%>
+  <li class="oo">
+    <%= i %>
+  </li>
+<% end %>
+</ul>

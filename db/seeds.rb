@@ -534,91 +534,85 @@ images = Image.create([
     name: "",
     format: "l",
     imagegallery_id: imagegalleries[1].id
-  },
-  {
-    filename: "couple_2_p.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "couple_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "couple_p.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "couple_window_l.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "cover_back_3_opt.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[1].id
-  },
-  {
-    filename: "cover_front_3_opt.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[1].id
-  },
-  {
-    filename: "fam_3_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "fam_window_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "female_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "frame_couple_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "goal_game_p.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "kader_2.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[1].id
-  },
-  {
-    filename: "male_tanker_top_p.jpeg",
-    name: "",
-    format: "p",
-    imagegallery_id: imagegalleries[0].id
-  },
-  {
-    filename: "underware_l.jpeg",
-    name: "",
-    format: "l",
-    imagegallery_id: imagegalleries[0].id
-  }
+   },
+  # {
+  #   filename: "couple_2_p.jpeg",
+  #   name: "",
+  #   format: "p",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "couple_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "couple_p.jpeg",
+  #   name: "",
+  #   format: "p",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "couple_window_l.jpeg",
+  #   name: "",
+  #   format: "p",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "cover_back_3_opt.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[1].id
+  # },
+  # {
+  #   filename: "cover_front_3_opt.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[1].id
+  # },
+  # {
+  #   filename: "fam_3_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "fam_window_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "female_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "frame_couple_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "kader_2.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[1].id
+  # },
+  # {
+  #   filename: "male_tanker_top_p.jpeg",
+  #   name: "",
+  #   format: "p",
+  #   imagegallery_id: imagegalleries[0].id
+  # },
+  # {
+  #   filename: "underware_l.jpeg",
+  #   name: "",
+  #   format: "l",
+  #   imagegallery_id: imagegalleries[0].id
+  # }
 ])
 
 categories = Category.create([
@@ -1388,102 +1382,94 @@ categoryimages = Categoryimage.create([
     image_id: images[60].id,
     imagecategory_id: imagecategories[7].id
   },
-  {
-    image_id: images[61].id,
-    imagecategory_id: imagecategories[7].id
-  },
-  {
-    image_id: images[62].id,
-    imagecategory_id: imagecategories[7].id
-  },
-  {
-    image_id: images[63].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[64].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[65].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[66].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[67].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[68].id,
-    imagecategory_id: imagecategories[3].id
-  },
-  {
-    image_id: images[69].id,
-    imagecategory_id: imagecategories[5].id
-  },
-  {
-    image_id: images[70].id,
-    imagecategory_id: imagecategories[5].id
-  },
-  {
-    image_id: images[71].id,
-    imagecategory_id: imagecategories[5].id
-  },
-  {
-    image_id: images[72].id,
-    imagecategory_id: imagecategories[5].id
-  },
-  {
-    image_id: images[74].id,
-    imagecategory_id: imagecategories[3].id
-  },
-  {
-    image_id: images[76].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[77].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[78].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[79].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[82].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[83].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[84].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[85].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[86].id,
-    imagecategory_id: imagecategories[6].id
-  },
-  {
-    image_id: images[88].id,
-    imagecategory_id: imagecategories[8].id
-  },
-  {
-    image_id: images[89].id,
-    imagecategory_id: imagecategories[3].id
-  }
+  # {
+  #   image_id: images[61].id,
+  #   imagecategory_id: imagecategories[7].id
+  # },
+  # {
+  #   image_id: images[62].id,
+  #   imagecategory_id: imagecategories[7].id
+  # },
+  # {
+  #   image_id: images[63].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[64].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[65].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[66].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[67].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[68].id,
+  #   imagecategory_id: imagecategories[3].id
+  # },
+  # {
+  #   image_id: images[69].id,
+  #   imagecategory_id: imagecategories[5].id
+  # },
+  # {
+  #   image_id: images[70].id,
+  #   imagecategory_id: imagecategories[5].id
+  # },
+  # {
+  #   image_id: images[71].id,
+  #   imagecategory_id: imagecategories[5].id
+  # },
+  # {
+  #   image_id: images[72].id,
+  #   imagecategory_id: imagecategories[5].id
+  # },
+  # {
+  #   image_id: images[74].id,
+  #   imagecategory_id: imagecategories[3].id
+  # },
+  # {
+  #   image_id: images[76].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[77].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[78].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[79].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[82].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[83].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[84].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[85].id,
+  #   imagecategory_id: imagecategories[8].id
+  # },
+  # {
+  #   image_id: images[86].id,
+  #   imagecategory_id: imagecategories[6].id
+  # }
 ])
 
 p "seeds done"

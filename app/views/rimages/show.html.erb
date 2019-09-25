@@ -1,0 +1,8 @@
+<div class="admin-page">
+  <h4>Image</h4>
+      <a href="<%= url_for(@rimage.image) %>">
+        formaat<%= @rimage.format %>
+      </a>
+      <%=image_tag url_for(@rimage.image)%>
+
+</div>

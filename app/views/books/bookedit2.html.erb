@@ -31,7 +31,7 @@
           <%= b.input :sender,
                       required: false , label: false , input_html: { value: "#{current_user.first_name} #{current_user.last_name}" } %>
             <%= b.input :streetname_and_number,
-                        required: true, input_html: { value: "#{current_user.streetname} #{current_user.streetnumber} #{current_user.number_extension}", class: 'input-straat' }, label: false  %>
+                        required: true, input_html: { value: "#{current_user.streetname_and_number}", class: 'input-straat' }, label: false  %>
             <%= b.input :postalcode,
                         required: true, input_html: { class: 'input-postcode', value: "#{current_user.postalcode}" } , label: false  %>
             <%= b.input :city,
@@ -60,7 +60,7 @@
             <%= b.input :addressee,
                         required: false , label: false , placeholder: "Naam ontvanger" %>
                <%= b.input :streetname_and_number2,
-                          required: true, input_html: { class: 'input-straat', value: "#{current_user.streetname2} #{current_user.streetnumber2} #{current_user.number2_extension}" }, label: false %>
+                          required: true, input_html: { class: 'input-straat', value: "#{current_user.streetname_and_number2}" }, label: false %>
               <%= b.input :postalcode_city2,
                           required: true, input_html: { class: 'input-straat', value: "#{current_user.postalcode2} #{current_user.city2}" } , label: false %>
               <%= b.input :country2,

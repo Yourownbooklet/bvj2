@@ -6,8 +6,9 @@ gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
-gem 'rails', '5.1.5'
+gem 'rails', '5.2.1'
 gem 'redis'
+gem 'activestorage', '>= 5.2.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '>= 3.4.0'
@@ -16,6 +17,12 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "figaro"
+gem 'bootsnap'
+gem 'aws-sdk-rails'
+# gem 'aws-sdk', '~> 3'
+gem 'aws-sdk-s3'
+gem 'mini_magick'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,0 +1,20 @@
+<div class="admin-page">
+  <h4>Images</h4>
+  <%= link_to new_rimage_path, class: "bt-new" do %>
+    <i class="fas fa-plus-square"></i> Nieuw image
+  <% end %>
+  <ul class="bt-list">
+    <% @rimages.each do |rimage|%>
+    <li>
+      <a href="<%= url_for(rimage.image) %>">
+        formaat<%= rimage.format %>
+      </a>
+      <%=image_tag url_for(rimage.image.variant(resize: "50x50"))%>
+      <%=image_tag url_for(rimage.image)%>
+
+      <%=image_tag url_for(rimage.image_tn)%>
+
+    </li>
+    <% end %>
+  </ul>
+</div>
