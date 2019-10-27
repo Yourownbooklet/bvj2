@@ -1,0 +1,28 @@
+<div class="user-page">
+  <h4>(Adres/details)Gegevens Klant / User pagina</h4>
+
+  <%= simple_form_for(@user, url: user_path(@user), html: { method: :put }, wrapper: :horizontal_form) do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :first_name, label: "Voornaam" %>
+      <%= f.input :last_name, label: "Achternaam" %>
+      <%= f.input :company_name, label: "Bedrijfsnaam" %>
+      <%= f.input :streetname_and_number, label: "Straatnaam en nr" %>
+      <%= f.input :postalcode, label: "Postcode" %>
+      <%= f.input :city, label: "Stad" %>
+      <%#= f.input :country, label: "Land" %>
+      <%= f.input :phonenumber, label: "telefoonnummer" %>
+      <% if @user.admin %>
+        <%= f.input :loyalty_points %>
+      <% end %>
+
+
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Bewaar", class: "knop vooruit" %>
+      <%= link_to "terug", user_path, class: "knop vooruit"%>
+    </div>
+  <% end %>
+
+</div>

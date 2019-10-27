@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :booktexts, only: [:create, :update]
   resources :orders, except: :destroy
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :edit, :update]
   resources :rimages, only: [:index, :create, :new, :show]
   resources :images
 

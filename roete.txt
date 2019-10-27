@@ -1,0 +1,77 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+         new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
+             user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
+     destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
+        new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
+       edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
+            user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
+                          PUT    /users/password(.:format)                                                                devise/passwords#update
+                          POST   /users/password(.:format)                                                                devise/passwords#create
+ cancel_user_registration GET    /users/cancel(.:format)                                                                  devise/registrations#cancel
+    new_user_registration GET    /users/sign_up(.:format)                                                                 devise/registrations#new
+   edit_user_registration GET    /users/edit(.:format)                                                                    devise/registrations#edit
+        user_registration PATCH  /users(.:format)                                                                         devise/registrations#update
+                          PUT    /users(.:format)                                                                         devise/registrations#update
+                          DELETE /users(.:format)                                                                         devise/registrations#destroy
+                          POST   /users(.:format)                                                                         devise/registrations#create
+                     root GET    /                                                                                        pages#home
+              batchupdate GET    /batchupdate(.:format)                                                                   images#batch_update
+                     list GET    /list(.:format)                                                                          rimages#list
+                    about GET    /about(.:format)                                                                         pages#about
+                     test GET    /test(.:format)                                                                          pages#test
+                  payment GET    /payment(.:format)                                                                       pages#payment
+                bookedit2 GET    /bookedit2(.:format)                                                                     books#bookedit2
+                 category GET    /categories/:id(.:format)                                                                categories#show
+              subcategory GET    /subcategories/:id(.:format)                                                             subcategories#show
+            booktemplates GET    /booktemplates(.:format)                                                                 booktemplates#index
+                          POST   /booktemplates(.:format)                                                                 booktemplates#create
+         new_booktemplate GET    /booktemplates/new(.:format)                                                             booktemplates#new
+        edit_booktemplate GET    /booktemplates/:id/edit(.:format)                                                        booktemplates#edit
+             booktemplate GET    /booktemplates/:id(.:format)                                                             booktemplates#show
+                          PATCH  /booktemplates/:id(.:format)                                                             booktemplates#update
+                          PUT    /booktemplates/:id(.:format)                                                             booktemplates#update
+                          DELETE /booktemplates/:id(.:format)                                                             booktemplates#destroy
+                    books GET    /books(.:format)                                                                         books#index
+                          POST   /books(.:format)                                                                         books#create
+                 new_book GET    /books/new(.:format)                                                                     books#new
+                edit_book GET    /books/:id/edit(.:format)                                                                books#edit
+                     book GET    /books/:id(.:format)                                                                     books#show
+                          PATCH  /books/:id(.:format)                                                                     books#update
+                          PUT    /books/:id(.:format)                                                                     books#update
+                          DELETE /books/:id(.:format)                                                                     books#destroy
+         question_answers GET    /questions/:question_id/answers(.:format)                                                answers#index
+                questions GET    /questions(.:format)                                                                     questions#index
+                 question GET    /questions/:id(.:format)                                                                 questions#show
+                booktexts POST   /booktexts(.:format)                                                                     booktexts#create
+                 booktext PATCH  /booktexts/:id(.:format)                                                                 booktexts#update
+                          PUT    /booktexts/:id(.:format)                                                                 booktexts#update
+                   orders GET    /orders(.:format)                                                                        orders#index
+                          POST   /orders(.:format)                                                                        orders#create
+                new_order GET    /orders/new(.:format)                                                                    orders#new
+               edit_order GET    /orders/:id/edit(.:format)                                                               orders#edit
+                    order GET    /orders/:id(.:format)                                                                    orders#show
+                          PATCH  /orders/:id(.:format)                                                                    orders#update
+                          PUT    /orders/:id(.:format)                                                                    orders#update
+                edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                     user GET    /users/:id(.:format)                                                                     users#show
+                          PATCH  /users/:id(.:format)                                                                     users#update
+                          PUT    /users/:id(.:format)                                                                     users#update
+                  rimages GET    /rimages(.:format)                                                                       rimages#index
+                          POST   /rimages(.:format)                                                                       rimages#create
+               new_rimage GET    /rimages/new(.:format)                                                                   rimages#new
+                   rimage GET    /rimages/:id(.:format)                                                                   rimages#show
+                   images GET    /images(.:format)                                                                        images#index
+                          POST   /images(.:format)                                                                        images#create
+                new_image GET    /images/new(.:format)                                                                    images#new
+               edit_image GET    /images/:id/edit(.:format)                                                               images#edit
+                    image GET    /images/:id(.:format)                                                                    images#show
+                          PATCH  /images/:id(.:format)                                                                    images#update
+                          PUT    /images/:id(.:format)                                                                    images#update
+                          DELETE /images/:id(.:format)                                                                    images#destroy
+                          PATCH  /booka/:id(.:format)                                                                     books#updatea
+                          PATCH  /booktextblock/:id(.:format)                                                             books#update_textblock
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
