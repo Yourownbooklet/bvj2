@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+#ƒ This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 p "seeds started"
 
+Order.destroy_all
+Book.destroy_all
 Categoryimage.destroy_all
 Imagecategory.destroy_all
 Imagecategory.destroy_all
@@ -33,6 +35,7 @@ users = User.create([
     last_name: 'Vrolijk',
     password: '123456',
     admin: true,
+    loyalty_points: 4,
   },
   {
     email: 'vormgever@bvj.nl',
@@ -45,6 +48,7 @@ users = User.create([
     first_name: 'Henk',
     last_name: 'Klant',
     password: '123456',
+    loyalty_points: 3,
   },
   {
     email: 'klant0@bvj.nl',
@@ -1471,5 +1475,66 @@ categoryimages = Categoryimage.create([
   #   imagecategory_id: imagecategories[6].id
   # }
 ])
+
+
+books = Book.create([
+  {
+    buyer_id: users[0].id,
+    booktexts: ["Boekje voor Jannetje",
+    "Je hebt van die dagen die je nooit meer vergeet.",
+    "6 november 2016 is er zo één.","Papa en Mama zijn naar het ziekenhuis gegaan omdat Jannetje uit mama's buik wil.",
+    "Afbeelding-3b.jpg","","En ja hoor, daar is Jannetje","img4-g.jpg","Wat een mooi meisje!","no text (hard coded in JS)"],
+    booktemplate_id: booktemplates[0].id
+  },{
+    buyer_id: users[0].id,
+    booktexts: ["Boekje voor Henk",
+    "Je hebt van die dagen die je nooit meer vergeet.",
+    "6 november 2016 is er zo één.","Papa en Mama zijn naar het ziekenhuis gegaan omdat Jannetje uit mama's buik wil.",
+    "Afbeelding-3b.jpg","","En ja hoor, daar is Jannetje","img4-g.jpg","Wat een mooi meisje!","no text (hard coded in JS)"],
+    booktemplate_id: booktemplates[0].id
+  },{
+    buyer_id: users[2].id,
+    booktexts: ["Boekje voor Jaap",
+    "Je hebt van die dagen die je nooit meer vergeet.",
+    "6 november 2016 is er zo één.","Papa en Mama zijn naar het ziekenhuis gegaan omdat Jannetje uit mama's buik wil.",
+    "Afbeelding-3b.jpg","","En ja hoor, daar is Jannetje","img4-g.jpg","Wat een mooi meisje!","no text (hard coded in JS)"],
+    booktemplate_id: booktemplates[0].id
+  },{
+    buyer_id: users[2].id,
+    booktexts: ["Boekje voor Piet",
+    "Je hebt van die dagen die je nooit meer vergeet.",
+    "6 november 2016 is er zo één.","Papa en Mama zijn naar het ziekenhuis gegaan omdat Jannetje uit mama's buik wil.",
+    "Afbeelding-3b.jpg","","En ja hoor, daar is Jannetje","img4-g.jpg","Wat een mooi meisje!","no text (hard coded in JS)"],
+    booktemplate_id: booktemplates[0].id
+  },
+  ])
+
+orders = Order.create([
+  {
+    book_id: books[0].id,
+    buyer_id: users[0].id,
+    order_amount: 20,
+    number_of_books: 2,
+  },
+  {
+    book_id: books[1].id,
+    buyer_id: users[0].id,
+    order_amount: 10,
+    number_of_books: 1,
+  },
+  {
+    book_id: books[2].id,
+    buyer_id: users[2].id,
+    order_amount: 30,
+    number_of_books: 3,
+  },
+  {
+    book_id: books[3].id,
+    buyer_id: users[2].id,
+    order_amount: 40,
+    number_of_books: 4,
+  }
+])
+
 
 p "seeds done"
