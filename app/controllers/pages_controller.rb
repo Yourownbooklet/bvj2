@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    get_book_templates
   end
 
   def test
